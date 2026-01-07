@@ -1,0 +1,248 @@
+@use '../base/animations.scss';
+
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  .float-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-accent-lime), transparent);
+    filter: blur(2px);
+  }
+}
+
+.corner-accent {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--color-accent-lime);
+  opacity: 0.15;
+  z-index: 2;
+
+  &.top-left {
+    top: 20px;
+    left: 20px;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  &.top-right {
+    top: 20px;
+    right: 20px;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  &.bottom-left {
+    bottom: 20px;
+    left: 20px;
+    border-right: none;
+    border-top: none;
+  }
+
+  &.bottom-right {
+    bottom: 20px;
+    right: 20px;
+    border-left: none;
+    border-top: none;
+  }
+}
+
+.home-content {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  z-index: 3;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.logo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 80px);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--color-accent-lime);
+  box-shadow: 0 0 20px rgba(0, 255, 60, 0.4);
+  opacity: 0.5;
+}
+
+.logo-image {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 20px var(--color-accent-lime));
+  animation: float 3s ease-in-out infinite;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.title-decoration {
+  height: 2px;
+  width: 80px;
+  background: linear-gradient(90deg, transparent, var(--color-accent-lime), transparent);
+  transform-origin: center;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-family: var(--font-accent);
+  color: var(--color-accent-lime);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  position: relative;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  text-align: left;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+
+  svg {
+    transition: 500ms;
+    color: var(--color-accent-lime);
+  }
+
+  &:hover {
+    border-color: var(--color-accent-lime);
+    box-shadow: 0 0 30px rgba(0, 255, 64, 0.3);
+
+    svg {
+      transform: translateX(10px);
+    }
+
+    .menu-item-glow {
+      opacity: 1;
+    }
+  }
+}
+
+.menu-item-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 64, 0.2), transparent);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.menu-item:hover .menu-item-glow {
+  left: 100%;
+}
+
+.menu-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-item-text {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.bottom-decoration {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--color-accent-lime);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+
+  .decoration-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent-lime), transparent);
+  }
+
+  .decoration-text {
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .logo-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .corner-accent {
+    width: 30px;
+    height: 30px;
+  }
+}

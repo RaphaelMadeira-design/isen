@@ -1,0 +1,144 @@
+{
+  "menu": {
+    "character": "Fiche de personnage",
+    "power": "Page de Pouvoir",
+    "story": "Histoire"
+  },
+  "character": {
+    "title": "Isen Hata",
+    "cardName" : "Isen Hata",
+    "roleplay" : "Profil RP",
+    "info": {
+      "age": "Âge",
+      "origin": "Origine",
+      "role": "Rôle",
+      "rank": "Grade",
+      "ageValue": "20",
+      "originValue": "Kitakyūshū",
+      "roleValue": "Étudiant",
+      "rankValue": "I"
+    },
+    "intro": {
+      "resumeTitle": "Résumé",
+      "resumeContent": [ 
+        "Travailleur, calme et profondement bienveillant, Isen est la parfaite incarnation de la force tranquille ; puissant mais maîtrisé, déterminé mais humble par dessus tout.",
+        "Malgré la puissance et la praticité offertes par son don, il fait preuve d'une retenue exemplaire et il le voit comme un outil plutôt que ce qui le définit, tout comme sa maladie. Isen un est un homme fiable et terre à terre, qui aspire à une vie simple, loin des projecteurs et du tumulte qui accompagne le quotidien d'un chasseur de Fléaux."
+      ],
+      "resumeLine": "Même le chaos a son rythme.",
+      "title": "Introduction",
+      "content": [
+        "Isen Hata est un élève actuellement inscrit en troisième année à l’Académie Shin’en. Il est issu d'une famille modeste qui ne présente aucun antécédent notable lié à la chasse aux entités spirituelles ou à l’utilisation d’artefacts liés à l’âme, mais il se distingue comme un chasseur de Fléaux prometteur.",
+        "Contrairement à la majorité des élèves de l’académie, dont l’objectif est de devenir des chasseurs de Fléaux et protéger le monde, Isen a intégré Shin’en avec une motivation essentiellement personnelle : renforcer la maîtrise de son pouvoir et tenter de stabiliser la condition qui l'afflige depuis sa plus tendre enfance.",
+        "Son Jinki est étroitement lié à sa maladie et le pouvoir qu'il lui confère, bien que puissant, présente toujours un risque important pour sa santé. Pour cette raison, Isen fait preuve de prudence et de discipline dans son utilisation, cherchant constamment à mieux comprendre ses capacités et à les employer à bon escient.",
+        "C’est un élève confiant en ses capacités, mais toujours prêt à en apprendre davantage pour devenir la meilleure version de lui-même. Sa personnalité accessible et sa détermination constante font de lui un camarade apprécié au sein du campus, et il n’est pas rare de le voir accompagné d’autres étudiants ou donner un coup de main ici et là."
+      ]
+    },
+    "likes": {
+      "title": "Aime",
+      "1": "Les promenades nocturnes",
+      "2": "La viande grillée",
+      "3": "Les animaux errants",
+      "4": "Le parkour"
+    },
+    "dislikes": {
+      "title": "N'aime pas",
+      "1": "La violence gratuite",
+      "2": "L'occultisme",
+      "3": "Les transports en commun",
+      "4": "Les fruits de mer"
+    },
+    "attributes": {
+      "title": "Attributs",
+      "health": "Points de Vie",
+      "hp": "PdV",
+      "energy": "Points d'Énergie",
+      "ep": "Énergie"
+    },
+    "statistics": {
+      "title": "Statistiques",
+      "power": "Puissance",
+      "stamina": "Endurance",
+      "mastery": "Maîtrise",
+      "range": "Portée",
+      "speed": "Vitesse",
+      "defense": "Défense"
+    },
+    "physical": {
+      "title": "Description Physique",
+      "content": [
+        "Du haut de son mètre quatre-vingt-deux (1m82) et pesant soixante-quinze kilogrammes (75kg), Isen est un homme qui possède un physique plutôt banal.",
+        "Il a des cheveux carmins, courts et coiffés avec quelques mèches qui retombent naturellement vers l’avant. Il a un regard calme, des yeux violets et en amande avec un grain de beauté sous l'oeil gauche.",
+        "Son style vestimentaire est simple et confortable, tout en restant pratique."
+      ]
+    },
+    "psychological": {
+      "title": "Profil Psychologique",
+      "content": [
+        "Isen est un jeune homme calme, posé et naturellement bienveillant. Il est perçu comme quelqu’un de distant mais serviable, qui est toujours prêt à tendre la main sans jamais rien attendre en retour.", 
+        "C'est un travailleur acharné qui est persuadé que le mérite provient de l'effort et non du talent et respecte ceux qui font preuve de persévérance.",
+        "Son pouvoir redoutable lui a enseigné la retenue et un certain sens des responsabilités."
+      ]
+    },
+    "power": {
+      "intro": {
+        "title": "Lien d'âme",
+        "content": [
+          "Dissonance n'est ni un artefact passé de génération en génération, ni un cadeau offert par quelqu'un qui lui est cher. Il s'agit d'un objet égaré, qu'Isen a découvert par hasard lorsqu'il n'était qu'un enfant. Cet objet a la particularité d'aténuer en grande partie les symptômes du tremblement essentiel dont il souffre depuis la naissance.",
+          "Ce jinki permet à son porteur de générer, concentrer et contrôler des vibrations dans l’air ou tout autre milieu environnant, dans un rayon de 10 mètres autour de lui. Son usage principal consiste à amplifier, rediriger ou déformer les ondes mécaniques afin de frapper, repousser, se protéger ou même altérer la matière à distance à un niveau atomique. Isen peut libérer de puissantes ondes de choc et affaiblir l’intégrité même des matériaux les plus résistants. Les vibrations générées peuvent également affecter la friction entre deux surfaces, lui permettant d’augmenter ou de réduire l’adhérence afin d’influencer les déplacements, le glissement ainsi que la stabilité d’un objet ou d’une personne.",
+          "Ce pouvoir se manifeste par un léger flou tout autour de la silhouette d'Isen accompagné d'un petit bourdonnement lorsqu'il fait usage de ses capacités, qui résultent des vibrations à haute fréquence produites."
+        ]
+      },
+      "limitsDesc": "Cette capacité exerce une contrainte extrême sur le corps. En plus de la fatigue liée à son l’activation, une utilisation prolongée de ce pouvoir provoque des migraines, vertiges et des lésions internes progressives, fragilisant la structure osseuse et les organes sensoriels. C'est pourquoi il n'utilise jamais son pouvoir trop longtemps, au risque d'aggraver sa condition.",
+      "jinki": {
+        "title": "Jinki",
+        "explanation": "Un diapason en acier trempé de quelques centimètres. Il émet un tintement aigu qui résonne pendant plusieurs minutes quand on frappe dessus."
+      },
+      "title": "Pouvoir",
+      "nameLabel": "Nom",
+      "name": "Dissonance",
+      "masteryLabel": "Maîtrise",
+      "mastery": "Bonne"
+    },
+    "abilities": {
+      "title": "Capacités",
+      "spells": {
+        "damage": "Dégâts",
+        "ultLabel": "Ultime",
+        "passiveLabel": "Passif",
+        "1": {
+          "name": "Shogekiha",
+          "desc": "Provoque une puissante onde de choc par une libération brutale de vibrations condensées."
+        },
+        "2": {
+          "name": "Shindoheki",
+          "desc": "Forme un mur ou seconde peau vibrante qui solidifie l’air et disperse l’énergie entrante."
+        },
+        "3": {
+          "name": "Masatsu Henka",
+          "desc": "Isen modifie la friction d’une surface pour la rendre extrêmement glissante ou collante."
+        },
+        "4": {
+          "name": "Shinjinsho",
+          "desc": "Ses bras et jambes vibrent à une fréquence si élevée qu’ils qu'ils deviennent solides et tranchants."
+        },
+        "5": {
+          "name": "Zen Kyomei Hokai",
+          "desc": "Libère une onde de résonance destructrice qui provoque tremblement, compression et dislocation à l’impact."
+        },
+        "6": {
+          "name": "Kyokaku",
+          "desc": "Perçoit les vibrations pour détecter les mouvements et la présence des Fléaux autour de lui."
+        }
+      }
+    }
+  },
+  "story": {
+    "title": "Mode Histoire",
+    "next": "Suivant",
+    "back": "Retour",
+    "start": "Commencer l'Histoire"
+  },
+  "loading": {
+    "text": "Initialisation"
+  }
+}

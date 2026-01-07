@@ -1,0 +1,144 @@
+{
+  "menu": {
+    "character": "Character Sheet",
+    "power": "Power Page",
+    "story": "Story"
+  },
+  "character": {
+    "title": "Isen Hata",
+    "cardName" : "Isen Hata",
+    "roleplay" : "RP Profile",
+    "info": {
+      "age": "Age",
+      "origin": "Origin",
+      "role": "Role",
+      "rank": "Rank",
+      "ageValue": "20",
+      "originValue": "Kitakyūshū",
+      "roleValue": "Student",
+      "rankValue": "I"
+    },
+    "intro": {
+      "resumeTitle": "Synopsis",
+      "resumeContent": [ 
+        "Hardworking, calm, and deeply kind, Isen is the perfect embodiment of quiet strength; powerful yet controlled, determined yet humble above all.",
+        "Despite the power and practicality offered by his gift, he shows exemplary restraint and sees it as a tool rather than what defines him, much like his condition. Isen is a reliable and down-to-earth man, who aspires to a simple life, away from the spotlight and the turmoil of the daily life of a renowned hunter."
+      ],
+      "resumeLine": "Even chaos has its rhythm.",
+      "title": "Introduction",
+      "content": [
+        "Isen Hata is a student currently enrolled in his third year at Shin’en Academy. He comes from a fairly modest family with no notable history in spirit hunting or the use of soul-linked artifacts named Jinki, yet he stands out as a powerfull and promising spirit hunter.",
+        "Unlike the majority of students at the academy, whose goal is to become the best hunters and protect the world, Isen joined Shin’en with a primarily personal motivation : to strengthen his control over his power and to stabilize the condition that has afflicted him since early childhood.",
+        "His Jinki is closely linked to his condition, and the power it grants, while formidable, always carries significant risks to his health. For this reason, Isen exercises caution and discipline in its use, constantly seeking to better understand his abilities and employ them wisely.",
+        "He is a confident student, yet always willing to learn more in order to become the best version of himself. His approachable personality and steadfast determination make him a well-regarded peer on campus, and it is not uncommon to see him accompanied by other students or lending a hand where needed."
+      ]
+    },
+    "likes": {
+      "title": "Likes",
+      "1": "Night walks",
+      "2": "Grilled meat",
+      "3": "Stray animals",
+      "4": "Parkour"
+    },
+    "dislikes": {
+      "title": "Dislikes",
+      "1": "Needless violence",
+      "2": "Occult practices",
+      "3": "Public transportation",
+      "4": "Seafood"
+    },
+    "attributes": {
+      "title": "Attributes",
+      "health": "Health Points",
+      "hp": "HP",
+      "energy": "Energy Points",
+      "ep": "Energy"
+    },
+    "statistics": {
+      "title": "Statistics",
+      "power": "Power",
+      "stamina": "Stamina",
+      "mastery": "Mastery",
+      "range": "Range",
+      "speed": "Speed",
+      "defense": "Defense"
+    },
+    "physical": {
+      "title": "Physical Description",
+      "content": [
+        "Isen is 1.82 meters tall and weighs 75 kilograms, possessing a rather average yet athletic physique.",
+        "He has short carmine hair styled with a few strands that falls naturally forward, framing his forehead. He has a calm gaze, with purple almond-shaped eyes with a beauty mark under his left eye.",
+        "His clothing style is simple and comfortable, yet practical."
+    ]
+    },
+    "psychological": {
+      "title": "Psychological Profile",
+      "content": [
+        "Isen is a calm, composed, and naturally kind young man. He is seen as someone helpful and reliable, always ready to lend a hand without ever expecting anything in return.", 
+        "He is a hard worker who firmly believes that merit comes from effort rather than talent and respects those who show perseverance.",
+        "His formidable power has taught him restraint and a certain sense of responsibility."
+      ]
+    },
+    "power": {
+      "intro": {
+        "title": "Soul Link",
+        "content": [
+          "Dissonance is neither a legacy artifact passed down through generations nor a gift given by someone dear to him. It is an object lost, which Isen discovered by chance when he was just a child. This object has the particularity of greatly mitigating the symptoms of his essential tremor, which he has suffered since birth.",
+          "This Jinki allows its user to generate, focus, and control vibrations in the air or any surrounding medium within a 10-meter radius around them. Its primary use is to amplify, redirect, or distort mechanical waves — whether seismic, sound-based, or pressure-related — in order to strike, repel, protect, or alter matter from a distance. Isen can release powerful shockwaves and weaken the integrity of even the most durable materials. The vibrations they generate can also affect friction between two surfaces, enabling them to increase or decrease adhesion in order to influence movement, sliding, or the stability of an object or even a person.",
+          "This power manifests itself as a slight blur around Isen's silhouette and is accompanied by a faint buzzing sound when he uses his abilities, that results from the high-frequency vibrations produced."
+        ]
+      },
+      "limitsDesc": "This ability exerts extreme strain on the body. In addition to the fatigue associated with its activation, prolonged use of this power causes migraines, dizziness, and progressive internal injuries, weakening bone structure and sensory organs. This is why he never uses his power for too long, at the risk of worsening his condition.",
+      "jinki": {
+        "title": "Jinki",
+        "explanation": "A hardened steel tuning fork, a few centimeters in length. When struck, it emits a sharp, piercing chime that resonates for several minutes."
+      },
+      "title": "Power",
+      "nameLabel": "Name",
+      "name": "Dissonance",
+      "masteryLabel": "Mastery",
+      "mastery": "Good"
+    },
+    "abilities": {
+      "title": "Abilities",
+      "spells": {
+        "damage" : "Damage",
+        "ultLabel": "Ultimate",
+        "passiveLabel": "Passive",
+        "1": {
+          "name": "Shogekiha",
+          "desc": "Generates a powerful shockwave through a sudden release of condensed vibrations."
+        },
+        "2": {
+          "name": "Shindoheki",
+          "desc": "Forms a vibrating wall or second skin that solidifies the air and disperses incoming energy."
+        },
+        "3": {
+          "name": "Masatsu Henka",
+          "desc": "Modifies the friction of a targeted object or area to make it sticky or slippery."
+        },
+        "4": {
+          "name": "Shinjinsho",
+          "desc": "His arms and legs vibrate at an extremely high frequency, making them solid and sharp."
+        },
+        "5": {
+          "name": "Zen Kyomei Hokai",
+          "desc": "Releases a destructive resonant wave that causes shaking, compression, and dislocation upon impact."
+        },
+        "6": {
+          "name": "Kyokaku",
+          "desc": "Perceives vibrations to detect the movements and presence of Fléaux around him."
+        }
+      }
+    }
+  },
+  "story": {
+    "title": "Story Mode",
+    "next": "Next",
+    "back": "Back",
+    "start": "Start Story"
+  },
+  "loading": {
+    "text": "Initializing"
+  }
+}
