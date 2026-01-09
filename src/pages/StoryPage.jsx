@@ -103,7 +103,7 @@ const StoryPage = () => {
         {scene.character === "Isen" && (
             <div className="character-avatar">
               <img
-                src="/images/full.svg"
+                src="/images/full.png"
                 alt="Isen"
               />
             </div>

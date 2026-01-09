@@ -3,7 +3,7 @@ import { Zap, Heart, Swords } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import '../styles/components/HolographicCard.scss';
 
-const HolographicCard = ({ stats = { hp: 19, attack: '1d3', energy: 14, rarity: "SSR" }, cardImage = "/images/card.png" }) => {
+const HolographicCard = ({ stats = { hp: 19, attack: '1d3', energy: 14, rarity: "SSR" }, cardImage = "/images/pose.png" }) => {
   const { t } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });

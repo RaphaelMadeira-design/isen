@@ -83,7 +83,7 @@ const CharacterSheet = () => {
         >
           <div className="character-image-wrapper">
             <img
-              src="/images/full.svg"
+              src="/images/full.png"
               alt="Kai Von Arkham"
               className="character-image"
             />
