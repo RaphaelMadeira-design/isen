@@ -6,6 +6,7 @@ import { ArrowLeft, Heart, Zap, Swords, Brain, PersonStanding } from 'lucide-rea
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import LanguageToggle from '../components/LanguageToggle';
 import InfoHover from '../components/InfoHover';
+import AudioPlayer from '../components/AudioPlayer';
 import '../styles/pages/CharacterSheet.scss';
 
 const CharacterSheet = () => {
@@ -124,8 +125,10 @@ const CharacterSheet = () => {
               <span className="clip-value">{t('character.info.roleValue')}</span>
             </div>
             <div className="clip-item">
-              <span className="clip-label">{t('character.info.rank')}</span>
-              <span className="clip-value">{t('character.info.rankValue')}</span>
+              <span className="clip-label">{t('character.info.voice')}</span>
+              <span className="clip-value">
+                <AudioPlayer src={t('character.info.voiceValue')} />
+              </span>
             </div>
           </div>
           <div className="section">

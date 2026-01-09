@@ -52,7 +52,7 @@ const PowerPage = () => {
               className="jinki-image-wrapper"
             >
               <img
-                src="/images/diapason.svg"
+                src="/images/diapason.png"
                 alt="Jinki Diapason"
                 className="jinki-image"
                 onMouseEnter={() => setHovered('jinki')}

@@ -14,14 +14,16 @@
       "role": "Rôle",
       "rank": "Grade",
       "ageValue": "20",
+      "voice" : "Voix",
       "originValue": "Kitakyūshū",
       "roleValue": "Étudiant",
-      "rankValue": "I"
+      "rankValue": "I",
+      "voiceValue": "/audio/voice.mp3"
     },
     "intro": {
       "resumeTitle": "Résumé",
       "resumeContent": [ 
-        "Travailleur, calme et profondement bienveillant, Isen est la parfaite incarnation de la force tranquille ; puissant mais maîtrisé, déterminé mais humble par dessus tout.",
+        "Travailleur, calme et profondément bienveillant, Isen est la parfaite incarnation de la force tranquille ; puissant mais maîtrisé, déterminé mais humble par dessus tout.",
         "Malgré la puissance et la praticité offertes par son don, il fait preuve d'une retenue exemplaire et il le voit comme un outil plutôt que ce qui le définit, tout comme sa maladie. Isen un est un homme fiable et terre à terre, qui aspire à une vie simple, loin des projecteurs et du tumulte qui accompagne le quotidien d'un chasseur de Fléaux."
       ],
       "resumeLine": "Même le chaos a son rythme.",
@@ -83,12 +85,13 @@
       "intro": {
         "title": "Lien d'âme",
         "content": [
-          "Dissonance n'est ni un artefact passé de génération en génération, ni un cadeau offert par quelqu'un qui lui est cher. Il s'agit d'un objet égaré, qu'Isen a découvert par hasard lorsqu'il n'était qu'un enfant. Cet objet a la particularité d'aténuer en grande partie les symptômes du tremblement essentiel dont il souffre depuis la naissance.",
+          "Dissonance n'est ni un artefact passé de génération en génération, ni un cadeau offert par quelqu'un qui lui est cher. Il s'agit d'un objet égaré, qu'Isen a découvert par hasard lorsqu'il n'était qu'un enfant.",
+          "D'abord simple objet décoratif, le lien d'âme s'est établi lors d'une crise de tremblement essentiel qui avait provoqué une arythmie cardiaque chez l'enfant invalidante. Serré dans le creux de sa main dans un geste instinctif et désespéré, le diapason s'est mis à vibrer et entrer en résonance avec le corps du garçon pour calmer les spasmes et recalibrer son rythme cardiaque, le sauvant d'une fin inévitable. Depuis, cet objet a la particularité d'aténuer en grande partie les symptômes du tremblement essentiel dont il souffre depuis la naissance.",
           "Ce jinki permet à son porteur de générer, concentrer et contrôler des vibrations dans l’air ou tout autre milieu environnant, dans un rayon de 10 mètres autour de lui. Son usage principal consiste à amplifier, rediriger ou déformer les ondes mécaniques afin de frapper, repousser, se protéger ou même altérer la matière à distance à un niveau atomique. Isen peut libérer de puissantes ondes de choc et affaiblir l’intégrité même des matériaux les plus résistants. Les vibrations générées peuvent également affecter la friction entre deux surfaces, lui permettant d’augmenter ou de réduire l’adhérence afin d’influencer les déplacements, le glissement ainsi que la stabilité d’un objet ou d’une personne.",
           "Ce pouvoir se manifeste par un léger flou tout autour de la silhouette d'Isen accompagné d'un petit bourdonnement lorsqu'il fait usage de ses capacités, qui résultent des vibrations à haute fréquence produites."
         ]
       },
-      "limitsDesc": "Cette capacité exerce une contrainte extrême sur le corps. En plus de la fatigue liée à son l’activation, une utilisation prolongée de ce pouvoir provoque des migraines, vertiges et des lésions internes progressives, fragilisant la structure osseuse et les organes sensoriels. C'est pourquoi il n'utilise jamais son pouvoir trop longtemps, au risque d'aggraver sa condition.",
+      "limitsDesc": "Manipuler son Jinki exerce une contrainte extrême sur le corps. En plus de la fatigue naturelle liée à son utilisation, une utilisation prolongée de ce pouvoir provoque des migraines accompagnées de vertiges. Mal utilisé, il fragilise la structure osseuse jusqu'à provoquer des fractures et les organes sensoriels subissent des lésions internes progressives.",
       "jinki": {
         "title": "Jinki",
         "explanation": "Un diapason en acier trempé de quelques centimètres. Il émet un tintement aigu qui résonne pendant plusieurs minutes quand on frappe dessus."

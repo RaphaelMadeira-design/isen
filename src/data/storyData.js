@@ -69,7 +69,7 @@ export const storyData = {
       character: "Isen",
       text: "“I remember finding it on the ground when I was little. It was shining a bit in the sun and it made a little sound that attracted me. It was a strange object, but I kept it. I don't know why, but I felt it was important.”\n\n" +
       "<i>He slowly squeezes the tuning fork in the palm of his hand.</i>\n\n" +
-      "“It's weird, completely silly or maybe just a placebo effect, but since I have this object, my tremors have calmed down. As if this tuning fork was some sort of catalyst that transforms my illness into power.”",
+      "“It's strange but this object has saved my life, and since that night, my tremors have calmed down. As if this tuning fork was some sort of catalyst that transforms my illness into power.”",
       background: "/images/bg2.png",
       choices: [
         { text: "Question him about his illness", next: 6 },
@@ -81,7 +81,7 @@ export const storyData = {
       character: "Isen",
       text: "“At first, I came to Shin'en Academy with the goal of mastering my gift in the hope of healing one day, if possible. I know it's a bit selfish, but I've never aspired to become a great hunter or a hero. I don't come from a respected lineage in the field, and I don't have a tragic story related to the Blights.”\n\n" +
       "<i>He looks up towards the front of the class where the teacher is busy sorting papers.</i>\n\n" +
-      "“But after two years spent studying and interacting with other students, I realized that maybe I could make a difference too. Maybe I could help other people like me. Maybe my condition is a weapon rather than an illness; a weapon to be used for the future and to get rid of those damn creatures.”",
+      "“Before I started my last year, I did two years of military service. These two years spent studying and interacting with others taught me that maybe I could make a difference too. Maybe I could help other people like me. Maybe my condition is a weapon rather than an illness; a weapon to be used for the future and to get rid of those damn creatures.”",
       background: "/images/bg2.png",
       choices: null
     },
@@ -168,7 +168,7 @@ export const storyData = {
       character: "Isen",
       text: "« Je me souviens l'avoir trouvé par terre quand j'étais petit. Il brillait un peu au soleil et il faisait un petit son qui m'a attiré. C'était un objet étrange, mais je l'ai gardé. Je ne sais pas pourquoi, mais j'avais l'impression qu'il était important. »\n\n" +
       "<i>Il serre lentement le diapason dans le creux de sa main.</i>\n\n" +
-      "« C'est bizarre, complètement idiot ou peut-être juste un effet placébo, mais depuis que je possède cet objet, mes tremblements se sont calmés. Comme si ce diapason était une sorte de catalyseur qui transforme ma maladie en pouvoir. »",
+      "« C'est bizarre, mais cet objet m'a sauvé la vie, et depuis cette nuit, mes tremblements se sont calmés. Comme si ce diapason était une sorte de catalyseur qui transforme ma maladie en pouvoir. »",
       background: "/images/bg2.png",
       choices: [
         { text: "L'interroger sur sa maladie", next: 6 },
@@ -180,7 +180,7 @@ export const storyData = {
       character: "Isen",
       text: "« À la base, je suis venu à l'académie Shin'en avec l'objectif de maîtriser mon don dans l'espoir de guérir un jour, si c'est possible. Je sais que c'est un peu égoïste, mais j'ai jamais aspiré à devenir un grand chasseur ou un héros. Je ne viens pas d'une lignée respectée dans le domaine, et je n'ai pas d'histoire tragique en rapport avec les Fléaux. »\n\n" +
       "<i>Il lève les yeux vers le devant de la classe où le professeur s'affaire à classer des papiers.</i>\n\n" +
-      "« Mais après deux années passées à étudier et côtoyer les autres élèves, je me suis rendu compte que, moi aussi, je pouvais peut-être faire une différence. Peut-être que je pourrais aider d'autres personnes comme moi. Peut-être que ma condition est une arme plutôt qu'une maladie ; une arme à utiliser pour l'avenir et nous débarasser de ces maudites bestioles. »",
+      "« Puis avant d'entamer ma dernière année, j'ai fait deux ans de conscription militaire. Ces deux années passées à étudier et côtoyer les autres, je m'ont fait comprendre que, moi aussi, je pouvais peut-être faire une différence. Peut-être que je pourrais aider d'autres personnes comme moi. Peut-être que ma condition est une arme plutôt qu'une maladie ; une arme à utiliser pour l'avenir et nous débarasser de ces maudites bestioles. »",
       background: "/images/bg2.png",
       choices: null
     },

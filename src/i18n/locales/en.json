@@ -13,10 +13,12 @@
       "origin": "Origin",
       "role": "Role",
       "rank": "Rank",
+      "voice" : "Voice",
       "ageValue": "20",
       "originValue": "Kitakyūshū",
       "roleValue": "Student",
-      "rankValue": "I"
+      "rankValue": "I",
+      "voiceValue": "/audio/voice.mp3"
     },
     "intro": {
       "resumeTitle": "Synopsis",
@@ -83,12 +85,13 @@
       "intro": {
         "title": "Soul Link",
         "content": [
-          "Dissonance is neither a legacy artifact passed down through generations nor a gift given by someone dear to him. It is an object lost, which Isen discovered by chance when he was just a child. This object has the particularity of greatly mitigating the symptoms of his essential tremor, which he has suffered since birth.",
+          "Dissonance is neither a legacy artifact passed down through generations nor a gift given by someone dear to him. It is an object lost, which Isen discovered by chance when he was just a child.",
+          "At first a simple decorative object, the soul link was established during an essential tremor crisis that caused a cardiac arrhythmia in the invalid child. Held tightly in the hollow of his hand in an instinctive and desperate gesture, the tuning fork began to vibrate and resonate with the boy's body to calm spasms and recalibrate his heart rhythm, saving him from an inevitable end. Since then, this object has the particularity of greatly mitigating the symptoms of his essential tremor, which he has suffered since birth.",
           "This Jinki allows its user to generate, focus, and control vibrations in the air or any surrounding medium within a 10-meter radius around them. Its primary use is to amplify, redirect, or distort mechanical waves — whether seismic, sound-based, or pressure-related — in order to strike, repel, protect, or alter matter from a distance. Isen can release powerful shockwaves and weaken the integrity of even the most durable materials. The vibrations they generate can also affect friction between two surfaces, enabling them to increase or decrease adhesion in order to influence movement, sliding, or the stability of an object or even a person.",
           "This power manifests itself as a slight blur around Isen's silhouette and is accompanied by a faint buzzing sound when he uses his abilities, that results from the high-frequency vibrations produced."
         ]
       },
-      "limitsDesc": "This ability exerts extreme strain on the body. In addition to the fatigue associated with its activation, prolonged use of this power causes migraines, dizziness, and progressive internal injuries, weakening bone structure and sensory organs. This is why he never uses his power for too long, at the risk of worsening his condition.",
+      "limitsDesc": "Manipulating his Jinki exerts extreme strain on the body. In addition to the natural fatigue associated with its use, prolonged use of this power causes migraines accompanied by dizziness. If misused, it weakens the bone structure to the point of causing fractures, and sensory organs suffer progressive internal damage.",
       "jinki": {
         "title": "Jinki",
         "explanation": "A hardened steel tuning fork, a few centimeters in length. When struck, it emits a sharp, piercing chime that resonates for several minutes."
