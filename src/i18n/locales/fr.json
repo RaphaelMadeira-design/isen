@@ -107,7 +107,6 @@
       "spells": {
         "damage": "DGT",
         "DEF" : "DEF",
-        "ultLabel": "Ultime",
         "passiveLabel": "Passif",
         "1": {
           "name": "Shōgeki-Ha",

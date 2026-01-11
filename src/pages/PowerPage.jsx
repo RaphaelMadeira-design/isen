@@ -142,11 +142,6 @@ const PowerPage = () => {
                             {t('character.abilities.spells.ultLabel', 'Ultime')}
                           </span>
                         )}
-                        {spell.isPassive && (
-                          <span className="spell-label spell-label--passive">
-                            {t('character.abilities.spells.passiveLabel', 'Passif')}
-                          </span>
-                        )}
                         {['2','3','4','5'].includes(spell.key) && (
                           <span className="spell-label spell-label--duration">
                             <Hourglass size={14} />
