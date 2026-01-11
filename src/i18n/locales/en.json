@@ -115,7 +115,7 @@
         },
         "2": {
           "name": "Shindō Kekkai",
-          "duration": "3 turns",
+          "duration": "2 turns",
           "desc": "Forms a barrier of vibrations solidifying the air around his body, which can partially absorb or disperse a physical or spiritual attack."
         },
         "3": {
@@ -125,7 +125,7 @@
         },
         "4": {
           "name": "Kyōmei Tekiken",
-          "duration": "2 turns",
+          "duration": "4 turns",
           "desc": "Makes his arms vibrate at such a high frequency that they become solid and sharp, capable of cutting through matter and Spirits on direct contact."
         },
         "5": {
