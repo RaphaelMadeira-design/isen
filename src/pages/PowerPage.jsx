@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ArrowLeft, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, Hourglass, Swords, ArrowUp, ArrowDown  } from 'lucide-react';
 import LanguageToggle from '../components/LanguageToggle';
 import HolographicCard from '../components/HolographicCard';
 import '../styles/pages/PowerPage.scss';
@@ -13,12 +13,12 @@ const PowerPage = () => {
   const [hovered, setHovered] = useState(null);
 
   const spells = [
-    { key: '1', image: '/images/spell-1.jpg', keyBind: '1', damage: 'N/A' },
-    { key: '2', image: '/images/spell-2.jpg', keyBind: '2', damage: 'N/A' },
-    { key: '3', image: '/images/spell-3-2.jpg', keyBind: '3', damage: 'N/A'},
-    { key: '4', image: '/images/spell-4.jpg', keyBind: '4', damage: 'N/A'},
-    { key: '5', image: '/images/spell-5.jpg', keyBind: '5', damage: 'N/A'},
-    { key: '6', image: '/images/spell-6.jpg', keyBind: '6', damage: 'N/A', isUlt: true},
+    { key: '1', image: '/images/spell-1.jpg', keyBind: '1', isDamage: true },
+    { key: '2', image: '/images/spell-2.jpg', keyBind: '2', isDamage: false, statBuff: { stat: 'DEF', value: 2 } },
+    { key: '3', image: '/images/spell-3-2.jpg', keyBind: '3', isDamage: false, statDebuff: { stat: 'DEF', value: -2 }},
+    { key: '4', image: '/images/spell-4.jpg', keyBind: '4', isDamage: true},
+    { key: '5', image: '/images/spell-5.jpg', keyBind: '5', isDamage: false},
+    { key: '6', image: '/images/spell-6.jpg', keyBind: '6', isDamage: true, isUlt:true},
   ];
 
   return (
@@ -147,23 +147,31 @@ const PowerPage = () => {
                             {t('character.abilities.spells.passiveLabel', 'Passif')}
                           </span>
                         )}
-                        <span className="cost">
-                          {t(`character.abilities.spells.${spell.key}.cost`)}
-                        </span>
-                        {spell.damage && (
-                          <span className="damage">
-                            {`${spell.damage} ${t('character.abilities.spells.damage')}`}
+                        {['2','3','4','5'].includes(spell.key) && (
+                          <span className="spell-label spell-label--duration">
+                            <Hourglass size={14} />
+                            {t(`character.abilities.spells.${spell.key}.duration`)}
                           </span>
                         )}
+                         {spell.isDamage && (
+                          <div className="spell-label spell-label--damage">
+                            <Swords size={14} />
+                            <span>
+                              {spell.damage} {t('character.abilities.spells.damage')}
+                            </span>
+                          </div>
+                        )}
                         {spell.statBuff && (
-                          <span className="buff">
+                          <span className="spell-label spell-label--buff">
+                            <ArrowUp size={14} />
                             {`+${spell.statBuff.value} ${t(
                               `character.abilities.spells.${spell.statBuff.stat}`
                             )}`}
                           </span>
                         )}
                         {spell.statDebuff && (
-                          <span className="debuff">
+                          <span className="spell-label spell-label--debuff">
+                            <ArrowDown size={14} />
                             {`${spell.statDebuff.value} ${t(
                               `character.abilities.spells.${spell.statDebuff.stat}`
                             )}`}

@@ -88,7 +88,7 @@
           "Dissonance is neither a legacy artifact passed down through generations nor a gift given by someone dear to him. It is an object lost, which Isen discovered by chance when he was just a child.",
           "At first a simple decorative object, the soul link was established during an essential tremor crisis that caused a cardiac arrhythmia in the invalid child. Held tightly in the hollow of his hand in an instinctive and desperate gesture, the tuning fork began to vibrate and resonate with the boy's body to calm spasms and recalibrate his heart rhythm, saving him from an inevitable end. Since then, this object has the particularity of greatly mitigating the symptoms of his essential tremor, which he has suffered since birth.",
           "This Jinki allows its user to generate, focus, and control vibrations in the air or any surrounding medium within a 10-meter radius around them. Its primary use is to amplify, redirect, or distort mechanical waves — whether seismic, sound-based, or pressure-related — in order to strike, repel, protect, or alter matter from a distance. Isen can release powerful shockwaves and weaken the integrity of even the most durable materials. The vibrations they generate can also affect friction between two surfaces, enabling them to increase or decrease adhesion in order to influence movement, sliding, or the stability of an object or even a person.",
-          "This power manifests itself as a slight blur around Isen's silhouette and is accompanied by a faint buzzing sound when he uses his abilities, that results from the high-frequency vibrations produced."
+          "To manifest these abilities, Isen must first strike the tuning fork with his finger or against a surfacegit  to create a base vibration, which he can then manipulate at will. This provokes a blur around his silhouette, accompanied by a faint buzzing sound audible nearby."
         ]
       },
       "limitsDesc": "Manipulating his Jinki exerts extreme strain on the mind and the body. In addition to the natural fatigue associated with its use, prolonged use of this power causes migraines accompanied by incapacitating dizziness. If misused, it weakens the bone structure to the point of causing fractures, and sensory organs suffer progressive internal damage.",
@@ -105,38 +105,37 @@
     "abilities": {
       "title": "Abilities",
       "spells": {
-        "damage" : "Damage",
+        "damage" : "DMG",
+        "DEF" : "DEF",
         "ultLabel": "Ultimate",
         "passiveLabel": "Passive",
         "1": {
           "name": "Shōgeki-Ha",
-          "cost": "N/A",
-          "desc": "Isen focuses his vibrations on a precise point and releases a powerful directed shockwave to repel or unbalance his enemies."
+          "desc": "Launches a powerful fist-sized shockwave up to 10 meters in a straight line, capable of repelling or unbalancing enemies."
         },
         "2": {
           "name": "Shindō Kekkai",
-          "cost": "N/A",
-          "desc": "Isen forms around his body or in a targeted area a barrier of vibrations that solidifies the air. It can absorb or disperse a physical or spiritual attack."
+          "duration": "3 turns",
+          "desc": "Forms a barrier of vibrations solidifying the air around his body, which can partially absorb or disperse a physical or spiritual attack."
         },
         "3": {
           "name": "Genkaiten",
-          "cost": "N/A",
-          "desc": "By touching his target, Isen injects an unstable vibration into a structure or entity, creating a critical point. The area becomes more vulnerable to subsequent impacts."
+          "duration": "4 turns",
+          "desc": "Injects an unstable vibration at contact, creating a critical point of 15cm in diameter. Damage received in this area is increased."
         },
         "4": {
           "name": "Kyōmei Tekiken",
-          "cost": "N/A",
-          "desc": "Isen's arms and legs vibrate at a very high frequency, making them solid and sharp. He can slice through matter or spirits on direct contact."
+          "duration": "2 turns",
+          "desc": "Makes his arms vibrate at such a high frequency that they become solid and sharp, capable of cutting through matter and Spirits on direct contact."
         },
         "5": {
           "name": "Kansatsu",
-          "cost": "N/A",
-          "desc": "Isen concentrates his vibrations into the air and ground to perceive the slightest movements and presences around him, without needing to see or hear."
+          "duration": "1 turn",
+          "desc": "Focuses on vibrations in the air and ground to perceive the slightest movements and presences, without needing to see or hear."
         },
         "6": {
           "name": "Zen Reishin Retsu-Ha",
-          "cost": "N/A",
-          "desc": "Isen concentrates all the vibrations of his body and soul, then releases a circular shockwave that spins through the air, capable of cutting through matter and spirits in its path."
+          "desc": "Releases a 2-meter sharp shockwave that cleaves the air, capable of slicing through matter and Spirits along its 10 meters path."
         }
       }
     }

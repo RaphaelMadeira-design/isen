@@ -88,7 +88,7 @@
           "Dissonance n'est ni un artefact passé de génération en génération, ni un cadeau offert par quelqu'un qui lui est cher. Il s'agit d'un objet égaré, qu'Isen a découvert par hasard lorsqu'il n'était qu'un enfant.",
           "D'abord simple objet décoratif, le lien d'âme s'est établi lors d'une crise de tremblement essentiel qui avait provoqué une arythmie cardiaque chez l'enfant invalidante. Serré dans le creux de sa main dans un geste instinctif et désespéré, le diapason s'est mis à vibrer et entrer en résonance avec le corps du garçon pour calmer les spasmes et recalibrer son rythme cardiaque, le sauvant d'une fin inévitable. Depuis, cet objet a la particularité d'aténuer en grande partie les symptômes du tremblement essentiel dont il souffre depuis la naissance.",
           "Ce jinki permet à son porteur de générer, concentrer et contrôler des vibrations dans l’air ou tout autre milieu environnant, dans un rayon de 10 mètres autour de lui. Son usage principal consiste à amplifier, rediriger ou déformer les ondes mécaniques afin de frapper, repousser, se protéger ou même altérer la matière à distance à un niveau atomique. Isen peut libérer de puissantes ondes de choc et affaiblir l’intégrité même des matériaux les plus résistants. Les vibrations générées peuvent également affecter la friction entre deux surfaces, lui permettant d’augmenter ou de réduire l’adhérence afin d’influencer les déplacements, le glissement ainsi que la stabilité d’un objet ou d’une personne.",
-          "Ce pouvoir se manifeste par un léger flou tout autour de la silhouette d'Isen accompagné d'un petit bourdonnement lorsqu'il fait usage de ses capacités, qui résultent des vibrations à haute fréquence produites."
+          "Pour manifester son pouvoir, il frappe son diapason du doigt ou contre une surface pour générer une vibration initiale qu'il peut ensuite modeler et manipuler à volonté. Ceci provoque un flou autour de sa silhouette, accompagné d'un léger bourdonnement audible à proximité."
         ]
       },
       "limitsDesc": "Manipuler son Jinki exerce une contrainte extrême sur le corps. En plus de la fatigue naturelle liée à son utilisation, une utilisation prolongée de ce pouvoir provoque des migraines accompagnées de vertiges. Mal utilisé, il fragilise la structure osseuse jusqu'à provoquer des fractures et les organes sensoriels subissent des lésions internes progressives.",
@@ -105,38 +105,37 @@
     "abilities": {
       "title": "Capacités",
       "spells": {
-        "damage": "Dégâts",
+        "damage": "DGT",
+        "DEF" : "DEF",
         "ultLabel": "Ultime",
         "passiveLabel": "Passif",
         "1": {
           "name": "Shōgeki-Ha",
-          "cost": "N/A",
-          "desc": "Isen concentre ses vibrations dans un point précis et libère une puissante onde de choc dirigée pour repousser ou déséquilibrer ses ennemis."
+          "desc": "Projette une onde de choc de la taille d’un poing sur une distance maximale de 10 mètres en ligne droite, capable de repousser ou déséquilibrer ses ennemis."
         },
         "2": {
           "name": "Shindō Kekkai",
-          "cost": "N/A",
-          "desc": "Isen forme autour de son corps ou dans une zone ciblée une barrière de vibrations solidifiant l’air. Elle peut absorber ou disperser une attaque physique ou spirituelle."
+          "duration": "3 tours",
+          "desc": "Forme une barrière de vibrations solidifiant l’air autour de son corps, qui peut en partie absorber ou disperser une attaque physique ou spirituelle."
         },
         "3": {
           "name": "Genkaiten",
-          "cost": "N/A",
-          "desc": "En touchant sa cible, Isen injecte une vibration instable dans une structure ou entité, créant un point critique. La zone devient plus vulnérable aux impacts suivants."
+          "duration": "4 tours",
+          "desc": "Injecte une vibration instable à son contact, créant un point critique de 15cm de diamètre. Les dégâts reçus dans cette zone sont augmentés."
         },
         "4": {
           "name": "Kyōmei Tekiken",
-          "cost": "N/A",
-          "desc": "Les bras et jambes d’Isen vibrent à une fréquence très élevée, les rendant solides et tranchants. Il peut trancher la matière ou les esprits au contact direct."
+          "duration": "2 tours",
+          "desc": "Fait vibrer ses bras à une fréquence si élevée qu’ils deviennent solides et tranchants, capables de découper la matière et les Fléaux au contact direct."
         },
         "5": {
           "name": "Kansatsu",
-          "cost": "N/A",
-          "desc": "Isen concentre ses vibrations dans l’air et le sol pour percevoir les moindres mouvements et présences autour de lui, sans avoir besoin de voir ou d’entendre."
+          "duration": "1 tour",
+          "desc": "Se concentre sur les vibrations dans l’air et le sol pour percevoir les moindres mouvements et présences, sans avoir besoin de voir ou d’entendre."
         },
         "6": {
           "name": "Zen Reishin Retsu-Ha",
-          "cost": "N/A",
-          "desc": "Isen concentre toutes les vibrations de son corps et de son âme, puis libère une onde circulaire de choc tranchante qui tourbillonne dans l’air, capable de sectionner matière et esprits sur sa trajectoire."
+          "desc": "Libère une onde de choc tranchante de 2 mètres qui fend l’air sur 10 mètres, capable de sectionner la matière et les Fléaux sur sa trajectoire."
         }
       }
     }
