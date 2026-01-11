@@ -109,28 +109,34 @@
         "ultLabel": "Ultime",
         "passiveLabel": "Passif",
         "1": {
-          "name": "Shogekiha",
-          "desc": "Provoque une puissante onde de choc par une libération brutale de vibrations condensées."
+          "name": "Shōgeki-Ha",
+          "cost": "N/A",
+          "desc": "Isen concentre ses vibrations dans un point précis et libère une puissante onde de choc dirigée pour repousser ou déséquilibrer ses ennemis."
         },
         "2": {
-          "name": "Shindoheki",
-          "desc": "Forme un mur ou seconde peau vibrante qui solidifie l’air et disperse l’énergie entrante."
+          "name": "Shindō Kekkai",
+          "cost": "N/A",
+          "desc": "Isen forme autour de son corps ou dans une zone ciblée une barrière de vibrations solidifiant l’air. Elle peut absorber ou disperser une attaque physique ou spirituelle."
         },
         "3": {
-          "name": "Masatsu Henka",
-          "desc": "Isen modifie la friction d’une surface pour la rendre extrêmement glissante ou collante."
+          "name": "Genkaiten",
+          "cost": "N/A",
+          "desc": "En touchant sa cible, Isen injecte une vibration instable dans une structure ou entité, créant un point critique. La zone devient plus vulnérable aux impacts suivants."
         },
         "4": {
-          "name": "Shinjinsho",
-          "desc": "Ses bras et jambes vibrent à une fréquence si élevée qu’ils qu'ils deviennent solides et tranchants."
+          "name": "Kyōmei Tekiken",
+          "cost": "N/A",
+          "desc": "Les bras et jambes d’Isen vibrent à une fréquence très élevée, les rendant solides et tranchants. Il peut trancher la matière ou les esprits au contact direct."
         },
         "5": {
-          "name": "Zen Kyomei Hokai",
-          "desc": "Libère une onde de résonance destructrice qui provoque tremblement, compression et dislocation à l’impact."
+          "name": "Kansatsu",
+          "cost": "N/A",
+          "desc": "Isen concentre ses vibrations dans l’air et le sol pour percevoir les moindres mouvements et présences autour de lui, sans avoir besoin de voir ou d’entendre."
         },
         "6": {
-          "name": "Kyokaku",
-          "desc": "Perçoit les vibrations pour détecter les mouvements et la présence des Fléaux autour de lui."
+          "name": "Zen Reishin Retsu-Ha",
+          "cost": "N/A",
+          "desc": "Isen concentre toutes les vibrations de son corps et de son âme, puis libère une onde circulaire de choc tranchante qui tourbillonne dans l’air, capable de sectionner matière et esprits sur sa trajectoire."
         }
       }
     }

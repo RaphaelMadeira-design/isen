@@ -91,7 +91,7 @@
           "This power manifests itself as a slight blur around Isen's silhouette and is accompanied by a faint buzzing sound when he uses his abilities, that results from the high-frequency vibrations produced."
         ]
       },
-      "limitsDesc": "Manipulating his Jinki exerts extreme strain on the body. In addition to the natural fatigue associated with its use, prolonged use of this power causes migraines accompanied by dizziness. If misused, it weakens the bone structure to the point of causing fractures, and sensory organs suffer progressive internal damage.",
+      "limitsDesc": "Manipulating his Jinki exerts extreme strain on the mind and the body. In addition to the natural fatigue associated with its use, prolonged use of this power causes migraines accompanied by incapacitating dizziness. If misused, it weakens the bone structure to the point of causing fractures, and sensory organs suffer progressive internal damage.",
       "jinki": {
         "title": "Jinki",
         "explanation": "A hardened steel tuning fork, a few centimeters in length. When struck, it emits a sharp, piercing chime that resonates for several minutes."
@@ -109,28 +109,34 @@
         "ultLabel": "Ultimate",
         "passiveLabel": "Passive",
         "1": {
-          "name": "Shogekiha",
-          "desc": "Generates a powerful shockwave through a sudden release of condensed vibrations."
+          "name": "Shōgeki-Ha",
+          "cost": "N/A",
+          "desc": "Isen focuses his vibrations on a precise point and releases a powerful directed shockwave to repel or unbalance his enemies."
         },
         "2": {
-          "name": "Shindoheki",
-          "desc": "Forms a vibrating wall or second skin that solidifies the air and disperses incoming energy."
+          "name": "Shindō Kekkai",
+          "cost": "N/A",
+          "desc": "Isen forms around his body or in a targeted area a barrier of vibrations that solidifies the air. It can absorb or disperse a physical or spiritual attack."
         },
         "3": {
-          "name": "Masatsu Henka",
-          "desc": "Modifies the friction of a targeted object or area to make it sticky or slippery."
+          "name": "Genkaiten",
+          "cost": "N/A",
+          "desc": "By touching his target, Isen injects an unstable vibration into a structure or entity, creating a critical point. The area becomes more vulnerable to subsequent impacts."
         },
         "4": {
-          "name": "Shinjinsho",
-          "desc": "His arms and legs vibrate at an extremely high frequency, making them solid and sharp."
+          "name": "Kyōmei Tekiken",
+          "cost": "N/A",
+          "desc": "Isen's arms and legs vibrate at a very high frequency, making them solid and sharp. He can slice through matter or spirits on direct contact."
         },
         "5": {
-          "name": "Zen Kyomei Hokai",
-          "desc": "Releases a destructive resonant wave that causes shaking, compression, and dislocation upon impact."
+          "name": "Kansatsu",
+          "cost": "N/A",
+          "desc": "Isen concentrates his vibrations into the air and ground to perceive the slightest movements and presences around him, without needing to see or hear."
         },
         "6": {
-          "name": "Kyokaku",
-          "desc": "Perceives vibrations to detect the movements and presence of Fléaux around him."
+          "name": "Zen Reishin Retsu-Ha",
+          "cost": "N/A",
+          "desc": "Isen concentrates all the vibrations of his body and soul, then releases a circular shockwave that spins through the air, capable of cutting through matter and spirits in its path."
         }
       }
     }

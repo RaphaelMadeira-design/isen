@@ -166,12 +166,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 
   .section-title {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.75rem;
+    font-weight: 800;
+    font-family: var(--font-secondary);
     color: var(--color-accent-lime);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
   }
 
   .section-text {
@@ -202,12 +203,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .split-title {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: var(--color-accent-lime);
+    font-family: var(--font-secondary);
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
   }
 
   .split-text {
@@ -219,5 +221,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .split-text p + p {
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.75rem;
   }
 }

@@ -13,12 +13,12 @@ const PowerPage = () => {
   const [hovered, setHovered] = useState(null);
 
   const spells = [
-    { key: '1', image: '/images/spell-1.jpg', keyBind: '1' },
-    { key: '2', image: '/images/spell-2.jpg', keyBind: '2'},
-    { key: '3', image: '/images/spell-3.jpg', keyBind: '3'},
-    { key: '4', image: '/images/spell-4.jpg', keyBind: '4'},
-    { key: '5', image: '/images/spell-5.jpg', keyBind: '5', isUlt: true},
-    { key: '6', image: '/images/spell-6.jpg', keyBind: '0', isPassive: true },
+    { key: '1', image: '/images/spell-1.jpg', keyBind: '1', damage: 'N/A' },
+    { key: '2', image: '/images/spell-2.jpg', keyBind: '2', damage: 'N/A' },
+    { key: '3', image: '/images/spell-3-2.jpg', keyBind: '3', damage: 'N/A'},
+    { key: '4', image: '/images/spell-4.jpg', keyBind: '4', damage: 'N/A'},
+    { key: '5', image: '/images/spell-5.jpg', keyBind: '5', damage: 'N/A'},
+    { key: '6', image: '/images/spell-6.jpg', keyBind: '6', damage: 'N/A', isUlt: true},
   ];
 
   return (
@@ -147,6 +147,9 @@ const PowerPage = () => {
                             {t('character.abilities.spells.passiveLabel', 'Passif')}
                           </span>
                         )}
+                        <span className="cost">
+                          {t(`character.abilities.spells.${spell.key}.cost`)}
+                        </span>
                         {spell.damage && (
                           <span className="damage">
                             {`${spell.damage} ${t('character.abilities.spells.damage')}`}

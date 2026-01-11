@@ -2,7 +2,7 @@
 
 .holographic-card-container {
     perspective: 1500px;
-    width: 400px;
+    max-width: 400px;
     height: 600px;
     margin: 0 auto 35px auto;
 }
@@ -469,4 +469,10 @@
     padding: 16px;
     border-top: 1px solid rgba(92, 246, 154, 0.3);
     margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+    .holographic-card-container {
+        display: none;
+    }
 }
