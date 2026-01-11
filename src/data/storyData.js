@@ -180,7 +180,7 @@ export const storyData = {
       character: "Isen",
       text: "« À la base, je suis venu à l'académie Shin'en avec l'objectif de maîtriser mon don dans l'espoir de guérir un jour, si c'est possible. Je sais que c'est un peu égoïste, mais j'ai jamais aspiré à devenir un grand chasseur ou un héros. Je ne viens pas d'une lignée respectée dans le domaine, et je n'ai pas d'histoire tragique en rapport avec les Fléaux. »\n\n" +
       "<i>Il lève les yeux vers le devant de la classe où le professeur s'affaire à classer des papiers.</i>\n\n" +
-      "« Puis avant d'entamer ma dernière année, j'ai fait deux ans de conscription militaire. Ces deux années passées à étudier et côtoyer les autres, je m'ont fait comprendre que, moi aussi, je pouvais peut-être faire une différence. Peut-être que je pourrais aider d'autres personnes comme moi. Peut-être que ma condition est une arme plutôt qu'une maladie ; une arme à utiliser pour l'avenir et nous débarasser de ces maudites bestioles. »",
+      "« Puis avant d'entamer ma dernière année, j'ai fait deux ans de conscription militaire. Ces deux années passées à étudier et côtoyer les autres, m'ont fait comprendre que, moi aussi, je pouvais peut-être faire une différence. Peut-être que je pourrais aider d'autres personnes comme moi. Peut-être que ma condition est une arme plutôt qu'une maladie ; une arme à utiliser pour l'avenir et nous débarasser de ces maudites bestioles. »",
       background: "/images/bg2.png",
       choices: null
     },
