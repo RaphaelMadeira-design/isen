@@ -132,7 +132,7 @@ const HomePage = () => {
           transition={{ delay: 1 }}
         >
           <div className="decoration-line" />
-          <div className="decoration-text">BLUE RIVER UNIVERSITY</div>
+          <div className="decoration-text">ACADEMIA NO SHIN'EN</div>
           <div className="decoration-line" />
         </motion.div>
       </motion.div>
