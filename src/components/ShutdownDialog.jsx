@@ -1,4 +1,4 @@
-import '../styles/ShutdownDialog.scss';
+import '../styles/shutdownDialog.scss';
 
 export default function ShutdownDialog({ onCancel }) {
   const handleYes = () => {

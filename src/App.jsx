@@ -11,24 +11,38 @@ import FileExplorer from './components/FileExplorer';
 import Notepad from './components/Notepad';
 import BootScreen from './components/BootScreen';
 import ShutdownDialog from './components/ShutdownDialog';
+import Snake from './components/Snake';
+import JumpGame from './components/JumpGame';
 
-const DESKTOP_ICONS = [
-  {
-    id: 'character',
-    label: 'Fiche de personnage',
-    icon: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
+const CELL = 90;
+
+const INITIAL_ICONS = [
+  { id: 'character', 
+    label: 'Fiche de personnage',   
+    icon: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',        
+    x: 0, y: 0 
   },
-  {
-    id: 'powers',
-    label: 'Pouvoirs et techniques',
-    icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
+  { id: 'powers',    
+    label: 'Pouvoirs et techniques', 
+    icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',  
+    x: 0, y: 1 
   },
-  {
-    id: 'histoire',
-    label: 'Histoire et Background',
-    icon: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
+  { id: 'histoire',  
+    label: 'Histoire et Background', 
+    icon: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',   
+    x: 0, y: 2 
   },
-];
+  { id: 'snake',     
+    label: 'SNAKE.exe',              
+    icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',           
+    x: 0, y: 3 
+  },
+  { id: 'jump',      
+    label: 'JUMP.exe',               
+    icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',            
+    x: 0, y: 4 
+  },
+].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }));
 
 const WINDOW_CONFIGS = {
   character: {
@@ -45,6 +59,16 @@ const WINDOW_CONFIGS = {
     title: 'Histoire et Background - Explorateur',
     defaultSize: { width: '82%', height: '80%' },
     defaultPosition: { x: 50, y: 25 },
+  },
+  snake: {
+    title: 'Snake — SNAKE.exe',
+    defaultSize: { width: 460, height: 520 },
+    defaultPosition: { x: 80, y: 20 },
+  },
+  jump: {
+    title: 'Jeu de saut — JUMP.exe',
+    defaultSize: { width: 540, height: 320 },
+    defaultPosition: { x: 100, y: 40 },
   },
 };
 
@@ -63,6 +87,10 @@ function App() {
   const [windows, setWindows] = useState([]);
   const [startOpen, setStartOpen] = useState(false);
   const [showShutdown, setShowShutdown] = useState(false);
+  const [icons, setIcons] = useState(INITIAL_ICONS);
+  const handleIconDragEnd = useCallback((id, pos) => {
+  setIcons(prev => prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic));
+}, []);
 
   const openWindow = useCallback((id) => {
     setWindows(prev => {
@@ -162,6 +190,8 @@ function App() {
     const { id } = win;
     if (id === 'character') return <FichePersonnage />;
     if (id === 'powers') return <Pouvoirs />;
+    if (id === 'snake') return <Snake />;
+    if (id === 'jump') return <JumpGame />;
     if (id === 'histoire') return <FileExplorer onOpenNotepad={openNotepad} />;
     if (id.startsWith('notepad-')) {
       return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />;
@@ -186,17 +216,17 @@ function App() {
       </div>
 
       {/* Desktop Icons */}
-      <div className="desktop__icons">
-        {DESKTOP_ICONS.map(icon => (
-          <DesktopIcon
-            key={icon.id}
-            id={icon.id}
-            label={icon.label}
-            icon={icon.icon}
-            onOpen={openWindow}
-          />
-        ))}
-      </div>
+      {icons.map(icon => (
+        <DesktopIcon
+          key={icon.id}
+          id={icon.id}
+          label={icon.label}
+          icon={icon.icon}
+          position={{ x: icon.x, y: icon.y }}
+          onOpen={openWindow}
+          onDragEnd={handleIconDragEnd}
+        />
+      ))}
 
       {/* Windows container */}
       <div className="desktop__content" style={{ position: 'absolute', inset: '0 0 32px 0' }}>

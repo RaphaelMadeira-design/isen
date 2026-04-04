@@ -6,6 +6,8 @@ const ICONS = {
   powers: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
   histoire: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
+  snake: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
 };
 
 const getWindowIcon = (id) => {
