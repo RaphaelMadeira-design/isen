@@ -1,0 +1,94 @@
+import { useState, useEffect } from 'react';
+
+const ICONS = {
+  start: 'https://win98icons.alexmeub.com/icons/png/windows-0.png',
+  volume: 'https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png',
+  network: 'https://win98icons.alexmeub.com/icons/png/network_normal_two_pcs-0.png',
+  character: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
+  powers: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
+  histoire: 'https://win98icons.alexmeub.com/icons/png/directory_closed-3.png',
+  notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
+};
+
+const getIcon = (id) => {
+  if (id === 'character') return ICONS.character;
+  if (id === 'powers') return ICONS.powers;
+  if (id === 'histoire') return ICONS.histoire;
+  if (id.startsWith('notepad-')) return ICONS.notepad;
+  return ICONS.start;
+};
+
+export default function Taskbar({ windows, onWindowFocus, onWindowToggle, onStartClick, startOpen }) {
+  const [time, setTime] = useState('');
+  const [date, setDate] = useState('');
+
+  useEffect(() => {
+    const update = () => {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      setTime(`${h}:${m}`);
+
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = now.getFullYear();
+      setDate(`${day}/${month}/${year}`);
+    };
+    update();
+    const id = setInterval(update, 10000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="taskbar" data-testid="taskbar">
+      {/* Start Button */}
+      <button
+        className="taskbar__start-btn"
+        onClick={onStartClick}
+        data-testid="start-button"
+        style={startOpen ? { borderTop: '2px solid #000', borderLeft: '2px solid #000', borderRight: '2px solid #fff', borderBottom: '2px solid #fff' } : {}}
+      >
+        <img src={ICONS.start} alt="Windows" />
+        <span>Démarrer</span>
+      </button>
+
+      <div className="taskbar__separator" />
+
+      {/* Open Windows */}
+      <div className="taskbar__items">
+        {windows.map(win => (
+          <button
+            key={win.id}
+            className={`taskbar__item ${win.focused ? 'taskbar__item--active' : ''}`}
+            onClick={() => onWindowToggle(win.id)}
+            data-testid={`taskbar-item-${win.id}`}
+          >
+            <img src={getIcon(win.id)} alt={win.title} />
+            <span>{win.title}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* System Tray */}
+      <div className="taskbar__tray" data-testid="taskbar-tray">
+        <img
+          src={ICONS.network}
+          alt="Réseau"
+          className="taskbar__tray-icon"
+          title="Connexion Ethernet - Connecté"
+          data-testid="tray-network"
+        />
+        <img
+          src={ICONS.volume}
+          alt="Volume"
+          className="taskbar__tray-icon"
+          title="Volume"
+          data-testid="tray-volume"
+        />
+        <span className="taskbar__clock" title={date} data-testid="taskbar-clock">
+          {time}
+        </span>
+      </div>
+    </div>
+  );
+}

@@ -1,61 +1,246 @@
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import LoadingPage from './pages/LoadingPage';
-import HomePage from './pages/HomePage';
-import CharacterSheet from './pages/CharacterSheet';
-import PowerPage from './pages/PowerPage';
-import StoryPage from './pages/StoryPage';
+import { useState, useCallback } from 'react';
+import './styles/desktop.scss';
+
+import DesktopIcon from './components/DesktopIcon';
+import Win98Window from './components/Win98Window';
+import Taskbar from './components/Taskbar';
+import StartMenu from './components/StartMenu';
+import FichePersonnage from './components/FichePersonnage';
+import Pouvoirs from './components/Pouvoirs';
+import FileExplorer from './components/FileExplorer';
+import Notepad from './components/Notepad';
+import BootScreen from './components/BootScreen';
+import ShutdownDialog from './components/ShutdownDialog';
+
+const DESKTOP_ICONS = [
+  {
+    id: 'character',
+    label: 'Fiche de personnage',
+    icon: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
+  },
+  {
+    id: 'powers',
+    label: 'Pouvoirs et techniques',
+    icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
+  },
+  {
+    id: 'histoire',
+    label: 'Histoire et Background',
+    icon: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
+  },
+];
+
+const WINDOW_CONFIGS = {
+  character: {
+    title: 'Fiche de personnage - Isen Hata',
+    defaultSize: { width: '80%', height: '80%' },
+    defaultPosition: { x: 40, y: 20 },
+  },
+  powers: {
+    title: 'Pouvoirs et Techniques - POUVOIRS.exe',
+    defaultSize: { width: '80%', height: '80%' },
+    defaultPosition: { x: 60, y: 30 },
+  },
+  histoire: {
+    title: 'Histoire et Background - Explorateur',
+    defaultSize: { width: '82%', height: '80%' },
+    defaultPosition: { x: 50, y: 25 },
+  },
+};
+
+// Crée une config de fenêtre Bloc-notes pour un fichier .txt
+const makeNotepadConfig = (fileId, fileName) => ({
+  title: `${fileName} - Bloc-notes`,
+  defaultSize: { width: 540, height: 420 },
+  defaultPosition: { x: 80 + Math.random() * 120, y: 40 + Math.random() * 80 },
+  notepadFile: { id: fileId, name: fileName },
+});
+
+let zCounter = 100;
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [booted, setBooted] = useState(false);
+  const [windows, setWindows] = useState([]);
+  const [startOpen, setStartOpen] = useState(false);
+  const [showShutdown, setShowShutdown] = useState(false);
 
-   useEffect(() => {
-    const disableImageRightClick = (e) => {
-      if (e.target.tagName === 'IMG') {
-        e.preventDefault();
+  const openWindow = useCallback((id) => {
+    setWindows(prev => {
+      const existing = prev.find(w => w.id === id);
+      if (existing) {
+        // Restore and focus
+        return prev.map(w =>
+          w.id === id
+            ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
+            : { ...w, focused: false }
+        );
       }
-    };
-
-    const disableImageDrag = (e) => {
-      if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-      }
-    };
-
-    document.addEventListener('contextmenu', disableImageRightClick);
-    document.addEventListener('dragstart', disableImageDrag);
-
-    return () => {
-      document.removeEventListener('contextmenu', disableImageRightClick);
-      document.removeEventListener('dragstart', disableImageDrag);
-    };
+      // New window
+      return [
+        ...prev.map(w => ({ ...w, focused: false })),
+        {
+          id,
+          ...WINDOW_CONFIGS[id],
+          minimized: false,
+          focused: true,
+          zIndex: ++zCounter,
+        },
+      ];
+    });
+    setStartOpen(false);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
+  const closeWindow = useCallback((id) => {
+    setWindows(prev => prev.filter(w => w.id !== id));
   }, []);
 
-  if (isLoading) {
-    return <LoadingPage />;
-  }
+  const minimizeWindow = useCallback((id) => {
+    setWindows(prev => prev.map(w =>
+      w.id === id ? { ...w, minimized: true, focused: false } : w
+    ));
+  }, []);
+
+  const focusWindow = useCallback((id) => {
+    setWindows(prev => prev.map(w =>
+      w.id === id
+        ? { ...w, focused: true, zIndex: ++zCounter }
+        : { ...w, focused: false }
+    ));
+  }, []);
+
+  const toggleWindow = useCallback((id) => {
+    setWindows(prev => {
+      const win = prev.find(w => w.id === id);
+      if (!win) return prev;
+      if (win.minimized) {
+        return prev.map(w =>
+          w.id === id
+            ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
+            : { ...w, focused: false }
+        );
+      }
+      if (win.focused) {
+        return prev.map(w =>
+          w.id === id ? { ...w, minimized: true, focused: false } : w
+        );
+      }
+      return prev.map(w =>
+        w.id === id
+          ? { ...w, focused: true, zIndex: ++zCounter }
+          : { ...w, focused: false }
+      );
+    });
+  }, []);
+
+    // Ouvre un fichier .txt dans un Bloc-notes (depuis FileExplorer)
+  const openNotepad = useCallback(({ id, name, content }) => {
+    const winId = `notepad-${id}`;
+    setWindows(prev => {
+      const existing = prev.find(w => w.id === winId);
+      if (existing) {
+        return prev.map(w =>
+          w.id === winId
+            ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
+            : { ...w, focused: false }
+        );
+      }
+      return [
+        ...prev.map(w => ({ ...w, focused: false })),
+        {
+          id: winId,
+          ...makeNotepadConfig(id, name),
+          notepadContent: content,
+          minimized: false,
+          focused: true,
+          zIndex: ++zCounter,
+        },
+      ];
+    });
+  }, []);
+
+  const renderWindowContent = (win) => {
+    const { id } = win;
+    if (id === 'character') return <FichePersonnage />;
+    if (id === 'powers') return <Pouvoirs />;
+    if (id === 'histoire') return <FileExplorer onOpenNotepad={openNotepad} />;
+    if (id.startsWith('notepad-')) {
+      return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />;
+    }
+    return null;
+  };
 
   return (
-    <Router>
-      <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/character" element={<CharacterSheet />} />
-          <Route path="/power" element={<PowerPage />} />
-          <Route path="/story" element={<StoryPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </AnimatePresence>
-    </Router>
+    <div className="desktop" data-testid="desktop" onMouseDown={() => setStartOpen(false)}>
+      {/* Boot screen - affiché par-dessus tout jusqu'à la fin du boot */}
+      {!booted && <BootScreen onDone={() => setBooted(true)} />}
+
+      {/* Wallpaper */}
+      <div className="desktop__wallpaper" />
+
+      {/* Scan lines overlay */}
+      <div className="scanlines" />
+
+      {/* Watermark */}
+      <div className="desktop__watermark">
+        <span>PC-98</span>
+      </div>
+
+      {/* Desktop Icons */}
+      <div className="desktop__icons">
+        {DESKTOP_ICONS.map(icon => (
+          <DesktopIcon
+            key={icon.id}
+            id={icon.id}
+            label={icon.label}
+            icon={icon.icon}
+            onOpen={openWindow}
+          />
+        ))}
+      </div>
+
+      {/* Windows container */}
+      <div className="desktop__content" style={{ position: 'absolute', inset: '0 0 32px 0' }}>
+        {windows.map(win => (
+          <Win98Window
+            key={win.id}
+            id={win.id}
+            title={win.title}
+            zIndex={win.zIndex}
+            focused={win.focused}
+            minimized={win.minimized}
+            defaultSize={win.defaultSize}
+            defaultPosition={win.defaultPosition}
+            onClose={closeWindow}
+            onMinimize={minimizeWindow}
+            onFocus={focusWindow}
+          >
+             {renderWindowContent(win)}
+          </Win98Window>
+        ))}
+      </div>
+
+      {/* Start Menu */}
+      {startOpen && (
+        <StartMenu
+          onClose={() => setStartOpen(false)}
+          onOpenWindow={openWindow}
+          onShutdown={() => setShowShutdown(true)}
+        />
+      )}
+      {/* Dialog Arrêt de Windows */}
+      {showShutdown && (
+        <ShutdownDialog onCancel={() => setShowShutdown(false)} />
+      )}
+
+      {/* Taskbar */}
+      <Taskbar
+        windows={windows}
+        onWindowFocus={focusWindow}
+        onWindowToggle={toggleWindow}
+        onStartClick={(e) => { e.stopPropagation(); setStartOpen(prev => !prev); }}
+        startOpen={startOpen}
+      />
+    </div>
   );
 }
 

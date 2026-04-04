@@ -1,0 +1,695 @@
+
+@use 'variables' as *;
+
+// Import pixel font
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  image-rendering: pixelated;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: $font-system;
+  font-size: 11px;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+// =====================
+// DESKTOP
+// =====================
+.desktop {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: $win98-desktop;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  user-select: none;
+
+  &__wallpaper {
+    position: absolute;
+    inset: 0;
+    background-color: #008080;
+    z-index: 0;
+    }
+  
+  &__watermark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+
+    span {
+      font-family: $font-system;
+      font-size: 2vw;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: rgba(0, 0, 0, 0.08);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+  }
+
+  &__icons {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+
+    > * {
+      pointer-events: all;
+    }
+  }
+}
+
+// =====================
+// DESKTOP ICONS
+// =====================
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  padding: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  position: relative;
+
+  &--selected {
+    .desktop-icon__label {
+      background-color: $win98-navy;
+      outline: 1px dotted $win98-white;
+    }
+    .desktop-icon__img {
+      filter: brightness(0.7) sepia(1) hue-rotate(180deg) saturate(3);
+    }
+  }
+
+  &__img {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto 4px;
+  }
+
+  &__label {
+    font-family: $font-system;
+    font-size: 11px;
+    color: $win98-white;
+    text-align: center;
+    padding: 1px 2px;
+    word-break: break-word;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 1px -1px 2px rgba(0,0,0,0.9), -1px 1px 2px rgba(0,0,0,0.9);
+  }
+}
+
+// =====================
+// TASKBAR
+// =====================
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background-color: $win98-gray;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  gap: 4px;
+  @include border-outset;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+
+  &__start-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    background-color: $win98-gray;
+    font-family: $font-system;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    height: 24px;
+    @include border-outset;
+
+    &:active {
+      @include border-inset;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+      image-rendering: pixelated;
+    }
+  }
+
+  &__separator {
+    width: 2px;
+    height: 24px;
+    background: $win98-dark-gray;
+    box-shadow: 1px 0 0 $win98-white;
+    flex-shrink: 0;
+    margin: 0 2px;
+  }
+
+  &__items {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    overflow: hidden;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    background-color: $win98-gray;
+    font-family: $font-system;
+    font-size: 11px;
+    cursor: pointer;
+    height: 24px;
+    max-width: 160px;
+    @include border-outset;
+
+    &--active {
+      @include border-inset;
+      background-color: $win98-light-gray;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+      image-rendering: pixelated;
+      flex-shrink: 0;
+    }
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &:active {
+      @include border-inset;
+    }
+  }
+
+  &__tray {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    height: 24px;
+    @include border-inset;
+    font-family: $font-system;
+    font-size: 11px;
+  }
+
+  &__tray-icon {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+    cursor: pointer;
+  }
+
+  &__clock {
+    font-family: $font-system;
+    font-size: 11px;
+    color: $win98-black;
+    white-space: nowrap;
+  }
+}
+
+// =====================
+// WINDOW
+// =====================
+.win98-window {
+  position: absolute;
+  background-color: $win98-gray;
+  @include border-outset;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__titlebar {
+    height: 24px;
+    background: linear-gradient(90deg, $win98-navy 0%, $pc98-violet 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    cursor: grab;
+    flex-shrink: 0;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &--inactive {
+      background: linear-gradient(90deg, #7b7b7b 0%, #9b9b9b 100%);
+    }
+  }
+
+  &__title-icon {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+    margin-right: 4px;
+    flex-shrink: 0;
+  }
+
+  &__title-text {
+    flex: 1;
+    font-family: $font-system;
+    font-size: 11px;
+    font-weight: bold;
+    color: $win98-white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  &__ctrl-btn {
+    width: 18px;
+    height: 18px;
+    background-color: $win98-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: normal;
+    color: $win98-black;
+    @include border-outset-light;
+    line-height: 1;
+
+    &:active {
+      @include border-inset-light;
+    }
+
+    &--close {
+      font-size: 12px;
+    }
+  }
+
+  &__menubar {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    background-color: $win98-gray;
+    border-bottom: 1px solid $win98-dark-gray;
+    flex-shrink: 0;
+    color: $win98-black;
+
+    span {
+      font-family: $font-system;
+      font-size: 11px;
+      padding: 2px 6px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $win98-navy;
+        color: $win98-white;
+      }
+    }
+  }
+
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    gap: 2px;
+    background-color: $win98-gray;
+    border-bottom: 1px solid $win98-dark-gray;
+    flex-shrink: 0;
+  }
+
+  &__toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background-color: $win98-gray;
+    font-family: $font-system;
+    font-size: 11px;
+    cursor: pointer;
+    @include border-outset-light;
+
+    &:active {
+      @include border-inset-light;
+    }
+
+    &--disabled {
+      color: $win98-dark-gray;
+      pointer-events: none;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+      image-rendering: pixelated;
+    }
+  }
+
+  &__address-bar {
+    display: flex;
+    align-items: center;
+    padding: 2px 4px;
+    gap: 4px;
+    background-color: $win98-gray;
+    border-bottom: 1px solid $win98-dark-gray;
+    flex-shrink: 0;
+
+    label {
+      font-family: $font-system;
+      font-size: 11px;
+      color: $win98-black;
+    }
+
+    input {
+      flex: 1;
+      height: 18px;
+      font-family: $font-system;
+      font-size: 11px;
+      padding: 0 4px;
+      background: $win98-white;
+      @include border-inset-light;
+      border: none;
+      outline: none;
+      @include border-inset-light;
+    }
+  }
+
+  &__body {
+    flex: 1;
+    overflow: auto;
+    background-color: $win98-white;
+    @include border-inset-light;
+    margin: 2px;
+    position: relative;
+  }
+
+  &__statusbar {
+    height: 20px;
+    background-color: $win98-gray;
+    border-top: 1px solid $win98-dark-gray;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    flex-shrink: 0;
+    color: $win98-black;
+
+    span {
+      font-family: $font-system;
+      font-size: 11px;
+      padding: 0 4px;
+      border-right: 1px solid $win98-dark-gray;
+    }
+  }
+
+  // Resize handle
+  &__resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    cursor: se-resize;
+    background: linear-gradient(135deg, transparent 50%, $win98-dark-gray 50%);
+  }
+}
+
+// =====================
+// FILE EXPLORER
+// =====================
+.file-explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: $win98-black;
+
+  &__panes {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__tree {
+    width: 220px;
+    min-width: 120px;
+    border-right: 2px solid $win98-dark-gray;
+    background: $win98-white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  &__content {
+    flex: 1;
+    background: $win98-white;
+    overflow-y: auto;
+    padding: 8px;
+  }
+
+  &__tree-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 4px;
+    cursor: pointer;
+    font-family: $font-system;
+    font-size: 11px;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #cce8ff;
+        color: $win98-black;
+    }
+
+    &--selected {
+      background-color: $win98-navy;
+      color: $win98-white;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+      image-rendering: pixelated;
+      flex-shrink: 0;
+    }
+
+    &__indent {
+      display: inline-block;
+      width: 16px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px;
+    align-content: flex-start;
+  }
+
+  &__file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 72px;
+    padding: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: #cce8ff;
+      border-color: #99c9ff;
+    }
+
+    &--selected {
+      background-color: $win98-navy;
+      color: $win98-white;
+
+      span {
+        color: $win98-white;
+      }
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+      image-rendering: pixelated;
+      margin-bottom: 4px;
+    }
+
+    span {
+      font-family: $font-system;
+      font-size: 11px;
+      text-align: center;
+      word-break: break-word;
+    }
+  }
+
+  &__breadcrumb {
+    font-family: $font-system;
+    font-size: 11px;
+    color: $win98-dark-gray;
+    padding: 4px 8px;
+    background: $win98-light-gray;
+    border-bottom: 1px solid $win98-dark-gray;
+    flex-shrink: 0;
+  }
+}
+
+// =====================
+// SCROLLBAR
+// =====================
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: $win98-light-gray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $win98-gray;
+  @include border-outset-light;
+}
+
+::-webkit-scrollbar-button {
+  background: $win98-gray;
+  @include border-outset-light;
+  width: 16px;
+  height: 16px;
+}
+
+// =====================
+// START MENU
+// =====================
+.start-menu {
+  position: fixed;
+  bottom: 32px;
+  left: 0;
+  width: 212px;
+  background: $win98-gray;
+  z-index: 99999;
+  @include border-outset;
+  display: flex;
+  flex-direction: column;
+
+  &__sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    background: linear-gradient(0deg, $win98-navy, $pc98-violet);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+
+    span {
+      font-family: $font-system;
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      letter-spacing: 1px;
+    }
+  }
+
+  &__content {
+    margin-left: 32px;
+    padding: 0;
+  }
+
+  &__separator {
+    height: 1px;
+    background: $win98-dark-gray;
+    margin: 4px 0;
+    box-shadow: 0 1px 0 $win98-white;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-family: $font-system;
+    font-size: 11px;
+
+    &:hover {
+      background-color: $win98-navy;
+      color: $win98-white;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      image-rendering: pixelated;
+    }
+
+    &__arrow {
+      margin-left: auto;
+      font-size: 8px;
+    }
+  }
+}
+
+// =====================
+// SCAN LINES EFFECT (subtle)
+// =====================
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.015) 2px,
+    rgba(0, 0, 0, 0.015) 4px
+  );
+}
