@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import '../styles/snake.scss';
+import '../styles/Snake.scss';
 
 const GRID = 20;
 const COLS = 20;

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import '../styles/boot.scss';
+import '../styles/Boot.scss';
 
 // Séquence BIOS - lignes qui s'affichent une par une
 const BIOS_LINES = [

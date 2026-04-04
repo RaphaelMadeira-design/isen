@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import '../styles/jumpGame.scss';
+import '../styles/JumpGame.scss';
 
 const W = 480;
 const H = 200;
