@@ -25,7 +25,7 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
       {/* Overlay */}
       <div className="start-menu__overlay" onClick={onClose} />
 
-      <div className="start-menu" onClick={(e) => e.stopPropagation()}>
+      <div className="start-menu" onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}>
         {/* Sidebar */}
         <div className="start-menu__sidebar">
           <span><b>Windows</b> 98</span>

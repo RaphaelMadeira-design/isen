@@ -200,7 +200,11 @@ function App() {
   };
 
   return (
-    <div className="desktop" data-testid="desktop" onMouseDown={() => setStartOpen(false)}>
+    <div className="desktop" data-testid="desktop" onMouseDown={(e) => {
+      if (!e.target.closest('.start-menu') && !e.target.closest('.taskbar')) {
+        setStartOpen(false);
+      }
+    }}>
       {/* Boot screen - affiché par-dessus tout jusqu'à la fin du boot */}
       {!booted && <BootScreen onDone={() => setBooted(true)} />}
 
