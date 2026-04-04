@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import './styles/desktop.scss';
+import './styles/Desktop.scss';
 
 import DesktopIcon from './components/DesktopIcon';
 import Win98Window from './components/Win98Window';
