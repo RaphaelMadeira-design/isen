@@ -1,15 +1,15 @@
-import '../styles/ShutdownDialog.scss';
+import '../styles/ShutdownDialog.scss'
 
 export default function ShutdownDialog({ onCancel }) {
   const handleYes = () => {
     // Tente de fermer l'onglet
-    window.open('', '_self');
-    window.close();
+    window.open('', '_self')
+    window.close()
     // Fallback : si le navigateur refuse, on affiche un message
     setTimeout(() => {
-      onCancel('blocked');
-    }, 300);
-  };
+      onCancel('blocked')
+    }, 300)
+  }
 
   return (
     <>
@@ -64,7 +64,7 @@ export default function ShutdownDialog({ onCancel }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 function Btn({ children, onClick, testId, autoFocus }) {
@@ -77,5 +77,5 @@ function Btn({ children, onClick, testId, autoFocus }) {
     >
       {children}
     </button>
-  );
+  )
 }

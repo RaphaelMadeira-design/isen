@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import '../styles/Boot.scss';
+import { useState, useEffect, useRef } from 'react'
+import '../styles/Boot.scss'
 
 // Séquence BIOS - lignes qui s'affichent une par une
 const BIOS_LINES = [
@@ -22,71 +22,71 @@ const BIOS_LINES = [
   { text: 'Boot from CD : ..Fail', delay: 2500 },
   { text: 'Boot from Floppy : Fail', delay: 2700 },
   { text: 'Boot from HDD-0 : OK', delay: 2900, highlight: true },
-];
+]
 
 const WIN98_LINES = [
   { text: 'Microsoft Windows 98', delay: 0, big: true },
   { text: 'Démarrage de Windows 98...', delay: 400 },
-];
+]
 
 // Phases : 'bios' | 'win98' | 'progress' | 'done'
 export default function BootScreen({ onDone }) {
-  const [phase, setPhase] = useState('bios');
-  const [visibleBios, setVisibleBios] = useState([]);
-  const [visibleWin, setVisibleWin] = useState([]);
-  const [progress, setProgress] = useState(0);
-  const [scanOn, setScanOn] = useState(true);
-  const timerRef = useRef(null);
+  const [phase, setPhase] = useState('bios')
+  const [visibleBios, setVisibleBios] = useState([])
+  const [visibleWin, setVisibleWin] = useState([])
+  const [progress, setProgress] = useState(0)
+  const [scanOn, setScanOn] = useState(true)
+  const timerRef = useRef(null)
 
   // --- Phase BIOS ---
   useEffect(() => {
-    if (phase !== 'bios') return;
+    if (phase !== 'bios') return
     const timers = BIOS_LINES.map((line, i) =>
       setTimeout(() => {
-        setVisibleBios(prev => [...prev, i]);
+        setVisibleBios(prev => [...prev, i])
       }, line.delay)
-    );
+    )
     // Fin du BIOS → transition vers Win98
-    const end = setTimeout(() => setPhase('win98'), 3200);
-    return () => { timers.forEach(clearTimeout); clearTimeout(end); };
-  }, [phase]);
+    const end = setTimeout(() => setPhase('win98'), 3200)
+    return () => { timers.forEach(clearTimeout); clearTimeout(end); }
+  }, [phase])
 
   // --- Phase Win98 logo ---
   useEffect(() => {
-    if (phase !== 'win98') return;
+    if (phase !== 'win98') return
     const timers = WIN98_LINES.map((line, i) =>
       setTimeout(() => {
-        setVisibleWin(prev => [...prev, i]);
+        setVisibleWin(prev => [...prev, i])
       }, line.delay)
     );
-    const end = setTimeout(() => setPhase('progress'), 1200);
-    return () => { timers.forEach(clearTimeout); clearTimeout(end); };
-  }, [phase]);
+    const end = setTimeout(() => setPhase('progress'), 1200)
+    return () => { timers.forEach(clearTimeout); clearTimeout(end); }
+  }, [phase])
 
   // --- Phase barre de progression ---
   useEffect(() => {
-    if (phase !== 'progress') return;
-    const steps = [10, 20, 30, 40, 50, 58, 66, 74, 82, 90, 95, 100];
-    let i = 0;
+    if (phase !== 'progress') return
+    const steps = [10, 20, 30, 40, 50, 58, 66, 74, 82, 90, 95, 100]
+    let i = 0
     const tick = () => {
-      if (i >= steps.length) return;
-      setProgress(steps[i]);
-      i++;
-      timerRef.current = setTimeout(tick, 200 + Math.random() * 180);
-    };
-    timerRef.current = setTimeout(tick, 300);
-    return () => clearTimeout(timerRef.current);
-  }, [phase]);
+      if (i >= steps.length) return
+      setProgress(steps[i])
+      i++
+      timerRef.current = setTimeout(tick, 200 + Math.random() * 180)
+    }
+    timerRef.current = setTimeout(tick, 300)
+    return () => clearTimeout(timerRef.current)
+  }, [phase])
 
   // --- Progression 100% → done ---
   useEffect(() => {
     if (progress === 100) {
       setTimeout(() => {
         setScanOn(false);
-        setTimeout(onDone, 600);
-      }, 500);
+        setTimeout(onDone, 600)
+      }, 500)
     }
-  }, [progress, onDone]);
+  }, [progress, onDone])
 
   return (
     <div className={`boot-screen ${!scanOn ? 'boot-screen--fade' : ''}`} data-testid="boot-screen">
@@ -139,5 +139,5 @@ export default function BootScreen({ onDone }) {
         </div>
       )}
     </div>
-  );
+  )
 }

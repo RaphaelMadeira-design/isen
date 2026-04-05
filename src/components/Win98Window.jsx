@@ -1,5 +1,5 @@
-import { useRef, useState, useCallback } from 'react';
-import { Rnd } from 'react-rnd';
+import { useRef, useState, useCallback } from 'react'
+import { Rnd } from 'react-rnd'
 
 const ICONS = {
   character: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
@@ -8,12 +8,12 @@ const ICONS = {
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
   snake: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-};
+}
 
 const getWindowIcon = (id) => {
-  if (id.startsWith('notepad-')) return ICONS.notepad;
-  return ICONS[id] || null;
-};
+  if (id.startsWith('notepad-')) return ICONS.notepad
+  return ICONS[id] || null
+}
 
 export default function Win98Window({
   id, title, children, onClose, onMinimize, onFocus,
@@ -22,37 +22,37 @@ export default function Win98Window({
   const [pos, setPos] = useState({
     x: defaultPosition?.x ?? 60,
     y: defaultPosition?.y ?? 30,
-  });
+  })
   const [size, setSize] = useState({
     width: defaultSize?.width ?? '80%',
     height: defaultSize?.height ?? '80%',
-  });
-  const [maximized, setMaximized] = useState(false);
-  const prevState = useRef(null);
+  })
+  const [maximized, setMaximized] = useState(false)
+  const prevState = useRef(null)
 
   const handleMouseDown = useCallback(() => {
-    onFocus(id);
-  }, [id, onFocus]);
+    onFocus(id)
+  }, [id, onFocus])
 
   const handleMaximize = useCallback(() => {
     if (maximized) {
       // Restore previous size/pos
       if (prevState.current) {
-        setPos(prevState.current.pos);
-        setSize(prevState.current.size);
+        setPos(prevState.current.pos)
+        setSize(prevState.current.size)
       }
-      setMaximized(false);
+      setMaximized(false)
     } else {
-      prevState.current = { pos, size };
-      setPos({ x: 0, y: 0 });
-      setSize({ width: '100%', height: '100%' });
-      setMaximized(true);
+      prevState.current = { pos, size }
+      setPos({ x: 0, y: 0 })
+      setSize({ width: '100%', height: '100%' })
+      setMaximized(true)
     }
-  }, [maximized, pos, size]);
+  }, [maximized, pos, size])
 
-  if (minimized) return null;
+  if (minimized) return null
 
-  const icon = ICONS[id];
+  const icon = ICONS[id]
 
   return (
     <Rnd
@@ -60,8 +60,8 @@ export default function Win98Window({
       size={size}
       onDragStop={(e, d) => setPos({ x: d.x, y: d.y })}
       onResizeStop={(e, dir, ref, delta, position) => {
-        setSize({ width: ref.style.width, height: ref.style.height });
-        setPos(position);
+        setSize({ width: ref.style.width, height: ref.style.height })
+        setPos(position)
       }}
       minWidth={320}
       minHeight={220}
@@ -120,5 +120,5 @@ export default function Win98Window({
         {children}
       </div>
     </Rnd>
-  );
+  )
 }

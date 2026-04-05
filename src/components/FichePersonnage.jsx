@@ -1,4 +1,3 @@
-// Fiche de personnage - contenu
 export default function FichePersonnage() {
   return (
     <div style={{ padding: '12px', fontFamily: 'MS Sans Serif, Tahoma, sans-serif', fontSize: '11px', height: '100%', overflowY: 'auto', backgroundColor: '#fff' }}>
@@ -64,7 +63,7 @@ function Section({ title, children }) {
         {children}
       </div>
     </div>
-  );
+  )
 }
 
 function Row({ label, value }) {
@@ -73,7 +72,7 @@ function Row({ label, value }) {
       <span style={{ fontWeight: 'bold', minWidth: '120px', color: '#000080' }}>{label} :</span>
       <span>{value}</span>
     </div>
-  );
+  )
 }
 
 function StatBar({ label, value, color }) {
@@ -85,5 +84,5 @@ function StatBar({ label, value, color }) {
       </div>
       <span style={{ minWidth: '32px', textAlign: 'right' }}>{value}</span>
     </div>
-  );
+  )
 }

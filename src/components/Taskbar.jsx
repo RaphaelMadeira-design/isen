@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 const ICONS = {
   start: 'https://win98icons.alexmeub.com/icons/png/windows-0.png',
@@ -8,36 +8,36 @@ const ICONS = {
   powers: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
   histoire: 'https://win98icons.alexmeub.com/icons/png/directory_closed-3.png',
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
-};
+}
 
 const getIcon = (id) => {
-  if (id === 'character') return ICONS.character;
-  if (id === 'powers') return ICONS.powers;
-  if (id === 'histoire') return ICONS.histoire;
-  if (id.startsWith('notepad-')) return ICONS.notepad;
-  return ICONS.start;
-};
+  if (id === 'character') return ICONS.character
+  if (id === 'powers') return ICONS.powers
+  if (id === 'histoire') return ICONS.histoire
+  if (id.startsWith('notepad-')) return ICONS.notepad
+  return ICONS.start
+}
 
 export default function Taskbar({ windows, onWindowFocus, onWindowToggle, onStartClick, startOpen }) {
-  const [time, setTime] = useState('');
-  const [date, setDate] = useState('');
+  const [time, setTime] = useState('')
+  const [date, setDate] = useState('')
 
   useEffect(() => {
     const update = () => {
-      const now = new Date();
-      const h = String(now.getHours()).padStart(2, '0');
-      const m = String(now.getMinutes()).padStart(2, '0');
-      setTime(`${h}:${m}`);
+      const now = new Date()
+      const h = String(now.getHours()).padStart(2, '0')
+      const m = String(now.getMinutes()).padStart(2, '0')
+      setTime(`${h}:${m}`)
 
-      const day = String(now.getDate()).padStart(2, '0');
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const year = now.getFullYear();
-      setDate(`${day}/${month}/${year}`);
-    };
-    update();
-    const id = setInterval(update, 10000);
-    return () => clearInterval(id);
-  }, []);
+      const day = String(now.getDate()).padStart(2, '0')
+      const month = String(now.getMonth() + 1).padStart(2, '0')
+      const year = now.getFullYear()
+      setDate(`${day}/${month}/${year}`)
+    }
+    update()
+    const id = setInterval(update, 10000)
+    return () => clearInterval(id)
+  }, [])
 
   return (
     <div className="taskbar" data-testid="taskbar">
@@ -90,5 +90,5 @@ export default function Taskbar({ windows, onWindowFocus, onWindowToggle, onStar
         </span>
       </div>
     </div>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-const FOLDER_ICON = 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png';
-const FOLDER_OPEN_ICON = 'https://win98icons.alexmeub.com/icons/png/directory_open_cool-3.png';
-const FILE_ICON = 'https://win98icons.alexmeub.com/icons/png/file_lines-0.png';
+const FOLDER_ICON = 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png'
+const FOLDER_OPEN_ICON = 'https://win98icons.alexmeub.com/icons/png/directory_open_cool-3.png'
+const FILE_ICON = 'https://win98icons.alexmeub.com/icons/png/file_lines-0.png'
 
 export const FILE_TREE = {
   root: {
@@ -30,62 +30,62 @@ export const FILE_TREE = {
   c2p1: { name: 'Partie 1 - La Découverte.txt',  parent: 'chapitre2', type: 'file', content: '[Contenu à remplir]' },
   c2p2: { name: 'Partie 2 - Premier combat.txt', parent: 'chapitre2', type: 'file', content: '[Contenu à remplir]' },
   c3p1: { name: 'Partie 1 - En cours.txt',       parent: 'chapitre3', type: 'file', content: '[Contenu à venir]' },
-};
+}
 
 export default function FileExplorer({ onOpenNotepad }) {
-  const [currentFolder, setCurrentFolder] = useState('root');
-  const [selectedItem, setSelectedItem] = useState(null);
-  const [history, setHistory] = useState(['root']);
+  const [currentFolder, setCurrentFolder] = useState('root')
+  const [selectedItem, setSelectedItem] = useState(null)
+  const [history, setHistory] = useState(['root'])
 
   // Reconstruit le chemin exact root → id en remontant les parents
   const getPathTo = (id) => {
-    const path = [];
-    let cur = id;
+    const path = []
+    let cur = id
     while (cur) {
-      path.unshift(cur);
-      cur = FILE_TREE[cur]?.parent || null;
+      path.unshift(cur)
+      cur = FILE_TREE[cur]?.parent || null
     }
     return path; // ex: ['root', 'chapitre2']
-  };
+  }
 
   // Navigate vers un dossier : le chemin est toujours recalculé proprement
   const navigateFolder = (id) => {
-    if (id === currentFolder) return;
-    setHistory(getPathTo(id));
-    setCurrentFolder(id);
-    setSelectedItem(null);
-  };
+    if (id === currentFolder) return
+    setHistory(getPathTo(id))
+    setCurrentFolder(id)
+    setSelectedItem(null)
+  }
 
   // Ouvrir un fichier .txt → Bloc-notes
   const openFile = (id) => {
-    const node = FILE_TREE[id];
-    if (!node || node.type !== 'file') return;
-    setSelectedItem(id);
+    const node = FILE_TREE[id]
+    if (!node || node.type !== 'file') return
+    setSelectedItem(id)
     if (onOpenNotepad) {
-      onOpenNotepad({ id, name: node.name, content: node.content });
+      onOpenNotepad({ id, name: node.name, content: node.content })
     }
-  };
+  }
 
   const goBack = () => {
-    if (history.length <= 1) return;
-    const newHistory = history.slice(0, -1);
-    setHistory(newHistory);
-    setCurrentFolder(newHistory[newHistory.length - 1]);
-    setSelectedItem(null);
-  };
+    if (history.length <= 1) return
+    const newHistory = history.slice(0, -1)
+    setHistory(newHistory)
+    setCurrentFolder(newHistory[newHistory.length - 1])
+    setSelectedItem(null)
+  }
 
   const goToRoot = () => {
-    setHistory(['root']);
-    setCurrentFolder('root');
-    setSelectedItem(null);
-  };
+    setHistory(['root'])
+    setCurrentFolder('root')
+    setSelectedItem(null)
+  }
 
-  const current = FILE_TREE[currentFolder];
-  const children = current?.children || [];
+  const current = FILE_TREE[currentFolder]
+  const children = current?.children || []
 
   const addressPath = history
   .map(id => FILE_TREE[id]?.name?.replace('\\', '') || id)
-  .join('\\');
+  .join('\\')
 
   return (
     <div className="file-explorer" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -137,9 +137,9 @@ export default function FileExplorer({ onOpenNotepad }) {
           </div>
 
           {['chapitre1', 'chapitre2', 'chapitre3'].map(chapId => {
-            const isCurrentChap = currentFolder === chapId;
-            const isChildOfChap = FILE_TREE[currentFolder]?.parent === chapId;
-            const isExpanded = isCurrentChap || isChildOfChap;
+            const isCurrentChap = currentFolder === chapId
+            const isChildOfChap = FILE_TREE[currentFolder]?.parent === chapId
+            const isExpanded = isCurrentChap || isChildOfChap
 
             return (
               <div key={chapId}>
@@ -168,7 +168,7 @@ export default function FileExplorer({ onOpenNotepad }) {
                   </div>
                 ))}
               </div>
-            );
+            )
           })}
         </div>
 
@@ -176,8 +176,8 @@ export default function FileExplorer({ onOpenNotepad }) {
         <div className="file-explorer__content">
           <div className="file-explorer__grid">
             {children.map(id => {
-              const node = FILE_TREE[id];
-              const isFolder = node.type !== 'file';
+              const node = FILE_TREE[id]
+              const isFolder = node.type !== 'file'
               return (
                 <div
                   key={id}
@@ -189,7 +189,7 @@ export default function FileExplorer({ onOpenNotepad }) {
                   <img src={isFolder ? FOLDER_ICON : FILE_ICON} alt="\" />
                   <span>{node.name}</span>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
@@ -201,5 +201,5 @@ export default function FileExplorer({ onOpenNotepad }) {
         <span>C:\Isen\Histoire</span>
       </div>
     </div>
-  );
+  )
 }

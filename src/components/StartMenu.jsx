@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react'
 
 const ICONS = {
   start:     'https://win98icons.alexmeub.com/icons/png/windows-0.png',
@@ -10,15 +10,15 @@ const ICONS = {
   snake:     'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump:      'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   games:     'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
-};
+}
 
 export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
-  const [gamesOpen, setGamesOpen] = useState(false);
+  const [gamesOpen, setGamesOpen] = useState(false)
 
   const handle = useCallback((id) => {
-    onOpenWindow(id);
-    onClose();
-  }, [onOpenWindow, onClose]);
+    onOpenWindow(id)
+    onClose()
+  }, [onOpenWindow, onClose])
 
   return (
     <>
@@ -97,5 +97,5 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
         </div>
       </div>
     </>
-  );
+  )
 }

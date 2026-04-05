@@ -1,4 +1,3 @@
-// Bloc-notes Windows 98
 export default function Notepad({ fileName, content }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -36,5 +35,5 @@ export default function Notepad({ fileName, content }) {
         <span>Ln 1, Col 1</span>
       </div>
     </div>
-  );
+  )
 }

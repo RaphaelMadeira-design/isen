@@ -1,20 +1,20 @@
-import { useState, useCallback } from 'react';
-import './styles/Desktop.scss';
+import { useState, useCallback } from 'react'
+import './styles/Desktop.scss'
 
-import DesktopIcon from './components/DesktopIcon';
-import Win98Window from './components/Win98Window';
-import Taskbar from './components/Taskbar';
-import StartMenu from './components/StartMenu';
-import FichePersonnage from './components/FichePersonnage';
-import Pouvoirs from './components/Pouvoirs';
-import FileExplorer from './components/FileExplorer';
-import Notepad from './components/Notepad';
-import BootScreen from './components/BootScreen';
-import ShutdownDialog from './components/ShutdownDialog';
-import Snake from './components/Snake';
-import JumpGame from './components/JumpGame';
+import DesktopIcon from './components/DesktopIcon'
+import Win98Window from './components/Win98Window'
+import Taskbar from './components/Taskbar'
+import StartMenu from './components/StartMenu'
+import FichePersonnage from './components/FichePersonnage'
+import Pouvoirs from './components/Pouvoirs'
+import FileExplorer from './components/FileExplorer'
+import Notepad from './components/Notepad'
+import BootScreen from './components/BootScreen'
+import ShutdownDialog from './components/ShutdownDialog'
+import Snake from './components/Snake'
+import JumpGame from './components/JumpGame'
 
-const CELL = 90;
+const CELL = 90
 
 const INITIAL_ICONS = [
   { id: 'character', 
@@ -42,7 +42,7 @@ const INITIAL_ICONS = [
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',            
     x: 0, y: 4 
   },
-].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }));
+].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
 const WINDOW_CONFIGS = {
   character: {
@@ -70,7 +70,7 @@ const WINDOW_CONFIGS = {
     defaultSize: { width: 540, height: 320 },
     defaultPosition: { x: 100, y: 40 },
   },
-};
+}
 
 // Crée une config de fenêtre Bloc-notes pour un fichier .txt
 const makeNotepadConfig = (fileId, fileName) => ({
@@ -78,54 +78,54 @@ const makeNotepadConfig = (fileId, fileName) => ({
   defaultSize: { width: 540, height: 420 },
   defaultPosition: { x: 80 + Math.random() * 120, y: 40 + Math.random() * 80 },
   notepadFile: { id: fileId, name: fileName },
-});
+})
 
-let zCounter = 100;
+let zCounter = 100
 
 function App() {
-  const [booted, setBooted] = useState(false);
-  const [windows, setWindows] = useState([]);
-  const [startOpen, setStartOpen] = useState(false);
-  const [showShutdown, setShowShutdown] = useState(false);
-  const [icons, setIcons] = useState(INITIAL_ICONS);
-  const [selectedIcon, setSelectedIcon] = useState(null);
+  const [booted, setBooted] = useState(false)
+  const [windows, setWindows] = useState([])
+  const [startOpen, setStartOpen] = useState(false)
+  const [showShutdown, setShowShutdown] = useState(false)
+  const [icons, setIcons] = useState(INITIAL_ICONS)
+  const [selectedIcon, setSelectedIcon] = useState(null)
   const handleIconDragEnd = useCallback((id, pos) => {
     setIcons(prev => {
-      const others = prev.filter(ic => ic.id !== id);
-      const isOccupied = (x, y) => others.some(ic => ic.x === x && ic.y === y);
+      const others = prev.filter(ic => ic.id !== id)
+      const isOccupied = (x, y) => others.some(ic => ic.x === x && ic.y === y)
 
       if (!isOccupied(pos.x, pos.y)) {
-        return prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic);
+        return prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic)
       }
 
       // Cellule occupée → cherche la plus proche libre (spirale)
       for (let r = 1; r <= 8; r++) {
         for (let dx = -r; dx <= r; dx++) {
           for (let dy = -r; dy <= r; dy++) {
-            if (Math.abs(dx) !== r && Math.abs(dy) !== r) continue;
-            const nx = pos.x + dx * CELL;
-            const ny = pos.y + dy * CELL;
+            if (Math.abs(dx) !== r && Math.abs(dy) !== r) continue
+            const nx = pos.x + dx * CELL
+            const ny = pos.y + dy * CELL
             if (nx >= 0 && ny >= 0 && !isOccupied(nx, ny)) {
-              return prev.map(ic => ic.id === id ? { ...ic, x: nx, y: ny } : ic);
+              return prev.map(ic => ic.id === id ? { ...ic, x: nx, y: ny } : ic)
             }
           }
         }
       }
 
-      return prev; // annule si aucune cellule libre trouvée
-    });
-  }, []);
+      return prev // annule si aucune cellule libre trouvée
+    })
+  }, [])
 
   const openWindow = useCallback((id) => {
     setWindows(prev => {
-      const existing = prev.find(w => w.id === id);
+      const existing = prev.find(w => w.id === id)
       if (existing) {
         // Restore and focus
         return prev.map(w =>
           w.id === id
             ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
             : { ...w, focused: false }
-        );
+        )
       }
       // New window
       return [
@@ -137,64 +137,64 @@ function App() {
           focused: true,
           zIndex: ++zCounter,
         },
-      ];
-    });
-    setStartOpen(false);
-  }, []);
+      ]
+    })
+    setStartOpen(false)
+  }, [])
 
   const closeWindow = useCallback((id) => {
-    setWindows(prev => prev.filter(w => w.id !== id));
-  }, []);
+    setWindows(prev => prev.filter(w => w.id !== id))
+  }, [])
 
   const minimizeWindow = useCallback((id) => {
     setWindows(prev => prev.map(w =>
       w.id === id ? { ...w, minimized: true, focused: false } : w
-    ));
-  }, []);
+    ))
+  }, [])
 
   const focusWindow = useCallback((id) => {
     setWindows(prev => prev.map(w =>
       w.id === id
         ? { ...w, focused: true, zIndex: ++zCounter }
         : { ...w, focused: false }
-    ));
-  }, []);
+    ))
+  }, [])
 
   const toggleWindow = useCallback((id) => {
     setWindows(prev => {
-      const win = prev.find(w => w.id === id);
-      if (!win) return prev;
+      const win = prev.find(w => w.id === id)
+      if (!win) return prev
       if (win.minimized) {
         return prev.map(w =>
           w.id === id
             ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
             : { ...w, focused: false }
-        );
+        )
       }
       if (win.focused) {
         return prev.map(w =>
           w.id === id ? { ...w, minimized: true, focused: false } : w
-        );
+        )
       }
       return prev.map(w =>
         w.id === id
           ? { ...w, focused: true, zIndex: ++zCounter }
           : { ...w, focused: false }
-      );
-    });
-  }, []);
+      )
+    })
+  }, [])
 
     // Ouvre un fichier .txt dans un Bloc-notes (depuis FileExplorer)
   const openNotepad = useCallback(({ id, name, content }) => {
-    const winId = `notepad-${id}`;
+    const winId = `notepad-${id}`
     setWindows(prev => {
-      const existing = prev.find(w => w.id === winId);
+      const existing = prev.find(w => w.id === winId)
       if (existing) {
         return prev.map(w =>
           w.id === winId
             ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
             : { ...w, focused: false }
-        );
+        )
       }
       return [
         ...prev.map(w => ({ ...w, focused: false })),
@@ -206,31 +206,31 @@ function App() {
           focused: true,
           zIndex: ++zCounter,
         },
-      ];
-    });
-  }, []);
+      ]
+    })
+  }, [])
 
   const renderWindowContent = (win) => {
-    const { id } = win;
-    if (id === 'character') return <FichePersonnage />;
-    if (id === 'powers') return <Pouvoirs />;
-    if (id === 'snake') return <Snake />;
-    if (id === 'jump') return <JumpGame />;
-    if (id === 'histoire') return <FileExplorer onOpenNotepad={openNotepad} />;
+    const { id } = win
+    if (id === 'character') return <FichePersonnage />
+    if (id === 'powers') return <Pouvoirs />
+    if (id === 'snake') return <Snake />
+    if (id === 'jump') return <JumpGame />
+    if (id === 'histoire') return <FileExplorer onOpenNotepad={openNotepad} />
     if (id.startsWith('notepad-')) {
-      return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />;
+      return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
     }
-    return null;
-  };
+    return null
+  }
 
   return (
     <div className="desktop" data-testid="desktop" 
       onMouseDown={(e) => {
         if (!e.target.closest('.start-menu') && !e.target.closest('.taskbar')) {
-          setStartOpen(false);
+          setStartOpen(false)
         }
         if (!e.target.closest('.desktop-icon')) {
-          setSelectedIcon(null);
+          setSelectedIcon(null)
         }
       }}>
       {/* Boot screen - affiché par-dessus tout jusqu'à la fin du boot */}
@@ -305,7 +305,7 @@ function App() {
         startOpen={startOpen}
       />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

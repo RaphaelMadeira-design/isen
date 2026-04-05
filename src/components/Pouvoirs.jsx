@@ -61,7 +61,7 @@ export default function Pouvoirs() {
         />
       </Section>
     </div>
-  );
+  )
 }
 
 function Section({ title, children }) {
@@ -82,12 +82,12 @@ function Section({ title, children }) {
         {children}
       </div>
     </div>
-  );
+  )
 }
 
 function SkillCard({ name, type, level, desc, color }) {
-  const levelColors = { 'EX': '#ff0000', 'SS': '#ff4400', 'S+': '#ff8800', 'S': '#cc8800', 'A+': '#0000cc', 'A': '#000080' };
-  const lColor = levelColors[level] || '#000';
+  const levelColors = { 'EX': '#ff0000', 'SS': '#ff4400', 'S+': '#ff8800', 'S': '#cc8800', 'A+': '#0000cc', 'A': '#000080' }
+  const lColor = levelColors[level] || '#000'
 
   return (
     <div style={{
@@ -122,5 +122,5 @@ function SkillCard({ name, type, level, desc, color }) {
       </div>
       <p style={{ margin: 0, fontSize: '10px', color: '#404040', paddingLeft: '32px' }}>{desc}</p>
     </div>
-  );
+  )
 }
