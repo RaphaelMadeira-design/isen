@@ -8,16 +8,18 @@ const snapToGrid = (x, y) => ({
 })
 
 export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selected, position, onDragEnd }) {
-  const dragRef   = useRef(null)
-  const movedRef  = useRef(false)
+  const dragRef    = useRef(null)
+  const movedRef   = useRef(false)
+  const snapPosRef = useRef(null)
 
   const handleMouseDown = useCallback((e) => {
-    if (e.button !== 0) return;
+    if (e.button !== 0) return
     e.preventDefault()
 
-    const startX  = e.clientX - position.x
-    const startY  = e.clientY - position.y
-    movedRef.current = false
+    const startX = e.clientX - position.x
+    const startY = e.clientY - position.y
+    movedRef.current  = false
+    snapPosRef.current = null
 
     const onMouseMove = (ev) => {
       const dx = Math.abs(ev.clientX - e.clientX)
@@ -28,9 +30,10 @@ export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selecte
         const snapped = snapToGrid(
           Math.max(0, ev.clientX - startX),
           Math.max(0, ev.clientY - startY),
-        );
-        dragRef.current.style.left = `${snapped.x}px`
-        dragRef.current.style.top  = `${snapped.y}px`
+        )
+        snapPosRef.current = snapped
+        // Transform au lieu de left/top → position d'origine préservée
+        dragRef.current.style.transform = `translate(${snapped.x - position.x}px, ${snapped.y - position.y}px)`
         dragRef.current.style.opacity = '0.7'
       }
     }
@@ -40,15 +43,17 @@ export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selecte
       window.removeEventListener('mouseup', onMouseUp)
 
       if (dragRef.current) {
+        // Efface le transform → revient visuellement à la position d'origine
+        dragRef.current.style.transform = ''
         dragRef.current.style.opacity = '1'
+      }
 
-        if (movedRef.current) {
-          const x = parseInt(dragRef.current.style.left, 10)
-          const y = parseInt(dragRef.current.style.top, 10)
-          onDragEnd(id, { x, y })
-        } else {
-          onSelect(id)
-        }
+      if (movedRef.current && snapPosRef.current) {
+        onDragEnd(id, snapPosRef.current)
+        // Si accepté → React re-render avec nouvelle position
+        // Si rejeté → return prev, pas de re-render, icône déjà revenue à sa place
+      } else {
+        onSelect(id)
       }
     }
 

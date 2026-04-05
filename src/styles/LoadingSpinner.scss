@@ -1,0 +1,79 @@
+
+@use 'Variables' as *;
+
+@keyframes spin98 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes marquee98 {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.loading-dialog {
+  background: $win98-gray;
+  @include border-outset;
+  padding: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+  font-family: $font-system;
+  font-size: 11px;
+
+  &__titlebar {
+    width: 100%;
+    background: linear-gradient(90deg, $win98-navy, #1084d0);
+    color: $win98-white;
+    padding: 3px 6px;
+    font-weight: bold;
+    font-size: 11px;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+    animation: spin98 1s steps(4, end) infinite;
+    margin-top: 4px;
+  }
+
+  &__label {
+    color: $win98-black;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  &__progress-wrap {
+    width: calc(100% - 32px);
+    height: 14px;
+    background: $win98-light-gray;
+    @include border-inset;
+    overflow: hidden;
+  }
+
+  &__progress-fill {
+    height: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      $win98-navy 0px,
+      $win98-navy 12px,
+      $win98-gray 12px,
+      $win98-gray 14px
+    );
+    animation: marquee98 1.2s linear infinite;
+    width: 60%;
+  }
+}

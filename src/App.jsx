@@ -13,6 +13,7 @@ import BootScreen from './components/BootScreen'
 import ShutdownDialog from './components/ShutdownDialog'
 import Snake from './components/Snake'
 import JumpGame from './components/JumpGame'
+import LoadingSpinner from './components/LoadingSpinner'
 
 const CELL = 90
 
@@ -72,6 +73,13 @@ const WINDOW_CONFIGS = {
   },
 }
 
+  const LOADING_LABELS = {
+    character: 'Fiche de personnage',
+    powers: 'POUVOIRS.exe',
+    snake: 'SNAKE.exe',
+    jump: 'JUMP.exe',
+  }
+
 // Crée une config de fenêtre Bloc-notes pour un fichier .txt
 const makeNotepadConfig = (fileId, fileName) => ({
   title: `${fileName} - Bloc-notes`,
@@ -89,6 +97,7 @@ function App() {
   const [showShutdown, setShowShutdown] = useState(false)
   const [icons, setIcons] = useState(INITIAL_ICONS)
   const [selectedIcon, setSelectedIcon] = useState(null)
+  const [loading, setLoading] = useState(null) // { id, label }
   const handleIconDragEnd = useCallback((id, pos) => {
     setIcons(prev => {
       const others = prev.filter(ic => ic.id !== id)
@@ -103,29 +112,49 @@ function App() {
   }, [])
 
   const openWindow = useCallback((id) => {
+    // Pas de spinner pour histoire ni pour les fenêtres déjà ouvertes
+    const skipLoading = id === 'histoire' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
       if (existing) {
-        // Restore and focus
+        // Déjà ouverte → juste focus, pas de spinner
         return prev.map(w =>
           w.id === id
             ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
             : { ...w, focused: false }
         )
       }
-      // New window
-      return [
-        ...prev.map(w => ({ ...w, focused: false })),
-        {
-          id,
-          ...WINDOW_CONFIGS[id],
-          minimized: false,
-          focused: true,
-          zIndex: ++zCounter,
-        },
-      ]
+      return prev
     })
     setStartOpen(false)
+
+    setWindows(prev => {
+      const existing = prev.find(w => w.id === id)
+      if (existing) return prev // déjà traité ci-dessus
+
+      if (skipLoading) {
+        return [
+          ...prev.map(w => ({ ...w, focused: false })),
+          { id, ...WINDOW_CONFIGS[id], minimized: false, focused: true, zIndex: ++zCounter },
+        ]
+      }
+
+      // Affiche le spinner puis ouvre après délai
+      const delay = 1200 + Math.random() * 1000
+      setLoading({ id, label: LOADING_LABELS[id] || id })
+      setTimeout(() => {
+        setLoading(null)
+        setWindows(prev2 => {
+          if (prev2.find(w => w.id === id)) return prev2
+          return [
+            ...prev2.map(w => ({ ...w, focused: false })),
+            { id, ...WINDOW_CONFIGS[id], minimized: false, focused: true, zIndex: ++zCounter },
+          ]
+        })
+      }, delay)
+
+      return prev
+    })
   }, [])
 
   const closeWindow = useCallback((id) => {
@@ -268,6 +297,8 @@ function App() {
           </Win98Window>
         ))}
       </div>
+      {/* Spinner de chargement */}
+      {loading && <LoadingSpinner label={loading.label} />}
 
       {/* Start Menu */}
       {startOpen && (
