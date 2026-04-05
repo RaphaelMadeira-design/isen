@@ -35,22 +35,20 @@ export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selecte
       }
     }
 
-    const onMouseUp = (ev) => {
+    const onMouseUp = () => {
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseup', onMouseUp)
 
-      if (dragRef.current) dragRef.current.style.opacity = '1'
+      if (dragRef.current) {
+        dragRef.current.style.opacity = '1'
 
-      if (movedRef.current) {
-        const rawX = ev.clientX - startX;
-        const rawY = ev.clientY - startY;
-        const snapped = snapToGrid(
-          Math.max(0, rawX),
-          Math.max(0, rawY),
-        )
-        onDragEnd(id, snapped)
-      } else {
-        onSelect(id)
+        if (movedRef.current) {
+          const x = parseInt(dragRef.current.style.left, 10)
+          const y = parseInt(dragRef.current.style.top, 10)
+          onDragEnd(id, { x, y })
+        } else {
+          onSelect(id)
+        }
       }
     }
 

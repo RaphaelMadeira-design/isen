@@ -98,21 +98,7 @@ function App() {
         return prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic)
       }
 
-      // Cellule occupée → cherche la plus proche libre (spirale)
-      for (let r = 1; r <= 8; r++) {
-        for (let dx = -r; dx <= r; dx++) {
-          for (let dy = -r; dy <= r; dy++) {
-            if (Math.abs(dx) !== r && Math.abs(dy) !== r) continue
-            const nx = pos.x + dx * CELL
-            const ny = pos.y + dy * CELL
-            if (nx >= 0 && ny >= 0 && !isOccupied(nx, ny)) {
-              return prev.map(ic => ic.id === id ? { ...ic, x: nx, y: ny } : ic)
-            }
-          }
-        }
-      }
-
-      return prev // annule si aucune cellule libre trouvée
+      return prev // cellule occupée → on annule, l'icône revient à sa place
     })
   }, [])
 
