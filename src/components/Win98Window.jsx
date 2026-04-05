@@ -10,11 +10,6 @@ const ICONS = {
   jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
 }
 
-const getWindowIcon = (id) => {
-  if (id.startsWith('notepad-')) return ICONS.notepad
-  return ICONS[id] || null
-}
-
 export default function Win98Window({
   id, title, children, onClose, onMinimize, onFocus,
   zIndex, focused, minimized, defaultSize, defaultPosition,
