@@ -13,7 +13,7 @@ import BootScreen from './components/BootScreen'
 import ShutdownDialog from './components/ShutdownDialog'
 import Snake from './components/Snake'
 import JumpGame from './components/JumpGame'
-import LoadingSpinner from './components/LoadingSpinner'
+import Loading from './components/Loading'
 
 const CELL = 90
 
@@ -298,7 +298,7 @@ function App() {
         ))}
       </div>
       {/* Spinner de chargement */}
-      {loading && <LoadingSpinner label={loading.label} />}
+      {loading && <Loading label={loading.label} />}
 
       {/* Start Menu */}
       {startOpen && (

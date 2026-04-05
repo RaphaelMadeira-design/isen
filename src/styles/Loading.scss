@@ -1,14 +1,9 @@
 
 @use 'Variables' as *;
 
-@keyframes spin98 {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes marquee98 {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(200%); }
+@keyframes progress98 {
+  0%   { width: 0%; }
+  100% { width: 100%; }
 }
 
 .loading-overlay {
@@ -43,10 +38,9 @@
   }
 
   &__icon {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     image-rendering: pixelated;
-    animation: spin98 1s steps(4, end) infinite;
     margin-top: 4px;
   }
 
