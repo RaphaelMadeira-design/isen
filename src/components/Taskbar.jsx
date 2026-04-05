@@ -8,12 +8,20 @@ const ICONS = {
   powers: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
   histoire: 'https://win98icons.alexmeub.com/icons/png/directory_closed-3.png',
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
+  snake : 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  vn: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  media: 'https://win98icons.alexmeub.com/icons/png/wm-3.png',
 }
 
 const getIcon = (id) => {
   if (id === 'character') return ICONS.character
   if (id === 'powers') return ICONS.powers
   if (id === 'histoire') return ICONS.histoire
+  if (id === 'media') return ICONS.media
+  if (id === 'snake') return ICONS.snake
+  if (id === 'jump') return ICONS.jump
+  if (id === 'vn') return ICONS.vn
   if (id.startsWith('notepad-')) return ICONS.notepad
   return ICONS.start
 }

@@ -8,6 +8,7 @@ const ICONS = {
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
   snake: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  media: 'https://win98icons.alexmeub.com/icons/png/wm-3.png',
 }
 
 export default function Win98Window({

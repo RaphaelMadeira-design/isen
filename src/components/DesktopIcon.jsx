@@ -50,8 +50,6 @@ export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selecte
 
       if (movedRef.current && snapPosRef.current) {
         onDragEnd(id, snapPosRef.current)
-        // Si accepté → React re-render avec nouvelle position
-        // Si rejeté → return prev, pas de re-render, icône déjà revenue à sa place
       } else {
         onSelect(id)
       }

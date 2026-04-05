@@ -9,7 +9,9 @@ const ICONS = {
   shutdown:  'https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png',
   snake:     'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump:      'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  vn:        'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   games:     'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
+  media:     'https://win98icons.alexmeub.com/icons/png/wm-4.png',
 }
 
 export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
@@ -48,6 +50,11 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
             Histoire & Background
           </div>
 
+          <div className="start-menu__item" onClick={() => handle('media')} data-testid="start-menu-media">
+            <img src={ICONS.media} alt="Media" />
+            Windows Media Player
+          </div>
+
           {/* Onglet Jeux avec sous-menu */}
           <div
             className={`start-menu__item start-menu__item--has-sub${gamesOpen ? ' start-menu__item--sub-open' : ''}`}
@@ -77,6 +84,14 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
                 >
                   <img src={ICONS.jump} alt="Jump" />
                   JUMP.exe
+                </div>
+                <div
+                  className="start-menu__item"
+                  onClick={() => handle('vn')}
+                  data-testid="start-menu-vn"
+                >
+                  <img src={ICONS.vn} alt="VN" />
+                  ISEN.exe
                 </div>
               </div>
             )}

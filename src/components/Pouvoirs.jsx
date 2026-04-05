@@ -1,4 +1,3 @@
-// Pouvoir et Techniques - contenu
 export default function Pouvoirs() {
   return (
     <div style={{ padding: '12px', fontFamily: 'MS Sans Serif, Tahoma, sans-serif', fontSize: '11px', height: '100%', overflowY: 'auto', backgroundColor: '#fff' }}>

@@ -15,17 +15,18 @@ import Snake from './components/Snake'
 import JumpGame from './components/JumpGame'
 import Loading from './components/Loading'
 import VisualNovel from './components/VisualNovel'
+import MediaPlayer from './components/MediaPlayer'
 
 const CELL = 90
 
 const INITIAL_ICONS = [
   { id: 'character', 
-    label: 'Fiche de personnage',   
+    label: 'Fiche',   
     icon: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',        
     x: 0, y: 0 
   },
   { id: 'powers',    
-    label: 'Pouvoirs et techniques', 
+    label: 'Statistiques', 
     icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',  
     x: 0, y: 1 
   },
@@ -49,6 +50,12 @@ const INITIAL_ICONS = [
     label: 'ISEN.exe',
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
     x: 0, y: 4,
+  },
+  {
+    id: 'media',
+    label: 'Media Player',
+    icon: 'https://win98icons.alexmeub.com/icons/png/wm-4.png',
+    x: 1, y: 0,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
@@ -82,6 +89,11 @@ const WINDOW_CONFIGS = {
     title: 'ISEN.exe — Visual Novel',
     defaultSize: { width: 640, height: 480 },
     defaultPosition: { x: 80, y: 40 },
+  },
+  media: {
+    title: 'Windows Media Player',
+    defaultSize: { width: 340, height: 460 },
+    defaultPosition: { x: 120, y: 60 },
   },
 }
 
@@ -119,17 +131,15 @@ function App() {
         return prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic)
       }
 
-      return prev // cellule occupée → on annule, l'icône revient à sa place
+      return prev
     })
   }, [])
 
   const openWindow = useCallback((id) => {
-    // Pas de spinner pour histoire ni pour les fenêtres déjà ouvertes
     const skipLoading = id === 'histoire' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
       if (existing) {
-        // Déjà ouverte → juste focus, pas de spinner
         return prev.map(w =>
           w.id === id
             ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
@@ -142,7 +152,7 @@ function App() {
 
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
-      if (existing) return prev // déjà traité ci-dessus
+      if (existing) return prev
 
       if (skipLoading) {
         return [
@@ -243,6 +253,7 @@ function App() {
     if (id === 'powers') return <Pouvoirs />
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
+    if (id === 'media') return <MediaPlayer />
     if (id === 'histoire') return <FileExplorer onOpenNotepad={openNotepad} />
     if (id.startsWith('notepad-')) {
       return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
