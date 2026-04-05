@@ -31,6 +31,8 @@ export default function MediaPlayer() {
   const [status,   setStatus]     = useState('Prêt')
 
   const track = PLAYLIST[trackIdx]
+  const trackIdxRef = useRef(trackIdx);
+  useEffect(() => { trackIdxRef.current = trackIdx; }, [trackIdx]);
 
   // ── Init Web Audio ────────────────────────────────────
   const initAudio = useCallback(() => {
@@ -68,7 +70,6 @@ export default function MediaPlayer() {
       const b   = Math.floor(255)
       ctx.fillStyle = `rgb(${r},${g},${b})`
       ctx.fillRect(i * (barW + 1), H - h, barW, h)
-      // peak dot
       ctx.fillStyle = '#00ffff'
       ctx.fillRect(i * (barW + 1), H - h - 2, barW, 2)
     })
@@ -97,9 +98,9 @@ export default function MediaPlayer() {
     if (ctxRef.current?.state === 'suspended') ctxRef.current.resume()
     audioRef.current.play()
     setPlaying(true)
-    setStatus(`Lecture : ${track.title}`)
+    setStatus(`Lecture : ${PLAYLIST[trackIdxRef.current].title}`)
     startViz()
-  }, [initAudio, startViz, track])
+  }, [initAudio, startViz])
 
   const pause = useCallback(() => {
     audioRef.current.pause()
