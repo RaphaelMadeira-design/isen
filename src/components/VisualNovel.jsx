@@ -5,7 +5,7 @@ import '../styles/VisualNovel.scss'
 const SCRIPT = [
   {
     id: 'intro',
-    bg: 'https://64.media.tumblr.com/b699ce7fecf31bc69a6dc8012fa63f56/tumblr_inline_ph6fwuUDdF1r4yh9t_1280.png',
+    bg: '/vn/scene.png',
     sprite: null,
     speaker: null,
     text: 'Une ruelle de Kyoto, minuit. La pluie tombe sans bruit sur les pavés anciens.',
@@ -13,15 +13,15 @@ const SCRIPT = [
   },
   {
     id: 'scene1',
-    bg: 'https://64.media.tumblr.com/b699ce7fecf31bc69a6dc8012fa63f56/tumblr_inline_ph6fwuUDdF1r4yh9t_1280.png',
-    sprite: 'https://68.media.tumblr.com/avatar_8d8e7a2b4a39_128.png',
+    bg: '/vn/scene.png',
+    sprite: '/vn/scene.png',
     speaker: 'Isen Hata',
     text: '...Tu n\'aurais pas dû venir ici. Cet endroit n\'est pas sûr pour les humains ordinaires.',
     next: 'choice1',
   },
   {
     id: 'choice1',
-    bg: 'https://64.media.tumblr.com/b699ce7fecf31bc69a6dc8012fa63f56/tumblr_inline_ph6fwuUDdF1r4yh9t_1280.png',
+    bg: '/vn/scene.png',
     sprite: 'https://68.media.tumblr.com/avatar_8d8e7a2b4a39_128.png',
     speaker: null,
     text: 'Comment réagis-tu ?',
@@ -33,7 +33,7 @@ const SCRIPT = [
   },
   {
     id: 'brave',
-    bg: 'https://64.media.tumblr.com/b699ce7fecf31bc69a6dc8012fa63f56/tumblr_inline_ph6fwuUDdF1r4yh9t_1280.png',
+    bg: '/vn/scene.png',
     sprite: 'https://68.media.tumblr.com/avatar_8d8e7a2b4a39_128.png',
     speaker: 'Isen Hata',
     text: '...*Un sourire imperceptible.* Intéressant. Peu de gens ont le courage de dire ça devant moi.',
@@ -41,7 +41,7 @@ const SCRIPT = [
   },
   {
     id: 'curious',
-    bg: 'https://64.media.tumblr.com/b699ce7fecf31bc69a6dc8012fa63f56/tumblr_inline_ph6fwuUDdF1r4yh9t_1280.png',
+    bg: '/vn/scene.png',
     sprite: 'https://68.media.tumblr.com/avatar_8d8e7a2b4a39_128.png',
     speaker: 'Isen Hata',
     text: 'Ce que je suis ? *Il lève les yeux vers toi.* Quelque chose que tu n\'as pas encore de mot pour définir.',
@@ -49,7 +49,7 @@ const SCRIPT = [
   },
   {
     id: 'silent',
-    bg: 'https://64.media.tumblr.com/b699ce7fecf31bc69a6dc8012fa63f56/tumblr_inline_ph6fwuUDdF1r4yh9t_1280.png',
+    bg: '/vn/scene.png',
     sprite: 'https://68.media.tumblr.com/avatar_8d8e7a2b4a39_128.png',
     speaker: 'Isen Hata',
     text: '*Il observe ton silence avec une attention froide.* Sage décision. Les mots imprudents coûtent cher ici.',
@@ -57,7 +57,7 @@ const SCRIPT = [
   },
   {
     id: 'end_brave',
-    bg: 'https://64.media.tumblr.com/b699ce7fecf31bc69a6dc8012fa63f56/tumblr_inline_ph6fwuUDdF1r4yh9t_1280.png',
+    bg: '/vn/scene.png',
     sprite: null,
     speaker: null,
     text: 'Il disparaît dans l\'ombre, laissant derrière lui une odeur d\'encens et quelque chose d\'indéfinissable.',

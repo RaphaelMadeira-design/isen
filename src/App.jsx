@@ -37,18 +37,18 @@ const INITIAL_ICONS = [
   { id: 'snake',     
     label: 'SNAKE.exe',              
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',           
-    x: 0, y: 3 
+    x: 2, y: 0 
   },
   { id: 'jump',      
     label: 'JUMP.exe',               
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',            
-    x: 0, y: 4 
+    x: 2, y: 1
   },
   {
     id: 'vn',
     label: 'ISEN.exe',
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-    x: 0, y: 5,
+    x: 0, y: 4,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
@@ -77,6 +77,11 @@ const WINDOW_CONFIGS = {
     title: 'Jeu de saut — JUMP.exe',
     defaultSize: { width: 540, height: 320 },
     defaultPosition: { x: 100, y: 40 },
+  },
+  vn: {
+    title: 'ISEN.exe — Visual Novel',
+    defaultSize: { width: 640, height: 480 },
+    defaultPosition: { x: 80, y: 40 },
   },
 }
 
@@ -242,6 +247,7 @@ function App() {
     if (id.startsWith('notepad-')) {
       return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
     }
+    if (id === 'vn') return <VisualNovel />
     return null
   }
 
