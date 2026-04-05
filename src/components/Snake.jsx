@@ -259,10 +259,6 @@ export default function Snake() {
           <div className="snake-game__overlay">
             <div className="snake-game__dialog">
               <div className="snake-game__dialog-title">
-                <img
-                  src="https://win98icons.alexmeub.com/icons/png/joystick-0.png"
-                  alt=""
-                />
                 SNAKE.exe
               </div>
               <div className="snake-game__dialog-body">

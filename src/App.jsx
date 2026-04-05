@@ -90,8 +90,31 @@ function App() {
   const [icons, setIcons] = useState(INITIAL_ICONS);
   const [selectedIcon, setSelectedIcon] = useState(null);
   const handleIconDragEnd = useCallback((id, pos) => {
-  setIcons(prev => prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic));
-}, []);
+    setIcons(prev => {
+      const others = prev.filter(ic => ic.id !== id);
+      const isOccupied = (x, y) => others.some(ic => ic.x === x && ic.y === y);
+
+      if (!isOccupied(pos.x, pos.y)) {
+        return prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic);
+      }
+
+      // Cellule occupée → cherche la plus proche libre (spirale)
+      for (let r = 1; r <= 8; r++) {
+        for (let dx = -r; dx <= r; dx++) {
+          for (let dy = -r; dy <= r; dy++) {
+            if (Math.abs(dx) !== r && Math.abs(dy) !== r) continue;
+            const nx = pos.x + dx * CELL;
+            const ny = pos.y + dy * CELL;
+            if (nx >= 0 && ny >= 0 && !isOccupied(nx, ny)) {
+              return prev.map(ic => ic.id === id ? { ...ic, x: nx, y: ny } : ic);
+            }
+          }
+        }
+      }
+
+      return prev; // annule si aucune cellule libre trouvée
+    });
+  }, []);
 
   const openWindow = useCallback((id) => {
     setWindows(prev => {
@@ -201,11 +224,15 @@ function App() {
   };
 
   return (
-    <div className="desktop" data-testid="desktop" onMouseDown={(e) => {
-      if (!e.target.closest('.start-menu') && !e.target.closest('.taskbar')) {
-        setStartOpen(false);
-      }
-    }}>
+    <div className="desktop" data-testid="desktop" 
+      onMouseDown={(e) => {
+        if (!e.target.closest('.start-menu') && !e.target.closest('.taskbar')) {
+          setStartOpen(false);
+        }
+        if (!e.target.closest('.desktop-icon')) {
+          setSelectedIcon(null);
+        }
+      }}>
       {/* Boot screen - affiché par-dessus tout jusqu'à la fin du boot */}
       {!booted && <BootScreen onDone={() => setBooted(true)} />}
 

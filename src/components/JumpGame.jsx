@@ -314,7 +314,7 @@ export default function JumpGame() {
     window.addEventListener('keyup', onKeyUp);
     return () => {
         window.removeEventListener('keydown', onKey);
-        window.removeEventListener('keyup', onKeyUp);     // ← ajouter
+        window.removeEventListener('keyup', onKeyUp);
     };
     }, [jump, gameLoop]);
 
@@ -390,10 +390,6 @@ export default function JumpGame() {
           <div className="jump-game__overlay">
             <div className="jump-game__dialog">
               <div className="jump-game__dialog-title">
-                <img
-                  src="https://win98icons.alexmeub.com/icons/png/wm-4.png"
-                  alt=""
-                />
                 JUMP.exe
               </div>
               <div className="jump-game__dialog-body">
