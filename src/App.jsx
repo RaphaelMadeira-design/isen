@@ -43,19 +43,19 @@ const INITIAL_ICONS = [
   { id: 'jump',      
     label: 'JUMP.exe',               
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',            
-    x: 2, y: 1
+    x: 3, y: 0
   },
   {
     id: 'vn',
     label: 'ISEN.exe',
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-    x: 0, y: 4,
+    x: 4, y: 0,
   },
   {
     id: 'media',
     label: 'Media Player',
     icon: 'https://win98icons.alexmeub.com/icons/png/wm-4.png',
-    x: 1, y: 0,
+    x: 0, y: 3,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
@@ -136,7 +136,7 @@ function App() {
   }, [])
 
   const openWindow = useCallback((id) => {
-    const skipLoading = id === 'histoire' || id.startsWith('notepad-')
+    const skipLoading = id === 'histoire' || id === 'media' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
       if (existing) {
