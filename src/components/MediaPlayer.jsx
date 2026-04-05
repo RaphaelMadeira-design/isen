@@ -24,15 +24,17 @@ export default function MediaPlayer() {
 
   const [trackIdx, setTrackIdx]   = useState(0)
   const [playing,  setPlaying]    = useState(false)
-  const [progress, setProgress]   = useState(0)   // 0-1
+  const [progress, setProgress]   = useState(0)
   const [duration, setDuration]   = useState(0)
   const [current,  setCurrent]    = useState(0)
   const [volume,   setVolume]     = useState(0.8)
   const [status,   setStatus]     = useState('Prêt')
 
   const track = PLAYLIST[trackIdx]
-  const trackIdxRef = useRef(trackIdx);
-  useEffect(() => { trackIdxRef.current = trackIdx; }, [trackIdx]);
+  const trackIdxRef = useRef(trackIdx)
+  useEffect(() => { 
+    trackIdxRef.current = trackIdx;
+  }, [trackIdx])
 
   // ── Init Web Audio ────────────────────────────────────
   const initAudio = useCallback(() => {
@@ -120,14 +122,20 @@ export default function MediaPlayer() {
   }, [stopViz])
 
   const prev = useCallback(() => {
-    stop()
+    audioRef.current.pause()
+    audioRef.current.currentTime = 0
+    setProgress(0)
+    setCurrent(0)
     setTrackIdx(i => (i - 1 + PLAYLIST.length) % PLAYLIST.length)
-  }, [stop])
+  }, [])
 
   const next = useCallback(() => {
-    stop()
+    audioRef.current.pause()
+    audioRef.current.currentTime = 0
+    setProgress(0)
+    setCurrent(0)
     setTrackIdx(i => (i + 1) % PLAYLIST.length)
-  }, [stop])
+  }, [])
 
   // ── Changer de piste ──────────────────────────────────
   useEffect(() => {
@@ -135,9 +143,8 @@ export default function MediaPlayer() {
     if (playing) {
       audioRef.current.play()
       startViz()
-      setStatus(`Lecture : ${track.title}`)
+      setStatus(`Lecture : ${PLAYLIST[trackIdx].title}`)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackIdx])
 
   // ── Progression ───────────────────────────────────────
