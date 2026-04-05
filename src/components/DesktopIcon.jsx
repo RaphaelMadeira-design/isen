@@ -7,7 +7,7 @@ const snapToGrid = (x, y) => ({
   y: Math.round(y / CELL) * CELL,
 });
 
-export default function DesktopIcon({ id, label, icon, onOpen, position, onDragEnd }) {
+export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selected, position, onDragEnd }) {
   const dragRef   = useRef(null);
   const movedRef  = useRef(false);
 
@@ -25,8 +25,12 @@ export default function DesktopIcon({ id, label, icon, onOpen, position, onDragE
       if (dx > 4 || dy > 4) movedRef.current = true;
 
       if (dragRef.current) {
-        dragRef.current.style.left = `${ev.clientX - startX}px`;
-        dragRef.current.style.top  = `${ev.clientY - startY}px`;
+        const snapped = snapToGrid(
+          Math.max(0, ev.clientX - startX),
+          Math.max(0, ev.clientY - startY),
+        );
+        dragRef.current.style.left = `${snapped.x}px`;
+        dragRef.current.style.top  = `${snapped.y}px`;
         dragRef.current.style.opacity = '0.7';
       }
     };
@@ -46,7 +50,7 @@ export default function DesktopIcon({ id, label, icon, onOpen, position, onDragE
         );
         onDragEnd(id, snapped);
       } else {
-        onOpen(id);
+        onSelect(id);
       }
     };
 
@@ -57,9 +61,10 @@ export default function DesktopIcon({ id, label, icon, onOpen, position, onDragE
   return (
     <div
       ref={dragRef}
-      className="desktop-icon"
+      className={`desktop-icon${selected ? ' desktop-icon--selected' : ''}`}
       style={{ position: 'absolute', left: position.x, top: position.y }}
       onMouseDown={handleMouseDown}
+      onDoubleClick={() => onOpen(id)}
       tabIndex={0}
       data-testid={`desktop-icon-${id}`}
       title={`Ouvrir ${label}`}

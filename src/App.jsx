@@ -88,6 +88,7 @@ function App() {
   const [startOpen, setStartOpen] = useState(false);
   const [showShutdown, setShowShutdown] = useState(false);
   const [icons, setIcons] = useState(INITIAL_ICONS);
+  const [selectedIcon, setSelectedIcon] = useState(null);
   const handleIconDragEnd = useCallback((id, pos) => {
   setIcons(prev => prev.map(ic => ic.id === id ? { ...ic, ...pos } : ic));
 }, []);
@@ -227,6 +228,8 @@ function App() {
           label={icon.label}
           icon={icon.icon}
           position={{ x: icon.x, y: icon.y }}
+          selected={selectedIcon === icon.id}
+          onSelect={setSelectedIcon}
           onOpen={openWindow}
           onDragEnd={handleIconDragEnd}
         />
