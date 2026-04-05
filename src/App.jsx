@@ -14,6 +14,7 @@ import ShutdownDialog from './components/ShutdownDialog'
 import Snake from './components/Snake'
 import JumpGame from './components/JumpGame'
 import Loading from './components/Loading'
+import VisualNovel from './components/VisualNovel'
 
 const CELL = 90
 
@@ -42,6 +43,12 @@ const INITIAL_ICONS = [
     label: 'JUMP.exe',               
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',            
     x: 0, y: 4 
+  },
+  {
+    id: 'vn',
+    label: 'ISEN.exe',
+    icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+    x: 0, y: 5,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
