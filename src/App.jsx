@@ -77,23 +77,23 @@ const WINDOW_CONFIGS = {
   },
   snake: {
     title: 'Snake — SNAKE.exe',
-    defaultSize: { width: 460, height: 520 },
-    defaultPosition: { x: 80, y: 20 },
+    defaultSize: { width: '80%', height: '80%' },
+    defaultPosition: { x: 40, y: 20 },
   },
   jump: {
     title: 'Jeu de saut — JUMP.exe',
-    defaultSize: { width: 540, height: 320 },
-    defaultPosition: { x: 100, y: 40 },
+    defaultSize: { width: '80%', height: '65%' },
+    defaultPosition: { x: 40, y: 20 },
   },
   vn: {
     title: 'ISEN.exe — Visual Novel',
-    defaultSize: { width: 640, height: 480 },
+    defaultSize: { width: '80%', height: '50%' },
     defaultPosition: { x: 80, y: 40 },
   },
   media: {
     title: 'Windows Media Player',
     defaultSize: { width: 340, height: 460 },
-    defaultPosition: { x: 120, y: 60 },
+    defaultPosition: { x: 80, y: 20 },
   },
 }
 
