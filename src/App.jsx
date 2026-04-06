@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import './styles/Desktop.scss'
 
 import DesktopIcon from './components/DesktopIcon'
@@ -16,6 +16,27 @@ import JumpGame from './components/JumpGame'
 import Loading from './components/Loading'
 import VisualNovel from './components/VisualNovel'
 import MediaPlayer from './components/MediaPlayer'
+import PDAView from './components/PDAView'
+import CRTFrame from './components/CRTFrame'
+
+// Hook pour détecter le mode mobile
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false
+    return window.innerWidth <= breakpoint || 'ontouchstart' in window
+  })
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= breakpoint || 'ontouchstart' in window)
+    }
+    
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [breakpoint])
+
+  return isMobile
+}
 
 const CELL = 90
 
@@ -115,6 +136,7 @@ const makeNotepadConfig = (fileId, fileName) => ({
 let zCounter = 100
 
 function App() {
+  const isMobile = useIsMobile()
   const [booted, setBooted] = useState(false)
   const [windows, setWindows] = useState([])
   const [startOpen, setStartOpen] = useState(false)
@@ -161,7 +183,6 @@ function App() {
         ]
       }
 
-      // Affiche le spinner puis ouvre après délai
       const delay = 1200 + Math.random() * 1000
       setLoading({ id, label: LOADING_LABELS[id] || id })
       setTimeout(() => {
@@ -262,7 +283,14 @@ function App() {
     return null
   }
 
-  return (
+  // Mode PDA pour mobile
+  if (isMobile) {
+    return <PDAView />
+  }
+
+
+  // Desktop Windows 98 avec cadre CRT
+  const desktopContent = (
     <div className="desktop" data-testid="desktop" 
       onMouseDown={(e) => {
         if (!e.target.closest('.start-menu') && !e.target.closest('.taskbar')) {
@@ -346,6 +374,11 @@ function App() {
         startOpen={startOpen}
       />
     </div>
+  )
+  return (
+    <CRTFrame>
+      {desktopContent}
+    </CRTFrame>
   )
 }
 

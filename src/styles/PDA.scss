@@ -1,0 +1,626 @@
+
+@use 'Variables' as *;
+@use 'sass:color';
+
+// =====================
+// PDA COLOR SCHEME (LCD Green/Amber)
+// =====================
+$pda-bg: #1a1a1a;
+$pda-frame: #2a2a2a;
+$pda-frame-highlight: #3a3a3a;
+$pda-frame-shadow: #0a0a0a;
+
+// LCD Colors - Classic Green
+$lcd-bg: #1a2b1a;
+$lcd-text: #33ff66;
+$lcd-text-dim: #1a8833;
+$lcd-highlight: #44ff77;
+$lcd-shadow: #0a1a0a;
+$lcd-bg-dark: #151f15;
+
+// Alternative: Amber LCD
+// $lcd-bg: #1a1408;
+// $lcd-text: #ffaa33;
+// $lcd-text-dim: #996622;
+// $lcd-highlight: #ffcc44;
+// $lcd-shadow: #0a0800;
+
+$pda-button: #333;
+$pda-button-text: #888;
+
+// =====================
+// PDA CONTAINER
+// =====================
+.pda {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &--boot {
+    .pda__frame {
+      animation: pda-power-on 0.5s ease-out;
+    }
+  }
+
+  // =====================
+  // PDA FRAME (Device body)
+  // =====================
+  &__frame {
+    width: 100%;
+    max-width: 380px;
+    height: 100%;
+    max-height: 700px;
+    background: linear-gradient(180deg, $pda-frame-highlight 0%, $pda-frame 20%, $pda-frame 80%, $pda-frame-shadow 100%);
+    border-radius: 24px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  // =====================
+  // LCD SCREEN
+  // =====================
+  &__screen {
+    flex: 1;
+    background: $lcd-bg;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      inset 0 2px 8px rgba(0, 0, 0, 0.8),
+      inset 0 0 0 2px #111;
+
+    &--boot {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  // LCD Scanlines effect
+  &__scanlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    mix-blend-mode: multiply;
+  }
+
+  // =====================
+  // STATUS BAR
+  // =====================
+  &__statusbar {
+    height: 28px;
+    background: linear-gradient(180deg, $lcd-bg-dark 0%, $lcd-bg 100%);
+    border-bottom: 1px solid $lcd-shadow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    flex-shrink: 0;
+    z-index: 10;
+
+    &-title {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 12px;
+      color: $lcd-text;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 8px rgba($lcd-text, 0.5);
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__battery {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 10px;
+    color: $lcd-text-dim;
+
+    &-icon {
+      width: 18px;
+      height: 10px;
+      border: 1px solid $lcd-text-dim;
+      border-radius: 2px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        bottom: 1px;
+        width: calc(var(--level) * 0.14);
+        max-width: 14px;
+        background: $lcd-text;
+        border-radius: 1px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: -3px;
+        top: 2px;
+        width: 2px;
+        height: 4px;
+        background: $lcd-text-dim;
+        border-radius: 0 1px 1px 0;
+      }
+    }
+  }
+
+  &__time {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 12px;
+    color: $lcd-text;
+    text-shadow: 0 0 8px rgba($lcd-text, 0.5);
+  }
+
+  // =====================
+  // MAIN CONTENT AREA
+  // =====================
+  &__content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__app-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // Restyle all content for LCD look
+    * {
+      color: $lcd-text !important;
+      border-color: $lcd-text-dim !important;
+    }
+
+    // Override backgrounds
+    > div {
+      background: transparent !important;
+    }
+
+    // Scrollbar
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $lcd-shadow;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $lcd-text-dim;
+      border-radius: 3px;
+    }
+
+    // Restyle components for LCD
+    h1, h2, h3 {
+      color: $lcd-highlight !important;
+      text-shadow: 0 0 10px rgba($lcd-highlight, 0.5);
+    }
+
+    p, span, label {
+      color: $lcd-text !important;
+    }
+
+    // Stat bars
+    div[style*=\"background\"] {
+      background: $lcd-shadow !important;
+    }
+
+    // Buttons in content
+    button:not(.pda__nav-btn):not(.pda-home__app) {
+      background: $lcd-shadow !important;
+      border: 1px solid $lcd-text-dim !important;
+      color: $lcd-text !important;
+
+      &:active {
+        background: $lcd-text-dim !important;
+        color: $lcd-bg !important;
+      }
+    }
+
+    // Links
+    a {
+      color: $lcd-highlight !important;
+    }
+  }
+
+  // =====================
+  // NAVIGATION BAR
+  // =====================
+  &__navbar {
+    height: 40px;
+    background: linear-gradient(180deg, $lcd-bg 0%, $lcd-bg-dark 100%);
+    border-top: 1px solid $lcd-shadow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    gap: 8px;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+
+  &__nav-btn {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 11px;
+    padding: 6px 12px;
+    background: $lcd-shadow;
+    border: 1px solid $lcd-text-dim;
+    color: $lcd-text;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s;
+    text-shadow: 0 0 6px rgba($lcd-text, 0.3);
+
+    &:active:not(:disabled) {
+      background: $lcd-text;
+      color: $lcd-bg;
+      text-shadow: none;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    &--home {
+      background: $lcd-text-dim;
+      color: $lcd-bg;
+      text-shadow: none;
+      font-weight: 600;
+
+      &:active {
+        background: $lcd-highlight;
+      }
+    }
+  }
+
+  &__nav-date {
+    font-family: 'Pixelify Sans', monospace;
+    font-size: 10px;
+    color: $lcd-text-dim;
+  }
+
+  // =====================
+  // PHYSICAL BUTTONS
+  // =====================
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 0 8px;
+  }
+
+  &__button {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(180deg, #444 0%, #222 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow:
+      0 3px 6px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.1s;
+
+    &:active {
+      transform: scale(0.95);
+      box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.5),
+        inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    span {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 14px;
+      color: #666;
+      font-weight: 600;
+    }
+  }
+
+  // =====================
+  // BRAND LOGO
+  // =====================
+  &__brand {
+    text-align: center;
+    padding-top: 4px;
+
+    span {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 16px;
+      font-weight: 700;
+      color: #555;
+      letter-spacing: 4px;
+      display: block;
+    }
+
+    small {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 8px;
+      color: #444;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// =====================
+// PDA HOME SCREEN
+// =====================
+.pda-home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h1 {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 20px;
+      color: $lcd-highlight;
+      margin: 0 0 4px;
+      text-shadow: 0 0 12px rgba($lcd-highlight, 0.6);
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 10px;
+      color: $lcd-text-dim;
+      margin: 0;
+    }
+  }
+
+  &__grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    align-content: start;
+  }
+
+  &__app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 8px;
+    background: rgba($lcd-text, 0.05);
+    border: 1px solid $lcd-text-dim;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+
+    &:active {
+      background: $lcd-text;
+      transform: scale(0.95);
+
+      .pda-home__app-icon,
+      .pda-home__app-label {
+        color: $lcd-bg !important;
+        text-shadow: none;
+      }
+    }
+
+    &-icon {
+      font-size: 28px;
+      filter: grayscale(100%) brightness(1.5);
+    }
+
+    &-label {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 10px;
+      color: $lcd-text;
+      text-shadow: 0 0 6px rgba($lcd-text, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+// =====================
+// PDA BOOT SCREEN
+// =====================
+.pda-boot {
+  text-align: center;
+  padding: 40px 20px;
+
+  &__logo {
+    margin-bottom: 40px;
+
+    span {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 48px;
+      font-weight: 700;
+      color: $lcd-highlight;
+      letter-spacing: 8px;
+      display: block;
+      text-shadow: 0 0 20px rgba($lcd-highlight, 0.8);
+      animation: lcd-flicker 2s infinite;
+    }
+
+    small {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 10px;
+      color: $lcd-text-dim;
+      letter-spacing: 2px;
+      display: block;
+      margin-top: 8px;
+    }
+  }
+
+  &__text {
+    p {
+      font-family: 'Pixelify Sans', monospace;
+      font-size: 11px;
+      color: $lcd-text;
+      margin: 0 0 12px;
+    }
+  }
+
+  &__progress {
+    width: 200px;
+    height: 12px;
+    background: $lcd-shadow;
+    border: 1px solid $lcd-text-dim;
+    border-radius: 2px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+
+    &-bar {
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        $lcd-text 0px,
+        $lcd-text 8px,
+        $lcd-text-dim 8px,
+        $lcd-text-dim 12px
+      );
+      box-shadow: 0 0 10px rgba($lcd-text, 0.5);
+    }
+  }
+
+  &__version {
+    font-size: 9px !important;
+    color: $lcd-text-dim !important;
+    opacity: 0.7;
+  }
+}
+
+// =====================
+// ANIMATIONS
+// =====================
+@keyframes pda-power-on {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lcd-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.97;
+  }
+  52% {
+    opacity: 1;
+  }
+  54% {
+    opacity: 0.98;
+  }
+}
+
+// =====================
+// RESPONSIVE ADJUSTMENTS
+// =====================
+@media (max-height: 600px) {
+  .pda {
+    padding: 8px;
+
+    &__frame {
+      padding: 10px;
+      border-radius: 16px;
+    }
+
+    &__statusbar {
+      height: 24px;
+    }
+
+    &__navbar {
+      height: 36px;
+    }
+
+    &__buttons {
+      padding: 8px 0 4px;
+      gap: 10px;
+    }
+
+    &__button {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .pda-home {
+    padding: 10px;
+
+    &__header {
+      margin-bottom: 12px;
+
+      h1 {
+        font-size: 16px;
+      }
+    }
+
+    &__grid {
+      gap: 8px;
+    }
+
+    &__app {
+      padding: 10px 6px;
+
+      &-icon {
+        font-size: 22px;
+      }
+
+      &-label {
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+// Very small screens
+@media (max-height: 500px) {
+  .pda__buttons {
+    display: none;
+  }
+
+  .pda__brand {
+    display: none;
+  }
+}
