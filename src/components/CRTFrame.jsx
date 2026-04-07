@@ -40,7 +40,7 @@ export default function CRTFrame({ children }) {
         <div className="crt-monitor__controls">
           {/* Logo marque */}
           <div className="crt-monitor__brand">
-            <span className="crt-monitor__brand-logo">Raphurst</span>
+            <span className="crt-monitor__brand-logo">RAPHURST</span>
             <span className="crt-monitor__brand-model">MultiSync 98</span>
           </div>
 
@@ -62,27 +62,18 @@ export default function CRTFrame({ children }) {
                 <span>◑</span>
               </button>
             </div>
-            <button 
-              className="crt-monitor__btn crt-monitor__btn--menu"
-              title="Menu"
-            >
-              <span>MENU</span>
-            </button>
-            <button 
-              className={`crt-monitor__btn crt-monitor__btn--power ${powerOn ? 'crt-monitor__btn--power-on' : ''}`}
-              onClick={() => setPowerOn(!powerOn)}
-              title="Power"
-            >
-              <span>⏻</span>
-              <div className="crt-monitor__led" />
-            </button>
+            {/* Power + LED à droite */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button
+                className={`crt-monitor__btn crt-monitor__btn--power${powerOn ? ' crt-monitor__btn--power-on' : ''}`}
+                onClick={() => setPowerOn(!powerOn)}
+                title="Power"
+              >
+                <span>⏻</span>
+              </button>
+              <div className={`crt-monitor__led${powerOn ? ' crt-monitor__led--on' : ''}`} />
+            </div>
           </div>
-        </div>
-
-        {/* Pied du moniteur */}
-        <div className="crt-monitor__stand">
-          <div className="crt-monitor__stand-neck" />
-          <div className="crt-monitor__stand-base" />
         </div>
       </div>
     </div>
