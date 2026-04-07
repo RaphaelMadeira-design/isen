@@ -18,6 +18,7 @@ import VisualNovel from './components/VisualNovel'
 import MediaPlayer from './components/MediaPlayer'
 import PDAView from './components/PDAView'
 import CRTFrame from './components/CRTFrame'
+import CMD from './components/CMD'
 
 // Hook pour détecter le mode mobile
 function useIsMobile(breakpoint = 768) {
@@ -98,23 +99,28 @@ const WINDOW_CONFIGS = {
   },
   snake: {
     title: 'Snake — SNAKE.exe',
-    defaultSize: { width: '80%', height: '80%' },
+    defaultSize: { width: '40%', height: '70%' },
     defaultPosition: { x: 40, y: 20 },
   },
   jump: {
     title: 'Jeu de saut — JUMP.exe',
-    defaultSize: { width: '80%', height: '65%' },
+    defaultSize: { width: '40%', height: '50%' },
     defaultPosition: { x: 40, y: 20 },
   },
   vn: {
     title: 'ISEN.exe — Visual Novel',
-    defaultSize: { width: '80%', height: '50%' },
+    defaultSize: { width: '35%', height: '55%' },
     defaultPosition: { x: 80, y: 40 },
   },
   media: {
     title: 'Windows Media Player',
     defaultSize: { width: 340, height: 460 },
     defaultPosition: { x: 80, y: 20 },
+  },
+  cmd: {
+    title: 'Invite de commandes',
+    defaultSize: { width: 600, height: 380 },
+    defaultPosition: { x: 80, y: 60 },
   },
 }
 
@@ -123,6 +129,7 @@ const WINDOW_CONFIGS = {
     powers: 'POUVOIRS.exe',
     snake: 'SNAKE.exe',
     jump: 'JUMP.exe',
+    vn: 'ISEN.exe',
   }
 
 // Crée une config de fenêtre Bloc-notes pour un fichier .txt
@@ -158,7 +165,7 @@ function App() {
   }, [])
 
   const openWindow = useCallback((id) => {
-    const skipLoading = id === 'histoire' || id === 'media' || id.startsWith('notepad-')
+    const skipLoading = id === 'histoire' || id === 'cmd' || id === 'media' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
       if (existing) {
@@ -272,6 +279,7 @@ function App() {
     const { id } = win
     if (id === 'character') return <FichePersonnage />
     if (id === 'powers') return <Pouvoirs />
+    if (id === 'cmd') return <CMD />
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
     if (id === 'media') return <MediaPlayer />

@@ -12,6 +12,7 @@ const ICONS = {
   jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   vn: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   media: 'https://win98icons.alexmeub.com/icons/png/wm-3.png',
+  cmd: 'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
 }
 
 const getIcon = (id) => {
@@ -22,6 +23,7 @@ const getIcon = (id) => {
   if (id === 'snake') return ICONS.snake
   if (id === 'jump') return ICONS.jump
   if (id === 'vn') return ICONS.vn
+  if (id === 'cmd') return ICONS.cmd
   if (id.startsWith('notepad-')) return ICONS.notepad
   return ICONS.start
 }

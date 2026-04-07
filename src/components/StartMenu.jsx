@@ -7,6 +7,7 @@ const ICONS = {
   folder:    'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
   programs:  'https://win98icons.alexmeub.com/icons/png/programs_folder-0.png',
   shutdown:  'https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png',
+  cmd:       'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
   snake:     'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump:      'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   vn:        'https://win98icons.alexmeub.com/icons/png/executable-0.png',
@@ -95,6 +96,11 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
                 </div>
               </div>
             )}
+          </div>
+
+          <div className="start-menu__item" onClick={() => handle('cmd')} data-testid="start-menu-cmd">
+            <img src={ICONS.cmd} alt="CMD" />
+            Invite de commandes
           </div>
 
           {/* Séparateur */}
