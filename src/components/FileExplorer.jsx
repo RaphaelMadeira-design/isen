@@ -122,10 +122,15 @@ function TreeNode({ id, depth, currentFolder, selectedItem, onNavigate, onSelect
   )
 }
 
-export default function FileExplorer({ onOpenNotepad }) {
-  const [currentFolder, setCurrentFolder] = useState('root')
+export default function FileExplorer({ onOpenNotepad, initialFolder = 'root' }) {
+  const [currentFolder, setCurrentFolder] = useState(initialFolder)
   const [selectedItem, setSelectedItem] = useState(null)
-  const [history, setHistory] = useState(['root'])
+  const [history, setHistory] = useState(() => {
+    const path = []
+    let cur = initialFolder
+    while (cur) { path.unshift(cur); cur = FILE_TREE[cur]?.parent || null }
+    return path
+  })
 
   const getPathTo = (id) => {
     const path = []

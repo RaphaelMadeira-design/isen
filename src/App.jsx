@@ -164,7 +164,7 @@ function App() {
     })
   }, [])
 
-  const openWindow = useCallback((id) => {
+  const openWindow = useCallback((id, options = {}) => {
     const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
@@ -186,7 +186,7 @@ function App() {
       if (skipLoading) {
         return [
           ...prev.map(w => ({ ...w, focused: false })),
-          { id, ...WINDOW_CONFIGS[id], minimized: false, focused: true, zIndex: ++zCounter },
+          { id, ...WINDOW_CONFIGS[id], initialFolder: options.initialFolder, minimized: false, focused: true, zIndex: ++zCounter }
         ]
       }
 
@@ -198,8 +198,7 @@ function App() {
           if (prev2.find(w => w.id === id)) return prev2
           return [
             ...prev2.map(w => ({ ...w, focused: false })),
-            { id, ...WINDOW_CONFIGS[id], minimized: false, focused: true, zIndex: ++zCounter },
-          ]
+            { id, ...WINDOW_CONFIGS[id], initialFolder: options.initialFolder, minimized: false, focused: true, zIndex: ++zCounter }          ]
         })
       }, delay)
 
@@ -283,7 +282,7 @@ function App() {
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
     if (id === 'media') return <MediaPlayer />
-    if (id === 'documents') return <FileExplorer onOpenNotepad={openNotepad} />
+    if (id === 'documents') return <FileExplorer onOpenNotepad={openNotepad} initialFolder={win.initialFolder} />
     if (id.startsWith('notepad-')) {
       return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
     }
