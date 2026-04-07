@@ -171,7 +171,7 @@ function App() {
       if (existing) {
         return prev.map(w =>
           w.id === id
-            ? { ...w, minimized: false, focused: true, zIndex: ++zCounter }
+            ? { ...w, minimized: false, focused: true, zIndex: ++zCounter, ...(options.initialFolder ? { initialFolder: options.initialFolder } : {}) }
             : { ...w, focused: false }
         )
       }
@@ -282,7 +282,7 @@ function App() {
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
     if (id === 'media') return <MediaPlayer />
-    if (id === 'documents') return <FileExplorer onOpenNotepad={openNotepad} initialFolder={win.initialFolder} />
+    if (id === 'documents') return <FileExplorer key={win.initialFolder ?? 'root'} onOpenNotepad={openNotepad} initialFolder={win.initialFolder} />
     if (id.startsWith('notepad-')) {
       return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
     }
@@ -351,7 +351,7 @@ function App() {
         ))}
       </div>
       {/* Spinner de chargement */}
-      {loading && <Loading label={loading.label} />}
+    {loading && <Loading label={loading.label} />}
 
       {/* Start Menu */}
       {startOpen && (

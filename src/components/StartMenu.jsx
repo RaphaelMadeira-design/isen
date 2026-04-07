@@ -5,17 +5,14 @@ const ICONS = {
   character: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
   powers:    'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
   folder:    'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
-  folderDoc: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
-  programs:  'https://win98icons.alexmeub.com/icons/png/programs_folder-0.png',
+  folderClosed: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
   shutdown:  'https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png',
   snake:     'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump:      'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   vn:        'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   games:     'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
   media:     'https://win98icons.alexmeub.com/icons/png/wm-4.png',
-  histoire:  'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
-  music:     'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
-  images:    'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
+  cmd:       'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
 }
 
 export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
@@ -29,11 +26,9 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
 
   return (
     <>
-      {/* Overlay */}
       <div className="start-menu__overlay" onClick={onClose} />
 
       <div className="start-menu" onClick={(e) => e.stopPropagation()} onMouseDown={(e) => e.stopPropagation()}>
-        {/* Sidebar */}
         <div className="start-menu__sidebar">
           <span><strong>Windows</strong> 98</span>
         </div>
@@ -63,16 +58,16 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
 
             {docsOpen && (
               <div className="start-menu__submenu">
-                <div className="start-menu__item" onClick={() => handle('histoire', { initialFolder: 'histoire' })}>
-                  <img src={ICONS.histoire} alt="Histoire" />
+                <div className="start-menu__item" onClick={() => handle('documents', { initialFolder: 'histoire' })} data-testid="start-menu-docs-histoire">
+                  <img src={ICONS.folderClosed} alt="Histoire" />
                   Histoire
                 </div>
-                <div className="start-menu__item" onClick={() => handle('histoire', { initialFolder: 'musique' })}>
-                  <img src={ICONS.music} alt="Musique" />
+                <div className="start-menu__item" onClick={() => handle('documents', { initialFolder: 'musique' })} data-testid="start-menu-docs-musique">
+                  <img src={ICONS.folderClosed} alt="Musique" />
                   Musique
                 </div>
-                <div className="start-menu__item" onClick={() => handle('histoire', { initialFolder: 'images' })}>
-                  <img src={ICONS.images} alt="Images" />
+                <div className="start-menu__item" onClick={() => handle('documents', { initialFolder: 'images' })} data-testid="start-menu-docs-images">
+                  <img src={ICONS.folderClosed} alt="Images" />
                   Images
                 </div>
               </div>
@@ -113,7 +108,13 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
             )}
           </div>
 
-          {/* Séparateur */}
+          <div className="start-menu__separator" />
+
+          <div className="start-menu__item" onClick={() => handle('cmd')} data-testid="start-menu-cmd">
+            <img src={ICONS.cmd} alt="CMD" />
+            Invite de commandes
+          </div>
+
           <div className="start-menu__separator" />
 
           <div className="start-menu__item" onClick={() => { onShutdown(); onClose(); }} data-testid="start-menu-shutdown">
