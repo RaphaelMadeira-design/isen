@@ -283,12 +283,6 @@ function App() {
     return null
   }
 
-  // Mode PDA pour mobile
-  if (isMobile) {
-    return <PDAView />
-  }
-
-
   // Desktop Windows 98 avec cadre CRT
   const desktopContent = (
     <div className="desktop" data-testid="desktop" 
@@ -375,8 +369,21 @@ function App() {
       />
     </div>
   )
+  const handleReset = useCallback(() => {
+    setBooted(false)
+    setWindows([])
+    setStartOpen(false)
+    setShowShutdown(false)
+    setLoading(null)
+  }, [])
+
+  // Mode PDA pour mobile
+  if (isMobile) {
+    return <PDAView />
+  }
+
   return (
-    <CRTFrame>
+    <CRTFrame onReset={handleReset}>
       {desktopContent}
     </CRTFrame>
   )

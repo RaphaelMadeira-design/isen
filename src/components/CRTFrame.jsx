@@ -1,9 +1,23 @@
 import { useState, useEffect } from 'react'
 import '../styles/CRTFrame.scss'
 
-export default function CRTFrame({ children }) {
+export default function CRTFrame({ children, onReset }) {
   const [powerOn, setPowerOn] = useState(true)
+  const [screenOn, setScreenOn] = useState(true)
   const [brightness, setBrightness] = useState(100)
+
+  const handlePower = () => {
+    if (powerOn) {
+      // Extinction : NO SIGNAL pendant 2.5s puis écran noir
+      setPowerOn(false)
+      setTimeout(() => setScreenOn(false), 2500)
+    } else {
+      // Rallumage : reset complet + boot screen
+      onReset?.()
+      setScreenOn(true)
+      setPowerOn(true)
+    }
+  }
 
   return (
     <div className="crt-monitor" data-testid="crt-monitor">
@@ -14,7 +28,7 @@ export default function CRTFrame({ children }) {
           {/* Biseau interne */}
           <div className="crt-monitor__bezel">
             {/* Écran CRT */}
-            <div className={`crt-monitor__screen ${powerOn ? 'crt-monitor__screen--on' : ''}`}>
+            <div className={`crt-monitor__screen ${screenOn ? 'crt-monitor__screen--on' : ''}`}>
               {/* Effets CRT */}
               <div className="crt-monitor__scanlines" />
               <div className="crt-monitor__flicker" />
@@ -66,7 +80,7 @@ export default function CRTFrame({ children }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <button
                 className={`crt-monitor__btn crt-monitor__btn--power${powerOn ? ' crt-monitor__btn--power-on' : ''}`}
-                onClick={() => setPowerOn(!powerOn)}
+                onClick={handlePower}
                 title="Power"
               >
                 <span>⏻</span>
