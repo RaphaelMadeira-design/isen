@@ -46,9 +46,9 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
             Pouvoirs & Techniques
           </div>
 
-          <div className="start-menu__item" onClick={() => handle('histoire')} data-testid="start-menu-histoire">
-            <img src={ICONS.folder} alt="Histoire" />
-            Histoire & Background
+          <div className="start-menu__item" onClick={() => handle('documents')} data-testid="start-menu-documents">
+            <img src={ICONS.folder} alt="Mes Documents" />
+            Mes Documents
           </div>
 
           <div className="start-menu__item" onClick={() => handle('media')} data-testid="start-menu-media">
