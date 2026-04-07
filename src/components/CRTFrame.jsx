@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, forwardRef, useImperativeHandle } from 'react'
 import '../styles/CRTFrame.scss'
 
 export default function CRTFrame({ children, onReset }) {
@@ -10,7 +10,7 @@ export default function CRTFrame({ children, onReset }) {
     if (powerOn) {
       // Extinction : NO SIGNAL pendant 2.5s puis écran noir
       setPowerOn(false)
-      setTimeout(() => setScreenOn(false), 2500)
+      setTimeout(() => setScreenOn(false), 500)
     } else {
       // Rallumage : reset complet + boot screen
       onReset?.()
