@@ -163,7 +163,7 @@ export default function FileExplorer({ onOpenNotepad }) {
 
   const current = FILE_TREE[currentFolder]
   const children = current?.children || []
-  const addressPath = history.map(id => FILE_TREE[id]?.name || id).join('')
+  const addressPath = history.map(id => FILE_TREE[id]?.name || id).join('\\')
 
   return (
     <div className="file-explorer" style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -194,7 +194,7 @@ export default function FileExplorer({ onOpenNotepad }) {
         <label>Adresse</label>
         <input
           type="text"
-          value={`C:Isen${addressPath}`}
+          value={`C:\\Isen\\${addressPath}`}
           readOnly
           data-testid="explorer-address"
         />

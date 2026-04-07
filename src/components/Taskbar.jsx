@@ -6,7 +6,7 @@ const ICONS = {
   network: 'https://win98icons.alexmeub.com/icons/png/network_normal_two_pcs-0.png',
   character: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
   powers: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
-  histoire: 'https://win98icons.alexmeub.com/icons/png/directory_closed-3.png',
+  documents: 'https://win98icons.alexmeub.com/icons/png/directory_closed-3.png',
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
   snake : 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
@@ -18,7 +18,7 @@ const ICONS = {
 const getIcon = (id) => {
   if (id === 'character') return ICONS.character
   if (id === 'powers') return ICONS.powers
-  if (id === 'histoire') return ICONS.histoire
+  if (id === 'documents') return ICONS.documents
   if (id === 'media') return ICONS.media
   if (id === 'snake') return ICONS.snake
   if (id === 'jump') return ICONS.jump

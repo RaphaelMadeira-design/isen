@@ -52,8 +52,8 @@ const INITIAL_ICONS = [
     icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',  
     x: 0, y: 1 
   },
-  { id: 'histoire',  
-    label: 'Histoire et Background', 
+  { id: 'documents',  
+    label: 'Mes Documents', 
     icon: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',   
     x: 0, y: 2 
   },
@@ -92,8 +92,8 @@ const WINDOW_CONFIGS = {
     defaultSize: { width: '80%', height: '80%' },
     defaultPosition: { x: 60, y: 30 },
   },
-  histoire: {
-    title: 'Histoire et Background - Explorateur',
+  documents: {
+    title: 'Mes Documents - Explorateur',
     defaultSize: { width: '82%', height: '80%' },
     defaultPosition: { x: 50, y: 25 },
   },
@@ -165,7 +165,7 @@ function App() {
   }, [])
 
   const openWindow = useCallback((id) => {
-    const skipLoading = id === 'histoire' || id === 'cmd' || id === 'media' || id.startsWith('notepad-')
+    const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
       if (existing) {
@@ -283,7 +283,7 @@ function App() {
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
     if (id === 'media') return <MediaPlayer />
-    if (id === 'histoire') return <FileExplorer onOpenNotepad={openNotepad} />
+    if (id === 'documents') return <FileExplorer onOpenNotepad={openNotepad} />
     if (id.startsWith('notepad-')) {
       return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
     }

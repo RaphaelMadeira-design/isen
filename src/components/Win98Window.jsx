@@ -4,7 +4,7 @@ import { Rnd } from 'react-rnd'
 const ICONS = {
   character: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
   powers: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
-  histoire: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
+  documents: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
   snake: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   jump: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
