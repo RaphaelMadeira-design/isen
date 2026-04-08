@@ -13,7 +13,7 @@ const ICONS = {
   games:        'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
   media:        'https://win98icons.alexmeub.com/icons/png/wm-4.png',
   cmd:          'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
-  browser:      'https://win98icons.alexmeub.com/icons/png/internet_connection_wiz-4.png',
+  browser:      'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
 }
 
 export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {

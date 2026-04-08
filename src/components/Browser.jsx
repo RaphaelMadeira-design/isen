@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../styles/Browser.scss'
 
-const IE_ICON = 'https://win98icons.alexmeub.com/icons/png/internet_explorer-0.png'
+const IE_ICON = 'https://win98icons.alexmeub.com/icons/png/msie1-2.png'
 const WIKI_ICON = 'https://win98icons.alexmeub.com/icons/png/help_book_small-0.png'
 
 function FakeGoogle() {

@@ -84,7 +84,7 @@ const INITIAL_ICONS = [
   {
     id: 'browser',
     label: 'Internet Explorer',
-    icon: 'https://win98icons.alexmeub.com/icons/png/internet_connection_wiz-4.png',
+    icon: 'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
     x: 1, y: 0,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
@@ -137,8 +137,8 @@ const WINDOW_CONFIGS = {
   },
   browser: {
     title: 'Internet Explorer',
-    defaultSize: { width: '80%', height: '80%' },
-    defaultPosition: { x: 50, y: 20 },
+    defaultSize: { width: '100%', height: '100%' },
+    defaultPosition: { x: 0, y: 0 },
   },
 }
 
