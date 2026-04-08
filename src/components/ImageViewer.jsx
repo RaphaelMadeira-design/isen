@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import '../styles/ImageViewer.scss'
 
 const IMAGES = [
-  { name: '1.png', file: '/images/1.png' },
-  { name: '2.png', file: '/images/2.png' },
-  { name: '3.png', file: '/images/3.png' },
+  { name: '1.jpg', file: '/images/1.jpg' },
+  { name: '2.jpg', file: '/images/2.jpg' },
+  { name: '3.jpg', file: '/images/3.jpg' },
 ]
 
 export default function ImageViewer({ requestedImage }) {

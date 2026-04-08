@@ -6,7 +6,7 @@ const ICONS = {
   myDocs:       'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
   txt:          'https://win98icons.alexmeub.com/icons/png/file_lines-0.png',
   mp3:          'https://win98icons.alexmeub.com/icons/png/wm_file-5.png',
-  img:          'https://win98icons.alexmeub.com/icons/png/image_file-0.png',
+  img:          'https://win98icons.alexmeub.com/icons/png/wia_img_color-0.png',
 }
 
 const getFileIcon = (name = '') => {
@@ -65,9 +65,9 @@ export const FILE_TREE = {
     parent: 'root',
     children: ['img1', 'img2', 'img3'],
   },
-  img1: { name: '1.png', parent: 'images', type: 'file', content: null, imageFile: '/images/1.png' },
-  img2: { name: '2.png', parent: 'images', type: 'file', content: null, imageFile: '/images/2.png' },
-  img3: { name: '3.png', parent: 'images', type: 'file', content: null, imageFile: '/images/3.png' },
+  img1: { name: '1.jpg', parent: 'images', type: 'file', content: null, imageFile: '/images/1.jpg' },
+  img2: { name: '2.jpg', parent: 'images', type: 'file', content: null, imageFile: '/images/2.jpg' },
+  img3: { name: '3.jpg', parent: 'images', type: 'file', content: null, imageFile: '/images/3.jpg' },
 }
 
 // Remonte les ancêtres d'un nœud (root inclus)
