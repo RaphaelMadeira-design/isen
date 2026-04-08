@@ -150,7 +150,8 @@ function App() {
   const [showShutdown, setShowShutdown] = useState(false)
   const [icons, setIcons] = useState(INITIAL_ICONS)
   const [selectedIcon, setSelectedIcon] = useState(null)
-  const [loading, setLoading] = useState(null) // { id, label }
+  const [loading, setLoading] = useState(null)
+  const [mediaTrack, setMediaTrack] = useState(null)
   const handleIconDragEnd = useCallback((id, pos) => {
     setIcons(prev => {
       const others = prev.filter(ic => ic.id !== id)
@@ -274,6 +275,11 @@ function App() {
     })
   }, [])
 
+  const handlePlayMusic = useCallback((track) => {
+    openWindow('media')
+    setMediaTrack(track)
+  }, [openWindow])
+
   const renderWindowContent = (win) => {
     const { id } = win
     if (id === 'character') return <FichePersonnage />
@@ -281,11 +287,15 @@ function App() {
     if (id === 'cmd') return <CMD />
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
-    if (id === 'media') return <MediaPlayer />
-    if (id === 'documents') return <FileExplorer key={win.initialFolder ?? 'root'} onOpenNotepad={openNotepad} initialFolder={win.initialFolder} />
-    if (id.startsWith('notepad-')) {
-      return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
-    }
+    if (id === 'media') return <MediaPlayer requestedTrack={mediaTrack} />
+    if (id === 'documents') return (
+      <FileExplorer
+        key={win.initialFolder ?? 'root'}
+        onOpenNotepad={openNotepad}
+        onPlayMusic={handlePlayMusic}
+        initialFolder={win.initialFolder}
+      />
+    )
     if (id === 'vn') return <VisualNovel />
     return null
   }

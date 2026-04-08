@@ -14,68 +14,63 @@ const fmt = (s) => {
   return `${m}:${sec}`
 }
 
-export default function MediaPlayer() {
-  const audioRef   = useRef(null)
-  const canvasRef  = useRef(null)
+export default function MediaPlayer({ requestedTrack }) {
+  const audioRef = useRef(null)
+  const canvasRef = useRef(null)
   const analyserRef = useRef(null)
-  const sourceRef  = useRef(null)
-  const animRef    = useRef(null)
-  const ctxRef     = useRef(null)
+  const sourceRef = useRef(null)
+  const animRef = useRef(null)
+  const ctxRef = useRef(null)
 
-  const [trackIdx, setTrackIdx]   = useState(0)
-  const [playing,  setPlaying]    = useState(false)
-  const [progress, setProgress]   = useState(0)
-  const [duration, setDuration]   = useState(0)
-  const [current,  setCurrent]    = useState(0)
-  const [volume,   setVolume]     = useState(0.8)
-  const [status,   setStatus]     = useState('Prêt')
+  const [trackIdx, setTrackIdx] = useState(0)
+  const [playing, setPlaying] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const [duration, setDuration] = useState(0)
+  const [current, setCurrent] = useState(0)
+  const [volume, setVolume] = useState(0.8)
+  const [status, setStatus] = useState('Prêt')
 
   const track = PLAYLIST[trackIdx]
   const trackIdxRef = useRef(trackIdx)
-  useEffect(() => { 
-    trackIdxRef.current = trackIdx;
-  }, [trackIdx])
+  useEffect(() => { trackIdxRef.current = trackIdx }, [trackIdx])
 
   // ── Init Web Audio ────────────────────────────────────
   const initAudio = useCallback(() => {
     if (analyserRef.current) return
-    const actx     = new (window.AudioContext || window.webkitAudioContext)()
+    const actx = new (window.AudioContext || window.webkitAudioContext)()
     const analyser = actx.createAnalyser()
     analyser.fftSize = 64
     const source = actx.createMediaElementSource(audioRef.current)
     source.connect(analyser)
     analyser.connect(actx.destination)
     analyserRef.current = analyser
-    sourceRef.current   = source
-    ctxRef.current      = actx
+    sourceRef.current = source
+    ctxRef.current = actx
   }, [])
 
   // ── Visualiseur ───────────────────────────────────────
   const drawViz = useCallback(() => {
-    const canvas   = canvasRef.current
+    const canvas = canvasRef.current
     const analyser = analyserRef.current
     if (!canvas || !analyser) return
-    const ctx  = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d')
     const data = new Uint8Array(analyser.frequencyBinCount)
     analyser.getByteFrequencyData(data)
-
     const W = canvas.width, H = canvas.height
     ctx.fillStyle = '#000810'
     ctx.fillRect(0, 0, W, H)
-
     const barW = Math.floor(W / data.length) - 1
     data.forEach((val, i) => {
       const pct = val / 255
-      const h   = Math.floor(pct * H)
-      const r   = Math.floor(20  + pct * 80)
-      const g   = Math.floor(180 + pct * 60)
-      const b   = Math.floor(255)
+      const h = Math.floor(pct * H)
+      const r = Math.floor(20 + pct * 80)
+      const g = Math.floor(180 + pct * 60)
+      const b = Math.floor(255)
       ctx.fillStyle = `rgb(${r},${g},${b})`
       ctx.fillRect(i * (barW + 1), H - h, barW, h)
       ctx.fillStyle = '#00ffff'
       ctx.fillRect(i * (barW + 1), H - h - 2, barW, 2)
     })
-
     animRef.current = requestAnimationFrame(drawViz)
   }, [])
 
@@ -86,7 +81,6 @@ export default function MediaPlayer() {
 
   const stopViz = useCallback(() => {
     cancelAnimationFrame(animRef.current)
-    // fade canvas to black
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
@@ -137,7 +131,7 @@ export default function MediaPlayer() {
     setTrackIdx(i => (i + 1) % PLAYLIST.length)
   }, [])
 
-  // ── Changer de piste ──────────────────────────────────
+  // ── Changer de piste (boutons prev/next) ──────────────
   useEffect(() => {
     audioRef.current.load()
     if (playing) {
@@ -147,6 +141,27 @@ export default function MediaPlayer() {
     }
   }, [trackIdx])
 
+  // ── Piste demandée depuis FileExplorer ────────────────
+  useEffect(() => {
+    if (!requestedTrack) return
+    const idx = PLAYLIST.findIndex(t => t.file === requestedTrack.file)
+    if (idx === -1) return
+    audioRef.current.pause()
+    audioRef.current.currentTime = 0
+    setProgress(0)
+    setCurrent(0)
+    setTrackIdx(idx)
+    setTimeout(() => {
+      initAudio()
+      if (ctxRef.current?.state === 'suspended') ctxRef.current.resume()
+      audioRef.current.load()
+      audioRef.current.play()
+      setPlaying(true)
+      setStatus(`Lecture : ${PLAYLIST[idx].title}`)
+      startViz()
+    }, 50)
+  }, [requestedTrack])
+
   // ── Progression ───────────────────────────────────────
   useEffect(() => {
     const audio = audioRef.current
@@ -155,7 +170,7 @@ export default function MediaPlayer() {
       setProgress(audio.duration ? audio.currentTime / audio.duration : 0)
     }
     const onLoad = () => setDuration(audio.duration)
-    const onEnd  = () => next()
+    const onEnd = () => next()
     audio.addEventListener('timeupdate', onTime)
     audio.addEventListener('loadedmetadata', onLoad)
     audio.addEventListener('ended', onEnd)
@@ -172,7 +187,7 @@ export default function MediaPlayer() {
   // ── Seek ──────────────────────────────────────────────
   const seek = (e) => {
     const rect = e.currentTarget.getBoundingClientRect()
-    const pct  = (e.clientX - rect.left) / rect.width
+    const pct = (e.clientX - rect.left) / rect.width
     audioRef.current.currentTime = pct * (audioRef.current.duration || 0)
   }
 
@@ -216,13 +231,13 @@ export default function MediaPlayer() {
       {/* Contrôles */}
       <div className="wmp__controls">
         <div className="wmp__btns">
-          <button className="wmp__btn" onClick={prev}  title="Précédent">⏮</button>
+          <button className="wmp__btn" onClick={prev} title="Précédent">⏮</button>
           {playing
             ? <button className="wmp__btn wmp__btn--pause" onClick={pause} title="Pause">⏸</button>
-            : <button className="wmp__btn wmp__btn--play"  onClick={play}  title="Lecture">▶</button>
+            : <button className="wmp__btn wmp__btn--play" onClick={play} title="Lecture">▶</button>
           }
-          <button className="wmp__btn wmp__btn--stop" onClick={stop}  title="Stop">■</button>
-          <button className="wmp__btn" onClick={next}  title="Suivant">⏭</button>
+          <button className="wmp__btn wmp__btn--stop" onClick={stop} title="Stop">■</button>
+          <button className="wmp__btn" onClick={next} title="Suivant">⏭</button>
         </div>
 
         {/* Volume */}
