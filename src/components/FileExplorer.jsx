@@ -63,8 +63,11 @@ export const FILE_TREE = {
   images: {
     name: 'Images',
     parent: 'root',
-    children: [],
+    children: ['img1', 'img2', 'img3'],
   },
+  img1: { name: '1.png', parent: 'images', type: 'file', content: null, imageFile: '/images/1.png' },
+  img2: { name: '2.png', parent: 'images', type: 'file', content: null, imageFile: '/images/2.png' },
+  img3: { name: '3.png', parent: 'images', type: 'file', content: null, imageFile: '/images/3.png' },
 }
 
 // Remonte les ancêtres d'un nœud (root inclus)
@@ -123,7 +126,7 @@ function TreeNode({ id, depth, currentFolder, selectedItem, onNavigate, onSelect
   )
 }
 
-export default function FileExplorer({ onOpenNotepad, onPlayMusic, initialFolder = 'root' }) {
+export default function FileExplorer({ onOpenNotepad, onPlayMusic, onOpenImage, initialFolder = 'root' }) {
   const [currentFolder, setCurrentFolder] = useState(initialFolder)
   const [selectedItem, setSelectedItem] = useState(null)
   const [history, setHistory] = useState(() => {
@@ -159,6 +162,9 @@ export default function FileExplorer({ onOpenNotepad, onPlayMusic, initialFolder
     }
     if (node.name.endsWith('.mp3') && onPlayMusic) {
       onPlayMusic({ file: node.musicFile, title: node.name.replace('.mp3', '') })
+    }
+    if (node.name.match(/\.(png|jpg|jpeg|gif|bmp)$/i) && onOpenImage) {
+      onOpenImage({ file: node.imageFile, name: node.name })
     }
   }
 

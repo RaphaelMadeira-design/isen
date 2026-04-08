@@ -19,6 +19,7 @@ import MediaPlayer from './components/MediaPlayer'
 import PDAView from './components/PDAView'
 import CRTFrame from './components/CRTFrame'
 import CMD from './components/CMD'
+import ImageViewer from './components/ImageViewer'
 
 // Hook pour détecter le mode mobile
 function useIsMobile(breakpoint = 768) {
@@ -122,6 +123,11 @@ const WINDOW_CONFIGS = {
     defaultSize: { width: 600, height: 380 },
     defaultPosition: { x: 80, y: 60 },
   },
+  imageviewer: {
+    title: 'Visionneuse d\'images Windows',
+    defaultSize: { width: 520, height: 460 },
+    defaultPosition: { x: 100, y: 30 },
+  },
 }
 
   const LOADING_LABELS = {
@@ -152,6 +158,7 @@ function App() {
   const [selectedIcon, setSelectedIcon] = useState(null)
   const [loading, setLoading] = useState(null)
   const [mediaTrack, setMediaTrack] = useState(null)
+  const [imageToView, setImageToView] = useState(null)
   const handleIconDragEnd = useCallback((id, pos) => {
     setIcons(prev => {
       const others = prev.filter(ic => ic.id !== id)
@@ -166,7 +173,7 @@ function App() {
   }, [])
 
   const openWindow = useCallback((id, options = {}) => {
-    const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id.startsWith('notepad-')
+    const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id === 'imageviewer' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
       if (existing) {
@@ -280,6 +287,11 @@ function App() {
     setMediaTrack(track)
   }, [openWindow])
 
+  const handleOpenImage = useCallback((img) => {
+    openWindow('imageviewer')
+    setImageToView(img)
+  }, [openWindow])
+
   const renderWindowContent = (win) => {
     const { id } = win
     if (id === 'character') return <FichePersonnage />
@@ -287,15 +299,18 @@ function App() {
     if (id === 'cmd') return <CMD />
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
+    if (id === 'imageviewer') return <ImageViewer requestedImage={imageToView} />
     if (id === 'media') return <MediaPlayer requestedTrack={mediaTrack} />
     if (id === 'documents') return (
-      <FileExplorer
-        key={win.initialFolder ?? 'root'}
-        onOpenNotepad={openNotepad}
-        onPlayMusic={handlePlayMusic}
-        initialFolder={win.initialFolder}
-      />
-    )
+    <FileExplorer
+      key={win.initialFolder ?? 'root'}
+      onOpenNotepad={openNotepad}
+      onPlayMusic={handlePlayMusic}
+      onOpenImage={handleOpenImage}
+      initialFolder={win.initialFolder}
+    />
+  )
+    if (id.startsWith('notepad-')) return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
     if (id === 'vn') return <VisualNovel />
     return null
   }
