@@ -20,6 +20,7 @@ import PDAView from './components/PDAView'
 import CRTFrame from './components/CRTFrame'
 import CMD from './components/CMD'
 import ImageViewer from './components/ImageViewer'
+import Browser from './components/Browser'
 
 // Hook pour détecter le mode mobile
 function useIsMobile(breakpoint = 768) {
@@ -80,6 +81,12 @@ const INITIAL_ICONS = [
     icon: 'https://win98icons.alexmeub.com/icons/png/wm-4.png',
     x: 0, y: 3,
   },
+  {
+    id: 'browser',
+    label: 'Internet Explorer',
+    icon: 'https://win98icons.alexmeub.com/icons/png/internet_connection_wiz-4.png',
+    x: 1, y: 0,
+  },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
 const WINDOW_CONFIGS = {
@@ -128,6 +135,11 @@ const WINDOW_CONFIGS = {
     defaultSize: { width: 520, height: 460 },
     defaultPosition: { x: 100, y: 30 },
   },
+  browser: {
+    title: 'Internet Explorer',
+    defaultSize: { width: '80%', height: '80%' },
+    defaultPosition: { x: 50, y: 20 },
+  },
 }
 
   const LOADING_LABELS = {
@@ -173,7 +185,7 @@ function App() {
   }, [])
 
   const openWindow = useCallback((id, options = {}) => {
-    const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id === 'imageviewer' || id.startsWith('notepad-')
+    const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id === 'browser' || id === 'imageviewer' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
       if (existing) {
@@ -297,6 +309,7 @@ function App() {
     if (id === 'character') return <FichePersonnage />
     if (id === 'powers') return <Pouvoirs />
     if (id === 'cmd') return <CMD />
+    if (id === 'browser') return <Browser />
     if (id === 'snake') return <Snake />
     if (id === 'jump') return <JumpGame />
     if (id === 'imageviewer') return <ImageViewer requestedImage={imageToView} />

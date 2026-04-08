@@ -1,18 +1,19 @@
 import { useState, useCallback } from 'react'
 
 const ICONS = {
-  start:     'https://win98icons.alexmeub.com/icons/png/windows-0.png',
-  character: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
-  powers:    'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
-  folder:    'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
+  start:        'https://win98icons.alexmeub.com/icons/png/windows-0.png',
+  character:    'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
+  powers:       'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
+  folder:       'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
   folderClosed: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
-  shutdown:  'https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png',
-  snake:     'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-  jump:      'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-  vn:        'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-  games:     'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
-  media:     'https://win98icons.alexmeub.com/icons/png/wm-4.png',
-  cmd:       'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
+  shutdown:     'https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png',
+  snake:        'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  jump:         'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  vn:           'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  games:        'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
+  media:        'https://win98icons.alexmeub.com/icons/png/wm-4.png',
+  cmd:          'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
+  browser:      'https://win98icons.alexmeub.com/icons/png/internet_connection_wiz-4.png',
 }
 
 export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
@@ -72,6 +73,11 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
                 </div>
               </div>
             )}
+          </div>
+
+          <div className="start-menu__item" onClick={() => handle('browser')} data-testid="start-menu-browser">
+            <img src={ICONS.browser} alt="Internet Explorer" />
+            Internet Explorer
           </div>
 
           <div className="start-menu__item" onClick={() => handle('media')} data-testid="start-menu-media">

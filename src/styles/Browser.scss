@@ -1,0 +1,470 @@
+@use 'Variables' as *;
+
+.browser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $win98-gray;
+  font-family: $font-system;
+  font-size: 11px;
+  color: $win98-black;
+  user-select: none;
+
+  // ── Barre de navigation ───────────────────────────────
+  &__navbar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 4px;
+    background: $win98-gray;
+    border-bottom: 1px solid $win98-dark-gray;
+    flex-shrink: 0;
+  }
+
+  &__nav-btns {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  &__nav-btn {
+    width: 26px;
+    height: 22px;
+    background: $win98-gray;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include border-outset-light;
+    &:active { @include border-inset-light; }
+    &--stop { color: #800000; }
+  }
+
+  &__address-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__address-label {
+    font-size: 11px;
+    white-space: nowrap;
+    color: $win98-black;
+  }
+
+  &__address-input {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: $win98-white;
+    @include border-inset-light;
+    padding: 2px 4px;
+    font-size: 11px;
+    height: 20px;
+    overflow: hidden;
+    cursor: text;
+    color: #000080;
+  }
+
+  &__address-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  &__address-go {
+    height: 22px;
+    padding: 0 8px;
+    background: $win98-gray;
+    font-size: 11px;
+    @include border-outset-light;
+    cursor: pointer;
+    &:active { @include border-inset-light; }
+  }
+
+  // ── Onglets ────────────────────────────────────────────
+  &__tabs {
+    display: flex;
+    align-items: flex-end;
+    background: $win98-light-gray;
+    border-bottom: 2px solid $win98-dark-gray;
+    padding: 4px 4px 0;
+    flex-shrink: 0;
+    gap: 2px;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    background: $win98-light-gray;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+    font-family: $font-system;
+    @include border-outset-light;
+    border-bottom: none;
+    position: relative;
+    top: 2px;
+    max-width: 160px;
+
+    &--active {
+      background: $win98-white;
+      z-index: 1;
+      top: 2px;
+      border-bottom-color: $win98-white;
+      font-weight: bold;
+    }
+
+    &:hover:not(&--active) {
+      background: $win98-gray;
+    }
+  }
+
+  &__tab-icon { font-size: 12px; }
+
+  &__tab-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 120px;
+  }
+
+  &__tabs-fill {
+    flex: 1;
+  }
+
+  // ── Contenu ────────────────────────────────────────────
+  &__content {
+    flex: 1;
+    background: $win98-white;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  // ── Status bar ─────────────────────────────────────────
+  &__statusbar {
+    height: 20px;
+    background: $win98-gray;
+    border-top: 1px solid $win98-dark-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    flex-shrink: 0;
+    font-size: 10px;
+
+    span { @include border-inset-light; padding: 0 6px; }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      @include border-inset-light;
+      padding: 0 6px;
+    }
+  }
+
+  // ── Google ─────────────────────────────────────────────
+  &__google {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    min-height: 100%;
+    background: #fff;
+    user-select: none;
+  }
+
+  &__google-logo {
+    font-size: 52px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  &__google-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 460px;
+    max-width: 90%;
+  }
+
+  &__google-input {
+    width: 100%;
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 0 8px;
+    font-size: 13px;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+    &:focus { border-color: #4285F4; }
+  }
+
+  &__google-btns {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__google-btn {
+    padding: 6px 14px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 12px;
+    cursor: pointer;
+    &:hover { background: #e8e8e8; border-color: #999; }
+  }
+
+  &__google-footer {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    color: #000080;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  // ── Wikipedia ──────────────────────────────────────────
+  &__wiki {
+    min-height: 100%;
+    background: #fff;
+    font-family: serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #000;
+    user-select: text;
+  }
+
+  &__wiki-header {
+    background: #fff;
+    border-bottom: 1px solid #aaa;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__wiki-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__wiki-logo-ball {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  &__wiki-logo-text {
+    display: flex;
+    flex-direction: column;
+    strong { font-size: 16px; font-family: 'Linux Libertine', serif; }
+    small  { font-size: 10px; color: #555; font-family: sans-serif; }
+  }
+
+  &__wiki-nav {
+    display: flex;
+    gap: 12px;
+    font-family: sans-serif;
+    font-size: 11px;
+    color: #000080;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__wiki-body {
+    display: flex;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 12px;
+    gap: 16px;
+  }
+
+  &__wiki-sidebar {
+    width: 160px;
+    flex-shrink: 0;
+    font-family: sans-serif;
+    font-size: 11px;
+
+    &-section {
+      margin-bottom: 14px;
+      strong {
+        display: block;
+        background: #cee0f2;
+        padding: 3px 6px;
+        font-size: 11px;
+        margin-bottom: 4px;
+        border: 1px solid #aaa;
+      }
+      ul {
+        list-style: none;
+        padding: 0 0 0 8px;
+        margin: 0;
+        li {
+          padding: 1px 0;
+          color: #000080;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__wiki-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__wiki-title {
+    font-family: 'Linux Libertine', 'Georgia', serif;
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 4px;
+    margin-bottom: 8px;
+  }
+
+  &__wiki-subtitle {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 8px;
+    font-family: sans-serif;
+  }
+
+  &__wiki-notice {
+    background: #eaf3fb;
+    border: 1px solid #a2a9b1;
+    padding: 6px 10px;
+    font-family: sans-serif;
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  &__wiki-infobox {
+    float: right;
+    clear: right;
+    margin: 0 0 12px 16px;
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    font-family: sans-serif;
+    font-size: 11px;
+    width: 220px;
+
+    &-title {
+      background: #cee0f2;
+      text-align: center;
+      padding: 5px;
+      font-weight: bold;
+      font-size: 13px;
+      border-bottom: 1px solid #a2a9b1;
+    }
+
+    &-img {
+      text-align: center;
+      padding: 8px;
+      border-bottom: 1px solid #a2a9b1;
+      img {
+        max-width: 180px;
+        max-height: 220px;
+        display: block;
+        margin: 0 auto 4px;
+      }
+      small { color: #555; font-size: 10px; }
+    }
+
+    &-table {
+      width: 100%;
+      border-collapse: collapse;
+      th, td {
+        padding: 3px 6px;
+        border-bottom: 1px solid #eaecf0;
+        vertical-align: top;
+      }
+      th {
+        font-weight: bold;
+        color: #555;
+        white-space: nowrap;
+        width: 90px;
+      }
+    }
+  }
+
+  &__wiki-toc {
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 10px 14px;
+    display: inline-block;
+    margin: 10px 0;
+    font-family: sans-serif;
+    font-size: 12px;
+    min-width: 200px;
+
+    &-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 20px;
+      li { padding: 1px 0; color: #000080; text-decoration: underline; cursor: pointer; }
+    }
+  }
+
+  &__wiki-h2 {
+    font-family: 'Linux Libertine', 'Georgia', serif;
+    font-size: 17px;
+    font-weight: normal;
+    border-bottom: 1px solid #aaa;
+    margin: 16px 0 8px;
+    clear: both;
+  }
+
+  &__wiki-link {
+    color: #000080;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__wiki-list {
+    padding-left: 24px;
+    li { margin-bottom: 4px; }
+  }
+
+  &__wiki-references {
+    border-top: 1px solid #aaa;
+    margin-top: 20px;
+    padding-top: 8px;
+    font-family: sans-serif;
+  }
+
+  &__wiki-ref-list {
+    font-size: 11px;
+    color: #555;
+    padding-left: 20px;
+    li { margin-bottom: 3px; }
+  }
+
+  &__wiki-categories {
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 6px 10px;
+    font-family: sans-serif;
+    font-size: 11px;
+    margin-top: 20px;
+    clear: both;
+    span { margin: 0 4px; }
+  }
+}
