@@ -1,3 +1,13 @@
+// ─── WINDOW INNER FLEX LAYOUT ────────────────────────────────────
+// Permet aux fenêtres de s'étirer quand on les redimensionne
+.msn-window-inner {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  background: #c0c0c0;
+}
+
 // ─── WIN98 TITLEBAR (MSN version) ────────────────────────────────
 .win98-titlebar {
   display: flex;
@@ -8,6 +18,7 @@
   user-select: none;
   cursor: move;
   min-height: 22px;
+  flex-shrink: 0;
 
   &__icon {
     width: 14px;
@@ -47,13 +58,13 @@
     justify-content: center;
     padding: 0;
     font-family: 'Tahoma', sans-serif;
+    color: #000;
 
     &:active {
       border-color: #808080 #fff #fff #808080;
     }
 
     &--close {
-      color: #000;
       font-size: 10px;
     }
   }
@@ -111,6 +122,7 @@
   padding: 12px 14px;
   background: linear-gradient(135deg, #002060 0%, #0050b0 45%, #1878d8 100%);
   border-bottom: 1px solid #001540;
+  flex-shrink: 0;
 
   &__logo {
     font-size: 30px;
@@ -139,6 +151,8 @@
 .msn-login__body {
   padding: 14px 16px;
   background: #ece9d8;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .msn-login__form-group {
@@ -205,6 +219,7 @@
   color: #555;
   font-family: 'Tahoma', sans-serif;
   text-align: center;
+  flex-shrink: 0;
 }
 
 // ─── CONTACT LIST ─────────────────────────────────────────────────
@@ -215,6 +230,7 @@
   padding: 8px 10px;
   background: linear-gradient(to right, #ddeeff, #f0f6ff);
   border-bottom: 1px solid #c0c0c0;
+  flex-shrink: 0;
 }
 
 .msn-contacts__user-name {
@@ -233,17 +249,11 @@
 .msn-contacts__body {
   background: #ffffff;
   overflow-y: auto;
-  max-height: 340px;
-  min-height: 200px;
+  flex: 1;        /* <— s'étire quand on redimensionne la fenêtre */
+  min-height: 80px;
 
-  &::-webkit-scrollbar {
-    width: 16px;
-    background: #c0c0c0;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #a0a0a0;
-    border: 1px solid #808080;
-  }
+  &::-webkit-scrollbar { width: 16px; background: #c0c0c0; }
+  &::-webkit-scrollbar-thumb { background: #a0a0a0; border: 1px solid #808080; }
 }
 
 .msn-group-header {
@@ -262,10 +272,7 @@
 
   &:hover { background: #d0cdc4; }
 
-  &__arrow {
-    font-size: 8px;
-    color: #555;
-  }
+  &__arrow { font-size: 8px; color: #555; }
 }
 
 .msn-contact-item {
@@ -279,10 +286,7 @@
   transition: background 0.08s;
 
   &:hover { background: #cce0ff; cursor: pointer; }
-
-  &--offline {
-    opacity: 0.55;
-  }
+  &--offline { opacity: 0.55; }
 
   &__name {
     font-size: 11px;
@@ -308,6 +312,7 @@
   padding: 6px 8px;
   background: #ece9d8;
   border-top: 1px solid #b0b0a8;
+  flex-shrink: 0;
 }
 
 .msn-toolbar-btn {
@@ -338,6 +343,7 @@
   padding: 7px 10px;
   background: linear-gradient(to right, #ddeeff, #f0f6ff);
   border-bottom: 1px solid #c0c0c0;
+  flex-shrink: 0;
 }
 
 .msn-chat__contact-name {
@@ -357,18 +363,13 @@
 .msn-chat__messages {
   background: #ffffff;
   overflow-y: auto;
-  height: 220px;
+  flex: 1;        /* <— s'étire quand on redimensionne la fenêtre */
+  min-height: 60px;
   padding: 8px 10px;
   border-bottom: 1px solid #c0c0c0;
 
-  &::-webkit-scrollbar {
-    width: 16px;
-    background: #c0c0c0;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #a0a0a0;
-    border: 1px solid #808080;
-  }
+  &::-webkit-scrollbar { width: 16px; background: #c0c0c0; }
+  &::-webkit-scrollbar-thumb { background: #a0a0a0; border: 1px solid #808080; }
 }
 
 .msn-chat__separator {
@@ -394,15 +395,11 @@
   &__sender {
     font-size: 11px;
     font-weight: bold;
-
-    &--self  { color: #cc0000; }
+    &--self  { color: #329a5a; }
     &--other { color: #0000bb; }
   }
 
-  &__time {
-    font-size: 9px;
-    color: #999;
-  }
+  &__time { font-size: 9px; color: #999; }
 
   &__text {
     font-size: 11px;
@@ -426,6 +423,7 @@
 .msn-chat__input-area {
   padding: 6px 8px 8px;
   background: #ece9d8;
+  flex-shrink: 0;
 }
 
 .msn-chat__input-label {
@@ -452,10 +450,7 @@
   display: block;
   margin-bottom: 5px;
 
-  &:disabled {
-    background: #e8e8e0;
-    color: #888;
-  }
+  &:disabled { background: #e8e8e0; color: #888; }
 }
 
 .msn-chat__actions {

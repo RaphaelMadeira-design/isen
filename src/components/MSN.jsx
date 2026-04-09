@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { Rnd } from 'react-rnd';
 import '../styles/msn.scss';
 
 // ─── CREDENTIALS ────────────────────────────────────────────────
@@ -21,21 +22,28 @@ const CONTACTS = [
     name: 'YukiChan_☆',
     status: 'online',
     personalMessage: "j'ai encore eu une vision... :/",
-    senderColor: '#7700cc',
+    senderColor: '#cc007a',
   },
   {
     id: 'kagami',
     name: 'KagamiSpirit',
     status: 'away',
     personalMessage: 'Le reflet ne ment jamais.',
-    senderColor: '#004488',
+    senderColor: '#171717',
+  },
+  {
+    id: 'masahiro',
+    name: '♫-MasaMasa-♫',
+    status: 'offline',
+    personalMessage: 'Concert bientôt !! Let\'s go !',
+    senderColor: '#721d9d',
   },
   {
     id: 'ryo',
-    name: 'Ryo',
+    name: 'b0xer.Ry0',
     status: 'offline',
     personalMessage: '',
-    senderColor: '#333333',
+    senderColor: '#cd1919',
   },
 ];
 
@@ -45,134 +53,170 @@ const CONVERSATIONS = {
     date: "Aujourd'hui — 20:45",
     messages: [
       { from: 'Kaito_07',  text: "isen !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
-      { from: 'isen.hata', text: 'non, quoi encore',                                         time: '20:46' },
+      { from: 'isen.samurai99', text: 'non, quoi encore',                                         time: '20:46' },
       { from: 'Kaito_07',  text: 'ils ont attaqué le district nord. encore.',                time: '20:46' },
       { from: 'Kaito_07',  text: "j'ai besoin de toi sur ce coup",                           time: '20:47' },
-      { from: 'isen.hata', text: 'je suis occupé',                                           time: '20:47' },
+      { from: 'isen.samurai99', text: 'je suis occupé',                                           time: '20:47' },
       { from: 'Kaito_07',  text: '"occupé" c\'est ça... ^^',                                 time: '20:48' },
       { from: 'Kaito_07',  text: "tu sais très bien qu'on ne peut pas le faire sans toi",    time: '20:48' },
-      { from: 'isen.hata', text: 'je viendrai. mais à mes conditions.',                      time: '20:49' },
+      { from: 'isen.samurai99', text: 'je viendrai. mais à mes conditions.',                      time: '20:49' },
       { from: 'Kaito_07',  text: 'évidemment ^^ rendez-vous au pont de maruyama. minuit.',  time: '20:50' },
-      { from: 'isen.hata', text: 'ok',                                                       time: '20:50' },
+      { from: 'isen.samurai99', text: 'ok',                                                       time: '20:50' },
     ],
   },
   yuki: {
-    date: "Aujourd'hui — 19:12",
+    date: "Aujourd'hui — 21:12",
     messages: [
-      { from: 'YukiChan_☆', text: "ISEN !!! j'ai eu une vision ce matin omg",                  time: '19:12' },
-      { from: 'YukiChan_☆', text: "c'était bizarre... tu étais là mais pas toi en même temps ??", time: '19:12' },
-      { from: 'isen.hata',  text: 'une vision de quoi exactement',                              time: '19:14' },
-      { from: 'YukiChan_☆', text: 'une silhouette derrière toi. noire. mais familière',         time: '19:15' },
-      { from: 'isen.hata',  text: '...',                                                         time: '19:16' },
-      { from: 'YukiChan_☆', text: "isen ?? tu vas bien ??? dis moi que c'est rien ;_;",          time: '19:17' },
-      { from: 'isen.hata',  text: "c'est rien. oublie cette vision.",                           time: '19:18' },
-      { from: 'YukiChan_☆', text: '... :/ tu mens très mal tu sais xD',                         time: '19:19' },
-      { from: 'isen.hata',  text: 'passe une bonne nuit yuki',                                  time: '19:20' },
-      { from: 'YukiChan_☆', text: 'toi aussi... fais attention à toi stp ;_;',                  time: '19:20' },
+      { from: 'YukiChan_☆', text: "ISEN !!! j'ai eu une vision ce matin omg",                   time: '21:12' },
+      { from: 'YukiChan_☆', text: "c'était bizarre... tu étais là mais pas toi en même temps ??", time: '21:12' },
+      { from: 'isen.samurai99',  text: 'une vision de quoi exactement',                               time: '21:14' },
+      { from: 'YukiChan_☆', text: 'une silhouette derrière toi. noire. mais familière',          time: '21:15' },
+      { from: 'isen.samurai99',  text: '...',                                                          time: '21:16' },
+      { from: 'YukiChan_☆', text: "isen ?? tu vas bien ??? dis moi que c'est rien ;_;",           time: '21:17' },
+      { from: 'isen.samurai99',  text: "c'est rien. oublie cette vision.",                            time: '21:18' },
+      { from: 'YukiChan_☆', text: '... :/ tu mens très mal tu sais xD',                          time: '21:19' },
+      { from: 'isen.samurai99',  text: 'passe une bonne nuit yuki',                                   time: '21:20' },
+      { from: 'YukiChan_☆', text: 'toi aussi... fais attention à toi stp ;_;',                   time: '21:20' },
     ],
   },
   kagami: {
     date: 'Hier — 22:01',
     messages: [
       { from: 'KagamiSpirit', text: 'Le reflet ne ment jamais.',                time: '22:01' },
-      { from: 'isen.hata',    text: "qu'est-ce que tu veux cette fois",          time: '22:01' },
+      { from: 'isen.samurai99',    text: "qu'est-ce que tu veux cette fois",          time: '22:01' },
       { from: 'KagamiSpirit', text: 'Ce que tu portes... il le sent aussi.',     time: '22:02' },
       { from: 'KagamiSpirit', text: 'Méfie-toi de ton ombre.',                   time: '22:02' },
-      { from: 'isen.hata',    text: 'parle clairement pour une fois',            time: '22:03' },
+      { from: 'isen.samurai99',    text: 'parle clairement pour une fois',            time: '22:03' },
       { from: 'KagamiSpirit', text: 'Bientôt. Le voile est fin cette nuit.',     time: '22:03' },
       { from: 'KagamiSpirit', text: 'Ne te retourne pas.', italic: true,         time: '22:04' },
       { from: 'system',       text: "[KagamiSpirit s'est déconnecté]",           time: '22:04' },
     ],
   },
-  ryo: {
-    date: 'Il y a 6 mois',
+  masahiro: {
+    date: 'Aujourd’hui — 21:01',
     messages: [
-      { from: 'Ryo',       text: 'je dois disparaître un moment',             time: '14:23' },
-      { from: 'isen.hata', text: 'quoi ? pourquoi',                           time: '14:23' },
-      { from: 'Ryo',       text: 'tu comprendras plus tard.',                  time: '14:24' },
-      { from: 'Ryo',       text: 'ne me cherche pas.',                        time: '14:24' },
-      { from: 'isen.hata', text: "ryo. qu'est-ce qui se passe vraiment",      time: '14:25' },
+      { from: '♫-MasaMasa-♫', text: 'Hello mon chanteur préféré~~',                time: '21:01' },
+      { from: 'isen.samurai99',    text: "yo",          time: '21:01' },
+      { from: '♫-MasaMasa-♫', text: "On organise une répét' jeudi avec le groupe",     time: '21:02' },
+      { from: '♫-MasaMasa-♫', text: 'Ça te dit de nous faire entendre ta voix ?',                   time: '21:02' },
+      { from: 'isen.samurai99',    text: 'wakatsuru est encore malade ?',            time: '21:06' },
+      { from: '♫-MasaMasa-♫', text: 'Non pas cette fois',     time: '21:08' },
+      { from: '♫-MasaMasa-♫', text: "Depuis qu'il sort avec Reina-chan, il vient plus trop",       time: '21:08' },
+      { from: 'isen.samurai99',    text: "c'est con",       time: '21:10' },
+      { from: 'isen.samurai99',    text: "quelle heure",       time: '21:10' },
+      { from: '♫-MasaMasa-♫',    text: "On sait pas encore",       time: '21:11' },
+      { from: '♫-MasaMasa-♫',    text: "Je te dis ça demain, ok ?",       time: '21:11' },
+      { from: 'isen.samurai99',    text: "ok mais je promets rien",       time: '21:12' },
+      { from: '♫-MasaMasa-♫',    text: "Je compte sur toi~ à demain",       time: '21:12' },
+      { from: 'isen.samurai99',    text: "a+ masahiro",       time: '21:15' },
+      { from: 'system',       text: "[♫-MasaMasa-♫ est déconnecté]"},
+    ],
+  },
+  ryo: {
+    date: 'Il y a 2 mois',
+    messages: [
+      { from: 'b0xer.Ry0',       text: 'je dois disparaître un moment',             time: '14:23' },
+      { from: 'isen.samurai99', text: 'quoi ? pourquoi',                           time: '14:23' },
+      { from: 'b0xer.Ry0',       text: 'tu comprendras plus tard.',                  time: '14:24' },
+      { from: 'b0xer.Ry0',       text: 'ne me cherche pas.',                        time: '14:24' },
+      { from: 'isen.samurai99', text: "ryo. qu'est-ce qui se passe vraiment",      time: '14:25' },
       { from: 'system',    text: '[CONNEXION PERDUE]',                        time: '14:25' },
-      { from: 'system',    text: "Ryo n'est plus en ligne depuis 6 mois.",   time: ''      },
+      { from: 'system',    text: "Ryo n'est plus en ligne depuis 2 mois.",   time: ''      },
     ],
   },
 };
 
-// ─── DRAG HOOK ──────────────────────────────────────────────────
-function useDraggable(init) {
-  const [pos, setPos] = useState(init);
-  const dragging = useRef(false);
-  const offset = useRef({ x: 0, y: 0 });
-  const posRef = useRef(init);
+// ─── WIN98 WINDOW WRAPPER (avec Rnd pour redimensionnement) ──────
+function Win98Window({ title, icon, children, onClose, onMinimize, zIndex = 100, initPos, initSize, showMinimize = true }) {
+  const [pos, setPos]         = useState(initPos  || { x: 150, y: 80 });
+  const [size, setSize]       = useState(initSize || { width: 380, height: 400 });
+  const [minimized, setMin]   = useState(false);
+  const [maximized, setMax]   = useState(false);
+  const prevState             = useRef(null);
 
-  useEffect(() => { posRef.current = pos; }, [pos]);
+  const handleMinimize = () => {
+    if (onMinimize) { onMinimize(); return; }
+    setMin(true);
+  };
 
-  const onMouseDown = useCallback((e) => {
-    if (e.button !== 0) return;
-    dragging.current = true;
-    offset.current = {
-      x: e.clientX - posRef.current.x,
-      y: e.clientY - posRef.current.y,
-    };
-    e.preventDefault();
-  }, []);
+  const handleMaximize = () => {
+    if (maximized) {
+      if (prevState.current) {
+        setPos(prevState.current.pos);
+        setSize(prevState.current.size);
+      }
+      setMax(false);
+    } else {
+      prevState.current = { pos, size };
+      setMax(true);
+    }
+  };
 
-  useEffect(() => {
-    const onMove = (e) => {
-      if (!dragging.current) return;
-      setPos({
-        x: Math.max(0, e.clientX - offset.current.x),
-        y: Math.max(0, e.clientY - offset.current.y),
-      });
-    };
-    const onUp = () => { dragging.current = false; };
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('mouseup', onUp);
-    return () => {
-      window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('mouseup', onUp);
-    };
-  }, []);
+  if (minimized) return null;
 
-  return { pos, onMouseDown };
-}
-
-// ─── WIN98 WINDOW WRAPPER ────────────────────────────────────────
-// IMPORTANT : position: 'absolute' (pas fixed) pour fonctionner dans le desktop
-function Win98Window({ title, icon, children, onClose, zIndex = 100, initPos, style = {} }) {
-  const { pos, onMouseDown } = useDraggable(initPos || { x: 150, y: 80 });
+  if (maximized) {
+    return (
+      <div
+        className="win98-window msn-window-inner"
+        style={{ position: 'absolute', inset: 0, zIndex }}
+        data-testid={`msn-window-${title.replace(/s/g, '-').toLowerCase()}`}
+      >
+        <div className="win98-titlebar">
+          {icon && <img src={icon} alt="" className="win98-titlebar__icon" />}
+          <span className="win98-titlebar__title">{title}</span>
+          <div className="win98-titlebar__btns">
+            {showMinimize && (
+              <button className="win98-titlebar__btn" onClick={handleMinimize} title="Réduire">_</button>
+            )}
+            <button className="win98-titlebar__btn" onClick={handleMaximize} title="Restaurer">❐</button>
+            <button className="win98-titlebar__btn win98-titlebar__btn--close" onClick={onClose} title="Fermer" data-testid="msn-close-btn">✕</button>
+          </div>
+        </div>
+        {children}
+      </div>
+    );
+  }
 
   return (
-    <div
-      className="win98-window"
-      style={{ position: 'absolute', left: pos.x, top: pos.y, zIndex, ...style }}
+    <Rnd
+      position={pos}
+      size={size}
+      onDragStop={(e, d) => setPos({ x: d.x, y: d.y })}
+      onResizeStop={(e, dir, ref, delta, position) => {
+        setSize({ width: ref.style.width, height: ref.style.height });
+        setPos(position);
+      }}
+      minWidth={260}
+      minHeight={220}
+      bounds="parent"
+      style={{ zIndex, position: 'absolute' }}
+      dragHandleClassName="win98-titlebar"
       data-testid={`msn-window-${title.replace(/s/g, '-').toLowerCase()}`}
     >
-      <div className="win98-titlebar" onMouseDown={onMouseDown}>
-        {icon && <img src={icon} alt="" className="win98-titlebar__icon" />}
-        <span className="win98-titlebar__title">{title}</span>
-        <div className="win98-titlebar__btns">
-          <button
-            className="win98-titlebar__btn win98-titlebar__btn--close"
-            onClick={onClose}
-            title="Fermer"
-            data-testid="msn-close-btn"
-          >
-            ✕
-          </button>
+      <div className="win98-window msn-window-inner" style={{ width: '100%', height: '100%' }}>
+        <div className="win98-titlebar">
+          {icon && <img src={icon} alt="" className="win98-titlebar__icon" />}
+          <span className="win98-titlebar__title">{title}</span>
+          <div className="win98-titlebar__btns">
+            {showMinimize && (
+              <button className="win98-titlebar__btn" onClick={handleMinimize} title="Réduire">_</button>
+            )}
+            <button className="win98-titlebar__btn" onClick={handleMaximize} title="Agrandir">☐</button>
+            <button className="win98-titlebar__btn win98-titlebar__btn--close" onClick={onClose} title="Fermer" data-testid="msn-close-btn">✕</button>
+          </div>
         </div>
+        {children}
       </div>
-      {children}
-    </div>
+    </Rnd>
   );
 }
 
 // ─── MSN LOGIN ──────────────────────────────────────────────────
 function MSNLogin({ onLogin, onClose }) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [error, setError]       = useState('');
+  const [loading, setLoading]   = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -194,7 +238,8 @@ function MSNLogin({ onLogin, onClose }) {
       onClose={onClose}
       zIndex={200}
       initPos={{ x: 200, y: 60 }}
-      style={{ width: 340 }}
+      initSize={{ width: 340, height: 360 }}
+      showMinimize={false}
     >
       <div className="msn-header">
         <div className="msn-header__logo">🦋</div>
@@ -244,25 +289,12 @@ function MSNLogin({ onLogin, onClose }) {
           </div>
 
           <div className="msn-login__actions">
-            <button
-              type="submit"
-              className="win98-btn"
-              disabled={loading}
-              data-testid="msn-login-btn"
-            >
+            <button type="submit" className="win98-btn" disabled={loading} data-testid="msn-login-btn">
               {loading ? 'Connexion...' : 'Se connecter'}
             </button>
-            <button type="button" className="win98-btn" onClick={onClose}>
-              Annuler
-            </button>
+            <button type="button" className="win98-btn" onClick={onClose}>Annuler</button>
           </div>
         </form>
-
-        <div className="msn-login__footer">
-          <a href="https://www.passport.com" target="_blank" rel="noreferrer">
-            Obtenir un compte Passport gratuit...
-          </a>
-        </div>
       </div>
 
       <div className="msn-login__copyright">
@@ -273,66 +305,47 @@ function MSNLogin({ onLogin, onClose }) {
 }
 
 // ─── MSN CONTACT LIST ────────────────────────────────────────────
-function MSNContactList({ onOpenChat, onClose }) {
+function MSNContactList({ onOpenChat, onClose, onMinimize }) {
   const [expanded, setExpanded] = useState({ online: true, offline: true });
 
-  const online = CONTACTS.filter(c => c.status === 'online' || c.status === 'away');
+  const online  = CONTACTS.filter(c => c.status === 'online' || c.status === 'away');
   const offline = CONTACTS.filter(c => c.status === 'offline');
-
-  const toggle = (group) => setExpanded(p => ({ ...p, [group]: !p[group] }));
+  const toggle  = (group) => setExpanded(p => ({ ...p, [group]: !p[group] }));
 
   return (
     <Win98Window
       title="MSN Messenger"
       icon="https://win98icons.alexmeub.com/icons/png/msn2-1.png"
       onClose={onClose}
+      onMinimize={onMinimize}
       zIndex={150}
       initPos={{ x: 90, y: 70 }}
-      style={{ width: 260 }}
+      initSize={{ width: 260, height: 430 }}
+      showMinimize={true}
     >
       <div className="msn-contacts__user-bar">
         <span className="msn-dot msn-dot--online" />
         <div>
-          <div className="msn-contacts__user-name">isen.hata</div>
+          <div className="msn-contacts__user-name">isen.samurai99</div>
           <div className="msn-contacts__user-status">En ligne</div>
         </div>
       </div>
 
       <div className="msn-contacts__body" data-testid="msn-contacts-list">
-        <div
-          className="msn-group-header"
-          onClick={() => toggle('online')}
-          data-testid="msn-group-online"
-        >
-          <span className="msn-group-header__arrow">
-            {expanded.online ? '▼' : '▶'}
-          </span>
+        <div className="msn-group-header" onClick={() => toggle('online')} data-testid="msn-group-online">
+          <span className="msn-group-header__arrow">{expanded.online ? '▼' : '▶'}</span>
           <span>En ligne ({online.length})</span>
         </div>
         {expanded.online && online.map(contact => (
-          <ContactItem
-            key={contact.id}
-            contact={contact}
-            onDoubleClick={() => onOpenChat(contact.id)}
-          />
+          <ContactItem key={contact.id} contact={contact} onDoubleClick={() => onOpenChat(contact.id)} />
         ))}
 
-        <div
-          className="msn-group-header"
-          onClick={() => toggle('offline')}
-          data-testid="msn-group-offline"
-        >
-          <span className="msn-group-header__arrow">
-            {expanded.offline ? '▼' : '▶'}
-          </span>
+        <div className="msn-group-header" onClick={() => toggle('offline')} data-testid="msn-group-offline">
+          <span className="msn-group-header__arrow">{expanded.offline ? '▼' : '▶'}</span>
           <span>Hors ligne ({offline.length})</span>
         </div>
         {expanded.offline && offline.map(contact => (
-          <ContactItem
-            key={contact.id}
-            contact={contact}
-            onDoubleClick={() => onOpenChat(contact.id)}
-          />
+          <ContactItem key={contact.id} contact={contact} onDoubleClick={() => onOpenChat(contact.id)} />
         ))}
       </div>
 
@@ -367,16 +380,11 @@ function ContactItem({ contact, onDoubleClick }) {
 // ─── MSN CHAT WINDOW ─────────────────────────────────────────────
 function MSNChat({ contact, index, onClose }) {
   const chatRef = useRef(null);
-  const conv = CONVERSATIONS[contact.id];
+  const conv    = CONVERSATIONS[contact.id];
 
   useEffect(() => {
-    if (chatRef.current) {
-      chatRef.current.scrollTop = chatRef.current.scrollHeight;
-    }
+    if (chatRef.current) chatRef.current.scrollTop = chatRef.current.scrollHeight;
   }, []);
-
-  const initX = 370 + index * 30;
-  const initY = 70 + index * 20;
 
   return (
     <Win98Window
@@ -384,8 +392,9 @@ function MSNChat({ contact, index, onClose }) {
       icon="https://win98icons.alexmeub.com/icons/png/msn2-1.png"
       onClose={onClose}
       zIndex={200 + index}
-      initPos={{ x: initX, y: initY }}
-      style={{ width: 390 }}
+      initPos={{ x: 370 + index * 30, y: 70 + index * 20 }}
+      initSize={{ width: 390, height: 440 }}
+      showMinimize={true}
     >
       <div className="msn-chat__contact-bar">
         <span className={`msn-dot msn-dot--${contact.status}`} />
@@ -398,12 +407,10 @@ function MSNChat({ contact, index, onClose }) {
       </div>
 
       <div className="msn-chat__messages" ref={chatRef} data-testid={`msn-chat-messages-${contact.id}`}>
-        {conv.date && (
-          <div className="msn-chat__separator">{conv.date}</div>
-        )}
+        {conv.date && <div className="msn-chat__separator">{conv.date}</div>}
         {conv.messages.map((msg, i) => {
           const isSystem = msg.from === 'system';
-          const isSelf = msg.from === 'isen.hata';
+          const isSelf   = msg.from === 'isen.samurai99';
 
           if (isSystem) {
             return (
@@ -433,7 +440,7 @@ function MSNChat({ contact, index, onClose }) {
       </div>
 
       <div className="msn-chat__input-area">
-        <div className="msn-chat__input-label">isen.hata dit :</div>
+        <div className="msn-chat__input-label">isen.samurai99 dit :</div>
         <textarea
           className="msn-chat__textarea"
           placeholder="Tapez votre message ici..."
@@ -456,43 +463,25 @@ function MSNChat({ contact, index, onClose }) {
 }
 
 // ─── MAIN MSN APP ────────────────────────────────────────────────
-export default function MSNApp({ onClose }) {
-  const [phase, setPhase] = useState('login'); // 'login' | 'contacts'
+export default function MSNApp({ onClose, onMinimize }) {
+  const [phase, setPhase]         = useState('login');
   const [openChats, setOpenChats] = useState([]);
 
-  const openChat = (contactId) => {
-    if (!openChats.includes(contactId)) {
-      setOpenChats(prev => [...prev, contactId]);
-    }
-  };
-
-  const closeChat = (contactId) => {
-    setOpenChats(prev => prev.filter(id => id !== contactId));
-  };
+  const openChat  = (id) => { if (!openChats.includes(id)) setOpenChats(p => [...p, id]); };
+  const closeChat = (id) => setOpenChats(p => p.filter(c => c !== id));
 
   return (
     <>
       {phase === 'login' ? (
-        <MSNLogin
-          onLogin={() => setPhase('contacts')}
-          onClose={onClose}
-        />
+        <MSNLogin onLogin={() => setPhase('contacts')} onClose={onClose} />
       ) : (
-        <MSNContactList
-          onOpenChat={openChat}
-          onClose={onClose}
-        />
+        <MSNContactList onOpenChat={openChat} onClose={onClose} onMinimize={onMinimize} />
       )}
 
       {openChats.map((contactId, i) => {
         const contact = CONTACTS.find(c => c.id === contactId);
         return (
-          <MSNChat
-            key={contactId}
-            contact={contact}
-            index={i}
-            onClose={() => closeChat(contactId)}
-          />
+          <MSNChat key={contactId} contact={contact} index={i} onClose={() => closeChat(contactId)} />
         );
       })}
     </>

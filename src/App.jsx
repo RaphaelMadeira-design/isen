@@ -192,6 +192,21 @@ function App() {
     })
   }, [])
 
+  // Synchronise MSN dans la barre des tâches
+  useEffect(() => {
+    if (msnOpen) {
+      setWindows(prev => {
+        if (prev.find(w => w.id === 'msn')) return prev
+        return [
+          ...prev.map(w => ({ ...w, focused: false })),
+          { id: 'msn', title: 'MSN Messenger', minimized: false, focused: true, zIndex: ++zCounter }
+        ]
+      })
+    } else {
+      setWindows(prev => prev.filter(w => w.id !== 'msn'))
+    }
+  }, [msnOpen])
+
   const openWindow = useCallback((id, options = {}) => {
     if (id === 'msn') { 
       setMsnOpen(true); 
@@ -240,6 +255,10 @@ function App() {
   }, [])
 
   const closeWindow = useCallback((id) => {
+    if (id === 'msn') { 
+      setMsnOpen(false); 
+      return 
+    }
     setWindows(prev => prev.filter(w => w.id !== id))
   }, [])
 
@@ -258,6 +277,10 @@ function App() {
   }, [])
 
   const toggleWindow = useCallback((id) => {
+    if (id === 'msn') { 
+      setMsnOpen(prev => !prev)
+      return 
+    }
     setWindows(prev => {
       const win = prev.find(w => w.id === id)
       if (!win) return prev
@@ -383,7 +406,7 @@ function App() {
 
       {/* Windows container */}
       <div className="desktop__content" style={{ position: 'absolute', inset: '0 0 32px 0' }}>
-        {windows.map(win => (
+        {windows.filter(win => win.id !== 'msn').map(win => (
           <Win98Window
             key={win.id}
             id={win.id}
@@ -417,8 +440,13 @@ function App() {
         <ShutdownDialog onCancel={() => setShowShutdown(false)} />
       )}
 
-      {msnOpen && 
-      <MSNApp onClose={() => setMsnOpen(false)} />}
+      {/* MSN App */}
+      {msnOpen && (
+        <MSNApp
+          onClose={() => setMsnOpen(false)}
+          onMinimize={() => setMsnOpen(false)}
+        />
+      )}
 
       {/* Taskbar */}
       <Taskbar

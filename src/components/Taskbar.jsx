@@ -15,6 +15,7 @@ const ICONS = {
   cmd: 'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
   imageviewer: 'https://win98icons.alexmeub.com/icons/png/kodak_imaging_file-0.png',
   browser: 'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
+  msn: 'https://win98icons.alexmeub.com/icons/png/msn2-1.png',
 }
 
 const getIcon = (id) => {
@@ -28,6 +29,7 @@ const getIcon = (id) => {
   if (id === 'browser') return ICONS.browser
   if (id === 'cmd') return ICONS.cmd
   if (id === 'imageviewer') return ICONS.imageviewer
+  if (id === 'msn') return ICONS.msn
   if (id.startsWith('notepad-')) return ICONS.notepad
   return ICONS.start
 }
