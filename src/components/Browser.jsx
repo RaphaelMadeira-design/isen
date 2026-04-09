@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '../styles/Browser.scss'
 
-const IE_ICON = 'https://win98icons.alexmeub.com/icons/png/msie1-2.png'
+const IE_ICON = 'https://win98icons.alexmeub.com/icons/png/search_web-0.png'
 
 function FakeGoogle() {
   const [query, setQuery] = useState('')
