@@ -234,7 +234,7 @@ function MSNLogin({ onLogin, onClose }) {
   return (
     <Win98Window
       title="MSN Messenger"
-      icon="https://win98icons.alexmeub.com/icons/png/msn2-1.png"
+      icon="https://win98icons.alexmeub.com/icons/png/msn2-2.png"
       onClose={onClose}
       zIndex={200}
       initPos={{ x: 200, y: 60 }}
@@ -242,7 +242,9 @@ function MSNLogin({ onLogin, onClose }) {
       showMinimize={false}
     >
       <div className="msn-header">
-        <div className="msn-header__logo">🦋</div>
+        <div className="msn-header__logo">
+          <img src="https://win98icons.alexmeub.com/icons/png/msn3-4.png" />
+        </div>
         <div>
           <div className="msn-header__title">MSN Messenger</div>
           <div className="msn-header__subtitle">La messagerie instantanée Windows</div>

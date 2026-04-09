@@ -126,7 +126,6 @@ function Page404({ url }) {
       <div className="browser__404-body">
         <p>Internet Explorer ne peut pas afficher la page demandée.</p>
         <ul>
-          <li>Actualisez : appuyez sur <b>F5</b>.</li>
           <li>Vérifiez l'adresse saisie : <em>{url}</em></li>
           <li>Contactez l'administrateur réseau.</li>
         </ul>
@@ -138,7 +137,7 @@ function Page404({ url }) {
 // Vous n'étiez pas censé trouver cette page.
 // Coordonnées archivées : 34.9876° N, 135.7553° E
 // Fréquence de résonance : 528 Hz
-// Elle sait que tu cherches.`}</pre>
+// Ils savent que tu cherches.`}</pre>
       </details>
     </div>
   )
@@ -192,7 +191,9 @@ function FakeWikipedia({ onLogoClick }) {
     <div className="browser__wiki">
       <div className="browser__wiki-header">
         <div className="browser__wiki-logo" onClick={onLogoClick} title="...">
-          <div className="browser__wiki-logo-ball">⊙</div>
+          <div className="browser__wiki-logo-ball">
+            <img src="/images/Wikipedia_logo.svg" alt="Wikipedia" />
+          </div>
           <div className="browser__wiki-logo-text">
             <strong>Wikipédia</strong>
             <small>L'encyclopédie libre</small>

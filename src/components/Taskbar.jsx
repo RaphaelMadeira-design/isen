@@ -15,7 +15,7 @@ const ICONS = {
   cmd: 'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
   imageviewer: 'https://win98icons.alexmeub.com/icons/png/kodak_imaging_file-0.png',
   browser: 'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
-  msn: 'https://win98icons.alexmeub.com/icons/png/msn2-1.png',
+  msn: 'https://win98icons.alexmeub.com/icons/png/msn2-2.png',
 }
 
 const getIcon = (id) => {
