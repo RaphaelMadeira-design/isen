@@ -85,52 +85,8 @@ $win98-navy: #0a246a;
   z-index: 1;
 
   &__logo {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  &__logo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 4px;
-    width: 60px;
-    height: 60px;
-  }
-
-  &__logo-cell {
-    border-radius: 2px;
-
-    &--red    { background: #ff2020; }
-    &--green  { background: #00cc44; }
-    &--blue   { background: #0066ff; }
-    &--yellow { background: #ffcc00; }
-  }
-
-  &__logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-  }
-
-  &__logo-win {
-    font-family: 'Times New Roman', serif;
-    font-style: italic;
-    font-size: 36px;
-    color: #ffffff;
-    font-weight: normal;
-    letter-spacing: -1px;
-  }
-
-  &__logo-98 {
-    font-family: 'Times New Roman', serif;
-    font-style: italic;
-    font-size: 28px;
-    color: #ffffff;
-    font-weight: normal;
-    align-self: flex-end;
-    margin-top: -4px;
+    width: 300px;
+    height: auto;
   }
 
   &__progress-wrap {

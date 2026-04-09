@@ -113,18 +113,11 @@ export default function BootScreen({ onDone }) {
       {/* Phase Windows 98 logo */}
       {(phase === 'win98' || phase === 'progress') && (
         <div className="boot-win98" data-testid="boot-win98">
-          <div className="boot-win98__logo">
-            <div className="boot-win98__logo-grid">
-              <div className="boot-win98__logo-cell boot-win98__logo-cell--red" />
-              <div className="boot-win98__logo-cell boot-win98__logo-cell--green" />
-              <div className="boot-win98__logo-cell boot-win98__logo-cell--blue" />
-              <div className="boot-win98__logo-cell boot-win98__logo-cell--yellow" />
-            </div>
-            <div className="boot-win98__logo-text">
-              <span className="boot-win98__logo-win">Windows</span>
-              <span className="boot-win98__logo-98">98</span>
-            </div>
-          </div>
+          <img
+            src="/images/Windows_98_logo.svg"
+            alt="Windows 98"
+            className="boot-win98__logo"
+          />
 
           {phase === 'progress' && (
             <div className="boot-win98__progress-wrap" data-testid="boot-progress">
