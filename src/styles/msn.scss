@@ -1,0 +1,242 @@
+/* =============================================
+   WIN98 BASE
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+.win98 {
+  &-window {
+    background: #d4d0c8;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+    box-shadow: 2px 2px 0 #000000;
+    font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
+    font-size: 11px;
+    user-select: none;
+  }
+
+  &-titlebar {
+    background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+    color: #ffffff;
+    padding: 3px 4px 3px 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: move;
+    font-weight: bold;
+    height: 22px;
+
+    &-inactive {
+      background: linear-gradient(to right, #7b7b7b 0%, #a8a8a8 100%);
+    }
+
+    &__icon {
+      width: 16px;
+      height: 16px;
+      image-rendering: pixelated;
+    }
+
+    &__title {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &__btns {
+      display: flex;
+      gap: 2px;
+    }
+
+    &__btn {
+      width: 16px;
+      height: 14px;
+      background: #d4d0c8;
+      border: 1px solid;
+      border-color: #ffffff #808080 #808080 #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:active {
+        border-color: #808080 #ffffff #ffffff #808080;
+      }
+
+      &--close:hover {
+        background: #cc0000;
+        color: white;
+      }
+    }
+  }
+
+  &-input {
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+    background: #ffffff;
+    padding: 3px 6px;
+    width: 100%;
+
+    &:focus {
+      border-color: #666 #dfdfdf #dfdfdf #666;
+      outline: none;
+    }
+  }
+
+  &-btn {
+    background: #d4d0c8;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    padding: 4px 12px;
+    cursor: pointer;
+
+    &:active {
+      border-color: #808080 #ffffff #ffffff #808080;
+      padding-left: 13px;
+      padding-top: 5px;
+    }
+
+    &:disabled {
+      color: #808080;
+      cursor: default;
+    }
+  }
+}
+
+/* =============================================
+   DESKTOP
+   ============================================= */
+
+.win98-desktop {
+  width: 100vw;
+  height: 100vh;
+  background-color: #008080;
+  position: relative;
+
+  &-icon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 6px 4px;
+    cursor: pointer;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &__img {
+      width: 32px;
+      height: 32px;
+      image-rendering: pixelated;
+    }
+
+    &__label {
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+    }
+  }
+}
+
+/* =============================================
+   MSN
+   ============================================= */
+
+.msn {
+  &-header {
+    background: linear-gradient(135deg, #001f6e 0%, #1570ef 100%);
+    color: #fff;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &__title {
+      font-family: Verdana;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &__subtitle {
+      font-size: 9px;
+      opacity: 0.75;
+    }
+  }
+
+  &-login {
+    &__body {
+      padding: 14px;
+      background: #d4d0c8;
+    }
+
+    &__form-group {
+      margin-bottom: 10px;
+    }
+
+    &__error {
+      background: #fff8f8;
+      border: 1px solid #cc0000;
+      color: #990000;
+      padding: 5px;
+    }
+
+    &__actions {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+  }
+
+  &-contacts {
+    &__body {
+      background: #ffffff;
+      max-height: 340px;
+      overflow-y: auto;
+    }
+  }
+
+  &-chat {
+    &__messages {
+      background: #ffffff;
+      height: 260px;
+      overflow-y: auto;
+      padding: 8px;
+    }
+
+    &__textarea {
+      width: 100%;
+      height: 52px;
+      resize: none;
+      border: none;
+      padding: 4px;
+    }
+  }
+}
+
+/* =============================================
+   HINT BOX
+   ============================================= */
+
+.desktop-hint {
+  position: absolute;
+  bottom: 40px;
+  right: 16px;
+  background: #ffffcc;
+  padding: 8px;
+  box-shadow: 2px 2px 0 #000;
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__text {
+    color: #555;
+  }
+}
