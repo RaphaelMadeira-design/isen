@@ -1,6 +1,5 @@
-
 import { useState, useRef, useEffect, useCallback } from 'react';
-import './msn.scss';
+import '../styles/msn.scss';
 
 // ─── CREDENTIALS ────────────────────────────────────────────────
 const CREDENTIALS = {
@@ -21,7 +20,7 @@ const CONTACTS = [
     id: 'yuki',
     name: 'YukiChan_☆',
     status: 'online',
-    personalMessage: "j'ai encore eu une vision... :/',",
+    personalMessage: "j'ai encore eu une vision... :/",
     senderColor: '#7700cc',
   },
   {
@@ -43,58 +42,58 @@ const CONTACTS = [
 // ─── CONVERSATIONS ──────────────────────────────────────────────
 const CONVERSATIONS = {
   kaito: {
-    date: 'Aujourd\'hui — 20:45',
+    date: "Aujourd'hui — 20:45",
     messages: [
-      { from: 'Kaito_07',    text: "isen !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
-      { from: 'isen.hata',   text: 'non, quoi encore',                                         time: '20:46' },
-      { from: 'Kaito_07',    text: 'ils ont attaqué le district nord. encore.',                time: '20:46' },
-      { from: 'Kaito_07',    text: "j'ai besoin de toi sur ce coup",                           time: '20:47' },
-      { from: 'isen.hata',   text: 'je suis occupé',                                           time: '20:47' },
-      { from: 'Kaito_07',    text: '"occupé" c\'est ça... ^^',                                 time: '20:48' },
-      { from: 'Kaito_07',    text: "tu sais très bien qu'on ne peut pas le faire sans toi",    time: '20:48' },
-      { from: 'isen.hata',   text: 'je viendrai. mais à mes conditions.',                      time: '20:49' },
-      { from: 'Kaito_07',    text: 'évidemment ^^ rendez-vous au pont de maruyama. minuit.',  time: '20:50' },
-      { from: 'isen.hata',   text: 'ok',                                                        time: '20:50' },
+      { from: 'Kaito_07',  text: "isen !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
+      { from: 'isen.hata', text: 'non, quoi encore',                                         time: '20:46' },
+      { from: 'Kaito_07',  text: 'ils ont attaqué le district nord. encore.',                time: '20:46' },
+      { from: 'Kaito_07',  text: "j'ai besoin de toi sur ce coup",                           time: '20:47' },
+      { from: 'isen.hata', text: 'je suis occupé',                                           time: '20:47' },
+      { from: 'Kaito_07',  text: '"occupé" c\'est ça... ^^',                                 time: '20:48' },
+      { from: 'Kaito_07',  text: "tu sais très bien qu'on ne peut pas le faire sans toi",    time: '20:48' },
+      { from: 'isen.hata', text: 'je viendrai. mais à mes conditions.',                      time: '20:49' },
+      { from: 'Kaito_07',  text: 'évidemment ^^ rendez-vous au pont de maruyama. minuit.',  time: '20:50' },
+      { from: 'isen.hata', text: 'ok',                                                       time: '20:50' },
     ],
   },
   yuki: {
-    date: 'Aujourd\'hui — 19:12',
+    date: "Aujourd'hui — 19:12",
     messages: [
-      { from: 'YukiChan_☆',  text: "ISEN !!! j'ai eu une vision ce matin omg",                 time: '19:12' },
-      { from: 'YukiChan_☆',  text: "c'était bizarre... tu étais là mais pas toi en même temps ??", time: '19:12' },
-      { from: 'isen.hata',   text: 'une vision de quoi exactement',                             time: '19:14' },
-      { from: 'YukiChan_☆',  text: 'une silhouette derrière toi. noire. mais familière',        time: '19:15' },
-      { from: 'isen.hata',   text: '...',                                                        time: '19:16' },
-      { from: 'YukiChan_☆',  text: "isen ?? tu vas bien ??? dis moi que c'est rien ;_;",        time: '19:17' },
-      { from: 'isen.hata',   text: "c'est rien. oublie cette vision.",                          time: '19:18' },
-      { from: 'YukiChan_☆',  text: '... :/ tu mens très mal tu sais xD',                        time: '19:19' },
-      { from: 'isen.hata',   text: 'passe une bonne nuit yuki',                                 time: '19:20' },
-      { from: 'YukiChan_☆',  text: 'toi aussi... fais attention à toi stp ;_;',                 time: '19:20' },
+      { from: 'YukiChan_☆', text: "ISEN !!! j'ai eu une vision ce matin omg",                  time: '19:12' },
+      { from: 'YukiChan_☆', text: "c'était bizarre... tu étais là mais pas toi en même temps ??", time: '19:12' },
+      { from: 'isen.hata',  text: 'une vision de quoi exactement',                              time: '19:14' },
+      { from: 'YukiChan_☆', text: 'une silhouette derrière toi. noire. mais familière',         time: '19:15' },
+      { from: 'isen.hata',  text: '...',                                                         time: '19:16' },
+      { from: 'YukiChan_☆', text: "isen ?? tu vas bien ??? dis moi que c'est rien ;_;",          time: '19:17' },
+      { from: 'isen.hata',  text: "c'est rien. oublie cette vision.",                           time: '19:18' },
+      { from: 'YukiChan_☆', text: '... :/ tu mens très mal tu sais xD',                         time: '19:19' },
+      { from: 'isen.hata',  text: 'passe une bonne nuit yuki',                                  time: '19:20' },
+      { from: 'YukiChan_☆', text: 'toi aussi... fais attention à toi stp ;_;',                  time: '19:20' },
     ],
   },
   kagami: {
     date: 'Hier — 22:01',
     messages: [
-      { from: 'KagamiSpirit', text: 'Le reflet ne ment jamais.',                               time: '22:01' },
-      { from: 'isen.hata',    text: "qu'est-ce que tu veux cette fois",                        time: '22:01' },
-      { from: 'KagamiSpirit', text: 'Ce que tu portes... il le sent aussi.',                   time: '22:02' },
-      { from: 'KagamiSpirit', text: 'Méfie-toi de ton ombre.',                                 time: '22:02' },
-      { from: 'isen.hata',    text: 'parle clairement pour une fois',                          time: '22:03' },
-      { from: 'KagamiSpirit', text: 'Bientôt. Le voile est fin cette nuit.',                   time: '22:03' },
-      { from: 'KagamiSpirit', text: 'Ne te retourne pas.', italic: true,                       time: '22:04' },
-      { from: 'system',       text: "[KagamiSpirit s'est déconnecté]",                         time: '22:04' },
+      { from: 'KagamiSpirit', text: 'Le reflet ne ment jamais.',                time: '22:01' },
+      { from: 'isen.hata',    text: "qu'est-ce que tu veux cette fois",          time: '22:01' },
+      { from: 'KagamiSpirit', text: 'Ce que tu portes... il le sent aussi.',     time: '22:02' },
+      { from: 'KagamiSpirit', text: 'Méfie-toi de ton ombre.',                   time: '22:02' },
+      { from: 'isen.hata',    text: 'parle clairement pour une fois',            time: '22:03' },
+      { from: 'KagamiSpirit', text: 'Bientôt. Le voile est fin cette nuit.',     time: '22:03' },
+      { from: 'KagamiSpirit', text: 'Ne te retourne pas.', italic: true,         time: '22:04' },
+      { from: 'system',       text: "[KagamiSpirit s'est déconnecté]",           time: '22:04' },
     ],
   },
   ryo: {
     date: 'Il y a 6 mois',
     messages: [
-      { from: 'Ryo',        text: 'je dois disparaître un moment',                             time: '14:23' },
-      { from: 'isen.hata',  text: 'quoi ? pourquoi',                                           time: '14:23' },
-      { from: 'Ryo',        text: 'tu comprendras plus tard.',                                  time: '14:24' },
-      { from: 'Ryo',        text: 'ne me cherche pas.',                                        time: '14:24' },
-      { from: 'isen.hata',  text: "ryo. qu'est-ce qui se passe vraiment",                     time: '14:25' },
-      { from: 'system',     text: '[CONNEXION PERDUE]',                                        time: '14:25' },
-      { from: 'system',     text: "Ryo n'est plus en ligne depuis 6 mois.",                   time: ''     },
+      { from: 'Ryo',       text: 'je dois disparaître un moment',             time: '14:23' },
+      { from: 'isen.hata', text: 'quoi ? pourquoi',                           time: '14:23' },
+      { from: 'Ryo',       text: 'tu comprendras plus tard.',                  time: '14:24' },
+      { from: 'Ryo',       text: 'ne me cherche pas.',                        time: '14:24' },
+      { from: 'isen.hata', text: "ryo. qu'est-ce qui se passe vraiment",      time: '14:25' },
+      { from: 'system',    text: '[CONNEXION PERDUE]',                        time: '14:25' },
+      { from: 'system',    text: "Ryo n'est plus en ligne depuis 6 mois.",   time: ''      },
     ],
   },
 };
@@ -139,14 +138,15 @@ function useDraggable(init) {
 }
 
 // ─── WIN98 WINDOW WRAPPER ────────────────────────────────────────
+// IMPORTANT : position: 'absolute' (pas fixed) pour fonctionner dans le desktop
 function Win98Window({ title, icon, children, onClose, zIndex = 100, initPos, style = {} }) {
   const { pos, onMouseDown } = useDraggable(initPos || { x: 150, y: 80 });
 
   return (
     <div
       className="win98-window"
-      style={{ position: 'fixed', left: pos.x, top: pos.y, zIndex, ...style }}
-      data-testid={`win98-window-${title.replace(/s/g, '-').toLowerCase()}`}
+      style={{ position: 'absolute', left: pos.x, top: pos.y, zIndex, ...style }}
+      data-testid={`msn-window-${title.replace(/s/g, '-').toLowerCase()}`}
     >
       <div className="win98-titlebar" onMouseDown={onMouseDown}>
         {icon && <img src={icon} alt="" className="win98-titlebar__icon" />}
@@ -177,7 +177,6 @@ function MSNLogin({ onLogin, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    // Small delay for authenticity
     setTimeout(() => {
       if (email.trim() === CREDENTIALS.email && password === CREDENTIALS.password) {
         onLogin();
@@ -194,10 +193,9 @@ function MSNLogin({ onLogin, onClose }) {
       icon="https://win98icons.alexmeub.com/icons/png/msn2-1.png"
       onClose={onClose}
       zIndex={200}
-      initPos={{ x: Math.max(50, (window.innerWidth - 340) / 2), y: 80 }}
+      initPos={{ x: 200, y: 60 }}
       style={{ width: 340 }}
     >
-      {/* MSN Brand Header */}
       <div className="msn-header">
         <div className="msn-header__logo">🦋</div>
         <div>
@@ -206,7 +204,6 @@ function MSNLogin({ onLogin, onClose }) {
         </div>
       </div>
 
-      {/* Form */}
       <div className="msn-login__body">
         <form onSubmit={handleSubmit}>
           <div className="msn-login__form-group">
@@ -293,7 +290,6 @@ function MSNContactList({ onOpenChat, onClose }) {
       initPos={{ x: 90, y: 70 }}
       style={{ width: 260 }}
     >
-      {/* User bar */}
       <div className="msn-contacts__user-bar">
         <span className="msn-dot msn-dot--online" />
         <div>
@@ -302,9 +298,7 @@ function MSNContactList({ onOpenChat, onClose }) {
         </div>
       </div>
 
-      {/* Contact list */}
       <div className="msn-contacts__body" data-testid="msn-contacts-list">
-        {/* Online group */}
         <div
           className="msn-group-header"
           onClick={() => toggle('online')}
@@ -323,7 +317,6 @@ function MSNContactList({ onOpenChat, onClose }) {
           />
         ))}
 
-        {/* Offline group */}
         <div
           className="msn-group-header"
           onClick={() => toggle('offline')}
@@ -343,7 +336,6 @@ function MSNContactList({ onOpenChat, onClose }) {
         ))}
       </div>
 
-      {/* Toolbar */}
       <div className="msn-contacts__toolbar">
         <button className="win98-btn msn-toolbar-btn">Contacts</button>
         <button className="win98-btn msn-toolbar-btn">Outils</button>
@@ -392,10 +384,9 @@ function MSNChat({ contact, index, onClose }) {
       icon="https://win98icons.alexmeub.com/icons/png/msn2-1.png"
       onClose={onClose}
       zIndex={200 + index}
-      initPos={{ x: Math.min(initX, window.innerWidth - 400), y: initY }}
+      initPos={{ x: initX, y: initY }}
       style={{ width: 390 }}
     >
-      {/* Contact header */}
       <div className="msn-chat__contact-bar">
         <span className={`msn-dot msn-dot--${contact.status}`} />
         <div>
@@ -406,7 +397,6 @@ function MSNChat({ contact, index, onClose }) {
         </div>
       </div>
 
-      {/* Messages */}
       <div className="msn-chat__messages" ref={chatRef} data-testid={`msn-chat-messages-${contact.id}`}>
         {conv.date && (
           <div className="msn-chat__separator">{conv.date}</div>
@@ -442,7 +432,6 @@ function MSNChat({ contact, index, onClose }) {
         })}
       </div>
 
-      {/* Input area (decorative – read-only log) */}
       <div className="msn-chat__input-area">
         <div className="msn-chat__input-label">isen.hata dit :</div>
         <textarea
@@ -450,7 +439,6 @@ function MSNChat({ contact, index, onClose }) {
           placeholder="Tapez votre message ici..."
           data-testid={`msn-chat-input-${contact.id}`}
           disabled={contact.status === 'offline'}
-          style={contact.status === 'offline' ? { opacity: 0.5 } : {}}
         />
         <div className="msn-chat__actions">
           <button

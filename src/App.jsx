@@ -21,6 +21,7 @@ import CRTFrame from './components/CRTFrame'
 import CMD from './components/CMD'
 import ImageViewer from './components/ImageViewer'
 import Browser from './components/Browser'
+import MSNApp from './components/MSN'
 
 // Hook pour détecter le mode mobile
 function useIsMobile(breakpoint = 768) {
@@ -86,6 +87,12 @@ const INITIAL_ICONS = [
     label: 'Internet Explorer',
     icon: 'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
     x: 1, y: 0,
+  },
+  { 
+    id: 'msn', 
+    label: 'MSN Messenger', 
+    icon: 'https://win98icons.alexmeub.com/icons/png/msn2-1.png', 
+    x: 1, y: 1,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
@@ -171,6 +178,7 @@ function App() {
   const [loading, setLoading] = useState(null)
   const [mediaTrack, setMediaTrack] = useState(null)
   const [imageToView, setImageToView] = useState(null)
+  const [msnOpen, setMsnOpen] = useState(false)
   const handleIconDragEnd = useCallback((id, pos) => {
     setIcons(prev => {
       const others = prev.filter(ic => ic.id !== id)
@@ -185,6 +193,11 @@ function App() {
   }, [])
 
   const openWindow = useCallback((id, options = {}) => {
+    if (id === 'msn') { 
+      setMsnOpen(true); 
+      setStartOpen(false); 
+      return; 
+    }
     const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id === 'browser' || id === 'imageviewer' || id.startsWith('notepad-')
     setWindows(prev => {
       const existing = prev.find(w => w.id === id)
@@ -403,6 +416,9 @@ function App() {
       {showShutdown && (
         <ShutdownDialog onCancel={() => setShowShutdown(false)} />
       )}
+
+      {msnOpen && 
+      <MSNApp onClose={() => setMsnOpen(false)} />}
 
       {/* Taskbar */}
       <Taskbar

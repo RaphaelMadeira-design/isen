@@ -14,6 +14,7 @@ const ICONS = {
   media:        'https://win98icons.alexmeub.com/icons/png/wm-4.png',
   cmd:          'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
   browser:      'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
+  msn:          'https://win98icons.alexmeub.com/icons/png/msn2-1.png',
 }
 
 export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
@@ -78,6 +79,11 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
           <div className="start-menu__item" onClick={() => handle('browser')} data-testid="start-menu-browser">
             <img src={ICONS.browser} alt="Internet Explorer" />
             Internet Explorer
+          </div>
+
+          <div className="start-menu__item" onClick={() => handle('msn')} data-testid="start-menu-msn">
+            <img src={ICONS.msn} alt="MSN" />
+            MSN Messenger
           </div>
 
           <div className="start-menu__item" onClick={() => handle('media')} data-testid="start-menu-media">

@@ -1,242 +1,470 @@
-/* =============================================
-   WIN98 BASE
-   ============================================= */
+// ─── WIN98 TITLEBAR (MSN version) ────────────────────────────────
+.win98-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px 3px 6px;
+  background: linear-gradient(to right, #0a246a 0%, #3169c4 100%);
+  user-select: none;
+  cursor: move;
+  min-height: 22px;
 
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
-
-.win98 {
-  &-window {
-    background: #d4d0c8;
-    border-top: 2px solid #ffffff;
-    border-left: 2px solid #ffffff;
-    border-bottom: 2px solid #808080;
-    border-right: 2px solid #808080;
-    box-shadow: 2px 2px 0 #000000;
-    font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
-    font-size: 11px;
-    user-select: none;
+  &__icon {
+    width: 14px;
+    height: 14px;
+    image-rendering: pixelated;
+    flex-shrink: 0;
   }
-
-  &-titlebar {
-    background: linear-gradient(to right, #000080 0%, #1084d0 100%);
-    color: #ffffff;
-    padding: 3px 4px 3px 6px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: move;
-    font-weight: bold;
-    height: 22px;
-
-    &-inactive {
-      background: linear-gradient(to right, #7b7b7b 0%, #a8a8a8 100%);
-    }
-
-    &__icon {
-      width: 16px;
-      height: 16px;
-      image-rendering: pixelated;
-    }
-
-    &__title {
-      flex: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    &__btns {
-      display: flex;
-      gap: 2px;
-    }
-
-    &__btn {
-      width: 16px;
-      height: 14px;
-      background: #d4d0c8;
-      border: 1px solid;
-      border-color: #ffffff #808080 #808080 #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8px;
-      font-weight: bold;
-      cursor: pointer;
-
-      &:active {
-        border-color: #808080 #ffffff #ffffff #808080;
-      }
-
-      &--close:hover {
-        background: #cc0000;
-        color: white;
-      }
-    }
-  }
-
-  &-input {
-    border: 2px solid;
-    border-color: #808080 #dfdfdf #dfdfdf #808080;
-    background: #ffffff;
-    padding: 3px 6px;
-    width: 100%;
-
-    &:focus {
-      border-color: #666 #dfdfdf #dfdfdf #666;
-      outline: none;
-    }
-  }
-
-  &-btn {
-    background: #d4d0c8;
-    border: 2px solid;
-    border-color: #ffffff #808080 #808080 #ffffff;
-    padding: 4px 12px;
-    cursor: pointer;
-
-    &:active {
-      border-color: #808080 #ffffff #ffffff #808080;
-      padding-left: 13px;
-      padding-top: 5px;
-    }
-
-    &:disabled {
-      color: #808080;
-      cursor: default;
-    }
-  }
-}
-
-/* =============================================
-   DESKTOP
-   ============================================= */
-
-.win98-desktop {
-  width: 100vw;
-  height: 100vh;
-  background-color: #008080;
-  position: relative;
-
-  &-icon {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80px;
-    padding: 6px 4px;
-    cursor: pointer;
-
-    &:hover {
-      border-color: rgba(255, 255, 255, 0.4);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    &__img {
-      width: 32px;
-      height: 32px;
-      image-rendering: pixelated;
-    }
-
-    &__label {
-      color: #ffffff;
-      text-align: center;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
-    }
-  }
-}
-
-/* =============================================
-   MSN
-   ============================================= */
-
-.msn {
-  &-header {
-    background: linear-gradient(135deg, #001f6e 0%, #1570ef 100%);
-    color: #fff;
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    &__title {
-      font-family: Verdana;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    &__subtitle {
-      font-size: 9px;
-      opacity: 0.75;
-    }
-  }
-
-  &-login {
-    &__body {
-      padding: 14px;
-      background: #d4d0c8;
-    }
-
-    &__form-group {
-      margin-bottom: 10px;
-    }
-
-    &__error {
-      background: #fff8f8;
-      border: 1px solid #cc0000;
-      color: #990000;
-      padding: 5px;
-    }
-
-    &__actions {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-    }
-  }
-
-  &-contacts {
-    &__body {
-      background: #ffffff;
-      max-height: 340px;
-      overflow-y: auto;
-    }
-  }
-
-  &-chat {
-    &__messages {
-      background: #ffffff;
-      height: 260px;
-      overflow-y: auto;
-      padding: 8px;
-    }
-
-    &__textarea {
-      width: 100%;
-      height: 52px;
-      resize: none;
-      border: none;
-      padding: 4px;
-    }
-  }
-}
-
-/* =============================================
-   HINT BOX
-   ============================================= */
-
-.desktop-hint {
-  position: absolute;
-  bottom: 40px;
-  right: 16px;
-  background: #ffffcc;
-  padding: 8px;
-  box-shadow: 2px 2px 0 #000;
 
   &__title {
+    flex: 1;
+    color: white;
+    font-size: 11px;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    width: 16px;
+    height: 14px;
+    border: 1px solid;
+    border-color: #fff #808080 #808080 #fff;
+    background: #c0c0c0;
+    font-size: 9px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-family: 'Tahoma', sans-serif;
+
+    &:active {
+      border-color: #808080 #fff #fff #808080;
+    }
+
+    &--close {
+      color: #000;
+      font-size: 10px;
+    }
+  }
+}
+
+// ─── WIN98 GENERIC ELEMENTS ───────────────────────────────────────
+.win98-btn {
+  font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  padding: 2px 10px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  outline: 1px solid #000;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) {
+    background: #d0d0d0;
+  }
+
+  &:active:not(:disabled) {
+    border-color: #808080 #ffffff #ffffff #808080;
+    padding: 3px 9px 1px 11px;
+  }
+
+  &:disabled {
+    color: #808080;
+    cursor: default;
+  }
+}
+
+.win98-input {
+  font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  width: 100%;
+  padding: 2px 4px;
+  background: white;
+  color: #000;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  outline: 1px solid #000;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 1px solid #000;
+  }
+}
+
+// ─── MSN BRAND HEADER ─────────────────────────────────────────────
+.msn-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #002060 0%, #0050b0 45%, #1878d8 100%);
+  border-bottom: 1px solid #001540;
+
+  &__logo {
+    font-size: 30px;
+    filter: drop-shadow(0 0 5px rgba(150, 200, 255, 0.6));
+    flex-shrink: 0;
+  }
+
+  &__title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Tahoma', sans-serif;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.3px;
+  }
+
+  &__subtitle {
+    color: #9ecfff;
+    font-size: 10px;
+    font-family: 'Tahoma', sans-serif;
+    margin-top: 1px;
+  }
+}
+
+// ─── LOGIN ────────────────────────────────────────────────────────
+.msn-login__body {
+  padding: 14px 16px;
+  background: #ece9d8;
+}
+
+.msn-login__form-group {
+  margin-bottom: 10px;
+}
+
+.msn-login__label {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 3px;
+  font-family: 'Tahoma', sans-serif;
+  color: #000;
+}
+
+.msn-login__error {
+  background: #fff5f5;
+  border: 1px solid #cc0000;
+  color: #aa0000;
+  font-size: 11px;
+  padding: 5px 8px;
+  margin-bottom: 10px;
+  font-family: 'Tahoma', sans-serif;
+  line-height: 1.4;
+}
+
+.msn-login__checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-family: 'Tahoma', sans-serif;
+
+  label { cursor: pointer; }
+}
+
+.msn-login__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.msn-login__footer {
+  border-top: 1px solid #b0b0a8;
+  padding-top: 8px;
+
+  a {
+    color: #0000cc;
+    font-size: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: 'Tahoma', sans-serif;
+
+    &:hover { color: #cc0000; }
+  }
+}
+
+.msn-login__copyright {
+  background: #d4d0c8;
+  border-top: 1px solid #b0b0a8;
+  padding: 4px 16px;
+  font-size: 10px;
+  color: #555;
+  font-family: 'Tahoma', sans-serif;
+  text-align: center;
+}
+
+// ─── CONTACT LIST ─────────────────────────────────────────────────
+.msn-contacts__user-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: linear-gradient(to right, #ddeeff, #f0f6ff);
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.msn-contacts__user-name {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif;
+  color: #002860;
+}
+
+.msn-contacts__user-status {
+  font-size: 10px;
+  color: #666;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.msn-contacts__body {
+  background: #ffffff;
+  overflow-y: auto;
+  max-height: 340px;
+  min-height: 200px;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    background: #c0c0c0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border: 1px solid #808080;
+  }
+}
+
+.msn-group-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  background: #e0ddd4;
+  border-bottom: 1px solid #c0c0c0;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif;
+  cursor: pointer;
+  color: #003399;
+  user-select: none;
+
+  &:hover { background: #d0cdc4; }
+
+  &__arrow {
+    font-size: 8px;
+    color: #555;
+  }
+}
+
+.msn-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 8px 5px 20px;
+  cursor: default;
+  border-bottom: 1px solid #f0eeea;
+  font-family: 'Tahoma', sans-serif;
+  transition: background 0.08s;
+
+  &:hover { background: #cce0ff; cursor: pointer; }
+
+  &--offline {
+    opacity: 0.55;
+  }
+
+  &__name {
+    font-size: 11px;
+    font-weight: bold;
+    color: #111;
+    line-height: 1.3;
+  }
+
+  &__msg {
+    font-size: 10px;
+    color: #555;
+    font-style: italic;
+    max-width: 190px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.msn-contacts__toolbar {
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+  background: #ece9d8;
+  border-top: 1px solid #b0b0a8;
+}
+
+.msn-toolbar-btn {
+  font-size: 10px !important;
+  padding: 1px 8px !important;
+}
+
+// ─── STATUS DOTS ──────────────────────────────────────────────────
+.msn-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 1px solid rgba(0,0,0,0.2);
+
+  &--online  { background: #00bb00; box-shadow: 0 0 4px #00ee00; }
+  &--away    { background: #ff8800; box-shadow: 0 0 4px #ffaa33; }
+  &--offline { background: #999; }
+}
+
+// ─── CHAT WINDOW ──────────────────────────────────────────────────
+.msn-chat__contact-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  background: linear-gradient(to right, #ddeeff, #f0f6ff);
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.msn-chat__contact-name {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif;
+  color: #002860;
+}
+
+.msn-chat__contact-status {
+  font-size: 10px;
+  color: #555;
+  font-family: 'Tahoma', sans-serif;
+  font-style: italic;
+}
+
+.msn-chat__messages {
+  background: #ffffff;
+  overflow-y: auto;
+  height: 220px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #c0c0c0;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    background: #c0c0c0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #a0a0a0;
+    border: 1px solid #808080;
+  }
+}
+
+.msn-chat__separator {
+  text-align: center;
+  font-size: 10px;
+  color: #999;
+  font-style: italic;
+  margin: 2px 0 10px;
+  font-family: 'Tahoma', sans-serif;
+}
+
+.msn-msg {
+  margin-bottom: 7px;
+  font-family: 'Tahoma', sans-serif;
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin-bottom: 1px;
+  }
+
+  &__sender {
+    font-size: 11px;
+    font-weight: bold;
+
+    &--self  { color: #cc0000; }
+    &--other { color: #0000bb; }
+  }
+
+  &__time {
+    font-size: 9px;
+    color: #999;
   }
 
   &__text {
-    color: #555;
+    font-size: 11px;
+    color: #111;
+    padding-left: 2px;
+    line-height: 1.4;
+
+    &--italic { font-style: italic; color: #444; }
+
+    &--system {
+      font-style: italic;
+      color: #888;
+      font-size: 10px;
+      text-align: center;
+      display: block;
+      padding: 2px 0;
+    }
   }
+}
+
+.msn-chat__input-area {
+  padding: 6px 8px 8px;
+  background: #ece9d8;
+}
+
+.msn-chat__input-label {
+  font-size: 10px;
+  color: #002880;
+  font-weight: bold;
+  font-family: 'Tahoma', sans-serif;
+  margin-bottom: 3px;
+}
+
+.msn-chat__textarea {
+  width: 100%;
+  height: 52px;
+  resize: none;
+  font-family: 'Tahoma', 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  outline: 1px solid #000;
+  background: white;
+  color: #000;
+  padding: 3px;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 5px;
+
+  &:disabled {
+    background: #e8e8e0;
+    color: #888;
+  }
+}
+
+.msn-chat__actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.msn-chat__action-btn {
+  font-size: 10px !important;
+  padding: 1px 12px !important;
 }
