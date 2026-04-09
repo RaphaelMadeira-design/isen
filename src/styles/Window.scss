@@ -164,15 +164,6 @@
     }
   }
 
-  &__body {
-    flex: 1;
-    overflow: auto;
-    background-color: $win98-white;
-    @include border-inset-light;
-    margin: 2px;
-    position: relative;
-  }
-
   &__statusbar {
     height: 20px;
     background-color: $win98-gray;
@@ -189,15 +180,5 @@
       padding: 0 4px;
       border-right: 1px solid $win98-dark-gray;
     }
-  }
-
-  &__resize-handle {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 16px;
-    height: 16px;
-    cursor: se-resize;
-    background: linear-gradient(135deg, transparent 50%, $win98-dark-gray 50%);
   }
 }

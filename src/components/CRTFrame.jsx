@@ -1,4 +1,4 @@
-import { useState, forwardRef, useImperativeHandle } from 'react'
+import { useState } from 'react'
 import '../styles/CRTFrame.scss'
 
 export default function CRTFrame({ children, onReset }) {

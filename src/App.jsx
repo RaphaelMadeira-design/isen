@@ -142,12 +142,12 @@ const WINDOW_CONFIGS = {
   },
 }
 
-  const LOADING_LABELS = {
-    character: 'Fiche de personnage',
-    powers: 'POUVOIRS.exe',
-    snake: 'SNAKE.exe',
-    jump: 'JUMP.exe',
-    vn: 'ISEN.exe',
+const LOADING_LABELS = {
+  character: 'Fiche de personnage',
+  powers: 'POUVOIRS.exe',
+  snake: 'SNAKE.exe',
+  jump: 'JUMP.exe',
+  vn: 'ISEN.exe',
   }
 
 // Crée une config de fenêtre Bloc-notes pour un fichier .txt

@@ -33,7 +33,7 @@ const WIN98_LINES = [
 export default function BootScreen({ onDone }) {
   const [phase, setPhase] = useState('bios')
   const [visibleBios, setVisibleBios] = useState([])
-  const [visibleWin, setVisibleWin] = useState([])
+  const [setVisibleWin] = useState([])
   const [progress, setProgress] = useState(0)
   const [scanOn, setScanOn] = useState(true)
   const timerRef = useRef(null)

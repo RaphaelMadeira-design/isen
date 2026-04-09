@@ -27,13 +27,13 @@ const GAME_APPS = [
   { id: 'media', label: 'Media', icon: '🎵' },
 ]
 
-export default function PDAView({ onOpenNotepad }) {
+export default function PDAView() {
   const [currentApp, setCurrentApp] = useState('home')
-  const [prevApp, setPrevApp] = useState(null)
+  const [setPrevApp] = useState(null)
   const [notepadData, setNotepadData] = useState(null)
   const [time, setTime] = useState('')
   const [date, setDate] = useState('')
-  const [battery, setBattery] = useState(87)
+  const [battery] = useState(87)
   const [showBootScreen, setShowBootScreen] = useState(true)
 
   // Horloge
