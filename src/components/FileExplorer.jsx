@@ -6,7 +6,7 @@ const ICONS = {
   myDocs:       'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
   txt:          'https://win98icons.alexmeub.com/icons/png/file_lines-0.png',
   mp3:          'https://win98icons.alexmeub.com/icons/png/wm_file-5.png',
-  img:          'https://win98icons.alexmeub.com/icons/png/wia_img_color-0.png',
+  img:          'https://win98icons.alexmeub.com/icons/png/kodak_imaging_file-0.png',
 }
 
 const getFileIcon = (name = '') => {

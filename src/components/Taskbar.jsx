@@ -13,7 +13,7 @@ const ICONS = {
   vn: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   media: 'https://win98icons.alexmeub.com/icons/png/wm-3.png',
   cmd: 'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
-  imageviewer: 'https://win98icons.alexmeub.com/icons/png/wia_img_color-0.png',
+  imageviewer: 'https://win98icons.alexmeub.com/icons/png/kodak_imaging_file-0.png',
   browser: 'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
 }
 

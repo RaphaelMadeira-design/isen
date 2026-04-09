@@ -54,7 +54,7 @@ export default function CRTFrame({ children, onReset }) {
         <div className="crt-monitor__controls">
           {/* Logo marque */}
           <div className="crt-monitor__brand">
-            <span className="crt-monitor__brand-logo">MultySync 98</span>
+            <span className="crt-monitor__brand-logo">PYRAKITAI</span>
             <span className="crt-monitor__brand-model">MultiSync 98</span>
           </div>
 
