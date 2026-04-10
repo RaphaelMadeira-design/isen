@@ -234,7 +234,7 @@ function MSNLogin({ onLogin, onClose }) {
   return (
     <Win98Window
       title="MSN Messenger"
-      icon="https://win98icons.alexmeub.com/icons/png/msn2-2.png"
+      icon="https://win98icons.alexmeub.com/icons/png/msn3-1.png"
       onClose={onClose}
       zIndex={200}
       initPos={{ x: 200, y: 60 }}
@@ -317,7 +317,7 @@ function MSNContactList({ onOpenChat, onClose, onMinimize }) {
   return (
     <Win98Window
       title="MSN Messenger"
-      icon="https://win98icons.alexmeub.com/icons/png/msn2-1.png"
+      icon="https://win98icons.alexmeub.com/icons/png/msn3-1.png"
       onClose={onClose}
       onMinimize={onMinimize}
       zIndex={150}
@@ -391,7 +391,7 @@ function MSNChat({ contact, index, onClose }) {
   return (
     <Win98Window
       title={`Conversation avec ${contact.name}`}
-      icon="https://win98icons.alexmeub.com/icons/png/msn2-1.png"
+      icon="https://win98icons.alexmeub.com/icons/png/msn3-1.png"
       onClose={onClose}
       zIndex={200 + index}
       initPos={{ x: 370 + index * 30, y: 70 + index * 20 }}

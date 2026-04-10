@@ -133,11 +133,15 @@ function Page404({ url }) {
       </div>
       <details className="browser__404-details">
         <summary>Informations techniques</summary>
-        <pre className="browser__404-hidden">{`// Accès non autorisé détecté.
-// Vous n'étiez pas censé trouver cette page.
-// Coordonnées archivées : 34.9876° N, 135.7553° E
-// Fréquence de résonance : 528 Hz
-// Ils savent que tu cherches.`}</pre>
+        <pre className="browser__404-hidden">
+          {
+            `// Accès non autorisé détecté.
+            // Vous n'étiez pas censé trouver cette page.
+            // Coordonnées archivées : 34.9876° N, 135.7553° E
+            // Fréquence de résonance : 528 Hz
+            // Ils savent que tu cherches.`
+          }
+          </pre>
       </details>
     </div>
   )
@@ -154,12 +158,7 @@ function FakeGoogle({ onSecretSearch }) {
   return (
     <div className="browser__google">
       <div className="browser__google-logo">
-        <span style={{ color: '#4285F4' }}>G</span>
-        <span style={{ color: '#EA4335' }}>o</span>
-        <span style={{ color: '#FBBC05' }}>o</span>
-        <span style={{ color: '#4285F4' }}>g</span>
-        <span style={{ color: '#34A853' }}>l</span>
-        <span style={{ color: '#EA4335' }}>e</span>
+        <img src="/images/Google_logo.png" alt="Google" />
       </div>
       <div className="browser__google-search">
         <input
@@ -190,9 +189,9 @@ function FakeWikipedia({ onLogoClick }) {
   return (
     <div className="browser__wiki">
       <div className="browser__wiki-header">
-        <div className="browser__wiki-logo" onClick={onLogoClick} title="...">
+        <div className="browser__wiki-logo" onClick={onLogoClick} title="Wikipédia ???">
           <div className="browser__wiki-logo-ball">
-            <img src="/images/Wikipedia_logo.svg" alt="Wikipedia" />
+            <img src="/images/Wikipedia_logo.png" alt="Wikipedia" />
           </div>
           <div className="browser__wiki-logo-text">
             <strong>Wikipédia</strong>
@@ -355,8 +354,19 @@ function KonamiOverlay({ onDismiss }) {
 // ── TABS ─────────────────────────────────────────────────────────
 
 const BASE_TABS = [
-  { id: 'google', label: 'Google',               url: 'http://www.google.fr/',                    icon: '🌐' },
-  { id: 'wiki',   label: 'Isen Hata — Wikipédia', url: 'https://fr.wikipedia.org/wiki/Isen_Hata', icon: '📄' },
+  { 
+    id: 'google', 
+    label: 'Google',               
+    url: 'http://www.google.fr/',                    
+    icon: 'https://win98icons.alexmeub.com/icons/png/search_web-1.png' 
+  },
+  { 
+    id: 'wiki',   
+    label: 
+    'Isen Hata — Wikipédia', 
+    url: 'https://fr.wikipedia.org/wiki/Isen_Hata', 
+    icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png' 
+  },
 ]
 
 // ── Browser ──────────────────────────────────────────────────────
@@ -369,7 +379,7 @@ export default function Browser() {
   const [logoClicks,       setLogoClicks]       = useState(0)
   const [konamiIdx,        setKonamiIdx]        = useState(0)
   const [showKonami,       setShowKonami]       = useState(false)
-  const [contentMode,      setContentMode]      = useState('normal') // 'normal' | 'glitch-search' | '404'
+  const [contentMode,      setContentMode]      = useState('normal')
   const [glitchQuery,      setGlitchQuery]      = useState('')
   const [notFoundUrl,      setNotFoundUrl]      = useState('')
   const [status,           setStatus]           = useState('Terminé')
@@ -517,7 +527,7 @@ export default function Browser() {
             ].filter(Boolean).join(' ')}
             onClick={() => handleTabChange(tab.id)}
           >
-            <span className="browser__tab-icon">{tab.icon}</span>
+            <span className="browser__tab-icon"><img src={tab.icon} alt="" /></span>
             <span className="browser__tab-label">{tab.label}</span>
           </button>
         ))}

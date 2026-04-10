@@ -114,7 +114,7 @@ export default function BootScreen({ onDone }) {
       {(phase === 'win98' || phase === 'progress') && (
         <div className="boot-win98" data-testid="boot-win98">
           <img
-            src="/images/Windows_98_logo.svg"
+            src="/images/Windows_98_logo.png"
             alt="Windows 98"
             className="boot-win98__logo"
           />

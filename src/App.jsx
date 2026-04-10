@@ -91,7 +91,7 @@ const INITIAL_ICONS = [
   { 
     id: 'msn', 
     label: 'MSN Messenger', 
-    icon: 'https://win98icons.alexmeub.com/icons/png/msn2-2.png', 
+    icon: 'https://win98icons.alexmeub.com/icons/png/msn3-3.png', 
     x: 1, y: 1,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))

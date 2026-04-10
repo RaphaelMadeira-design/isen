@@ -137,7 +137,9 @@
     }
   }
 
-  &__tab-icon { font-size: 12px; }
+  &__tab-icon { 
+    font-size: 12px; 
+  }
 
   &__tab-label {
     overflow: hidden;
@@ -193,12 +195,14 @@
   }
 
   &__google-logo {
-    font-size: 52px;
-    font-weight: 700;
-    font-family: Arial, sans-serif;
-    letter-spacing: -2px;
     margin-bottom: 24px;
     line-height: 1;
+
+    img {
+      width: auto;
+      height: 100px;
+      image-rendering: pixelated;
+    }
   }
 
   &__google-search {
@@ -229,12 +233,15 @@
 
   &__google-btn {
     padding: 6px 14px;
-    background: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 2px;
     font-size: 12px;
+    background-color: $win98-gray;
     cursor: pointer;
-    &:hover { background: #e8e8e8; border-color: #999; }
+    @include border-outset;
+
+    &:hover {
+       background: #e8e8e8; 
+       border-color: #999; 
+      }
   }
 
   &__google-footer {
@@ -287,8 +294,16 @@
   &__wiki-logo-text {
     display: flex;
     flex-direction: column;
-    strong { font-size: 16px; font-family: 'Linux Libertine', serif; }
-    small  { font-size: 10px; color: #555; font-family: sans-serif; }
+
+    strong { 
+      font-size: 16px; 
+      font-family: 'Linux Libertine', 'Georgia', serif;
+      font-weight: 500;
+    }
+    small  { 
+      font-size: 10px; 
+      color: #555; 
+      font-family: sans-serif; }
   }
 
   &__wiki-nav {

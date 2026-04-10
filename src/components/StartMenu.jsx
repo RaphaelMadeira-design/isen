@@ -14,7 +14,7 @@ const ICONS = {
   media:        'https://win98icons.alexmeub.com/icons/png/wm-4.png',
   cmd:          'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
   browser:      'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
-  msn:          'https://win98icons.alexmeub.com/icons/png/msn2-2.png',
+  msn:          'https://win98icons.alexmeub.com/icons/png/msn3-3.png',
 }
 
 export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
