@@ -245,15 +245,15 @@ function FakeWikipedia({ onLogoClick }) {
                 <tr><th>Univers</th><td>ISEN Project</td></tr>
                 <tr><th>Première apparition</th><td><em>ISEN.exe</em> (2026)</td></tr>
                 <tr><th>Créé par</th><td>Raphurst</td></tr>
-                <tr><th>Espèce</th><td>Humaine (modifiée)</td></tr>
-                <tr><th>Sexe</th><td>Féminin</td></tr>
+                <tr><th>Espèce</th><td>Humain (modifiée)</td></tr>
+                <tr><th>Sexe</th><td>Masculin</td></tr>
                 <tr><th>Capacités</th><td>Résonance ondulatoire, Perception étendue</td></tr>
-                <tr><th>Affiliation</th><td>Indépendante</td></tr>
+                <tr><th>Affiliation</th><td>Indépendant</td></tr>
               </tbody>
             </table>
           </div>
           <p>
-            <strong>Isen Hata</strong> (畑 イセン, <em>Hata Isen</em>) est un personnage fictif issu de l'univers narratif <em>ISEN Project</em>. Protagoniste principale du visual novel éponyme, elle est décrite comme une jeune femme aux capacités sensorielles hors du commun, capable de percevoir et d'interagir avec des fréquences imperceptibles à l'œil humain.
+            <strong>Isen Hata</strong> (畑 イセン, <em>Hata Isen</em>) est un personnage fictif issu de l'univers narratif <em>ISEN Project</em>. Protagoniste principale du visual novel éponyme, elle est décrite comme une jeune homme aux capacités sensorielles hors du commun, capable de percevoir et d'interagir avec des fréquences imperceptibles à l'œil humain.
           </p>
           <div className="browser__wiki-toc">
             <div className="browser__wiki-toc-title">Sommaire</div>
@@ -303,7 +303,7 @@ function FakeWikipedia({ onLogoClick }) {
             <strong>Catégories :</strong>
             <span className="browser__wiki-link">Personnage fictif</span> •
             <span className="browser__wiki-link">Visual novel</span> •
-            <span className="browser__wiki-link">Personnage féminin</span> •
+            <span className="browser__wiki-link">Personnage masculin</span> •
             <span className="browser__wiki-link">ISEN Project</span>
           </div>
         </div>
@@ -316,12 +316,12 @@ function FakeWikipedia({ onLogoClick }) {
 
 function FakeGamePage() {
   const stats = [
-    { name: 'Perception', value: 94 },
-    { name: 'Dextérité',  value: 85 },
-    { name: 'Endurance',  value: 71 },
-    { name: 'Force',      value: 62 },
-    { name: 'Résistance', value: 68 },
-    { name: 'Shokan',     value: 55 },
+    { name: 'Perception', value: 94, color: '#bfff44' },
+    { name: 'Dextérité',  value: 85, color: '#44d4ff' },
+    { name: 'Endurance',  value: 71, color: '#ff9944' },
+    { name: 'Force',      value: 62, color: '#ff4466' },
+    { name: 'Résistance', value: 68, color: '#cc44ff' },
+    { name: 'Shokan',     value: 55, color: '#44ffb0' },
   ]
 
   const hp     = { current: 847,  max: 1200 }
@@ -390,7 +390,7 @@ function FakeGamePage() {
             <div className="gp__lvl-badge" data-testid="level-badge">NIV.{level}</div>
             <img src="/images/pose.png" alt="Isen Hata" className="gp__portrait" />
             <div className="gp__char-name">ISEN HATA</div>
-            <div className="gp__char-class">Classe : Résonante ★★★</div>
+            <div className="gp__char-class">Classe : Combattant ★★★</div>
           </div>
 
           {/* Barres */}
@@ -477,7 +477,7 @@ function FakeGamePage() {
                 />
                 {/* Points */}
                 {dataPts.map((p, i) => (
-                  <circle key={i} cx={p.x} cy={p.y} r="2.8" fill="#4cc8ff" stroke="#0a0b10" strokeWidth="1" />
+                  <circle key={i} cx={p.x} cy={p.y} r="2.8" fill={stats[i].color} stroke="#0a0b10" strokeWidth="1" />
                 ))}
                 {/* Labels */}
                 {stats.map((s, i) => {
@@ -500,9 +500,9 @@ function FakeGamePage() {
                   <div className="gp__stat-row" key={s.name} data-testid={`stat-${s.name}`}>
                     <span className="gp__stat-name">{s.name}</span>
                     <div className="gp__stat-mini-track">
-                      <div className="gp__stat-mini-fill" style={{ width: `${s.value}%` }} />
+                      <div className="gp__stat-mini-fill" style={{ width: `${s.value}%`, background: s.color }} />
                     </div>
-                    <span className="gp__stat-val">{s.value}</span>
+                      <span className="gp__stat-val" style={{ color: s.color }}>{s.value}</span>
                   </div>
                 ))}
               </div>
