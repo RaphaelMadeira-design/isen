@@ -47,12 +47,12 @@ const INITIAL_ICONS = [
   { id: 'powers',    
     label: 'Statistiques', 
     icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',  
-    x: 0, y: 1 
+    x: 0, y: 3
   },
   { id: 'documents',  
     label: 'Mes Documents', 
     icon: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',   
-    x: 0, y: 2 
+    x: 0, y: 0 
   },
   { id: 'snake',     
     label: 'SNAKE.exe',              
@@ -74,19 +74,19 @@ const INITIAL_ICONS = [
     id: 'media',
     label: 'Media Player',
     icon: 'https://win98icons.alexmeub.com/icons/png/wm-4.png',
-    x: 0, y: 3,
+    x: 0, y: 4,
   },
   {
     id: 'browser',
     label: 'Internet Explorer',
     icon: 'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
-    x: 1, y: 0,
+    x: 0, y: 1,
   },
   { 
     id: 'msn', 
     label: 'MSN Messenger', 
     icon: 'https://win98icons.alexmeub.com/icons/png/msn3-3.png', 
-    x: 1, y: 1,
+    x: 0, y: 2,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import '../styles/PDA.scss'
 
-import FichePersonnage from './FichePersonnage'
 import Pouvoirs from './Pouvoirs'
 import FileExplorer from './FileExplorer'
 import Snake from './Snake'
@@ -14,7 +13,6 @@ import Notepad from './Notepad'
 // Configuration des apps PDA
 const PDA_APPS = [
   { id: 'home', label: 'Menu', icon: '🏠' },
-  { id: 'character', label: 'Fiche', icon: '👤' },
   { id: 'powers', label: 'Stats', icon: '⚡' },
   { id: 'histoire', label: 'Docs', icon: '📁' },
   { id: 'vn', label: 'ISEN', icon: '📖' },
@@ -84,8 +82,6 @@ export default function PDAView() {
     switch (currentApp) {
       case 'home':
         return <PDAHomeScreen apps={PDA_APPS.slice(1)} onAppSelect={navigateTo} />
-      case 'character':
-        return <FichePersonnage />
       case 'powers':
         return <Pouvoirs />
       case 'histoire':
@@ -175,9 +171,6 @@ export default function PDAView() {
 
         {/* Boutons physiques PDA */}
         <div className="pda__buttons">
-          <div className="pda__button" onClick={() => navigateTo('character')} title="Fiche">
-            <span>1</span>
-          </div>
           <div className="pda__button" onClick={() => navigateTo('powers')} title="Stats">
             <span>2</span>
           </div>
