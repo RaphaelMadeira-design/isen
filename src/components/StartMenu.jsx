@@ -2,7 +2,6 @@ import { useState, useCallback } from 'react'
 
 const ICONS = {
   start:        'https://win98icons.alexmeub.com/icons/png/windows-0.png',
-  character:    'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
   powers:       'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
   folder:       'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
   folderClosed: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
@@ -36,11 +35,6 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
         </div>
 
         <div className="start-menu__content">
-
-          <div className="start-menu__item" onClick={() => handle('character')} data-testid="start-menu-character">
-            <img src={ICONS.character} alt="Fiche" />
-            Fiche de personnage
-          </div>
 
           <div className="start-menu__item" onClick={() => handle('powers')} data-testid="start-menu-powers">
             <img src={ICONS.powers} alt="Pouvoirs" />

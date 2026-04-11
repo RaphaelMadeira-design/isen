@@ -312,236 +312,6 @@ function FakeWikipedia({ onLogoClick }) {
   )
 }
 
-// ── Page de jeu — Fiche de personnage ────────────────────────────
-
-function FakeGamePage() {
-  const stats = [
-    { name: 'Perception', value: 94, color: '#bfff44' },
-    { name: 'Dextérité',  value: 85, color: '#44d4ff' },
-    { name: 'Endurance',  value: 71, color: '#ff9944' },
-    { name: 'Force',      value: 62, color: '#ff4466' },
-    { name: 'Résistance', value: 68, color: '#cc44ff' },
-    { name: 'Shokan',     value: 55, color: '#44ffb0' },
-  ]
-
-  const hp     = { current: 847,  max: 1200 }
-  const energy = { current: 340,  max: 500  }
-  const xp     = { current: 7850, max: 10000 }
-  const level  = 23
-
-  const spells = [
-    {
-      id: 1, key: 'Q',
-      name: 'Écho Fracturé',
-      icon: '/images/spell-1.jpg',
-      cost: 45, duration: '3s',
-      desc: 'Projette une onde de résonance concentrée qui fracture la cohérence des objets ciblés dans un cône frontal.',
-    },
-    {
-      id: 2, key: 'W',
-      name: 'Vague de Syntonisation',
-      icon: '/images/spell-2.jpg',
-      cost: 80, duration: '8s',
-      desc: 'Harmonise les fréquences d\'Isen avec sa cible, créant un lien télépathique temporaire et ralentissant ses réflexes.',
-    },
-    {
-      id: 3, key: 'E',
-      name: 'Résonance Sismique',
-      icon: '/images/spell-3.jpg',
-      cost: 120, duration: '5s',
-      desc: 'Libère une décharge d\'énergie ondulatoire en zone circulaire, déstabilisant et repoussant tous les ennemis proches.',
-    },
-    {
-      id: 4, key: 'R',
-      name: 'Fréquence 528',
-      icon: '/images/spell-4.jpg',
-      cost: 200, duration: '12s',
-      ultimate: true,
-      desc: 'ULTIME — Isen entre en état de résonance pure à 528 Hz. Toutes ses capacités sont amplifiées et elle perçoit les failles cachées du réel. Ne peut être activé qu\'en dessous de 40% PV.',
-    },
-  ]
-
-  // Radar chart — hexagone, sens horaire depuis le haut
-  const cx = 110, cy = 108, r = 72
-  const angles = stats.map((_, i) => -Math.PI / 2 + (2 * Math.PI * i) / 6)
-  const outerPts = angles.map(a => ({ x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) }))
-  const dataPts  = stats.map((s, i) => ({
-    x: cx + r * (s.value / 100) * Math.cos(angles[i]),
-    y: cy + r * (s.value / 100) * Math.sin(angles[i]),
-  }))
-  const rings = [0.25, 0.5, 0.75, 1.0]
-
-  const toPolygon = pts => pts.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')
-
-  return (
-    <div className="gp" data-testid="game-page">
-      {/* En-tête */}
-      <div className="gp__header">
-        <span className="gp__header-title">// ISEN PROJECT :: REGISTRE DE COMBAT //</span>
-        <span className="gp__header-ver">CLIENT v2.4.1 — PATCH 0.9.7</span>
-      </div>
-
-      <div className="gp__body">
-        {/* ─── Colonne gauche ─────────────────────────── */}
-        <div className="gp__left">
-
-          {/* Portrait */}
-          <div className="gp__portrait-frame">
-            <div className="gp__lvl-badge" data-testid="level-badge">NIV.{level}</div>
-            <img src="/images/pose.png" alt="Isen Hata" className="gp__portrait" />
-            <div className="gp__char-name">ISEN HATA</div>
-            <div className="gp__char-class">Classe : Combattant ★★★</div>
-          </div>
-
-          {/* Barres */}
-          <div className="gp__bars" data-testid="stat-bars">
-            {[
-              { label: 'PV', cur: hp.current,     max: hp.max,     mod: 'hp'     },
-              { label: 'EN', cur: energy.current, max: energy.max, mod: 'energy' },
-              { label: 'XP', cur: xp.current,     max: xp.max,     mod: 'xp'     },
-            ].map(b => (
-              <div className="gp__bar-row" key={b.label}>
-                <span className="gp__bar-label">{b.label}</span>
-                <div className="gp__bar-track">
-                  <div
-                    className={`gp__bar-fill gp__bar-fill--${b.mod}`}
-                    style={{ width: `${(b.cur / b.max) * 100}%` }}
-                  />
-                </div>
-                <span className="gp__bar-nums" data-testid={`bar-${b.mod}`}>
-                  {b.cur}<span className="gp__bar-max">/{b.max}</span>
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Dossier sujet */}
-          <div className="gp__dossier">
-            <div className="gp__section-lbl">[ DOSSIER SUJET ]</div>
-            <p>
-              Isen Hata est une <strong>Résonante de classe 3</strong> — une rare catégorie
-              d'individus capables d'interagir directement avec les fréquences ondulatoires
-              du monde. Son pouvoir, la <strong>Résonance Active</strong>, lui permet d'émettre,
-              percevoir et moduler des ondes invisibles à 528 Hz, affectant matière, perception
-              et conscience à distance variable.
-            </p>
-            <p>
-              <strong>Limites :</strong> chaque activation consomme de l'énergie biologique.
-              À court d'énergie, ses sens se retournent contre elle — surcharge sensorielle,
-              douleur aiguë, désorientation. Ses sorts de zone la rendent temporairement{' '}
-              <em>aveugle aux fréquences</em>, l'exposant aux contre-attaques.
-            </p>
-            <p>
-              <strong>Subtilité :</strong> son ultime <em>Fréquence 528</em> ne peut être
-              activé que lorsque ses PV sont inférieurs à 40 %. Plus elle est fragilisée,
-              plus son amplitude de résonance est puissante — un état que certains adversaires
-              apprennent à redouter.
-            </p>
-          </div>
-        </div>
-
-        {/* ─── Colonne droite ──────────────────────────── */}
-        <div className="gp__right">
-
-          {/* Radar + stats */}
-          <div className="gp__panel" data-testid="radar-panel">
-            <div className="gp__section-lbl">[ STATISTIQUES DE COMBAT ]</div>
-            <div className="gp__radar-row">
-
-              {/* SVG Radar */}
-              <svg viewBox="0 0 220 216" className="gp__radar-svg" data-testid="radar-chart">
-                {/* Grille */}
-                {rings.map((s, ri) => (
-                  <polygon
-                    key={ri}
-                    points={toPolygon(outerPts.map(p => ({
-                      x: cx + (p.x - cx) * s,
-                      y: cy + (p.y - cy) * s,
-                    })))}
-                    fill="none"
-                    stroke={s === 1 ? '#e8c147' : '#23243a'}
-                    strokeWidth={s === 1 ? 1.2 : 0.6}
-                  />
-                ))}
-                {/* Axes */}
-                {outerPts.map((p, i) => (
-                  <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#23243a" strokeWidth="0.6" />
-                ))}
-                {/* Zone de données */}
-                <polygon
-                  points={toPolygon(dataPts)}
-                  fill="rgba(76,200,255,0.18)"
-                  stroke="#4cc8ff"
-                  strokeWidth="1.4"
-                  strokeLinejoin="round"
-                />
-                {/* Points */}
-                {dataPts.map((p, i) => (
-                  <circle key={i} cx={p.x} cy={p.y} r="2.8" fill={stats[i].color} stroke="#0a0b10" strokeWidth="1" />
-                ))}
-                {/* Labels */}
-                {stats.map((s, i) => {
-                  const lx = cx + (r + 17) * Math.cos(angles[i])
-                  const ly = cy + (r + 17) * Math.sin(angles[i])
-                  return (
-                    <text
-                      key={i} x={lx.toFixed(1)} y={ly.toFixed(1)}
-                      textAnchor="middle" dominantBaseline="middle"
-                      fontSize="7.5" fill="#e8c147"
-                      fontFamily="'Courier New', monospace" fontWeight="bold"
-                    >{s.name}</text>
-                  )
-                })}
-              </svg>
-
-              {/* Liste de stats */}
-              <div className="gp__stat-list">
-                {stats.map(s => (
-                  <div className="gp__stat-row" key={s.name} data-testid={`stat-${s.name}`}>
-                    <span className="gp__stat-name">{s.name}</span>
-                    <div className="gp__stat-mini-track">
-                      <div className="gp__stat-mini-fill" style={{ width: `${s.value}%`, background: s.color }} />
-                    </div>
-                      <span className="gp__stat-val" style={{ color: s.color }}>{s.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Sorts */}
-          <div className="gp__panel gp__panel--spells" data-testid="spells-panel">
-            <div className="gp__section-lbl">[ CAPACITÉS ]</div>
-            <div className="gp__spells">
-              {spells.map(sp => (
-                <div
-                  key={sp.id}
-                  className={`gp__spell${sp.ultimate ? ' gp__spell--ult' : ''}`}
-                  data-testid={`spell-${sp.id}`}
-                >
-                  <div className="gp__spell-ico-wrap">
-                    <img src={sp.icon} alt={sp.name} className="gp__spell-ico" />
-                    <span className="gp__spell-key">{sp.key}</span>
-                  </div>
-                  <div className="gp__spell-body">
-                    <div className="gp__spell-name">{sp.name}</div>
-                    <div className="gp__spell-meta">
-                      <span className="gp__spell-cost" data-testid={`spell-cost-${sp.id}`}>EN : {sp.cost}</span>
-                      <span className="gp__spell-dur">{sp.duration}</span>
-                    </div>
-                    <p className="gp__spell-desc">{sp.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function KonamiOverlay({ onDismiss }) {
   return (
     <div className="browser__konami" onClick={onDismiss}>
@@ -577,12 +347,6 @@ const BASE_TABS = [
     label: 'Isen Hata — Wikipédia',
     url: 'https://fr.wikipedia.org/wiki/Isen_Hata',
     icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
-  },
-  {
-    id: 'game',
-    label: 'Isen :: Fiche de Combat',
-    url: 'http://isen-project.net/personnages/isen-hata',
-    icon: 'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
   },
 ]
 
@@ -652,10 +416,6 @@ export default function Browser() {
         setActiveTab('wiki')
         setContentMode('normal')
         setAddressValue('https://fr.wikipedia.org/wiki/Isen_Hata')
-      } else if (trimmed.includes('isen-project') || trimmed.includes('personnages')) {
-        setActiveTab('game')
-        setContentMode('normal')
-        setAddressValue('http://isen-project.net/personnages/isen-hata')
       } else {
         setNotFoundUrl(url)
         setContentMode('404')
@@ -702,7 +462,6 @@ export default function Browser() {
     if (contentMode === 'glitch-search') return <GlitchSearch query={glitchQuery} />
     if (activeTab === 'secret') return <SecretPage />
     if (activeTab === 'wiki')   return <FakeWikipedia onLogoClick={handleLogoClick} />
-    if (activeTab === 'game')   return <FakeGamePage />
     return <FakeGoogle onSecretSearch={handleSecretSearch} />
   }
 
@@ -746,7 +505,6 @@ export default function Browser() {
               'browser__tab',
               activeTab === tab.id && contentMode === 'normal' ? 'browser__tab--active' : '',
               tab.id === 'secret' ? 'browser__tab--secret' : '',
-              tab.id === 'game'   ? 'browser__tab--game'   : '',
             ].filter(Boolean).join(' ')}
             onClick={() => handleTabChange(tab.id)}
             data-testid={`tab-${tab.id}`}

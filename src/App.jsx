@@ -5,7 +5,6 @@ import DesktopIcon from './components/DesktopIcon'
 import Win98Window from './components/Win98Window'
 import Taskbar from './components/Taskbar'
 import StartMenu from './components/StartMenu'
-import FichePersonnage from './components/FichePersonnage'
 import Pouvoirs from './components/Pouvoirs'
 import FileExplorer from './components/FileExplorer'
 import Notepad from './components/Notepad'
@@ -45,11 +44,6 @@ function useIsMobile(breakpoint = 768) {
 const CELL = 90
 
 const INITIAL_ICONS = [
-  { id: 'character', 
-    label: 'Fiche',   
-    icon: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',        
-    x: 0, y: 0 
-  },
   { id: 'powers',    
     label: 'Statistiques', 
     icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',  
@@ -97,11 +91,6 @@ const INITIAL_ICONS = [
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
 const WINDOW_CONFIGS = {
-  character: {
-    title: 'Fiche de personnage - Isen Hata',
-    defaultSize: { width: '80%', height: '80%' },
-    defaultPosition: { x: 40, y: 20 },
-  },
   powers: {
     title: 'Pouvoirs et Techniques - POUVOIRS.exe',
     defaultSize: { width: '80%', height: '80%' },
@@ -150,7 +139,6 @@ const WINDOW_CONFIGS = {
 }
 
 const LOADING_LABELS = {
-  character: 'Fiche de personnage',
   powers: 'POUVOIRS.exe',
   snake: 'SNAKE.exe',
   jump: 'JUMP.exe',
@@ -342,7 +330,6 @@ function App() {
 
   const renderWindowContent = (win) => {
     const { id } = win
-    if (id === 'character') return <FichePersonnage />
     if (id === 'powers') return <Pouvoirs />
     if (id === 'cmd') return <CMD />
     if (id === 'browser') return <Browser />

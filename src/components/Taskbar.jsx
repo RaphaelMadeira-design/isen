@@ -4,7 +4,6 @@ const ICONS = {
   start: 'https://win98icons.alexmeub.com/icons/png/windows-0.png',
   volume: 'https://win98icons.alexmeub.com/icons/png/loudspeaker_rays-0.png',
   network: 'https://win98icons.alexmeub.com/icons/png/network_normal_two_pcs-0.png',
-  character: 'https://win98icons.alexmeub.com/icons/png/user_world-0.png',
   powers: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
   documents: 'https://win98icons.alexmeub.com/icons/png/directory_closed-3.png',
   notepad: 'https://win98icons.alexmeub.com/icons/png/notepad-0.png',
@@ -19,7 +18,6 @@ const ICONS = {
 }
 
 const getIcon = (id) => {
-  if (id === 'character') return ICONS.character
   if (id === 'powers') return ICONS.powers
   if (id === 'documents') return ICONS.documents
   if (id === 'media') return ICONS.media
