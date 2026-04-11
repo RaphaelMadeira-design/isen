@@ -2,17 +2,17 @@ import { useState, useCallback } from 'react'
 
 const ICONS = {
   start:        'https://win98icons.alexmeub.com/icons/png/windows-0.png',
-  powers:       'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',
+  powers:       'https://win98icons.alexmeub.com/icons/png/shell_window5-0.png',
   folder:       'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
   folderClosed: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
   shutdown:     'https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png',
-  snake:        'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-  jump:         'https://win98icons.alexmeub.com/icons/png/executable-0.png',
+  snake:        'https://win98icons.alexmeub.com/icons/png/joystick_alt-0.png',
+  jump:         'https://win98icons.alexmeub.com/icons/png/joystick_alt-0.png',
   vn:           'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-  games:        'https://win98icons.alexmeub.com/icons/png/joystick-0.png',
+  games:        'https://win98icons.alexmeub.com/icons/png/joystick-2.png',
   media:        'https://win98icons.alexmeub.com/icons/png/wm-4.png',
   cmd:          'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
-  browser:      'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
+  browser:      'https://win98icons.alexmeub.com/icons/png/msie1-1.png',
   msn:          'https://win98icons.alexmeub.com/icons/png/msn3-3.png',
 }
 
@@ -39,6 +39,21 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
           <div className="start-menu__item" onClick={() => handle('powers')} data-testid="start-menu-powers">
             <img src={ICONS.powers} alt="Pouvoirs" />
             Pouvoirs & Techniques
+          </div>
+
+          <div className="start-menu__item" onClick={() => handle('browser')} data-testid="start-menu-browser">
+            <img src={ICONS.browser} alt="Internet Explorer" />
+            Internet Explorer
+          </div>
+
+          <div className="start-menu__item" onClick={() => handle('msn')} data-testid="start-menu-msn">
+            <img src={ICONS.msn} alt="MSN" />
+            MSN Messenger
+          </div>
+
+          <div className="start-menu__item" onClick={() => handle('media')} data-testid="start-menu-media">
+            <img src={ICONS.media} alt="Media" />
+            Windows Media Player
           </div>
 
           {/* Mes Documents avec sous-menu */}
@@ -68,21 +83,6 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
                 </div>
               </div>
             )}
-          </div>
-
-          <div className="start-menu__item" onClick={() => handle('browser')} data-testid="start-menu-browser">
-            <img src={ICONS.browser} alt="Internet Explorer" />
-            Internet Explorer
-          </div>
-
-          <div className="start-menu__item" onClick={() => handle('msn')} data-testid="start-menu-msn">
-            <img src={ICONS.msn} alt="MSN" />
-            MSN Messenger
-          </div>
-
-          <div className="start-menu__item" onClick={() => handle('media')} data-testid="start-menu-media">
-            <img src={ICONS.media} alt="Media" />
-            Windows Media Player
           </div>
 
           {/* Jeux avec sous-menu */}

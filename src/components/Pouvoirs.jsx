@@ -225,7 +225,7 @@ export default function Pouvoirs() {
                       key={i}
                       x={lx.toFixed(1)} y={ly.toFixed(1)}
                       textAnchor="middle" dominantBaseline="middle"
-                      fill="#e8c147" fontSize="8" fontFamily="Courier New"
+                      fill="#e8c147" fontSize="7" fontFamily="Pixelify Sans, sans-serif"
                     >
                       {s.name}
                     </text>

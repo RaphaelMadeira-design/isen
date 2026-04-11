@@ -166,7 +166,7 @@
 
   // ── Colonne gauche ───────────────────────────────
   &__left {
-    max-width: 500px;
+    width: 400px;
     flex-shrink: 0;
     border-right: 1px solid #181830;
     display: flex;
@@ -318,7 +318,7 @@
     &__radar-svg {
     width: 100%;
     height: auto;
-    aspect-ratio: 220 / 216;
+    aspect-ratio: 180 / 175;
     flex-shrink: 0;
     background: #06070f;
     border: 1px solid #181830;
@@ -371,10 +371,19 @@
       color: #9090b0;
       font-family: Arial, sans-serif;
 
-      strong { color: #d8d8f0; font-family: 'Courier New', monospace; }
-      em     { color: #4cc8ff; font-style: normal; }
+      strong { 
+        color: #d8d8f0; 
+        font-family: 'Pixelify Sans', monospace; 
+      }
 
-      &:last-child { margin-bottom: 0; }
+      em { 
+        color: #4cc8ff; 
+        font-style: normal; 
+      }
+
+      &:last-child { 
+        margin-bottom: 0; 
+      }
     }
   }
 

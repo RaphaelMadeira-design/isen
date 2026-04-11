@@ -46,7 +46,7 @@ const CELL = 90
 const INITIAL_ICONS = [
   { id: 'powers',    
     label: 'Statistiques', 
-    icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',  
+    icon: 'https://win98icons.alexmeub.com/icons/png/shell_window5-0.png',  
     x: 1, y: 0
   },
   { id: 'documents',  
@@ -56,12 +56,12 @@ const INITIAL_ICONS = [
   },
   { id: 'snake',     
     label: 'SNAKE.exe',              
-    icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',           
+    icon: 'https://win98icons.alexmeub.com/icons/png/joystick-4.png',           
     x: 1, y: 1
   },
   { id: 'jump',      
     label: 'JUMP.exe',               
-    icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',            
+    icon: 'https://win98icons.alexmeub.com/icons/png/joystick-4.png',            
     x: 1, y: 2
   },
   {

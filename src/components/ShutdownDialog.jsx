@@ -49,14 +49,14 @@ export default function ShutdownDialog({ onCancel }) {
         <div className="shutdown-dialog__buttons">
           <Btn onClick={handleYes} testId="shutdown-yes" autoFocus>
             <img
-              src="https://win98icons.alexmeub.com/icons/png/check-0.png"
+              src="https://win98icons.alexmeub.com/icons/png/trust0-1.png"
               alt=""
             />
             Oui
           </Btn>
           <Btn onClick={onCancel} testId="shutdown-no">
             <img
-              src="https://win98icons.alexmeub.com/icons/png/msg_error-0.png"
+              src="https://win98icons.alexmeub.com/icons/png/msg_error-2.png"
               alt=""
             />
             Non

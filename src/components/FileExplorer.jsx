@@ -4,21 +4,23 @@ const ICONS = {
   folderClosed: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',
   folderOpen:   'https://win98icons.alexmeub.com/icons/png/directory_open_cool-3.png',
   myDocs:       'https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png',
-  txt:          'https://win98icons.alexmeub.com/icons/png/file_lines-0.png',
+  txt:          'https://win98icons.alexmeub.com/icons/png/notepad_file-0.png',
   mp3:          'https://win98icons.alexmeub.com/icons/png/wm_file-5.png',
   img:          'https://win98icons.alexmeub.com/icons/png/kodak_imaging_file-0.png',
 }
 
 const getFileIcon = (name = '') => {
-  if (name.endsWith('.mp3')) return ICONS.mp3
-  if (name.match(/.(jpg|jpeg|png|gif|bmp)$/i)) return ICONS.img
+  if (name.endsWith('.mp3')) 
+    return ICONS.mp3
+  if (name.match(/.(jpg|jpeg|png|gif|bmp)$/i)) 
+    return ICONS.img
   return ICONS.txt
 }
 
 export const FILE_TREE = {
   root: {
     name: 'Mes Documents',
-    children: ['histoire', 'musique', 'images'],
+    children: ['histoire', 'musique', 'images', 'important'],
   },
 
   // --- Histoire ---
@@ -42,12 +44,42 @@ export const FILE_TREE = {
     parent: 'histoire',
     children: ['c3p1'],
   },
-  c1p1: { name: 'Partie 1 - Naissance.txt',     parent: 'chapitre1', type: 'file', content: '[Contenu de la Partie 1 à remplir]' },
-  c1p2: { name: 'Partie 2 - Enfance.txt',        parent: 'chapitre1', type: 'file', content: '[Contenu de la Partie 2 à remplir]' },
-  c1p3: { name: 'Partie 3 - Premier éveil.txt',  parent: 'chapitre1', type: 'file', content: '[Contenu de la Partie 3 à remplir]' },
-  c2p1: { name: 'Partie 1 - La Découverte.txt',  parent: 'chapitre2', type: 'file', content: '[Contenu à remplir]' },
-  c2p2: { name: 'Partie 2 - Premier combat.txt', parent: 'chapitre2', type: 'file', content: '[Contenu à remplir]' },
-  c3p1: { name: 'Partie 1 - En cours.txt',       parent: 'chapitre3', type: 'file', content: '[Contenu à venir]' },
+  c1p1: { 
+    name: 'Partie 1 - Naissance.txt',     
+    parent: 'chapitre1', 
+    type: 'file', 
+    content: '[Contenu de la Partie 1 à remplir]' 
+  },
+  c1p2: { 
+    name: 'Partie 2 - Enfance.txt',        
+    parent: 'chapitre1', 
+    type: 'file', 
+    content: '[Contenu de la Partie 2 à remplir]' 
+  },
+  c1p3: { 
+    name: 'Partie 3 - Premier éveil.txt',  
+    parent: 'chapitre1', 
+    type: 'file', 
+    content: '[Contenu de la Partie 3 à remplir]' 
+  },
+  c2p1: { 
+    name: 'Partie 1 - La Découverte.txt',  
+    parent: 'chapitre2', 
+    type: 'file', 
+    content: '[Contenu à remplir]' 
+  },
+  c2p2: { 
+    name: 'Partie 2 - Premier combat.txt', 
+    parent: 'chapitre2', 
+    type: 'file', 
+    content: '[Contenu à remplir]' 
+  },
+  c3p1: { 
+    name: 'Partie 1 - En cours.txt',       
+    parent: 'chapitre3', 
+    type: 'file', 
+    content: '[Contenu à venir]' 
+  },
 
   // --- Musique ---
   musique: {
@@ -55,9 +87,27 @@ export const FILE_TREE = {
     parent: 'root',
     children: ['mus1', 'mus2', 'mus3'],
   },
-  mus1: { name: 'Raphurst - Prelude.mp3', parent: 'musique', type: 'file', content: null, musicFile: '/music/track01.mp3' },
-  mus2: { name: 'Raphurst - Ecstasy.mp3', parent: 'musique', type: 'file', content: null, musicFile: '/music/track02.mp3' },
-  mus3: { name: 'Raphurst - Falling In And Out.mp3', parent: 'musique', type: 'file', content: null, musicFile: '/music/track03.mp3' },
+  mus1: { 
+    name: 'Raphurst - Prelude.mp3', 
+    parent: 'musique', 
+    type: 'file', 
+    content: null, 
+    musicFile: '/music/track01.mp3' 
+  },
+  mus2: { 
+    name: 'Raphurst - Ecstasy.mp3', 
+    parent: 'musique', 
+    type: 'file', 
+    content: null, 
+    musicFile: '/music/track02.mp3' 
+  },
+  mus3: { 
+    name: 'Raphurst - Falling In And Out.mp3', 
+    parent: 'musique', 
+    type: 'file', 
+    content: null, 
+    musicFile: '/music/track03.mp3' 
+  },
 
   // --- Images ---
   images: {
@@ -65,9 +115,39 @@ export const FILE_TREE = {
     parent: 'root',
     children: ['img1', 'img2', 'img3'],
   },
-  img1: { name: '1.jpg', parent: 'images', type: 'file', content: null, imageFile: '/images/1.jpg' },
-  img2: { name: '2.jpg', parent: 'images', type: 'file', content: null, imageFile: '/images/2.jpg' },
-  img3: { name: '3.jpg', parent: 'images', type: 'file', content: null, imageFile: '/images/3.jpg' },
+  img1: { 
+    name: '1.jpg', 
+    parent: 'images', 
+    type: 'file', 
+    content: null, 
+    imageFile: '/images/1.jpg' 
+  },
+  img2: { 
+    name: '2.jpg', 
+    parent: 'images', 
+    type: 'file', 
+    content: null, 
+    imageFile: '/images/2.jpg' 
+  },
+  img3: { 
+    name: '3.jpg', 
+    parent: 'images', 
+    type: 'file', 
+    content: null, 
+    imageFile: '/images/3.jpg' 
+  },
+  // --- Autre ---
+  important: {
+    name: 'Important',
+    parent: 'root',
+    children: ['mdp'],
+  },
+  mdp: {
+    name: 'Mots de passe.txt',
+    parent: 'important',
+    type: 'file',
+    content: '[Contenu du mot de passe à remplir]'
+  }
 }
 
 // Remonte les ancêtres d'un nœud (root inclus)
