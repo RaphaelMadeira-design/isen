@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import '../styles/pouvoirs.scss'
+import '../styles/Pouvoirs.scss'
 
 // ─── TYPEWRITER HOOK ──────────────────────────────────────────────
 function useTypewriter(text, speed = 22, startDelay = 0) {
