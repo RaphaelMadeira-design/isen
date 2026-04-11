@@ -47,46 +47,46 @@ const INITIAL_ICONS = [
   { id: 'powers',    
     label: 'Statistiques', 
     icon: 'https://win98icons.alexmeub.com/icons/png/executable_script-0.png',  
-    x: 0, y: 3
+    x: 1, y: 0
   },
   { id: 'documents',  
     label: 'Mes Documents', 
     icon: 'https://win98icons.alexmeub.com/icons/png/directory_closed-4.png',   
-    x: 0, y: 0 
+    x: 0, y: 3
   },
   { id: 'snake',     
     label: 'SNAKE.exe',              
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',           
-    x: 2, y: 0 
+    x: 1, y: 1
   },
   { id: 'jump',      
     label: 'JUMP.exe',               
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',            
-    x: 3, y: 0
+    x: 1, y: 2
   },
   {
     id: 'vn',
     label: 'ISEN.exe',
     icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-    x: 4, y: 0,
+    x: 1, y: 3,
   },
   {
     id: 'media',
     label: 'Media Player',
     icon: 'https://win98icons.alexmeub.com/icons/png/wm-4.png',
-    x: 0, y: 4,
+    x: 0, y: 2,
   },
   {
     id: 'browser',
     label: 'Internet Explorer',
     icon: 'https://win98icons.alexmeub.com/icons/png/msie1-2.png',
-    x: 0, y: 1,
+    x: 0, y: 0,
   },
   { 
     id: 'msn', 
     label: 'MSN Messenger', 
     icon: 'https://win98icons.alexmeub.com/icons/png/msn3-3.png', 
-    x: 0, y: 2,
+    x: 0, y: 1,
   },
 ].map(icon => ({ ...icon, x: icon.x * CELL, y: icon.y * CELL }))
 
@@ -143,9 +143,8 @@ const LOADING_LABELS = {
   snake: 'SNAKE.exe',
   jump: 'JUMP.exe',
   vn: 'ISEN.exe',
-  }
+}
 
-// Crée une config de fenêtre Bloc-notes pour un fichier .txt
 const makeNotepadConfig = (fileId, fileName) => ({
   title: `${fileName} - Bloc-notes`,
   defaultSize: { width: 540, height: 420 },
@@ -180,7 +179,6 @@ function App() {
     })
   }, [])
 
-  // Synchronise MSN dans la barre des tâches
   useEffect(() => {
     if (msnOpen) {
       setWindows(prev => {
@@ -292,7 +290,6 @@ function App() {
     })
   }, [])
 
-    // Ouvre un fichier .txt dans un Bloc-notes (depuis FileExplorer)
   const openNotepad = useCallback(({ id, name, content }) => {
     const winId = `notepad-${id}`
     setWindows(prev => {
@@ -351,7 +348,6 @@ function App() {
     return null
   }
 
-  // Desktop Windows 98 avec cadre CRT
   const desktopContent = (
     <div className="desktop" data-testid="desktop" 
       onMouseDown={(e) => {
@@ -362,6 +358,7 @@ function App() {
           setSelectedIcon(null)
         }
       }}>
+
       {/* Boot screen - affiché par-dessus tout jusqu'à la fin du boot */}
       {!booted && <BootScreen onDone={() => setBooted(true)} />}
 
@@ -411,8 +408,11 @@ function App() {
           </Win98Window>
         ))}
       </div>
+
       {/* Spinner de chargement */}
-    {loading && <Loading label={loading.label} />}
+      {loading && 
+        <Loading label={loading.label} 
+      />}
 
       {/* Start Menu */}
       {startOpen && (
@@ -422,6 +422,7 @@ function App() {
           onShutdown={() => setShowShutdown(true)}
         />
       )}
+
       {/* Dialog Arrêt de Windows */}
       {showShutdown && (
         <ShutdownDialog onCancel={() => setShowShutdown(false)} />
@@ -453,7 +454,6 @@ function App() {
     setLoading(null)
   }, [])
 
-  // Mode PDA pour mobile
   if (isMobile) {
     return <PDAView />
   }
