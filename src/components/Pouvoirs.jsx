@@ -83,7 +83,7 @@ const SPELLS = [
     name: 'Vague de Syntonisation',
     icon: '/images/spell-2.jpg',
     cost: 80, duration: '8s',
-    desc: "Harmonise les fréquences d'Isen avec sa cible, créant un lien télépathique temporaire et ralentissant ses réflexes.",
+    desc: "Harmonise les fréquences de Kiba avec sa cible, créant un lien télépathique temporaire et ralentissant ses réflexes.",
   },
   {
     id: 3, key: 'E',
@@ -98,7 +98,7 @@ const SPELLS = [
     icon: '/images/spell-4.jpg',
     cost: 200, duration: '12s',
     ultimate: true,
-    desc: "ULTIME — Isen entre en état de résonance pure à 528 Hz. Toutes ses capacités sont amplifiées et elle perçoit les failles cachées du réel. Ne peut être activé qu'en dessous de 40% PV.",
+    desc: "ULTIME — Kiba entre en état de résonance pure à 528 Hz. Toutes ses capacités sont amplifiées et elle perçoit les failles cachées du réel. Ne peut être activé qu'en dessous de 40% PV.",
   },
 ]
 
@@ -153,8 +153,8 @@ export default function Pouvoirs() {
           {/* Portrait */}
           <div className={`gp__portrait-frame ${animCls('pv-portrait-in')}`}>
             <span className="gp__lvl-badge">NIV.{LEVEL}</span>
-            <img src="/images/pose.png" alt="Isen Hata" className="gp__portrait" />
-            <div className="gp__char-name">ISEN HATA</div>
+            <img src="/images/pose.png" alt="Kiba Hata" className="gp__portrait" />
+            <div className="gp__char-name">KIBA HATA</div>
             <div className="gp__char-class">Classe : Combattant ★★★</div>
           </div>
 
@@ -260,7 +260,7 @@ export default function Pouvoirs() {
             <div className="gp__section-lbl">[ DOSSIER SUJET ]</div>
 
             <p className={`gp__dossier-p ${animCls('pv-para-1')}`}>
-              Isen Hata est une <strong>Résonante de classe 3</strong> — une rare
+              Kiba Hata est un <strong>Résonant de classe 3</strong> — une rare
               catégorie d'individus capables d'interagir directement avec les fréquences
               ondulatoires du monde. Son pouvoir, la{' '}
               <strong>Résonance Active</strong>, lui permet d'émettre, percevoir et
@@ -270,7 +270,7 @@ export default function Pouvoirs() {
 
             <p className={`gp__dossier-p ${animCls('pv-para-2')}`}>
               <strong>Limites :</strong> chaque activation consomme de l'énergie
-              biologique. À court d'énergie, ses sens se retournent contre elle —
+              biologique. À court d'énergie, ses sens se retournent contre lui —
               surcharge sensorielle, douleur aiguë, désorientation. Ses sorts de zone la
               rendent temporairement <em>aveugle aux fréquences</em>, l'exposant aux
               contre-attaques.
@@ -278,8 +278,8 @@ export default function Pouvoirs() {
 
             <p className={`gp__dossier-p ${animCls('pv-para-3')}`}>
               <strong>Subtilité :</strong> son ultime <em>Fréquence 528</em> ne peut
-              être activé que lorsque ses PV sont inférieurs à 40 %. Plus elle est
-              fragilisée, plus son amplitude de résonance est puissante — un état que
+              être activé que lorsque ses PV sont inférieurs à 40 %. Plus il est
+              fragilisé, plus son amplitude de résonance est puissante — un état que
               certains adversaires apprennent à redouter.
             </p>
           </div>

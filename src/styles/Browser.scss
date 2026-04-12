@@ -413,6 +413,10 @@
     font-size: 11px;
     width: 220px;
 
+    li {
+      list-style: none;
+    }
+
     &-title {
       background: #cee0f2;
       text-align: center;
@@ -428,7 +432,7 @@
       border-bottom: 1px solid #a2a9b1;
 
       img {
-        max-width: 180px;
+        max-width: 200px;
         max-height: 220px;
         display: block;
         margin: 0 auto 4px;
@@ -447,7 +451,6 @@
       th, td {
         padding: 3px 6px;
         border-bottom: 1px solid #eaecf0;
-        vertical-align: top;
       }
 
       th {
@@ -455,6 +458,8 @@
         color: #555;
         white-space: nowrap;
         width: 90px;
+        display: flex;
+        padding-left: 10px;
       }
     }
   }

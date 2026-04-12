@@ -113,7 +113,7 @@ export const FILE_TREE = {
   images: {
     name: 'Images',
     parent: 'root',
-    children: ['img1', 'img2', 'img3'],
+    children: ['img1', 'img2', 'img3', 'img4'],
   },
   img1: { 
     name: '1.jpg', 
@@ -135,6 +135,13 @@ export const FILE_TREE = {
     type: 'file', 
     content: null, 
     imageFile: '/images/3.jpg' 
+  },
+  img4: { 
+    name: '4.jpg', 
+    parent: 'images', 
+    type: 'file', 
+    content: null, 
+    imageFile: '/images/4.jpg' 
   },
   // --- Autre ---
   important: {

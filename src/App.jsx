@@ -127,7 +127,7 @@ const WINDOW_CONFIGS = {
     defaultPosition: { x: 80, y: 60 },
   },
   imageviewer: {
-    title: 'Visionneuse d\'image',
+    title: "Visionneuse d'image",
     defaultSize: { width: 520, height: 460 },
     defaultPosition: { x: 100, y: 30 },
   },

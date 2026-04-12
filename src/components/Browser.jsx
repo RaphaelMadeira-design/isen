@@ -3,8 +3,8 @@ import '../styles/Browser.scss'
 
 const IE_ICON = 'https://win98icons.alexmeub.com/icons/png/search_web-0.png'
 const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']
-const SECRET_SEARCHES = ['isen', 'résonance', 'resonance', 'éveil', 'eveil', 'mémoire', 'memoire', 'fréquence', 'frequence', '528', 'hata', 'raphurst', 'academia']
-const SECRET_URLS = ['isen://core', 'isen://secret', 'about:isen', 'isen://memories']
+const SECRET_SEARCHES = ['kiba', 'résonance', 'resonance', 'éveil', 'eveil', 'mémoire', 'memoire', 'fréquence', 'frequence', '528', 'igarashi', 'raphurst', 'academia']
+const SECRET_URLS = ['kiba://core', 'kiba://secret', 'about:kiba', 'kiba://memories']
 
 // ── Pages secrètes ───────────────────────────────────────────────
 
@@ -86,10 +86,10 @@ function GlitchSearch({ query }) {
       </div>
       <div className="browser__glitch-results">
         <div className="browser__glitch-result">
-          <span className="browser__glitch-result-title browser-glitch-text" data-text="isen-hata.████ — Dossier [CLASSIFIÉ]">
-            isen-hata.████ — Dossier [CLASSIFIÉ]
+          <span className="browser__glitch-result-title browser-glitch-text" data-text="kiba-igarashi.████ — Dossier [CLASSIFIÉ]">
+            kiba-igarashi.████ — Dossier [CLASSIFIÉ]
           </span>
-          <div className="browser__glitch-result-url">http://www.isen-hata.██████.fr/core</div>
+          <div className="browser__glitch-result-url">http://www.kiba-igarashi.██████.fr/core</div>
           <p className="browser__glitch-result-desc">
             Sujet actif. Classe ??? détectée. Fréquence d'émission : 528 Hz. Rapport incident #00x7 — [suite inaccessible]. Ne pas distribuer.
           </p>
@@ -105,7 +105,7 @@ function GlitchSearch({ query }) {
         </div>
         <div className="browser__glitch-result browser__glitch-result--blocked">
           <span className="browser__glitch-result-title">████████████ — [ACCÈS REFUSÉ]</span>
-          <div className="browser__glitch-result-url">isen://core</div>
+          <div className="browser__glitch-result-url">kiba://core</div>
           <p className="browser__glitch-result-desc">
             █████ ██ ████████ ████ ██████. Tu sais ce que tu cherches vraiment.
           </p>
@@ -227,33 +227,32 @@ function FakeWikipedia({ onLogoClick }) {
           </div>
         </div>
         <div className="browser__wiki-content">
-          <h1 className="browser__wiki-title">Isen Hata</h1>
+          <h1 className="browser__wiki-title">Kiba Igarashi</h1>
           <div className="browser__wiki-subtitle">
-            <em>Cet article traite du personnage fictif. Pour d'autres usages, voir <span className="browser__wiki-link">Hata (homonymie)</span>.</em>
+            <em>Cet article traite du personnage fictif. Pour d'autres usages, voir <span className="browser__wiki-link">Igarashi (homonymie)</span>.</em>
           </div>
           <div className="browser__wiki-notice">
             <strong>Cet article est une ébauche concernant un personnage fictif.</strong> Vous pouvez partager vos connaissances en l'améliorant.
           </div>
           <div className="browser__wiki-infobox">
-            <div className="browser__wiki-infobox-title">Isen Hata</div>
+            <div className="browser__wiki-infobox-title">Kiba Igarashi</div>
             <div className="browser__wiki-infobox-img">
-              <img src="/images/full.png" alt="Isen Hata" onError={e => { e.target.style.display = 'none' }} />
-              <small>Illustration officielle d'Isen Hata</small>
+              <img src="/images/4.jpg" alt="Kiba Igarashi" onError={e => { e.target.style.display = 'none' }} />
+              <small>Illustration officielle de Kiba Igarashi</small>
             </div>
             <table className="browser__wiki-infobox-table">
               <tbody>
-                <tr><th>Univers</th><td>ISEN Project</td></tr>
-                <tr><th>Première apparition</th><td><em>ISEN.exe</em> (2026)</td></tr>
-                <tr><th>Créé par</th><td>Raphurst</td></tr>
-                <tr><th>Espèce</th><td>Humain (modifiée)</td></tr>
+                <tr><th>Nom complet</th><td>Kiba Igarashi</td></tr>
+                <tr><th>Surnoms</th><td>Croc Écarlate, Kōga</td></tr>
                 <tr><th>Sexe</th><td>Masculin</td></tr>
-                <tr><th>Capacités</th><td>Résonance ondulatoire, Perception étendue</td></tr>
-                <tr><th>Affiliation</th><td>Indépendant</td></tr>
+                <tr><th>Clan</th><td>Magaishi</td></tr>
+                <tr><th>Shokan</th><td>Résonance</td></tr>
+                <tr><th>Type</th><td>Élémentaire</td></tr>
               </tbody>
             </table>
           </div>
           <p>
-            <strong>Isen Hata</strong> (畑 イセン, <em>Hata Isen</em>) est un personnage fictif issu de l'univers narratif <em>ISEN Project</em>. Protagoniste principale du visual novel éponyme, elle est décrite comme une jeune homme aux capacités sensorielles hors du commun, capable de percevoir et d'interagir avec des fréquences imperceptibles à l'œil humain.
+            <strong>Kiba Igarashi</strong> (五十嵐 牙, <em>Igarashi Kiba</em>) est un personnage fictif issu de l'univers narratif <em>ISEN Project</em>. Protagoniste principal du visual novel éponyme, il est décrit comme un jeune homme aux capacités sensorielles hors du commun, capable de percevoir et d'interagir avec des fréquences imperceptibles à l'œil humain.
           </p>
           <div className="browser__wiki-toc">
             <div className="browser__wiki-toc-title">Sommaire</div>
@@ -268,14 +267,14 @@ function FakeWikipedia({ onLogoClick }) {
           </div>
           <h2 className="browser__wiki-h2">1. Biographie fictive</h2>
           <p>
-            Isen Hata grandit dans une ville côtière anonyme, loin des centres urbains. Dès l'enfance, elle manifeste une sensibilité inhabituelle aux sons et aux vibrations ambiantes. C'est à l'adolescence que ses capacités se révèlent dans leur véritable étendue, lors d'un incident qualifié dans les archives de <em>l'Éveil</em>.
+            Kiba Igarashi grandit dans une ville côtière anonyme, loin des centres urbains. Dès l'enfance, il manifeste une sensibilité inhabituelle aux sons et aux vibrations ambiantes. C'est à l'adolescence que ses capacités se révèlent dans leur véritable étendue, lors d'un incident qualifié dans les archives de <em>l'Éveil</em>.
           </p>
           <p>
-            Après cet événement, Isen choisit de vivre en marge des institutions. Elle développe seule sa maîtrise de la <em>résonance ondulatoire</em>, discipline qu'elle définit comme « écouter ce que le monde ne dit pas à voix haute ».
+            Après cet événement, Kiba choisit de vivre en marge des institutions. Il développe seule sa maîtrise de la <em>résonance ondulatoire</em>, discipline qu'il définit comme « écouter ce que le monde ne dit pas à voix haute ».
           </p>
           <h2 className="browser__wiki-h2">2. Personnalité</h2>
           <p>
-            Isen est généralement décrite comme <strong>introvertie et observatrice</strong>. Elle parle peu mais avec précision, et manifeste une forme d'ironie douce que ses interlocuteurs perçoivent parfois comme de la distance.
+            Kiba est généralement décrit comme <strong>introverti et observateur</strong>. Il parle peu mais avec précision, et manifeste une forme d'ironie douce que ses interlocuteurs perçoivent parfois comme de la distance.
           </p>
           <h2 className="browser__wiki-h2">3. Capacités et techniques</h2>
           <ul className="browser__wiki-list">
@@ -285,7 +284,7 @@ function FakeWikipedia({ onLogoClick }) {
           </ul>
           <h2 className="browser__wiki-h2">4. Apparitions</h2>
           <p>
-            Isen apparaît pour la première fois dans le visual novel <em>ISEN.exe</em> (2026), disponible sur PC-98 émulé. Elle est également mentionnée dans les notes de l'EP <em>Raphurst — Prelude</em>.
+            Kiba apparaît pour la première fois dans le visual novel <em>ISEN.exe</em> (2026), disponible sur PC-98 émulé. Il est également mentionné dans les notes de l'EP <em>Raphurst — Prelude</em>.
           </p>
           <h2 className="browser__wiki-h2">5. Réception</h2>
           <p>
@@ -295,7 +294,7 @@ function FakeWikipedia({ onLogoClick }) {
             <h2 className="browser__wiki-h2">6. Références</h2>
             <ol className="browser__wiki-ref-list">
               <li>Raphurst, <em>Notes de production — Prelude EP</em>, 2026.</li>
-              <li>« ISEN Project — Présentation officielle », <em>isen-hata.vercel.app</em>, consulté le 7 avril 2026.</li>
+              <li>« ISEN Project — Présentation officielle », <em>kiba-igarashi.vercel.app</em>, consulté le 7 avril 2026.</li>
               <li>Archives de l'Éveil, document interne, non daté.</li>
             </ol>
           </div>
@@ -322,7 +321,7 @@ function KonamiOverlay({ onDismiss }) {
         </div>
         <div className="browser__konami-body">
           <p>PROTOCOLE DE CONFINEMENT ACTIVÉ</p>
-          <p>SUJET : <span className="browser__konami-hi">ISEN HATA</span></p>
+          <p>SUJET : <span className="browser__konami-hi">KIBA IGARASHI</span></p>
           <p>FRÉQUENCE ÉMISE : <span className="browser__konami-hi">██████ Hz</span></p>
           <p>NIVEAU DE MENACE : <span className="browser__konami-red">INDÉTERMINÉ</span></p>
           <p>ACCÈS SYSTÈME : <span className="browser__konami-red">COMPROMIS</span></p>
@@ -627,8 +626,8 @@ const BASE_TABS = [
   },
   {
     id: 'wiki',
-    label: 'Isen Hata — Wikipédia',
-    url: 'https://fr.wikipedia.org/wiki/Isen_Hata',
+    label: 'Kiba Igarashi — Wikipédia',
+    url: 'https://fr.wikipedia.org/wiki/Kiba_Igarashi',
     icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
   },
   {
@@ -655,7 +654,7 @@ export default function Browser() {
   const [status, setStatus] = useState('Terminé')
 
   const tabs = secretTabVisible
-    ? [...BASE_TABS, { id: 'secret', label: '????', url: 'isen://core', icon: '⚠' }]
+    ? [...BASE_TABS, { id: 'secret', label: '????', url: 'kiba://core', icon: '⚠' }]
     : BASE_TABS
 
   // ── Konami ─────────────────────────────────────────────────────
@@ -695,7 +694,7 @@ export default function Browser() {
       if (SECRET_URLS.includes(trimmed)) {
         setSecretTabVisible(true)
         setActiveTab('secret')
-        setAddressValue('isen://core')
+        setAddressValue('kiba://core')
         setContentMode('normal')
       } else if (trimmed.includes('google')) {
         setActiveTab('google')
@@ -704,7 +703,7 @@ export default function Browser() {
       } else if (trimmed.includes('wikipedia') || trimmed.includes('wiki')) {
         setActiveTab('wiki')
         setContentMode('normal')
-        setAddressValue('https://fr.wikipedia.org/wiki/Isen_Hata')
+        setAddressValue('https://fr.wikipedia.org/wiki/Kiba_Igarashi')
       } else if (trimmed.includes('actunet') || trimmed.includes('actualites') || trimmed.includes('news')) {
         setActiveTab('news')
         setContentMode('normal')
@@ -726,7 +725,7 @@ export default function Browser() {
       triggerGlitch(() => {
         setSecretTabVisible(true)
         setActiveTab('secret')
-        setAddressValue('isen://core')
+        setAddressValue('kiba://core')
         setContentMode('normal')
       })
     }

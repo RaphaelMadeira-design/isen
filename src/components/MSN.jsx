@@ -4,7 +4,7 @@ import '../styles/msn.scss';
 
 // ─── CREDENTIALS ────────────────────────────────────────────────
 const CREDENTIALS = {
-  email: 'isen.hata@hotmail.fr',
+  email: 'kiba.hata@hotmail.fr',
   password: 'kyoto1999',
 };
 
@@ -52,30 +52,30 @@ const CONVERSATIONS = {
   kaito: {
     date: "Aujourd'hui — 20:45",
     messages: [
-      { from: 'Kaito_07',  text: "isen !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
-      { from: 'isen.samurai99', text: 'non, quoi encore',                                         time: '20:46' },
+      { from: 'Kaito_07',  text: "kiba !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
+      { from: 'kiba.samurai99', text: 'non, quoi encore',                                         time: '20:46' },
       { from: 'Kaito_07',  text: 'ils ont attaqué le district nord. encore.',                time: '20:46' },
       { from: 'Kaito_07',  text: "j'ai besoin de toi sur ce coup",                           time: '20:47' },
-      { from: 'isen.samurai99', text: 'je suis occupé',                                           time: '20:47' },
+      { from: 'kiba.samurai99', text: 'je suis occupé',                                           time: '20:47' },
       { from: 'Kaito_07',  text: '"occupé" c\'est ça... ^^',                                 time: '20:48' },
       { from: 'Kaito_07',  text: "tu sais très bien qu'on ne peut pas le faire sans toi",    time: '20:48' },
-      { from: 'isen.samurai99', text: 'je viendrai. mais à mes conditions.',                      time: '20:49' },
+      { from: 'kiba.samurai99', text: 'je viendrai. mais à mes conditions.',                      time: '20:49' },
       { from: 'Kaito_07',  text: 'évidemment ^^ rendez-vous au pont de maruyama. minuit.',  time: '20:50' },
-      { from: 'isen.samurai99', text: 'ok',                                                       time: '20:50' },
+      { from: 'kiba.samurai99', text: 'ok',                                                       time: '20:50' },
     ],
   },
   yuki: {
     date: "Aujourd'hui — 21:12",
     messages: [
-      { from: 'YukiChan_☆', text: "ISEN !!! j'ai eu une vision ce matin omg",                   time: '21:12' },
+      { from: 'YukiChan_☆', text: "KIBA !!! j'ai eu une vision ce matin omg",                   time: '21:12' },
       { from: 'YukiChan_☆', text: "c'était bizarre... tu étais là mais pas toi en même temps ??", time: '21:12' },
-      { from: 'isen.samurai99',  text: 'une vision de quoi exactement',                               time: '21:14' },
+      { from: 'kiba.samurai99',  text: 'une vision de quoi exactement',                               time: '21:14' },
       { from: 'YukiChan_☆', text: 'une silhouette derrière toi. noire. mais familière',          time: '21:15' },
-      { from: 'isen.samurai99',  text: '...',                                                          time: '21:16' },
-      { from: 'YukiChan_☆', text: "isen ?? tu vas bien ??? dis moi que c'est rien ;_;",           time: '21:17' },
-      { from: 'isen.samurai99',  text: "c'est rien. oublie cette vision.",                            time: '21:18' },
+      { from: 'kiba.samurai99',  text: '...',                                                          time: '21:16' },
+      { from: 'YukiChan_☆', text: "kiba ?? tu vas bien ??? dis moi que c'est rien ;_;",           time: '21:17' },
+      { from: 'kiba.samurai99',  text: "c'est rien. oublie cette vision.",                            time: '21:18' },
       { from: 'YukiChan_☆', text: '... :/ tu mens très mal tu sais xD',                          time: '21:19' },
-      { from: 'isen.samurai99',  text: 'passe une bonne nuit yuki',                                   time: '21:20' },
+      { from: 'kiba.samurai99',  text: 'passe une bonne nuit yuki',                                   time: '21:20' },
       { from: 'YukiChan_☆', text: 'toi aussi... fais attention à toi stp ;_;',                   time: '21:20' },
     ],
   },
@@ -83,10 +83,10 @@ const CONVERSATIONS = {
     date: 'Hier — 22:01',
     messages: [
       { from: 'KagamiSpirit', text: 'Le reflet ne ment jamais.',                time: '22:01' },
-      { from: 'isen.samurai99',    text: "qu'est-ce que tu veux cette fois",          time: '22:01' },
+      { from: 'kiba.samurai99',    text: "qu'est-ce que tu veux cette fois",          time: '22:01' },
       { from: 'KagamiSpirit', text: 'Ce que tu portes... il le sent aussi.',     time: '22:02' },
       { from: 'KagamiSpirit', text: 'Méfie-toi de ton ombre.',                   time: '22:02' },
-      { from: 'isen.samurai99',    text: 'parle clairement pour une fois',            time: '22:03' },
+      { from: 'kiba.samurai99',    text: 'parle clairement pour une fois',            time: '22:03' },
       { from: 'KagamiSpirit', text: 'Bientôt. Le voile est fin cette nuit.',     time: '22:03' },
       { from: 'KagamiSpirit', text: 'Ne te retourne pas.', italic: true,         time: '22:04' },
       { from: 'system',       text: "[KagamiSpirit s'est déconnecté]",           time: '22:04' },
@@ -96,19 +96,19 @@ const CONVERSATIONS = {
     date: 'Aujourd’hui — 21:01',
     messages: [
       { from: '♫-MasaMasa-♫', text: 'Hello mon chanteur préféré~~',                time: '21:01' },
-      { from: 'isen.samurai99',    text: "yo",          time: '21:01' },
+      { from: 'kiba.samurai99',    text: "yo",          time: '21:01' },
       { from: '♫-MasaMasa-♫', text: "On organise une répét' jeudi avec le groupe",     time: '21:02' },
       { from: '♫-MasaMasa-♫', text: 'Ça te dit de nous faire entendre ta voix ?',                   time: '21:02' },
-      { from: 'isen.samurai99',    text: 'wakatsuru est encore malade ?',            time: '21:06' },
+      { from: 'kiba.samurai99',    text: 'wakatsuru est encore malade ?',            time: '21:06' },
       { from: '♫-MasaMasa-♫', text: 'Non pas cette fois',     time: '21:08' },
       { from: '♫-MasaMasa-♫', text: "Depuis qu'il sort avec Reina-chan, il vient plus trop",       time: '21:08' },
-      { from: 'isen.samurai99',    text: "c'est con",       time: '21:10' },
-      { from: 'isen.samurai99',    text: "quelle heure",       time: '21:10' },
+      { from: 'kiba.samurai99',    text: "c'est con",       time: '21:10' },
+      { from: 'kiba.samurai99',    text: "quelle heure",       time: '21:10' },
       { from: '♫-MasaMasa-♫',    text: "On sait pas encore",       time: '21:11' },
       { from: '♫-MasaMasa-♫',    text: "Je te dis ça demain, ok ?",       time: '21:11' },
-      { from: 'isen.samurai99',    text: "ok mais je promets rien",       time: '21:12' },
+      { from: 'kiba.samurai99',    text: "ok mais je promets rien",       time: '21:12' },
       { from: '♫-MasaMasa-♫',    text: "Je compte sur toi~ à demain",       time: '21:12' },
-      { from: 'isen.samurai99',    text: "a+ masahiro",       time: '21:15' },
+      { from: 'kiba.samurai99',    text: "a+ masahiro",       time: '21:15' },
       { from: 'system',       text: "[♫-MasaMasa-♫ est déconnecté]"},
     ],
   },
@@ -116,10 +116,10 @@ const CONVERSATIONS = {
     date: 'Il y a 2 mois',
     messages: [
       { from: 'b0xer.Ry0',       text: 'je dois disparaître un moment',             time: '14:23' },
-      { from: 'isen.samurai99', text: 'quoi ? pourquoi',                           time: '14:23' },
+      { from: 'kiba.samurai99', text: 'quoi ? pourquoi',                           time: '14:23' },
       { from: 'b0xer.Ry0',       text: 'tu comprendras plus tard.',                  time: '14:24' },
       { from: 'b0xer.Ry0',       text: 'ne me cherche pas.',                        time: '14:24' },
-      { from: 'isen.samurai99', text: "ryo. qu'est-ce qui se passe vraiment",      time: '14:25' },
+      { from: 'kiba.samurai99', text: "ryo. qu'est-ce qui se passe vraiment",      time: '14:25' },
       { from: 'system',    text: '[CONNEXION PERDUE]',                        time: '14:25' },
       { from: 'system',    text: "Ryo n'est plus en ligne depuis 2 mois.",   time: ''      },
     ],
@@ -328,7 +328,7 @@ function MSNContactList({ onOpenChat, onClose, onMinimize }) {
       <div className="msn-contacts__user-bar">
         <span className="msn-dot msn-dot--online" />
         <div>
-          <div className="msn-contacts__user-name">isen.samurai99</div>
+          <div className="msn-contacts__user-name">kiba.samurai99</div>
           <div className="msn-contacts__user-status">En ligne</div>
         </div>
       </div>
@@ -412,7 +412,7 @@ function MSNChat({ contact, index, onClose }) {
         {conv.date && <div className="msn-chat__separator">{conv.date}</div>}
         {conv.messages.map((msg, i) => {
           const isSystem = msg.from === 'system';
-          const isSelf   = msg.from === 'isen.samurai99';
+          const isSelf   = msg.from === 'kiba.samurai99';
 
           if (isSystem) {
             return (
@@ -442,7 +442,7 @@ function MSNChat({ contact, index, onClose }) {
       </div>
 
       <div className="msn-chat__input-area">
-        <div className="msn-chat__input-label">isen.samurai99 dit :</div>
+        <div className="msn-chat__input-label">kiba.samurai99 dit :</div>
         <textarea
           className="msn-chat__textarea"
           placeholder="Tapez votre message ici..."

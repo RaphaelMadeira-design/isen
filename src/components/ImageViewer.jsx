@@ -5,6 +5,7 @@ const IMAGES = [
   { name: '1.jpg', file: '/images/1.jpg' },
   { name: '2.jpg', file: '/images/2.jpg' },
   { name: '3.jpg', file: '/images/3.jpg' },
+  { name: '4.jpg', file: '/images/4.jpg' },
 ]
 
 export default function ImageViewer({ requestedImage }) {
