@@ -266,33 +266,33 @@ function FakeWikipedia({ onLogoClick }) {
               <li><span className="browser__wiki-link">Références</span></li>
             </ol>
           </div>
-          <h2 className="browser__wiki-h2">1. Biographie fictive</h2>
+          <h2 className="browser__wiki-h2">Biographie fictive</h2>
           <p>
             Kiba Igarashi grandit dans une ville côtière anonyme, loin des centres urbains. Dès l'enfance, il manifeste une sensibilité inhabituelle aux sons et aux vibrations ambiantes. C'est à l'adolescence que ses capacités se révèlent dans leur véritable étendue, lors d'un incident qualifié dans les archives de <em>l'Éveil</em>.
           </p>
           <p>
             Après cet événement, Kiba choisit de vivre en marge des institutions. Il développe seule sa maîtrise de la <em>résonance ondulatoire</em>, discipline qu'il définit comme « écouter ce que le monde ne dit pas à voix haute ».
           </p>
-          <h2 className="browser__wiki-h2">2. Personnalité</h2>
+          <h2 className="browser__wiki-h2">Personnalité</h2>
           <p>
             Kiba est généralement décrit comme <strong>introverti et observateur</strong>. Il parle peu mais avec précision, et manifeste une forme d'ironie douce que ses interlocuteurs perçoivent parfois comme de la distance.
           </p>
-          <h2 className="browser__wiki-h2">3. Capacités et techniques</h2>
+          <h2 className="browser__wiki-h2">Capacités et techniques</h2>
           <ul className="browser__wiki-list">
             <li><strong>Perception ondulatoire</strong> — détection des fréquences sonores et électromagnétiques à longue portée.</li>
             <li><strong>Résonance active</strong> — émission contrôlée d'ondes capables d'affecter l'environnement immédiat.</li>
             <li><strong>Syntonisation</strong> — harmonisation avec un être vivant ou un objet, permettant une forme de communication non-verbale.</li>
           </ul>
-          <h2 className="browser__wiki-h2">4. Apparitions</h2>
+          <h2 className="browser__wiki-h2">Apparitions</h2>
           <p>
             Kiba apparaît pour la première fois dans le visual novel <em>ISEN.exe</em> (2026), disponible sur PC-98 émulé. Il est également mentionné dans les notes de l'EP <em>Raphurst — Prelude</em>.
           </p>
-          <h2 className="browser__wiki-h2">5. Réception</h2>
+          <h2 className="browser__wiki-h2">Réception</h2>
           <p>
             Le personnage a été bien accueilli pour sa <strong>profondeur psychologique</strong> et son design visuel inspiré de l'esthétique PC-98.
           </p>
           <div className="browser__wiki-references">
-            <h2 className="browser__wiki-h2">6. Références</h2>
+            <h2 className="browser__wiki-h2">Références</h2>
             <ol className="browser__wiki-ref-list">
               <li>Raphurst, <em>Notes de production — Prelude EP</em>, 2026.</li>
               <li>« ISEN Project — Présentation officielle », <em>kiba-igarashi.vercel.app</em>, consulté le 7 avril 2026.</li>
