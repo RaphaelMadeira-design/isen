@@ -74,6 +74,12 @@
 
     &--close {
       font-size: 12px;
+      transition: all 100ms ease;
+
+      &:hover {
+        background-color: $pc98-red;
+        color: $win98-white;
+      }
     }
   }
 

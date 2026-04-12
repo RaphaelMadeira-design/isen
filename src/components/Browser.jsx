@@ -14,7 +14,7 @@ const FRAGMENTS = [
   { text: '> Lecture des fragments mémoire...', cmd: true, delay: 560 },
   { text: '', delay: 840 },
   { text: ' [FRAGMENT #001] ████████████████████ [CORROMPU]', frag: true, delay: 1120 },
-  { text: ' [FRAGMENT #002] "...ils ne savent pas ce que j\'ai perçu ce soir-là."', frag: true, delay: 1400 },
+  { text: ' [FRAGMENT #002] "...ils ne savent pas ce que j\'ai perçu ce soir-là.', frag: true, delay: 1400 },
   { text: ' [FRAGMENT #003] ████████████ [DATE EFFACÉE]', frag: true, delay: 1680 },
   { text: ' [FRAGMENT #004] "la résonance était là avant moi. avant nous tous."', frag: true, delay: 1960 },
   { text: ' [FRAGMENT #005] ████ [ACCÈS REFUSÉ — NIVEAU 5]', frag: true, delay: 2240 },
@@ -333,6 +333,289 @@ function KonamiOverlay({ onDismiss }) {
   )
 }
 
+// ── ActuNet News ──────────────────────────────────────────────────
+
+const NEWS_DATE = 'Lundi 17 janvier 2000'
+
+const TICKER_ITEMS = [
+  "FLASH : Séisme majeur au Salvador — bilan provisoire de 700 victimes",
+  "KYOTO : Aucun commentaire officiel sur l'incident de vendredi",
+  "EURO : La monnaie unique à 1,03 dollar",
+  "L'ACADÉMIE maintient le silence sur le rapport #00x7",
+  "MÉTÉO KYOTO : Brouillard inexpliqué dans Fushimi et Gion",
+  "BOURSE DE TOKYO : Nikkei en hausse de 1,2 %",
+  "SCIENCES : 528 Hz, une fréquence qui divise les chercheurs",
+  "CONCORDE : Les enquêtes de sécurité se poursuivent",
+]
+
+const NEWS_ARTICLES = [
+  {
+    id: 1,
+    category: "Monde",
+    catColor: '#990000',
+    date: "Sam. 15 Jan. 2000  |  14:32 JST",
+    headline: "KYOTO — Une ruelle scellée après un « incident d'ombre anormale »",
+    summary: "Trois riverains signalent des ombres se déplaçant indépendamment de leur source lumineuse. Une silhouette juvénile aperçue sur les lieux. Enquête préliminaire ouverte.",
+    paragraphs: [
+      "La préfecture de police de Kyoto a confirmé vendredi l'ouverture d'une enquête préliminaire suite à trois témoignages concordants dans le quartier de Fushimi. Les appels ont été enregistrés à 23h14 heure locale.",
+      "L'un des témoins, ayant requis l'anonymat, a déclaré à un correspondant local : « Il y avait un jeune individu au centre de la ruelle. Les ombres autour de lui ne lui appartenaient pas. Elles reproduisaient des gestes qu'il n'était pas en train de faire — comme un double. »",
+      "La ruelle Nakamura-dori a été scellée pendant soixante-douze heures. L'Institut national des sciences anomales (INSA) aurait été dépêché sur place. Aucune conclusion publique n'a été rendue à ce jour.",
+      "Le suspect principal, décrit comme un jeune individu de vingt ans environ, vêtements sombres, n'a pas encore été formellement identifié. Une source préfectorale a simplement indiqué : « Nous savons qui chercher. »",
+    ],
+  },
+  {
+    id: 2,
+    category: "Sciences",
+    catColor: '#004499',
+    date: "Mer. 12 Jan. 2000  |  09:17 CET",
+    headline: "Un document Raphurst sur les « Sujets Résonants » circule sur les forums",
+    summary: "Un rapport interne décrivant des individus à « propriétés électromagnétiques atypiques » a brièvement circulé avant d'être retiré. Il mentionne un certain « Sujet R-003 ».",
+    paragraphs: [
+      "Plusieurs utilisateurs de forums scientifiques indépendants ont signalé mercredi la mise en ligne d'un document portant l'en-tête confidentiel de l'Institut Raphurst, organisation de recherche privée japonaise dont les travaux restent peu documentés.",
+      "Le texte décrirait une catégorie d'individus désignés sous le terme « Sujets Résonants » — des personnes émettant des fréquences biologiques concentrées autour de 528 Hz.",
+      "Un « Sujet R-003 » serait mentionné de manière répétée, avec la note : « mesures dépassant significativement les seuils connus — statut actif, non localisé ». L'Institut Raphurst n'a donné aucune réponse aux demandes de commentaire.",
+      "« J'ai eu le fichier pendant dix minutes avant que le lien soit coupé, » témoigne un utilisateur contacté par e-mail. « Il y avait des coordonnées GPS et une seule ligne en bas de page : \"Ne pas approcher sans équipement de confinement fréquentiel.\" »",
+    ],
+  },
+  {
+    id: 3,
+    category: "Faits divers",
+    catColor: '#336600',
+    date: "Lun. 10 Jan. 2000  |  11:04 JST",
+    headline: "Disparue depuis le 23 novembre — Un message codé avant de s'évanouir",
+    summary: "Une lycéenne de Kyoto portée disparue. Sa famille avait reçu un court message : « 528 — je perçois tout maintenant — ne cherchez pas. »",
+    paragraphs: [
+      "La famille d'une lycéenne de Kyoto, identifiée uniquement par ses initiales I.H., a relancé l'appel à témoins ce lundi, plus de six semaines après sa disparition le 23 novembre dernier.",
+      "Quelques heures avant les faits, la famille avait reçu depuis son téléphone un message ne contenant que ces mots : « 528 — je perçois tout maintenant — ne cherchez pas. »",
+      "La police de Kyoto a classé l'affaire sans suite après trois semaines, invoquant un départ volontaire. Ses proches contestent cette conclusion. « Elle n'aurait jamais fait ça. Quelque chose lui est arrivé cette nuit-là, dans cette ruelle. »",
+      "Fait troublant : la date de disparition — le 23 novembre — coïncide exactement avec l'incident référencé sous le code #00x7 dans les registres municipaux, dont l'accès public a depuis été restreint.",
+    ],
+  },
+  {
+    id: 4,
+    category: "Sciences",
+    catColor: '#004499',
+    date: "Jeu. 6 Jan. 2000  |  16:55 CET",
+    headline: "528 Hz : entre fréquence cicatrisante et anomalie mesurable",
+    summary: "Plusieurs laboratoires signalent des relevés inexplicables à exactement 528 Hz sans source identifiable. Une organisation non nommée collecte ces données depuis 1997.",
+    paragraphs: [
+      "Ce que les adeptes de médecine alternative appellent la « fréquence de guérison » commence à attirer l'attention de chercheurs sérieux — non pour ses vertus supposées, mais pour des mesures que certains qualifient d'anomalies.",
+      "« Nous avons d'abord cru à une erreur de calibrage, » confie un ingénieur japonais ayant requis l'anonymat. « Puis nous avons réalisé que les émissions à 528 Hz ne se produisaient que lorsqu'un certain membre de l'équipe était dans la pièce. Quand il partait, la lecture tombait à zéro. »",
+      "Au moins quatre laboratoires en Europe et au Japon auraient observé des phénomènes similaires sans jamais les publier officiellement, par crainte de ne pas être pris au sérieux.",
+      "Une organisation privée dont le siège serait à Osaka, et dont le nom n'a pas été communiqué, collecterait ces données depuis 1997. Leurs chercheurs parleraient désormais de « signatures biologiques uniques » — une empreinte fréquentielle propre à chaque individu dit « actif ».",
+    ],
+  },
+  {
+    id: 5,
+    category: "Monde",
+    catColor: '#990000',
+    date: "Ven. 7 Jan. 2000  |  08:30 JST",
+    headline: "L'Académie refuse de répondre — Rapport #00x7 toujours classifié",
+    summary: "L'organisation désignée sous le nom « L'Académie » maintient le silence total sur l'incident du 23 novembre à Kyoto.",
+    paragraphs: [
+      "Deux journalistes d'investigation qui ont tenté d'accéder au rapport incident #00x7 — référencé dans les documents administratifs de la ville de Kyoto — se sont heurtés à un mur de silence. L'organisation qui en aurait la garde, connue sous le seul nom « L'Académie », n'a répondu à aucune sollicitation.",
+      "Un fonctionnaire municipal, s'exprimant sous couvert d'anonymat total, a accepté de livrer quelques mots : « Ce que nous avons vu cette nuit-là ne rentrait dans aucune case. Ce n'était pas une lumière. Ce n'était pas une explosion. C'était une absence — une ombre sans corps, et au centre, quelqu'un qui semblait parfaitement calme. »",
+      "Le rapport, s'il existe, serait l'un des rares documents classifiés au niveau municipal au Japon depuis l'après-guerre.",
+      "L'Académie est liée à au moins trois affaires non résolues de « phénomènes perceptifs anormaux » entre 1997 et 2000. Ses membres, ses financements et ses objectifs demeurent inconnus du grand public.",
+    ],
+  },
+]
+
+const NEWS_BRIEFS = [
+  "MÉTÉO — Kyoto : brouillard d'origine inconnue dans Fushimi et Gion (16/01)",
+  "SCIENCES — Un chercheur américain revendique l'enregistrement d'une \"signature fréquentielle humaine\" (04/01)",
+  "DIVERS — La ruelle Nakamura-dori rouverte au public après expertise (17/01)",
+  "JAPON — L'INSA nie avoir envoyé une équipe à Kyoto le 15 janvier (16/01)",
+]
+
+const TICKER_STR = TICKER_ITEMS.join('  ◆  ') + '  ◆  '
+
+function FakeNewsPortal() {
+  const [activeArticle, setActiveArticle] = useState(null)
+
+  if (activeArticle) {
+    return (
+      <div className="browser__news-art">
+        <div className="browser__news-art-bar">
+          <button className="browser__news-back" onClick={() => setActiveArticle(null)}>
+            « Retour aux actualités
+          </button>
+          <span className="browser__news-art-cat" style={{ color: activeArticle.catColor }}>
+            {activeArticle.category}
+          </span>
+        </div>
+        <div className="browser__news-art-body">
+          <div className="browser__news-art-meta">
+            {activeArticle.date} &nbsp;|&nbsp; ActuNet Actualités
+          </div>
+          <h1 className="browser__news-art-title">{activeArticle.headline}</h1>
+          <p className="browser__news-art-lead">{activeArticle.summary}</p>
+          <hr className="browser__news-hr" />
+          {activeArticle.paragraphs.map((p, i) => (
+            <p key={i} className="browser__news-art-p">{p}</p>
+          ))}
+          <div className="browser__news-art-foot">
+            © 2000 ActuNet Actualités &nbsp;|&nbsp;
+            <span className="browser__news-link">Envoyer cet article</span> &nbsp;|&nbsp;
+            <span className="browser__news-link">Imprimer</span> &nbsp;|&nbsp;
+            <span className="browser__news-link">Signaler une erreur</span>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  const featured  = NEWS_ARTICLES[0]
+  const secondary = NEWS_ARTICLES.slice(1, 3)
+  const rest      = NEWS_ARTICLES.slice(3)
+
+  return (
+    <div className="browser__news">
+      {/* ── Header ── */}
+      <div className="browser__news-header">
+        <div className="browser__news-logo">
+          <span className="browser__news-logo-a">Actu</span>
+          <span className="browser__news-logo-b">Net</span>
+          <span className="browser__news-logo-tag">Actualités</span>
+        </div>
+        <div className="browser__news-header-r">
+          <span className="browser__news-datestr">{NEWS_DATE}</span>
+          <div className="browser__news-search">
+            <input className="browser__news-search-input" placeholder="Rechercher…" readOnly />
+            <button className="browser__news-search-btn">OK</button>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Nav ── */}
+      <div className="browser__news-nav">
+        {['Accueil','Monde','Japon','Sciences','Technologie','Faits divers','Sports','Météo','Finance'].map((c, i) => (
+          <span key={c} className="browser__news-nav-item">
+            {i > 0 && <span className="browser__news-nav-sep">|</span>}
+            {c}
+          </span>
+        ))}
+      </div>
+
+      {/* ── Ticker ── */}
+      <div className="browser__news-ticker">
+        <span className="browser__news-ticker-label">FLASH</span>
+        <div className="browser__news-ticker-wrap">
+          <span className="browser__news-ticker-track">
+            {TICKER_STR}{TICKER_STR}
+          </span>
+        </div>
+      </div>
+
+      {/* ── Body ── */}
+      <div className="browser__news-body">
+
+        {/* Sidebar */}
+        <div className="browser__news-sidebar">
+          <div className="browser__news-sb-section">
+            <div className="browser__news-sb-title">RUBRIQUES</div>
+            {['Monde','Japon','Sciences','Technologie','Faits divers','Sports','Culture','Météo'].map(c => (
+              <div key={c} className="browser__news-sb-link">{c}</div>
+            ))}
+          </div>
+          <div className="browser__news-sb-section">
+            <div className="browser__news-sb-title">MÉTÉO</div>
+            <div className="browser__news-weather">
+              <div className="browser__news-weather-city">Kyoto, JP</div>
+              <div className="browser__news-weather-temp">9°C</div>
+              <div className="browser__news-weather-desc">Brouillard</div>
+            </div>
+          </div>
+          <div className="browser__news-sb-section">
+            <div className="browser__news-sb-title">EN BREF</div>
+            {NEWS_BRIEFS.map((b, i) => (
+              <div key={i} className="browser__news-brief">{b}</div>
+            ))}
+          </div>
+          <div className="browser__news-ad">
+            <div>PUBLICITÉ</div>
+            <strong>ActuNet Pro</strong>
+            <div>Hébergement web</div>
+            <div>dès 2000¥/mois</div>
+          </div>
+        </div>
+
+        {/* Main */}
+        <div className="browser__news-main">
+          {/* Featured */}
+          <div className="browser__news-featured">
+            <span className="browser__news-catbadge" style={{ background: featured.catColor }}>
+              {featured.category}
+            </span>
+            <h2
+              className="browser__news-feat-title browser__news-link"
+              onClick={() => setActiveArticle(featured)}
+            >
+              {featured.headline}
+            </h2>
+            <div className="browser__news-feat-meta">{featured.date}</div>
+            <p className="browser__news-feat-summary">{featured.summary}</p>
+            <span className="browser__news-readmore browser__news-link" onClick={() => setActiveArticle(featured)}>
+              Lire la suite ›
+            </span>
+          </div>
+
+          <hr className="browser__news-hr" />
+          <div className="browser__news-section-hd">ACTUALITÉS RÉCENTES</div>
+
+          <div className="browser__news-grid">
+            {secondary.map(art => (
+              <div key={art.id} className="browser__news-card">
+                <div className="browser__news-card-cat" style={{ color: art.catColor }}>
+                  [{art.category}]
+                </div>
+                <div
+                  className="browser__news-card-title browser__news-link"
+                  onClick={() => setActiveArticle(art)}
+                >
+                  {art.headline}
+                </div>
+                <div className="browser__news-card-meta">{art.date}</div>
+                <p className="browser__news-card-sum">{art.summary}</p>
+                <span className="browser__news-readmore browser__news-link" onClick={() => setActiveArticle(art)}>
+                  Lire ›
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <hr className="browser__news-hr" />
+          <div className="browser__news-section-hd">AUTRES ARTICLES</div>
+
+          <div className="browser__news-list">
+            {rest.map(art => (
+              <div key={art.id} className="browser__news-listitem">
+                <span className="browser__news-card-cat" style={{ color: art.catColor }}>
+                  [{art.category}]
+                </span>{' '}
+                <span
+                  className="browser__news-link"
+                  onClick={() => setActiveArticle(art)}
+                >
+                  {art.headline}
+                </span>
+                <span className="browser__news-listitem-date"> — {art.date}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Footer ── */}
+      <div className="browser__news-footer">
+        © 2000 ActuNet Actualités — Publicité — Aide — Contact — Conditions d'utilisation
+        <br />
+        <small>Ce site est optimisé pour Netscape Navigator 4.0 et Internet Explorer 5.0 · Résolution recommandée : 800×600</small>
+      </div>
+    </div>
+  )
+}
+
 // ── TABS ─────────────────────────────────────────────────────────
 
 const BASE_TABS = [
@@ -346,6 +629,12 @@ const BASE_TABS = [
     id: 'wiki',
     label: 'Isen Hata — Wikipédia',
     url: 'https://fr.wikipedia.org/wiki/Isen_Hata',
+    icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
+  },
+  {
+    id: 'news',
+    label: 'ActuNet Actualités',
+    url: 'http://www.actunet-news.fr/',
     icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
   },
 ]
@@ -416,6 +705,10 @@ export default function Browser() {
         setActiveTab('wiki')
         setContentMode('normal')
         setAddressValue('https://fr.wikipedia.org/wiki/Isen_Hata')
+      } else if (trimmed.includes('actunet') || trimmed.includes('actualites') || trimmed.includes('news')) {
+        setActiveTab('news')
+        setContentMode('normal')
+        setAddressValue('http://www.actunet-news.fr/')
       } else {
         setNotFoundUrl(url)
         setContentMode('404')
@@ -458,10 +751,16 @@ export default function Browser() {
 
   // ── Rendu contenu ──────────────────────────────────────────────
   const renderContent = () => {
-    if (contentMode === '404') return <Page404 url={notFoundUrl} />
-    if (contentMode === 'glitch-search') return <GlitchSearch query={glitchQuery} />
-    if (activeTab === 'secret') return <SecretPage />
-    if (activeTab === 'wiki')   return <FakeWikipedia onLogoClick={handleLogoClick} />
+    if (contentMode === '404') 
+      return <Page404 url={notFoundUrl} />
+    if (contentMode === 'glitch-search') 
+      return <GlitchSearch query={glitchQuery} />
+    if (activeTab === 'secret') 
+      return <SecretPage />
+    if (activeTab === 'wiki') 
+      return <FakeWikipedia onLogoClick={handleLogoClick} />
+    if (activeTab === 'news') 
+      return <FakeNewsPortal />
     return <FakeGoogle onSecretSearch={handleSecretSearch} />
   }
 

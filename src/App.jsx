@@ -92,7 +92,7 @@ const INITIAL_ICONS = [
 
 const WINDOW_CONFIGS = {
   powers: {
-    title: 'Pouvoirs et Techniques - POUVOIRS.exe',
+    title: 'Shokan et Techniques - SHOKAN.exe',
     defaultSize: { width: '70%', height: '90%' },
     defaultPosition: { x: 60, y: 30 },
   },
