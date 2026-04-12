@@ -238,13 +238,14 @@ function FakeWikipedia({ onLogoClick }) {
             <div className="browser__wiki-infobox-title">Kiba Igarashi</div>
             <div className="browser__wiki-infobox-img">
               <img src="/images/4.jpg" alt="Kiba Igarashi" onError={e => { e.target.style.display = 'none' }} />
-              <small>Illustration officielle de Kiba Igarashi</small>
+              <small>Illustration par Pyr</small>
             </div>
             <table className="browser__wiki-infobox-table">
               <tbody>
                 <tr><th>Nom complet</th><td>Kiba Igarashi</td></tr>
                 <tr><th>Surnoms</th><td>Croc Écarlate, Kōga</td></tr>
-                <tr><th>Sexe</th><td>Masculin</td></tr>
+                <tr><th>Naissance</th><td>23 juillet 6070 (19 ans)</td></tr>
+                <tr><th>Sexe</th><td>Masculin ♂</td></tr>
                 <tr><th>Clan</th><td>Magaishi</td></tr>
                 <tr><th>Shokan</th><td>Résonance</td></tr>
                 <tr><th>Type</th><td>Élémentaire</td></tr>
