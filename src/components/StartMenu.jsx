@@ -38,7 +38,7 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
 
           <div className="start-menu__item" onClick={() => handle('powers')} data-testid="start-menu-powers">
             <img src={ICONS.powers} alt="Pouvoirs" />
-            Pouvoirs & Techniques
+            Rapport - Shokan
           </div>
 
           <div className="start-menu__item" onClick={() => handle('browser')} data-testid="start-menu-browser">
@@ -53,7 +53,7 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
 
           <div className="start-menu__item" onClick={() => handle('media')} data-testid="start-menu-media">
             <img src={ICONS.media} alt="Media" />
-            Windows Media Player
+            Media Player
           </div>
 
           {/* Mes Documents avec sous-menu */}

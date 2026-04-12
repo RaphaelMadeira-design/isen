@@ -161,9 +161,24 @@ export default function Pouvoirs() {
           {/* Barres PV / EN / XP */}
           <div className="gp__bars">
             {[
-              { label: 'PV', cur: HP.current,     max: HP.max,     mod: 'hp'     },
-              { label: 'EN', cur: ENERGY.current,  max: ENERGY.max, mod: 'energy' },
-              { label: 'XP', cur: XP.current,      max: XP.max,     mod: 'xp'     },
+              { 
+                label: 'PV', 
+                cur: HP.current,     
+                max: HP.max,     
+                mod: 'hp'     
+              },
+              { 
+                label: 'EN', 
+                cur: ENERGY.current,  
+                max: ENERGY.max, 
+                mod: 'energy' 
+              },
+              { 
+                label: 'XP', 
+                cur: XP.current,      
+                max: XP.max,     
+                mod: 'xp'     
+              },
             ].map(b => (
               <div key={b.label} className="gp__bar-row">
                 <span className="gp__bar-label">{b.label}</span>

@@ -45,7 +45,7 @@ const CELL = 90
 
 const INITIAL_ICONS = [
   { id: 'powers',    
-    label: 'Statistiques', 
+    label: 'Rapport SHOKAN', 
     icon: 'https://win98icons.alexmeub.com/icons/png/shell_window5-0.png',  
     x: 1, y: 0
   },
@@ -72,7 +72,7 @@ const INITIAL_ICONS = [
   },
   {
     id: 'media',
-    label: 'Media Player',
+    label: 'Windows Media Player',
     icon: 'https://win98icons.alexmeub.com/icons/png/wm-4.png',
     x: 0, y: 2,
   },
@@ -93,7 +93,7 @@ const INITIAL_ICONS = [
 const WINDOW_CONFIGS = {
   powers: {
     title: 'Pouvoirs et Techniques - POUVOIRS.exe',
-    defaultSize: { width: '80%', height: '80%' },
+    defaultSize: { width: '70%', height: '90%' },
     defaultPosition: { x: 60, y: 30 },
   },
   documents: {
