@@ -447,6 +447,8 @@
     &-table {
       width: 100%;
       border-collapse: collapse;
+      display: flex;
+      padding: 5px 0;
 
       th, td {
         padding: 3px 6px;

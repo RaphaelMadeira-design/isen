@@ -229,10 +229,10 @@ function FakeWikipedia({ onLogoClick }) {
         <div className="browser__wiki-content">
           <h1 className="browser__wiki-title">Kiba Igarashi</h1>
           <div className="browser__wiki-subtitle">
-            <em>Cet article traite du personnage fictif. Pour d'autres usages, voir <span className="browser__wiki-link">Igarashi (homonymie)</span>.</em>
+            <em>Cet article traite d'une personnalité publique. Pour d'autres usages, voir <span className="browser__wiki-link">Igarashi (homonymie)</span>.</em>
           </div>
           <div className="browser__wiki-notice">
-            <strong>Cet article est une ébauche concernant un personnage fictif.</strong> Vous pouvez partager vos connaissances en l'améliorant.
+            <strong>Cet article est une ébauche concernant une personne physique.</strong> Vous pouvez partager vos connaissances en l'améliorant.
           </div>
           <div className="browser__wiki-infobox">
             <div className="browser__wiki-infobox-title">Kiba Igarashi</div>
@@ -246,6 +246,8 @@ function FakeWikipedia({ onLogoClick }) {
                 <tr><th>Surnoms</th><td>Croc Écarlate, Kōga</td></tr>
                 <tr><th>Naissance</th><td>23 juillet 6070 (19 ans)</td></tr>
                 <tr><th>Sexe</th><td>Masculin ♂</td></tr>
+                <tr><th>MBTI</th><td>ENFJ</td></tr>
+                <tr><th>Alignement</th><td>Neutre - Bon</td></tr>
                 <tr><th>Clan</th><td>Magaishi</td></tr>
                 <tr><th>Shokan</th><td>Résonance</td></tr>
                 <tr><th>Type</th><td>Élémentaire</td></tr>
@@ -253,7 +255,7 @@ function FakeWikipedia({ onLogoClick }) {
             </table>
           </div>
           <p>
-            <strong>Kiba Igarashi</strong> (五十嵐 牙, <em>Igarashi Kiba</em>) est un personnage fictif issu de l'univers narratif <em>ISEN Project</em>. Protagoniste principal du visual novel éponyme, il est décrit comme un jeune homme aux capacités sensorielles hors du commun, capable de percevoir et d'interagir avec des fréquences imperceptibles à l'œil humain.
+            <strong>Kiba Igarashi</strong> (五十嵐 牙, <em>Igarashi Kiba</em>), aussi appelé <strong>Kōga</strong> ou <strong>Croc Écarlate</strong>, est un membre issu de la souche inférieure du clan <strong>Magaishi</strong>, qui contrôle une grande partie de la <em>métropole de Tokyo</em>. Membre de second plan du fait de son jeune âge et de sa position au sein de la hiérarchie, il est peu impliqué dans les affaires officielles du clan et apparaît rarement dans les registres gouvernementaux qui y sont liés.
           </p>
           <div className="browser__wiki-toc">
             <div className="browser__wiki-toc-title">Sommaire</div>
