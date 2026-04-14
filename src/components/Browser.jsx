@@ -246,17 +246,18 @@ function FakeWikipedia({ onLogoClick }) {
                 <tr><th>Surnoms</th><td>Croc Écarlate, Kōga</td></tr>
                 <tr><th>Naissance</th><td>23 juillet 6070 (19 ans)</td></tr>
                 <tr><th>Sexe</th><td>Masculin ♂</td></tr>
-                <tr><th>MBTI</th><td>ENFJ</td></tr>
                 <tr><th>Alignement</th><td>Neutre - Bon</td></tr>
                 <tr><th>Clan</th><td>Magaishi</td></tr>
                 <tr><th>Shokan</th><td>Résonance</td></tr>
                 <tr><th>Type</th><td>Élémentaire</td></tr>
+                <tr><th>Rang</th><td>E</td></tr>
               </tbody>
             </table>
           </div>
           <p>
-            <strong>Kiba Igarashi</strong> (五十嵐 牙, <em>Igarashi Kiba</em>), aussi appelé <strong>Kōga</strong> ou <strong>Croc Écarlate</strong>, est un membre issu de la souche inférieure du clan <strong>Magaishi</strong>, qui contrôle une grande partie de la <em>métropole de Tokyo</em>. Membre de second plan du fait de son jeune âge et de sa position au sein de la hiérarchie, il est peu impliqué dans les affaires officielles du clan et apparaît rarement dans les registres gouvernementaux qui y sont liés.
+            <strong>Kiba Igarashi</strong> (五十嵐 牙, <em>Igarashi Kiba</em>), aussi appelé <strong>Kōga</strong> ou <strong>Croc Écarlate</strong>, est un <em>chevalier</em> de rang E. C'est un membre issu de la souche inférieure du clan <strong>Magaishi</strong>, qui contrôle une grande partie de la <em>métropole de Tokyo</em>. Affilié de second plan du fait de son jeune âge et de sa position au sein de la hiérarchie, il est peu impliqué dans les affaires officielles du clan et apparaît rarement dans les registres gouvernementaux qui y sont liés.
           </p>
+          <p>Il est membre des <strong>Bunkyo City Bolts</strong>, un groupe de <em>parkour</em> très présent sur la scène locale et participant à de nombreuses compétitions dans la capitale, qu'ils ont remportées à plusieurs reprises. Ils alimentent une rivalité avec le fameux crew <strong>Tenku Striders</strong>.</p>
           <div className="browser__wiki-toc">
             <div className="browser__wiki-toc-title">Sommaire</div>
             <ol>
@@ -268,31 +269,30 @@ function FakeWikipedia({ onLogoClick }) {
               <li><span className="browser__wiki-link">Références</span></li>
             </ol>
           </div>
-          <h2 className="browser__wiki-h2">Biographie fictive</h2>
+          <h2 className="browser__wiki-h2">Apparence</h2>
           <p>
-            Kiba Igarashi grandit dans une ville côtière anonyme, loin des centres urbains. Dès l'enfance, il manifeste une sensibilité inhabituelle aux sons et aux vibrations ambiantes. C'est à l'adolescence que ses capacités se révèlent dans leur véritable étendue, lors d'un incident qualifié dans les archives de <em>l'Éveil</em>.
+            Du haut de son mètre quatre-vingt (<em>1m80</em>) et pesant soixante-et-onze kilogrammes (<em>71kg</em>), Kiba est un homme qui possède un physique plutôt banal. Ses cheveux carmins tirent légèrement vers un rouge brun et sont coiffés de manière naturelle, presque négligée avec des mèches désordonnées qui retombent sur son front sans jamais vraiment masquer ses yeux. Son visage est équilibré, aux traits nets mais assez doux. Ses yeux sont violets et dessinés en amande. Le grain de beauté sous son œil gauche attire subtilement l’attention et ajoute une petite signature visuelle qui casse la symétrie de son visage.
           </p>
           <p>
-            Après cet événement, Kiba choisit de vivre en marge des institutions. Il développe seule sa maîtrise de la <em>résonance ondulatoire</em>, discipline qu'il définit comme « écouter ce que le monde ne dit pas à voix haute ».
+            Côté style vestimentaire, Kiba privilégie l’essentiel. Des vêtements simples, confortables mais toujours pratiques. Son style penche vers le streetwear, sans extravagance et fonctionnel avant tout, sans jamais être négligé.
           </p>
           <h2 className="browser__wiki-h2">Personnalité</h2>
           <p>
-            Kiba est généralement décrit comme <strong>introverti et observateur</strong>. Il parle peu mais avec précision, et manifeste une forme d'ironie douce que ses interlocuteurs perçoivent parfois comme de la distance.
+            Kiba est un jeune homme calme, posé et naturellement bienveillant. C'est quelqu'un de serviable, qui est toujours prêt à tendre la main sans jamais rien attendre en retour, mais pas au point de s'oublier. C'est aussi un travailleur acharné qui croit fermement que rien de durable ne se construit sans effort. Pour lui, le talent n’est qu’un avantage de départ qui ne garantit rien sur la durée.
           </p>
-          <h2 className="browser__wiki-h2">Capacités et techniques</h2>
+          <p> 
+            Ce qu’il respecte réellement, ce sont les personnes qui avancent malgré les difficultés, qui tombent mais choisissent de se relever, encore et encore. Il ne cherche pas à être le meilleur naturellement, il cherche à le devenir à force de persévérance. Chaque progrès, aussi minime soit-il, est une victoire qu’il accumule sans jamais s'en vanter. Indépendant, Kiba n’a pas besoin de reconnaissance extérieure car savoir qu’il avance lui suffit. C’est cette philosophie qui guide ses actions.
+          </p>
+          <h2 className="browser__wiki-h2">Biographie</h2>
+          <p>
+            En cours...
+          </p>
+          <h2 className="browser__wiki-h2">Aptitudes et compétences</h2>
           <ul className="browser__wiki-list">
-            <li><strong>Perception ondulatoire</strong> — détection des fréquences sonores et électromagnétiques à longue portée.</li>
-            <li><strong>Résonance active</strong> — émission contrôlée d'ondes capables d'affecter l'environnement immédiat.</li>
-            <li><strong>Syntonisation</strong> — harmonisation avec un être vivant ou un objet, permettant une forme de communication non-verbale.</li>
+            <li><strong>En cours</strong> — Description à venir...</li>
+            <li><strong>En cours</strong> — Description à venir...</li>
+            <li><strong>En cours</strong> — Description à venir...</li>
           </ul>
-          <h2 className="browser__wiki-h2">Apparitions</h2>
-          <p>
-            Kiba apparaît pour la première fois dans le visual novel <em>ISEN.exe</em> (2026), disponible sur PC-98 émulé. Il est également mentionné dans les notes de l'EP <em>Raphurst — Prelude</em>.
-          </p>
-          <h2 className="browser__wiki-h2">Réception</h2>
-          <p>
-            Le personnage a été bien accueilli pour sa <strong>profondeur psychologique</strong> et son design visuel inspiré de l'esthétique PC-98.
-          </p>
           <div className="browser__wiki-references">
             <h2 className="browser__wiki-h2">Références</h2>
             <ol className="browser__wiki-ref-list">
