@@ -261,11 +261,10 @@ function FakeWikipedia({ onLogoClick }) {
           <div className="browser__wiki-toc">
             <div className="browser__wiki-toc-title">Sommaire</div>
             <ol>
-              <li><span className="browser__wiki-link">Biographie fictive</span></li>
+              <li><span className="browser__wiki-link">Apparence</span></li>
               <li><span className="browser__wiki-link">Personnalité</span></li>
-              <li><span className="browser__wiki-link">Capacités et techniques</span></li>
-              <li><span className="browser__wiki-link">Apparitions</span></li>
-              <li><span className="browser__wiki-link">Réception</span></li>
+              <li><span className="browser__wiki-link">Biographie</span></li>
+              <li><span className="browser__wiki-link">Aptitudes et compétences</span></li>
               <li><span className="browser__wiki-link">Références</span></li>
             </ol>
           </div>
