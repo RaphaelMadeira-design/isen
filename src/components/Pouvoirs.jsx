@@ -153,8 +153,8 @@ export default function Pouvoirs() {
           {/* Portrait */}
           <div className={`gp__portrait-frame ${animCls('pv-portrait-in')}`}>
             <span className="gp__lvl-badge">NIV.{LEVEL}</span>
-            <img src="/images/pose.png" alt="Kiba Hata" className="gp__portrait" />
-            <div className="gp__char-name">KIBA HATA</div>
+            <img src="/images/pose.png" alt="Kiba Igarashi" className="gp__portrait" />
+            <div className="gp__char-name">KIBA IGARASHI</div>
             <div className="gp__char-class">Classe : Combattant ★★★</div>
           </div>
 
@@ -260,7 +260,7 @@ export default function Pouvoirs() {
             <div className="gp__section-lbl">[ DOSSIER SUJET ]</div>
 
             <p className={`gp__dossier-p ${animCls('pv-para-1')}`}>
-              Kiba Hata est un <strong>Résonant de classe 3</strong> — une rare
+              Kiba Igarashi est un <strong>Résonant de classe 3</strong> — une rare
               catégorie d'individus capables d'interagir directement avec les fréquences
               ondulatoires du monde. Son pouvoir, la{' '}
               <strong>Résonance Active</strong>, lui permet d'émettre, percevoir et

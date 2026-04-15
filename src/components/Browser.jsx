@@ -244,13 +244,13 @@ function FakeWikipedia({ onLogoClick }) {
               <tbody>
                 <tr><th>Nom complet</th><td>Kiba Igarashi</td></tr>
                 <tr><th>Surnoms</th><td>Croc Écarlate, Kōga</td></tr>
-                <tr><th>Naissance</th><td>23 juillet 6070 (19 ans)</td></tr>
+                <tr><th>Naissance</th><td>23 mai 6070 (19 ans) (♊︎)</td></tr>
                 <tr><th>Sexe</th><td>Masculin ♂</td></tr>
                 <tr><th>Alignement</th><td>Neutre - Bon</td></tr>
                 <tr><th>Clan</th><td>Magaishi</td></tr>
                 <tr><th>Rôle</th><td>Membre</td></tr>
-                <tr><th>Shokan</th><td>Résonance</td></tr>
-                <tr><th>Type</th><td>Élémentaire</td></tr>
+                <tr><th>Shokan</th><td>Écho de l'âme</td></tr>
+                <tr><th>Type</th><td>???</td></tr>
                 <tr><th>Rang</th><td>E</td></tr>
               </tbody>
             </table>
@@ -283,9 +283,9 @@ function FakeWikipedia({ onLogoClick }) {
               <li>
                 <span className="browser__wiki-link" onClick={() => document.getElementById('wiki-aptitudes')?.scrollIntoView({ behavior: 'smooth' })}>Aptitudes et compétences</span>
                 <ol>
-                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-aptitudes-gen')?.scrollIntoView({ behavior: 'smooth' })}>Aptitudes générales</span></li>
-                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-competences')?.scrollIntoView({ behavior: 'smooth' })}>Compétences spéciales</span></li>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-competences')?.scrollIntoView({ behavior: 'smooth' })}>Compétences générales</span></li>
                   <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-combat')?.scrollIntoView({ behavior: 'smooth' })}>Style de combat</span></li>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-shokan')?.scrollIntoView({ behavior: 'smooth' })}>Shokan</span></li>
                 </ol>
               </li>
               <li>
@@ -296,61 +296,68 @@ function FakeWikipedia({ onLogoClick }) {
           <h2 id="wiki-apparence" className="browser__wiki-h2">Apparence</h2>
           <h3 id="wiki-physique" className="browser__wiki-h3">Physique</h3>
           <p>
-            Du haut de son mètre quatre-vingt (<em>1m80</em>) et pesant soixante-et-onze kilogrammes (<em>71kg</em>), Kiba est un homme qui possède un physique plutôt banal. Ses cheveux carmins tirent légèrement vers un rouge brun et sont coiffés de manière naturelle, presque négligée avec des mèches désordonnées qui retombent sur son front sans jamais vraiment masquer ses yeux. Son visage est équilibré, aux traits nets mais assez doux. Ses yeux sont violets et dessinés en amande. Le grain de beauté sous son œil gauche attire subtilement l’attention et ajoute une petite signature visuelle qui casse la symétrie de son visage.
+            Du haut de son mètre quatre-vingt (<em>1m80</em>) et pesant soixante-et-onze kilogrammes (<em>71kg</em>), Kiba est un homme qui possède un physique plutôt banal. Ses cheveux carmins tirent légèrement vers un rouge brun et sont coiffés de manière naturelle, presque négligée avec des mèches désordonnées qui retombent sur son front sans jamais vraiment masquer ses yeux. Son visage est équilibré, aux traits nets mais assez doux. Ses yeux sont violets et dessinés en amande. Le grain de beauté sous son œil gauche attire subtilement l’attention et ajoute une petite signature visuelle qui casse la symétrie de son visage. Kiba ne possède aucun tatouage ni piercing, et son corps ne présente aucune cicatrice visible ou importante.
           </p>
           <h3 id="wiki-style" className="browser__wiki-h3">Style vestimentaire</h3>
           <p>
-            Côté style vestimentaire, Kiba privilégie l’essentiel. Des vêtements simples, confortables mais toujours pratiques. Son style penche vers le streetwear, sans extravagance et fonctionnel avant tout, sans jamais être négligé.
+            Côté style vestimentaire, Kiba privilégie l’essentiel. Des vêtements simples, confortables mais toujours pratiques. Son style penche vers le streetwear, sans extravagance et fonctionnel avant tout, sans jamais être négligé. Son accoutrement de prédilection est un sweat à capuche beige et ample, un pantalon chino bleu nuit bien ajusté, des sneakers basses blanches délavées à scratch et un blouson type bomber vert foncé. Il ne porte pas d'accessoires particuliers, préférant garder une apparence épurée et sans fioritures, à l’image de sa personnalité.
           </p>
           <h2 id="wiki-personnalite" className="browser__wiki-h2">Personnalité</h2>
           <h3 id="wiki-temperament" className="browser__wiki-h3">Tempérament</h3>
           <p>
-            Kiba est un jeune homme calme, posé et naturellement bienveillant. C'est quelqu'un de serviable, qui est toujours prêt à tendre la main sans jamais rien attendre en retour, mais pas au point de s'oublier. C'est aussi un travailleur acharné qui croit fermement que rien de durable ne se construit sans effort. Pour lui, le talent n’est qu’un avantage de départ qui ne garantit rien sur la durée.
-          </p>
-          <p> 
-            Ce qu’il respecte réellement, ce sont les personnes qui avancent malgré les difficultés, qui tombent mais choisissent de se relever, encore et encore. Il ne cherche pas à être le meilleur naturellement, il cherche à le devenir à force de persévérance. Chaque progrès, aussi minime soit-il, est une victoire qu’il accumule sans jamais s'en vanter. Indépendant, Kiba n’a pas besoin de reconnaissance extérieure car savoir qu’il avance lui suffit. C’est cette philosophie qui guide ses actions.
+            Kiba est quelqu’un d’ouvert, avenant et facile à approcher. Il engage la conversation sans difficulté et met naturellement les autres à l’aise, sans effort particulier. Son attitude détendue et son sens du contact lui permettent de s’intégrer rapidement, quel que soit le contexte. Il possède une énergie plutôt tranquille, sans jamais devenir envahissant, ce qui rend sa présence agréable. Il trouve instinctivement sa place parmi les autres, sans chercher à s’imposer. Sociable sans être dépendant, Kiba apprécie les échanges simples et sincères, mais garde toujours une certaine maîtrise de lui-même. Il sait écouter, répondre, plaisanter, mais choisit avec soin ce qu’il révèle réellement de lui. En effet, derrière cette facilité apparente se cache quelqu’un de plus mesuré, qui ne se livre jamais complètement, même dans des relations proches.
           </p>
           <h3 id="wiki-qualites" className="browser__wiki-h3">Qualités et Défauts</h3>
           <p>
-            En cours...
+            Kiba possède un excellent sens du relationnel. Il comprend rapidement les dynamiques sociales et sait adapter son comportement en fonction des personnes qu’il a en face de lui, sans jamais paraître artificiel. Il est aussi constant dans ses efforts. Peu importe les circonstances, il maintient un rythme stable et fiable, ce qui fait de lui quelqu’un sur qui l’on peut compter dans la durée. Il n'est pas du genre à trop réfléchir et vouloir tout analyser avant de se lancer, préférant prendre des risques au risque d'échouer.Enfin, Kiba est assez pragmatique et ne s’attarde pas inutilement sur ce qui ne peut pas être changé car il préfère se concentrer sur ce qui dépend réellement de lui.
+          </p>
+          <p>
+            Mais à l'inverse, Kiba peut donner l’illusion d’être plus proche des autres qu’il ne l’est réellement. Sa facilité sociale masque une sorte de distance émotionnelle, qui peut créer un décalage entre ce que les autres ressentent et ce qu’il est prêt à offrir. Il a tendance à éviter les confrontations importantes en les désamorçant par le dialogue ou l’humour. Mais si cela fonctionne dans des situations légères, cela devient problématique lorsque les enjeux sont plus sérieux. Finalement, Kiba est parfois trop spontané dans ses décisions, au point de ne pas toujours peser le pour et le contre.
           </p>
           <h3 id="wiki-desirs" className="browser__wiki-h3">Désirs et craintes</h3>
           <p>
-            En cours...
+            Au fond, Kiba aspire à une forme de liberté simple et honnête. Il ne cherche ni la gloire ni le pouvoir, mais souhaite avancer selon ses propres règles, sans être défini par son nom ou son appartenance au clan Magaishi. À travers le parkour, il cherche un espace où il peut exister pleinement, sans contrainte ni attente extérieure. C’est dans ces moments qu’il se sent le plus proche de ce qu’il veut être. Bien qu’il ne l’exprime pas ouvertement, Kiba aspire à créer des liens sincères, des relations basées sur la confiance et le respect mutuel, loin des hiérarchies et des intérêts du clan.
+          </p>
+          <p>
+            L'une des plus grandes craintes de Kiba est la stagnation. L’idée de rester au même point et de ne pas évoluer malgré ses efforts, est quelque chose qu’il perçoit comme un échec profond. Il redoute aussi de ne pas être à la hauteur. Non pas aux yeux des autres, mais face à ses propres attentes et c'est cette peur alimente son besoin constant de progresser.
           </p>
           <h2 id="wiki-biographie" className="browser__wiki-h2">Biographie</h2>
           <p>
             En cours...
           </p>
           <h2 id="wiki-aptitudes" className="browser__wiki-h2">Aptitudes et compétences</h2>
-          <h3 id="wiki-aptitudes-générales" className="browser__wiki-h3">Aptitudes générales</h3>
+          <h3 id="wiki-competences" className="browser__wiki-h3">Compétences générales</h3>
           <ul className="browser__wiki-list">
-            <li><strong>En cours</strong> — Description à venir...</li>
-            <li><strong>En cours</strong> — Description à venir...</li>
-            <li><strong>En cours</strong> — Description à venir...</li>
+            <li><strong>Motricité</strong> — Kiba est ambidextre depuis son plus jeune âge et possède une excellente coordination œil-main et œil-pied.</li>
+            <li><strong>Ouïe surdéveloppée</strong> — Il perçoit les sons avec une acuité exceptionnelle, ce qui lui permet de détecter des bruits subtils.</li>
+            <li><strong>Langues</strong> — En plus du japonais, sa langue maternelle, Kiba parle aussi couramment l'anglais, le mandarin et le cantonais.</li>
+            <li><strong>Technologie</strong> — Kiba est familier avec les dernières avancées technologiques et connaît plusieurs langages de programmation.</li>
           </ul>
-          <h3 id="wiki-compétences" className="browser__wiki-h3">Compétences spéciales</h3>
-          <p>
-            En cours...
-          </p>
           <h3 id="wiki-combat" className="browser__wiki-h3">Style de combat</h3>
+            <p>
+              Kiba ne possède pas de style de combat à proprement parler. Sa manière de combattre se rapproche plus du <em>street fighting</em> que des arts martiaux traditionnels. Il emprunte des techniques de <strong>boxe anglaise</strong>, de <strong>lutte libre</strong>, de <strong>taekwondo</strong> et de <strong>capoeira</strong> qu'il adapte à sa propre manière de bouger. Bien qu'il reste amateur, son style est fluide, imprévisible et chaotique, basé sur les feintes, les changements de rythme mais aussi sur son environnement immédiat.
+            </p>
+          <h3 id="wiki-shokan" className="browser__wiki-h3">Shokan</h3>
           <p>
-            En cours...
+            Le <em>Shokan</em> de Kiba lui permet, via son téléphone, de matérialiser sa volonté sous la forme d'une entité semi-indépendante, baptisée <strong>Écho de l'âme</strong>, qui combat à ses côtés. Plutôt que d’invoquer une arme ou une forme fixe, Kiba génère des manifestations éphémères d’énergie qui sont directement liées à son intention au moment de l’action. Il peut faire apparaître un bras, une jambe ou juste une main pour attraper, frapper, bloquer ou plus généralement l'aider dans ses mouvements.
+          </p>
+          <p>
+            Ce <em>Shokan</em> présente plusieurs contraintes qui limitent grandement son efficacité, expliquant son rang au plus bas dans la hiérarchie. D'abord, ses manifestations sont brèves, <strong>1 à 2 secondes</strong> tout au plus, et ne peuvent surgir que dans un <strong>rayon de 3 mètres</strong> autour de Kiba. Ensuite, leur puissance de frappe est équivalente à celle de l'utilisateur, comme s'il s'agissait d'une extension de son propre corps, bien qu'elles ne partagent pas de sensations.
           </p>
           <div className="browser__wiki-references">
             <h2 id="wiki-references" className="browser__wiki-h2">Références</h2>
             <ol className="browser__wiki-ref-list">
-              <li>Raphurst, <em>Notes de production — Prelude EP</em>, 2026.</li>
-              <li>« ISEN Project — Présentation officielle », <em>kiba-igarashi.vercel.app</em>, consulté le 7 avril 2026.</li>
-              <li>Archives de l'Éveil, document interne, non daté.</li>
+              <li>Mairie de Tokyo, <em>Recensement des membres de clan</em>, 6089.</li>
+              <li>« Registre gouvernemental des Shokans », <em>Grand Lexique du Japon</em>, consulté le 7 avril 6089.</li>
+              <li>Archives Magaishi, document interne, non daté.</li>
             </ol>
           </div>
           <div className="browser__wiki-categories">
             <strong>Catégories :</strong>
-            <span className="browser__wiki-link">Personnage fictif</span> •
-            <span className="browser__wiki-link">Visual novel</span> •
-            <span className="browser__wiki-link">Personnage masculin</span> •
-            <span className="browser__wiki-link">ISEN Project</span>
+            <span className="browser__wiki-link">Homme</span> •
+            <span className="browser__wiki-link">Magaishi</span> •
+            <span className="browser__wiki-link">Souche inférieure</span> •
+            <span className="browser__wiki-link">Shokan</span>
           </div>
         </div>
       </div>
