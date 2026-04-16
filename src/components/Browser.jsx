@@ -279,6 +279,11 @@ function FakeWikipedia({ onLogoClick }) {
               </li>
               <li>
                 <span className="browser__wiki-link" onClick={() => document.getElementById('wiki-biographie')?.scrollIntoView({ behavior: 'smooth' })}>Biographie</span>
+                <ol>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-origine')?.scrollIntoView({ behavior: 'smooth' })}>Origine et famille</span></li>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-parkour')?.scrollIntoView({ behavior: 'smooth' })}>Découverte du parkour et les <em>Ura Ura Kidz</em></span></li>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-bunkyo')?.scrollIntoView({ behavior: 'smooth' })}><em>Bunkyo City Bolts</em> et la <em>Tokyo Skyrun League</em></span></li>
+                </ol>
               </li>
               <li>
                 <span className="browser__wiki-link" onClick={() => document.getElementById('wiki-aptitudes')?.scrollIntoView({ behavior: 'smooth' })}>Aptitudes et compétences</span>
@@ -322,8 +327,20 @@ function FakeWikipedia({ onLogoClick }) {
             L'une des plus grandes craintes de Kiba est la stagnation. L’idée de rester au même point et de ne pas évoluer malgré ses efforts, est quelque chose qu’il perçoit comme un échec profond. Il redoute aussi de ne pas être à la hauteur. Non pas aux yeux des autres, mais face à ses propres attentes et c'est cette peur alimente son besoin constant de progresser.
           </p>
           <h2 id="wiki-biographie" className="browser__wiki-h2">Biographie</h2>
+          <h3 id="wiki-origine" className="browser__wiki-h3">Origine et famille</h3>
           <p>
-            En cours...
+            Kiba est issu de la famille Igarashi, une lignée mineure quasiment oubliée et eclipsée par les branches supérieures du clan Magaishi. Contrairement aux lignées principales, où les héritiers sont formés dès l’enfance pour occuper des fonctions stratégiques, la branche dont il est issu occupe une position de second plan et est souvent reléguée à des rôles d’exécution ou de soutien. De ce fait, il a grandi loin des projecteurs, dans une relative obscurité, sans les pressions et les attentes qui pèsent sur les membres plus en vue du clan.
+          </p>
+          <p>
+            Élevé dans le quartier de Bunkyo à Tokyo, Kiba n'a pas eu d'enfance particulièrement dure, ni réellement privilégiée. Ses parents, bien que membres du clan, n'ont jamais été très impliqués dans les affaires internes et ont laissé une grande liberté à leur fils, tant qu'il respectait les règles de base. Ce côté indépendant lui a permis d explorer ses propres intérêts et de développer sa personnalité sans être constamment comparé à des figures plus prestigieuses de la famille.
+          </p>
+          <h3 id="wiki-parkour" className="browser__wiki-h3">Découverte du parkour et les <em>Ura Ura Kidz</em></h3>
+          <p>
+            Ses journées passées à profiter de cette liberté en vadrouillant dans les rues des différents quartiers de la capitale lui ont fait découvrir le parkour, qui est rapidement devenu sa passion et son exutoire.
+          </p>
+          <h3 id="wiki-bunkyo" className="browser__wiki-h3"><em>Bunkyo City Bolts</em> et la <em>Tokyo Skyrun League</em></h3>
+          <p>
+            En grandissant, Kiba a rejoint les <em>Ura Ura Kidz</em>, un groupe de parkour composé de jeunes du quartier qui partageaient la même passion. C'est là qu'il a commencé à se faire un nom dans la scène locale grâce à son style fluide et créatif. Après quelques années, il a intégré les <em>Bunkyo City Bolts</em>, un crew plus compétitif et reconnu dans toute la métropole, avec lequel il participe régulièrement à la <em>Tokyo Skyrun League</em>, une compétition annuelle qui rassemble les meilleurs traceurs de la ville.
           </p>
           <h2 id="wiki-aptitudes" className="browser__wiki-h2">Aptitudes et compétences</h2>
           <h3 id="wiki-competences" className="browser__wiki-h3">Compétences générales</h3>

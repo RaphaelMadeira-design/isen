@@ -4,24 +4,24 @@ import '../styles/msn.scss';
 
 // ─── CREDENTIALS ────────────────────────────────────────────────
 const CREDENTIALS = {
-  email: 'kiba.hata@hotmail.fr',
+  email: 'kiba.igarashi@hotmail.fr',
   password: 'kyoto1999',
 };
 
 // ─── CONTACTS ───────────────────────────────────────────────────
 const CONTACTS = [
   {
-    id: 'kaito',
-    name: 'Kaito_07',
+    id: 'naoto',
+    name: 'naoto_07',
     status: 'online',
-    personalMessage: 'Mission en cours... →_→',
+    personalMessage: 'Bunkyo City Bolts on TOP !',
     senderColor: '#0000bb',
   },
   {
     id: 'yuki',
     name: 'YukiChan_☆',
     status: 'online',
-    personalMessage: "j'ai encore eu une vision... :/",
+    personalMessage: "j'en ai marre des exams... →_→",
     senderColor: '#cc007a',
   },
   {
@@ -49,19 +49,22 @@ const CONTACTS = [
 
 // ─── CONVERSATIONS ──────────────────────────────────────────────
 const CONVERSATIONS = {
-  kaito: {
+  naoto: {
     date: "Aujourd'hui — 20:45",
     messages: [
-      { from: 'Kaito_07',  text: "kiba !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
+      { from: 'naoto_07',  text: "kiba !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
       { from: 'kiba.samurai99', text: 'non, quoi encore',                                         time: '20:46' },
-      { from: 'Kaito_07',  text: 'ils ont attaqué le district nord. encore.',                time: '20:46' },
-      { from: 'Kaito_07',  text: "j'ai besoin de toi sur ce coup",                           time: '20:47' },
-      { from: 'kiba.samurai99', text: 'je suis occupé',                                           time: '20:47' },
-      { from: 'Kaito_07',  text: '"occupé" c\'est ça... ^^',                                 time: '20:48' },
-      { from: 'Kaito_07',  text: "tu sais très bien qu'on ne peut pas le faire sans toi",    time: '20:48' },
-      { from: 'kiba.samurai99', text: 'je viendrai. mais à mes conditions.',                      time: '20:49' },
-      { from: 'Kaito_07',  text: 'évidemment ^^ rendez-vous au pont de maruyama. minuit.',  time: '20:50' },
-      { from: 'kiba.samurai99', text: 'ok',                                                       time: '20:50' },
+      { from: 'naoto_07',  text: 'ya une nouvelle course clandestine',                time: '20:46' },
+      { from: 'naoto_07',  text: 'et de nouveaux crews foutent le bordel pour entrer dans la ligue',                time: '20:47' },
+      { from: 'naoto_07',  text: "j'ai besoin de toi sur ce coup",                           time: '20:47' },
+      { from: 'kiba.samurai99', text: 'laisse les se faire choper par les flics ou les clans',                                           time: '20:48' },
+      { from: 'naoto_07',  text: "c'est ça... ^^",                                 time: '20:49' },
+      { from: 'naoto_07',  text: "tu sais très bien qu'ils vont rien faire",    time: '20:49' },
+      { from: 'kiba.samurai99',  text: "j'avoue",                               time: '20:49' },
+      { from: 'naoto_07',  text: "le run se passe à toshima, près d'ikebukuro",    time: '20:49' },
+      { from: 'kiba.samurai99', text: 'je me prépare',                      time: '20:50' },
+      { from: 'naoto_07',  text: 'je pars mtn ^^ rendez-vous au pont de maruyama. 23h.',  time: '20:51' },
+      { from: 'kiba.samurai99', text: 'ok',                                                       time: '20:51' },
     ],
   },
   yuki: {
@@ -71,8 +74,9 @@ const CONVERSATIONS = {
       { from: 'YukiChan_☆', text: "c'était bizarre... tu étais là mais pas toi en même temps ??", time: '21:12' },
       { from: 'kiba.samurai99',  text: 'une vision de quoi exactement',                               time: '21:14' },
       { from: 'YukiChan_☆', text: 'une silhouette derrière toi. noire. mais familière',          time: '21:15' },
-      { from: 'kiba.samurai99',  text: '...',                                                          time: '21:16' },
-      { from: 'YukiChan_☆', text: "kiba ?? tu vas bien ??? dis moi que c'est rien ;_;",           time: '21:17' },
+      { from: 'kiba.samurai99',  text: "qu'est-ce que tu racontes",                            time: '21:16' },
+      { from: 'kiba.samurai99',  text: "t'es chelou avec tes histoires de visions",            time: '21:17' },
+      { from: 'YukiChan_☆', text: " dis moi que c'est rien ;_;",                        time: '21:18' },
       { from: 'kiba.samurai99',  text: "c'est rien. oublie cette vision.",                            time: '21:18' },
       { from: 'YukiChan_☆', text: '... :/ tu mens très mal tu sais xD',                          time: '21:19' },
       { from: 'kiba.samurai99',  text: 'passe une bonne nuit yuki',                                   time: '21:20' },
@@ -83,22 +87,22 @@ const CONVERSATIONS = {
     date: 'Hier — 22:01',
     messages: [
       { from: 'KagamiSpirit', text: 'Le reflet ne ment jamais.',                time: '22:01' },
-      { from: 'kiba.samurai99',    text: "qu'est-ce que tu veux cette fois",          time: '22:01' },
+      { from: 'kiba.samurai99',    text: "t'es qui toi",          time: '22:01' },
       { from: 'KagamiSpirit', text: 'Ce que tu portes... il le sent aussi.',     time: '22:02' },
       { from: 'KagamiSpirit', text: 'Méfie-toi de ton ombre.',                   time: '22:02' },
-      { from: 'kiba.samurai99',    text: 'parle clairement pour une fois',            time: '22:03' },
+      { from: 'kiba.samurai99',    text: "de quoi tu parles. je t'ai jamais ajouté",            time: '22:03' },
       { from: 'KagamiSpirit', text: 'Bientôt. Le voile est fin cette nuit.',     time: '22:03' },
       { from: 'KagamiSpirit', text: 'Ne te retourne pas.', italic: true,         time: '22:04' },
-      { from: 'system',       text: "[KagamiSpirit s'est déconnecté]",           time: '22:04' },
+      { from: 'system',       text: "[KagamiSpirit est injoignable]",           time: '22:04' },
     ],
   },
   masahiro: {
     date: 'Aujourd’hui — 21:01',
     messages: [
-      { from: '♫-MasaMasa-♫', text: 'Hello mon chanteur préféré~~',                time: '21:01' },
+      { from: '♫-MasaMasa-♫', text: 'Hello mon batteur préféré~~',                time: '21:01' },
       { from: 'kiba.samurai99',    text: "yo",          time: '21:01' },
       { from: '♫-MasaMasa-♫', text: "On organise une répét' jeudi avec le groupe",     time: '21:02' },
-      { from: '♫-MasaMasa-♫', text: 'Ça te dit de nous faire entendre ta voix ?',                   time: '21:02' },
+      { from: '♫-MasaMasa-♫', text: 'Ça te dit de jouer avec nous ?',                   time: '21:02' },
       { from: 'kiba.samurai99',    text: 'wakatsuru est encore malade ?',            time: '21:06' },
       { from: '♫-MasaMasa-♫', text: 'Non pas cette fois',     time: '21:08' },
       { from: '♫-MasaMasa-♫', text: "Depuis qu'il sort avec Reina-chan, il vient plus trop",       time: '21:08' },
@@ -108,13 +112,14 @@ const CONVERSATIONS = {
       { from: '♫-MasaMasa-♫',    text: "Je te dis ça demain, ok ?",       time: '21:11' },
       { from: 'kiba.samurai99',    text: "ok mais je promets rien",       time: '21:12' },
       { from: '♫-MasaMasa-♫',    text: "Je compte sur toi~ à demain",       time: '21:12' },
-      { from: 'kiba.samurai99',    text: "a+ masahiro",       time: '21:15' },
+      { from: 'kiba.samurai99',    text: "a+",       time: '21:15' },
       { from: 'system',       text: "[♫-MasaMasa-♫ est déconnecté]"},
     ],
   },
   ryo: {
     date: 'Il y a 2 mois',
     messages: [
+      { from: 'b0xer.Ry0',       text: 'ya un truc bizarre qui se prepare',             time: '14:22' },
       { from: 'b0xer.Ry0',       text: 'je dois disparaître un moment',             time: '14:23' },
       { from: 'kiba.samurai99', text: 'quoi ? pourquoi',                           time: '14:23' },
       { from: 'b0xer.Ry0',       text: 'tu comprendras plus tard.',                  time: '14:24' },

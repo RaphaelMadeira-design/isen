@@ -2,9 +2,11 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import '../styles/MediaPlayer.scss'
 
 const PLAYLIST = [
-  { title: 'Raphurst — Prelude', file: '/music/track01.mp3' },
-  { title: 'Raphurst — Ecstasy', file: '/music/track02.mp3' },
-  { title: 'Raphurst — Falling In And Out', file: '/music/track03.mp3' },
+  { title: 'M.O.O.N. — Dust', file: '/music/track01.mp3' },
+  { title: '憂鬱 — Sun', file: '/music/track02.mp3' },
+  { title: 'Lonely Lies, GOLDKID$ — Interlinked', file: '/music/track03.mp3' },
+  { title: 'Visitor — RnB', file: '/music/track04.mp3' },
+  { title: 'ILLENIUM — Fractures', file: '/music/track05.mp3' },
 ]
 
 const fmt = (s) => {

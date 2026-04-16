@@ -158,7 +158,7 @@ $pda-button-text: #888;
         left: 1px;
         top: 1px;
         bottom: 1px;
-        width: calc(var(--level) * 0.14);
+        width: calc(var(--level) * 1);
         max-width: 14px;
         background: $lcd-text;
         border-radius: 1px;

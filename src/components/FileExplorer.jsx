@@ -85,28 +85,42 @@ export const FILE_TREE = {
   musique: {
     name: 'Musique',
     parent: 'root',
-    children: ['mus1', 'mus2', 'mus3'],
+    children: ['mus1', 'mus2', 'mus3', 'mus4', 'mus5'],
   },
   mus1: { 
-    name: 'Raphurst - Prelude.mp3', 
+    name: 'M.O.O.N. - Dust.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
     musicFile: '/music/track01.mp3' 
   },
   mus2: { 
-    name: 'Raphurst - Ecstasy.mp3', 
+    name: '憂鬱 - Sun.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
     musicFile: '/music/track02.mp3' 
   },
   mus3: { 
-    name: 'Raphurst - Falling In And Out.mp3', 
+    name: 'Lonely Lies, GOLDKID$ - Interlinked.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
     musicFile: '/music/track03.mp3' 
+  },
+  mus4: { 
+    name: 'Visitor - RnB.mp3', 
+    parent: 'musique', 
+    type: 'file', 
+    content: null, 
+    musicFile: '/music/track04.mp3' 
+  },
+  mus5: { 
+    name: 'ILLENIUM - Fractures.mp3', 
+    parent: 'musique', 
+    type: 'file', 
+    content: null, 
+    musicFile: '/music/track05.mp3' 
   },
 
   // --- Images ---
@@ -296,7 +310,7 @@ export default function FileExplorer({ onOpenNotepad, onPlayMusic, onOpenImage, 
         <label>Adresse</label>
         <input
           type="text"
-          value={`C:\\Isen\\${addressPath}`}
+          value={`C:\\Kiba\\${addressPath}`}
           readOnly
           data-testid="explorer-address"
         />
@@ -343,7 +357,7 @@ export default function FileExplorer({ onOpenNotepad, onPlayMusic, onOpenImage, 
       {/* Barre de statut */}
       <div className="win98-window__statusbar">
         <span>{children.length} objet(s)</span>
-        <span>{`C:\\Isen\\${addressPath}`}</span>
+        <span>{`C:\\Kiba\\${addressPath}`}</span>
       </div>
     </div>
   )

@@ -15,7 +15,7 @@ const PDA_APPS = [
   { id: 'home', label: 'Menu', icon: '🏠' },
   { id: 'powers', label: 'Stats', icon: '⚡' },
   { id: 'histoire', label: 'Docs', icon: '📁' },
-  { id: 'vn', label: 'ISEN', icon: '📖' },
+  { id: 'vn', label: 'KIBA', icon: '📖' },
   { id: 'games', label: 'Jeux', icon: '🎮' },
 ]
 
@@ -31,7 +31,7 @@ export default function PDAView() {
   const [notepadData, setNotepadData] = useState(null)
   const [time, setTime] = useState('')
   const [date, setDate] = useState('')
-  const [battery] = useState(87)
+  const [battery] = useState(48)
   const [showBootScreen, setShowBootScreen] = useState(true)
 
   // Horloge
@@ -172,6 +172,9 @@ export default function PDAView() {
         {/* Boutons physiques PDA */}
         <div className="pda__buttons">
           <div className="pda__button" onClick={() => navigateTo('powers')} title="Stats">
+            <span>1</span>
+          </div>
+          <div className="pda__button" onClick={() => navigateTo('powers')} title="Stats">
             <span>2</span>
           </div>
           <div className="pda__button" onClick={() => navigateTo('histoire')} title="Docs">
@@ -184,7 +187,7 @@ export default function PDAView() {
 
         {/* Logo PDA */}
         <div className="pda__brand">
-          <span>ISEN</span>
+          <span>PYR//TECH</span>
           <small>PDA-98</small>
         </div>
       </div>
@@ -193,7 +196,7 @@ export default function PDAView() {
 }
 
 // Écran d'accueil du PDA
-function PDAHomeScreen({ apps, onAppSelect, title = "ISEN PDA" }) {
+function PDAHomeScreen({ apps, onAppSelect, title = "KIBA PDA" }) {
   return (
     <div className="pda-home">
       <div className="pda-home__header">
@@ -238,7 +241,7 @@ function PDABootScreen() {
           <div className="pda__scanlines" />
           <div className="pda-boot">
             <div className="pda-boot__logo">
-              <span>ISEN</span>
+              <span>PYR//</span>
               <small>Personal Digital Assistant</small>
             </div>
             <div className="pda-boot__text">
@@ -251,7 +254,7 @@ function PDABootScreen() {
                   transition={{ duration: 2.2, ease: 'easeInOut' }}
                 />
               </div>
-              <p className="pda-boot__version">v1.0 — © 2026 Academia no Shin'en</p>
+              <p className="pda-boot__version">v2.5b — © 2000 Shokan no Kishi</p>
             </div>
           </div>
         </div>
@@ -262,7 +265,7 @@ function PDABootScreen() {
           <div className="pda__button"><span>4</span></div>
         </div>
         <div className="pda__brand">
-          <span>ISEN</span>
+          <span>PYR//TECH</span>
           <small>PDA-98</small>
         </div>
       </div>
