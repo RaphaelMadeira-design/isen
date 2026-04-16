@@ -282,7 +282,9 @@ function FakeWikipedia({ onLogoClick }) {
                 <ol>
                   <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-origine')?.scrollIntoView({ behavior: 'smooth' })}>Origine et famille</span></li>
                   <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-parkour')?.scrollIntoView({ behavior: 'smooth' })}>Découverte du parkour et les <em>Ura Ura Kidz</em></span></li>
-                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-bunkyo')?.scrollIntoView({ behavior: 'smooth' })}><em>Bunkyo City Bolts</em> et la <em>Tokyo Skyrun League</em></span></li>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-bunkyo')?.scrollIntoView({ behavior: 'smooth' })}><em>Bunkyo City Bolts</em> et la <em>Skyrunner League</em></span></li>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-disparition')?.scrollIntoView({ behavior: 'smooth' })}>Premier contact et disparition de Ryohei Nishikawa</span></li>
+                  <li><span className="browser__wiki-link" onClick={() => document.getElementById('wiki-present')?.scrollIntoView({ behavior: 'smooth' })}>Présent</span></li>
                 </ol>
               </li>
               <li>
@@ -338,9 +340,17 @@ function FakeWikipedia({ onLogoClick }) {
           <p>
             Ses journées passées à profiter de cette liberté en vadrouillant dans les rues des différents quartiers de la capitale lui ont fait découvrir le parkour, qui est rapidement devenu sa passion et son exutoire.
           </p>
-          <h3 id="wiki-bunkyo" className="browser__wiki-h3"><em>Bunkyo City Bolts</em> et la <em>Tokyo Skyrun League</em></h3>
+          <h3 id="wiki-bunkyo" className="browser__wiki-h3"><em>Bunkyo City Bolts</em> et la <em>Tokyo Skyrunner League</em></h3>
           <p>
-            En grandissant, Kiba a rejoint les <em>Ura Ura Kidz</em>, un groupe de parkour composé de jeunes du quartier qui partageaient la même passion. C'est là qu'il a commencé à se faire un nom dans la scène locale grâce à son style fluide et créatif. Après quelques années, il a intégré les <em>Bunkyo City Bolts</em>, un crew plus compétitif et reconnu dans toute la métropole, avec lequel il participe régulièrement à la <em>Tokyo Skyrun League</em>, une compétition annuelle qui rassemble les meilleurs traceurs de la ville.
+            ...
+          </p>
+          <h3 id="wiki-disparition" className="browser__wiki-h3">Premier contact et disparition de Ryohei Nishikawa</h3>
+          <p>
+            ...
+          </p>
+          <h3 id="wiki-present" className="browser__wiki-h3">Présent</h3>
+          <p>
+            ...
           </p>
           <h2 id="wiki-aptitudes" className="browser__wiki-h2">Aptitudes et compétences</h2>
           <h3 id="wiki-competences" className="browser__wiki-h3">Compétences générales</h3>
