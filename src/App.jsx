@@ -166,6 +166,8 @@ function App() {
   const [mediaTrack, setMediaTrack] = useState(null)
   const [imageToView, setImageToView] = useState(null)
   const [msnOpen, setMsnOpen] = useState(false)
+  const [msnMinimized, setMsnMinimized] = useState(false)
+
   const handleIconDragEnd = useCallback((id, pos) => {
     setIcons(prev => {
       const others = prev.filter(ic => ic.id !== id)
@@ -190,14 +192,23 @@ function App() {
       })
     } else {
       setWindows(prev => prev.filter(w => w.id !== 'msn'))
+      setMsnMinimized(false)
     }
   }, [msnOpen])
 
+  useEffect(() => {
+    if (!msnOpen) return
+    setWindows(prev => prev.map(w =>
+      w.id === 'msn' ? { ...w, minimized: msnMinimized, focused: !msnMinimized } : w
+    ))
+  }, [msnMinimized, msnOpen])
+
   const openWindow = useCallback((id, options = {}) => {
     if (id === 'msn') { 
-      setMsnOpen(true); 
-      setStartOpen(false); 
-      return; 
+      setMsnOpen(true)
+      setMsnMinimized(false)
+      setStartOpen(false)
+      return
     }
     const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id === 'browser' || id === 'imageviewer' || id.startsWith('notepad-')
     setWindows(prev => {
@@ -264,7 +275,12 @@ function App() {
 
   const toggleWindow = useCallback((id) => {
     if (id === 'msn') { 
-      setMsnOpen(prev => !prev)
+      if (!msnOpen) {
+        setMsnOpen(true)
+        setMsnMinimized(false)
+      } else {
+        setMsnMinimized(prev => !prev)
+      }
       return 
     }
     setWindows(prev => {
@@ -288,7 +304,7 @@ function App() {
           : { ...w, focused: false }
       )
     })
-  }, [])
+  }, [msnOpen])
 
   const openNotepad = useCallback(({ id, name, content }) => {
     const winId = `notepad-${id}`
@@ -430,10 +446,12 @@ function App() {
 
       {/* MSN App */}
       {msnOpen && (
-        <MSNApp
-          onClose={() => setMsnOpen(false)}
-          onMinimize={() => setMsnOpen(false)}
-        />
+        <div style={msnMinimized ? { display: 'none' } : undefined}>
+          <MSNApp
+            onClose={() => { setMsnOpen(false); setMsnMinimized(false) }}
+            onMinimize={() => setMsnMinimized(true)}
+          />
+        </div>
       )}
 
       {/* Taskbar */}

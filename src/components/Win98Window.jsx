@@ -45,8 +45,6 @@ export default function Win98Window({
     }
   }, [maximized, pos, size])
 
-  if (minimized) return null
-
   const icon = ICONS[id]
 
   return (
@@ -61,7 +59,7 @@ export default function Win98Window({
       minWidth={320}
       minHeight={220}
       bounds="parent"
-      style={{ zIndex, position: 'absolute' }}
+      style={{ zIndex, position: 'absolute', display: minimized ? 'none' : undefined }}
       onMouseDown={handleMouseDown}
       dragHandleClassName="win98-window__titlebar"
       disableDragging={maximized}
