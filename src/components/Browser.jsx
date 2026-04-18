@@ -436,60 +436,60 @@ function KonamiOverlay({ onDismiss }) {
 
 // ── ActuNet News ──────────────────────────────────────────────────
 
-const NEWS_DATE = 'Lundi 17 janvier 2000'
+const NEWS_DATE = 'Vendredi 17 avril 6089'
 
 const TICKER_ITEMS = [
-  "FLASH : Séisme majeur au Salvador — bilan provisoire de 700 victimes",
-  "KYOTO : Aucun commentaire officiel sur l'incident de vendredi",
-  "EURO : La monnaie unique à 1,03 dollar",
-  "L'ACADÉMIE maintient le silence sur le rapport #00x7",
-  "MÉTÉO KYOTO : Brouillard inexpliqué dans Fushimi et Gion",
-  "BOURSE DE TOKYO : Nikkei en hausse de 1,2 %",
-  "SCIENCES : 528 Hz, une fréquence qui divise les chercheurs",
-  "CONCORDE : Les enquêtes de sécurité se poursuivent",
+  "FLASH : Tokyo Skyrunner League — 4ᵉ course de la saison ce week-end à Shinjuku",
+  "BUNKYO : La mairie ne commente toujours pas les « silhouettes aux yeux ambrés »",
+  "DISPARITION : Ryohei Nishikawa, ex-capitaine des Ura Ura Kidz, toujours introuvable",
+  "CLAN : Le porte-parole Magaishi nie toute implication dans l'affaire N.",
+  "SPORTS : Les Bunkyo City Bolts installent leur domination sur la ligue",
+  "SHOKANS : L'Ordre exige une meilleure classification des Chevaliers de rang E",
+  "FAIT DIVERS : Nouvelle « observation ambre » signalée à Ikebukuro",
+  "TENKU STRIDERS : Takumi Kurogane esquive les questions de la presse",
 ]
 
 const NEWS_ARTICLES = [
   {
     id: 1,
-    category: "Monde",
-    catColor: '#990000',
-    date: "Sam. 15 Jan. 2000  |  14:32 JST",
-    headline: "KYOTO — Une ruelle scellée après un « incident d'ombre anormale »",
-    summary: "Trois riverains signalent des ombres se déplaçant indépendamment de leur source lumineuse. Une silhouette juvénile aperçue sur les lieux. Enquête préliminaire ouverte.",
+    category: "Faits divers",
+    catColor: '#336600',
+    date: "Jeu. 16 Avr. 6089  |  08:12 JST",
+    headline: "Disparition de Ryohei Nishikawa : deux mois sans la moindre trace",
+    summary: "Ancien traceur prodige des Ura Ura Kidz devenu gestionnaire, Ryohei Nishikawa reste introuvable. Dernier message à un proche : « je m'absente, ne me cherche pas. »",
     paragraphs: [
-      "La préfecture de police de Kyoto a confirmé vendredi l'ouverture d'une enquête préliminaire suite à trois témoignages concordants dans le quartier de Fushimi. Les appels ont été enregistrés à 23h14 heure locale.",
-      "L'un des témoins, ayant requis l'anonymat, a déclaré à un correspondant local : « Il y avait un jeune individu au centre de la ruelle. Les ombres autour de lui ne lui appartenaient pas. Elles reproduisaient des gestes qu'il n'était pas en train de faire — comme un double. »",
-      "La ruelle Nakamura-dori a été scellée pendant soixante-douze heures. L'Institut national des sciences anomales (INSA) aurait été dépêché sur place. Aucune conclusion publique n'a été rendue à ce jour.",
-      "Le suspect principal, décrit comme un jeune individu de vingt ans environ, vêtements sombres, n'a pas encore été formellement identifié. Une source préfectorale a simplement indiqué : « Nous savons qui chercher. »",
+      "Plus de deux mois après son dernier signe de vie, le jeune manager et ex-traceur Ryohei Nishikawa demeure officiellement porté disparu. La préfecture de police de Tokyo confirme ce lundi que l'enquête reste ouverte, sans indiquer de piste privilégiée.",
+      "Selon plusieurs sources proches du crew des Bunkyo City Bolts, Ryohei était devenu, depuis sa blessure aux jambes lors du tournoi opposant les Ura Ura Kidz aux Tenku Striders, un fin observateur de la scène parkour de la capitale. Il s'intéressait particulièrement aux disparitions à bas bruit de concurrents « atypiques » dans la Tokyo Skyrunner League.",
+      "Un membre de son entourage, sous couvert d'anonymat, a livré au correspondant d'ActuNet un témoignage troublant : « Il avait repéré un schéma. Des Chevaliers de rang faible, mais aux Shokans instables — et qui, du jour au lendemain, ne courent plus. Il voulait comprendre. Aujourd'hui, c'est lui qui n'est plus là. »",
+      "Le dernier message reçu par son meilleur ami est limpide : « Je m'absente un moment. Inutile de me chercher. » Un courrier au ton posé, mais dont l'implacable brièveté ne cesse d'interroger.",
     ],
   },
   {
     id: 2,
-    category: "Sciences",
-    catColor: '#004499',
-    date: "Mer. 12 Jan. 2000  |  09:17 CET",
-    headline: "Un document Raphurst sur les « Sujets Résonants » circule sur les forums",
-    summary: "Un rapport interne décrivant des individus à « propriétés électromagnétiques atypiques » a brièvement circulé avant d'être retiré. Il mentionne un certain « Sujet R-003 ».",
+    category: "Sport",
+    catColor: '#990000',
+    date: "Jeu. 16 Avr. 6089  |  23:48 JST",
+    headline: "TOKYO SKYRUNNER LEAGUE — Les Bunkyo City Bolts écrasent la 3ᵉ manche",
+    summary: "Menés par un Kiba Igarashi en état de grâce, les Bolts s'imposent sur le parcours de Nakano. Fait notable : plusieurs participants rapportent avoir aperçu « des silhouettes aux yeux ambrés » perchées sur les toits.",
     paragraphs: [
-      "Plusieurs utilisateurs de forums scientifiques indépendants ont signalé mercredi la mise en ligne d'un document portant l'en-tête confidentiel de l'Institut Raphurst, organisation de recherche privée japonaise dont les travaux restent peu documentés.",
-      "Le texte décrirait une catégorie d'individus désignés sous le terme « Sujets Résonants » — des personnes émettant des fréquences biologiques concentrées autour de 528 Hz.",
-      "Un « Sujet R-003 » serait mentionné de manière répétée, avec la note : « mesures dépassant significativement les seuils connus — statut actif, non localisé ». L'Institut Raphurst n'a donné aucune réponse aux demandes de commentaire.",
-      "« J'ai eu le fichier pendant dix minutes avant que le lien soit coupé, » témoigne un utilisateur contacté par e-mail. « Il y avait des coordonnées GPS et une seule ligne en bas de page : \"Ne pas approcher sans équipement de confinement fréquentiel.\" »",
+      "Sur un parcours urbain particulièrement exigeant reliant Nakano à Kōenji, les Bunkyo City Bolts ont confirmé dimanche soir leur statut de favoris. Leur crew, composé de Kiba Igarashi dit « Kōga », Aoi Kanzaki, Hidemichi Ōyama et Daigo Kawamura, termine avec plus de onze secondes d'avance sur les White Sparrows de Setagaya.",
+      "Le numéro 1 du crew, surnommé « Croc Écarlate » par la scène underground, s'est illustré par une manœuvre saluée par les commentateurs comme « techniquement incompréhensible » : une relance en plein vide entre deux immeubles du quartier commerçant. Son Shokan, classé au rang E et peu documenté, n'a, selon la ligue, rien d'officiel dans cette performance.",
+      "Plus discret, mais répété par au moins quatre crews concurrents ce soir-là : la présence de silhouettes immobiles, yeux ambrés luisants, postées en hauteur tout au long du parcours. « On ne sait pas qui c'est. On sait juste qu'ils regardent toujours les mêmes personnes », glisse un traceur des Kanda Ravens.",
+      "Interrogés, les organisateurs de la Tokyo Skyrunner League n'ont pas souhaité répondre. La fédération officielle rappelle pour sa part qu'elle ne reconnaît aucun événement appelé « Skyrunner League ».",
     ],
   },
   {
     id: 3,
-    category: "Faits divers",
-    catColor: '#336600',
-    date: "Lun. 10 Jan. 2000  |  11:04 JST",
-    headline: "Disparue depuis le 23 novembre — Un message codé avant de s'évanouir",
-    summary: "Une lycéenne de Kyoto portée disparue. Sa famille avait reçu un court message : « 528 — je perçois tout maintenant — ne cherchez pas. »",
+    category: "Monde",
+    catColor: '#004499',
+    date: "Sam. 15 Jan. 6090  |  19:05 JST",
+    headline: "Clan Magaishi : silence officiel, rumeurs persistantes",
+    summary: "Plusieurs noms liés à la souche inférieure du clan Magaishi auraient disparu ces derniers mois des registres municipaux. Le clan nie, la mairie de Tokyo botte en touche.",
     paragraphs: [
-      "La famille d'une lycéenne de Kyoto, identifiée uniquement par ses initiales I.H., a relancé l'appel à témoins ce lundi, plus de six semaines après sa disparition le 23 novembre dernier.",
-      "Quelques heures avant les faits, la famille avait reçu depuis son téléphone un message ne contenant que ces mots : « 528 — je perçois tout maintenant — ne cherchez pas. »",
-      "La police de Kyoto a classé l'affaire sans suite après trois semaines, invoquant un départ volontaire. Ses proches contestent cette conclusion. « Elle n'aurait jamais fait ça. Quelque chose lui est arrivé cette nuit-là, dans cette ruelle. »",
-      "Fait troublant : la date de disparition — le 23 novembre — coïncide exactement avec l'incident référencé sous le code #00x7 dans les registres municipaux, dont l'accès public a depuis été restreint.",
+      "Le clan Magaishi, qui contrôle une partie de la métropole de Tokyo, est de nouveau cité dans une série de rumeurs concernant la disparition discrète de plusieurs jeunes Chevaliers rattachés à ses branches secondaires. Notre rédaction a pu croiser trois noms cités par des sources indépendantes — aucun ne figure plus dans le dernier recensement municipal.",
+      "Officiellement, le porte-parole du clan dément toute forme de « purge », évoquant des « mutations internes ordinaires ». Officieusement, plusieurs observateurs pointent une corrélation gênante : tous les disparus avaient, à un moment ou à un autre, participé à des courses de la Tokyo Skyrunner League.",
+      "Un fonctionnaire de la mairie, s'exprimant sous anonymat total, résume l'atmosphère : « Tant que cela concerne les souches inférieures, personne en haut du clan ne bougera. C'est exactement pour ça que ça continue. »",
+      "Contactée, l'organisation désignée uniquement comme « L'Académie » — accusée par certains forums de ficher discrètement les Chevaliers au Shokan atypique — n'a pas répondu à nos sollicitations.",
     ],
   },
   {
@@ -523,10 +523,10 @@ const NEWS_ARTICLES = [
 ]
 
 const NEWS_BRIEFS = [
-  "MÉTÉO — Kyoto : brouillard d'origine inconnue dans Fushimi et Gion (16/01)",
-  "SCIENCES — Un chercheur américain revendique l'enregistrement d'une \"signature fréquentielle humaine\" (04/01)",
-  "DIVERS — La ruelle Nakamura-dori rouverte au public après expertise (17/01)",
-  "JAPON — L'INSA nie avoir envoyé une équipe à Kyoto le 15 janvier (16/01)",
+  "SPORTS — 4ᵉ manche de la Tokyo Skyrunner League ce samedi à Shinjuku (17/01)",
+  "BUNKYO — Nouvelle « observation ambre » signalée près du parc Rikugien (16/01)",
+  "CLANS — La mairie de Tokyo confirme deux « mutations » dans la souche Igarashi (15/01)",
+  "TECHNOLOGIE — Une mise à jour des Shokans synchronisés par téléphone à l'étude (12/01)",
 ]
 
 const TICKER_STR = TICKER_ITEMS.join('  ◆  ') + '  ◆  '

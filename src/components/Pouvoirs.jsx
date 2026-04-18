@@ -102,7 +102,7 @@ const SPELLS = [
   },
 ]
 
-const HEADER_TEXT = '// ISEN PROJECT :: REGISTRE DE COMBAT //  CLIENT v2.4.1 — PATCH 0.9.7'
+const HEADER_TEXT = '// MAGAISHI // REGISTRE DES SHOKANS :: DOSSIER CHEVALIER //  CLIENT v2.4.1 — PATCH 0.9.7'
 
 // ─── RADAR GEOMETRY ───────────────────────────────────────────────
 const CX = 110, CY = 108, R = 72
@@ -152,10 +152,10 @@ export default function Pouvoirs() {
 
           {/* Portrait */}
           <div className={`gp__portrait-frame ${animCls('pv-portrait-in')}`}>
-            <span className="gp__lvl-badge">NIV.{LEVEL}</span>
+            <span className="gp__lvl-badge">RANG E</span>
             <img src="/images/pose.png" alt="Kiba Igarashi" className="gp__portrait" />
             <div className="gp__char-name">KIBA IGARASHI</div>
-            <div className="gp__char-class">Classe : Combattant ★★★</div>
+            <div className="gp__char-class">Chevalier • Clan Magaishi</div>
           </div>
 
           {/* Barres PV / EN / XP */}
@@ -260,27 +260,35 @@ export default function Pouvoirs() {
             <div className="gp__section-lbl">[ DOSSIER SUJET ]</div>
 
             <p className={`gp__dossier-p ${animCls('pv-para-1')}`}>
-              Kiba Igarashi est un <strong>Résonant de classe 3</strong> — une rare
-              catégorie d'individus capables d'interagir directement avec les fréquences
-              ondulatoires du monde. Son pouvoir, la{' '}
-              <strong>Résonance Active</strong>, lui permet d'émettre, percevoir et
-              moduler des ondes invisibles à 528 Hz, affectant matière, perception et
-              conscience à distance variable.
+              Kiba Igarashi, alias <strong>Kōga</strong> ou <em>Croc Écarlate</em>, est un{' '}
+              <strong>Chevalier de rang E</strong> issu de la souche inférieure du clan{' '}
+              <strong>Magaishi</strong>. Membre des <em>Bunkyo City Bolts</em>, il évolue
+              dans la <em>Tokyo Skyrunner League</em>, où les courses de parkour autorisent
+              l'usage des <strong>Shokans</strong>. Son propre Shokan, baptisé{' '}
+              <strong>Écho de l'âme</strong>, est officiellement classé au rang le plus bas
+              de la hiérarchie — une évaluation que peu d'adversaires prennent la peine
+              de remettre en cause.
             </p>
 
             <p className={`gp__dossier-p ${animCls('pv-para-2')}`}>
-              <strong>Limites :</strong> chaque activation consomme de l'énergie
-              biologique. À court d'énergie, ses sens se retournent contre lui —
-              surcharge sensorielle, douleur aiguë, désorientation. Ses sorts de zone la
-              rendent temporairement <em>aveugle aux fréquences</em>, l'exposant aux
-              contre-attaques.
+              <strong>Mécanique :</strong> via son téléphone, Kiba matérialise sa volonté
+              sous la forme d'une entité semi-indépendante. Plutôt qu'une arme ou une
+              forme fixe, il fait apparaître des fragments éphémères — une main, un
+              avant-bras, une jambe — directement liés à son intention : saisir,
+              frapper, bloquer, servir d'appui. Les manifestations durent{' '}
+              <strong>1 à 2 secondes</strong> tout au plus et ne peuvent surgir que dans
+              un <strong>rayon de 3 mètres</strong> autour de lui.
             </p>
 
             <p className={`gp__dossier-p ${animCls('pv-para-3')}`}>
-              <strong>Subtilité :</strong> son ultime <em>Fréquence 528</em> ne peut
-              être activé que lorsque ses PV sont inférieurs à 40 %. Plus il est
-              fragilisé, plus son amplitude de résonance est puissante — un état que
-              certains adversaires apprennent à redouter.
+              <strong>Limites :</strong> la puissance de frappe de l'Écho est strictement
+              équivalente à celle de Kiba — aucune amplification, aucun partage de
+              sensations. Ce qui fait la dangerosité du sujet n'est donc pas la
+              démesure du pouvoir, mais l'<em>imagination tactique</em> de son porteur,
+              couplée à un style de combat hybride (boxe, lutte libre, taekwondo,
+              capoeira) et à ses réflexes de traceur. <em>Écho de l'âme</em> n'est,
+              littéralement, qu'une extension de sa volonté : plus il la comprend, plus
+              elle devient imprévisible.
             </p>
           </div>
 
