@@ -21,6 +21,7 @@ import CMD from './components/CMD'
 import ImageViewer from './components/ImageViewer'
 import Browser from './components/Browser'
 import MSNApp from './components/MSN'
+import Sounds from './components/Sounds'
 
 // Hook pour détecter le mode mobile
 function useIsMobile(breakpoint = 768) {
@@ -208,6 +209,7 @@ function App() {
       setMsnOpen(true)
       setMsnMinimized(false)
       setStartOpen(false)
+      Sounds.windowOpen()
       return
     }
     const skipLoading = id === 'documents' || id === 'cmd' || id === 'media' || id === 'browser' || id === 'imageviewer' || id.startsWith('notepad-')
@@ -229,6 +231,7 @@ function App() {
       if (existing) return prev
 
       if (skipLoading) {
+        Sounds.windowOpen()
         return [
           ...prev.map(w => ({ ...w, focused: false })),
           { id, ...WINDOW_CONFIGS[id], initialFolder: options.initialFolder, minimized: false, focused: true, zIndex: ++zCounter }
@@ -239,6 +242,7 @@ function App() {
       setLoading({ id, label: LOADING_LABELS[id] || id })
       setTimeout(() => {
         setLoading(null)
+        Sounds.windowOpen()
         setWindows(prev2 => {
           if (prev2.find(w => w.id === id)) return prev2
           return [
@@ -253,9 +257,11 @@ function App() {
 
   const closeWindow = useCallback((id) => {
     if (id === 'msn') { 
-      setMsnOpen(false); 
+      setMsnOpen(false)
+      Sounds.windowClose()
       return 
     }
+    Sounds.windowClose()
     setWindows(prev => prev.filter(w => w.id !== id))
   }, [])
 
@@ -376,7 +382,7 @@ function App() {
       }}>
 
       {/* Boot screen - affiché par-dessus tout jusqu'à la fin du boot */}
-      {!booted && <BootScreen onDone={() => setBooted(true)} />}
+       {!booted && <BootScreen onDone={() => { setBooted(true); Sounds.startup() }} />}
 
       {/* Wallpaper */}
       <div className="desktop__wallpaper" />
@@ -441,7 +447,7 @@ function App() {
 
       {/* Dialog Arrêt de Windows */}
       {showShutdown && (
-        <ShutdownDialog onCancel={() => setShowShutdown(false)} />
+        <ShutdownDialog onCancel={() => setShowShutdown(false)} onShutdownSound={Sounds.shutdown} />
       )}
 
       {/* MSN App */}

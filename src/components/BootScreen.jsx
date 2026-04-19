@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import Sounds from '../components/Sounds'
 import '../styles/Boot.scss'
 
 // Séquence BIOS - lignes qui s'affichent une par une
@@ -47,7 +48,7 @@ export default function BootScreen({ onDone }) {
       }, line.delay)
     )
     // Fin du BIOS → transition vers Win98
-    const end = setTimeout(() => setPhase('win98'), 3200)
+    const end = setTimeout(() => { Sounds.biosBeep(); setPhase('win98') }, 3200)
     return () => { timers.forEach(clearTimeout); clearTimeout(end); }
   }, [phase])
 

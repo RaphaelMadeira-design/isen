@@ -1,11 +1,10 @@
 import '../styles/ShutdownDialog.scss'
 
-export default function ShutdownDialog({ onCancel }) {
+export default function ShutdownDialog({ onCancel, onShutdownSound }) {
   const handleYes = () => {
-    // Tente de fermer l'onglet
+    if (onShutdownSound) onShutdownSound()
     window.open('', '_self')
     window.close()
-    // Fallback : si le navigateur refuse, on affiche un message
     setTimeout(() => {
       onCancel('blocked')
     }, 300)

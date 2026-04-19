@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Rnd } from 'react-rnd';
+import Sounds from '../components/Sounds'
 import '../styles/msn.scss';
 
 // ─── CREDENTIALS ────────────────────────────────────────────────
@@ -230,8 +231,10 @@ function MSNLogin({ onLogin, onClose }) {
     setLoading(true);
     setTimeout(() => {
       if (email.trim() === CREDENTIALS.email && password === CREDENTIALS.password) {
+        Sounds.msnNotify();
         onLogin();
       } else {
+        Sounds.error();
         setError('Adresse de messagerie ou mot de passe incorrect. Vérifiez vos informations et réessayez.');
         setLoading(false);
       }
@@ -476,7 +479,7 @@ export default function MSNApp({ onClose, onMinimize }) {
   const [phase, setPhase]         = useState('login');
   const [openChats, setOpenChats] = useState([]);
 
-  const openChat  = (id) => { if (!openChats.includes(id)) setOpenChats(p => [...p, id]); };
+  const openChat  = (id) => { if (!openChats.includes(id)) { Sounds.msnNotify(); setOpenChats(p => [...p, id]); } };
   const closeChat = (id) => setOpenChats(p => p.filter(c => c !== id));
 
   return (

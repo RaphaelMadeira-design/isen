@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import Sounds from '../components/Sounds'
 import '../styles/Snake.scss'
 
 const GRID = 20
@@ -122,10 +123,12 @@ export default function Snake() {
     const head = { x: s.snake[0].x + s.dir.x, y: s.snake[0].y + s.dir.y }
 
     if (head.x < 0 || head.x >= COLS || head.y < 0 || head.y >= ROWS) {
+      Sounds.gameOver()
       setPhase('over')
       return
     }
     if (s.snake.some(seg => seg.x === head.x && seg.y === head.y)) {
+      Sounds.gameOver()
       setPhase('over')
       return
     }
@@ -138,6 +141,7 @@ export default function Snake() {
     if (ateFood) {
       s.score += 10
       s.food = randomFood(newSnake)
+      Sounds.gameScore()
       setScore(s.score)
       setHiScore(prev => Math.max(prev, s.score))
     }
@@ -205,12 +209,14 @@ export default function Snake() {
 
   // ── Handlers ──────────────────────────────────────────────────
   const handleStart = () => {
+    Sounds.gameStart()
     initState(speedIdx)
     setPhase('playing')
     setTimeout(() => startLoop(speedIdx), 50)
   }
 
   const handleRestart = () => {
+    Sounds.gameStart()
     stopLoop()
     initState(speedIdx)
     setPhase('playing')

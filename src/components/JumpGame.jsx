@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
+import Sounds from '../components/Sounds'
 import '../styles/JumpGame.scss'
 
 const W = 480
@@ -60,7 +61,7 @@ export default function JumpGame() {
         y: GROUND_Y - PLAYER_H,
         vy: 0,
         grounded: true,
-        frame: 0,       // animation marche
+        frame: 1,       // animation marche
         frameTick: 0,
         jumpHeld: false,   // ← ajouter
         jumpTime: 0,       // ← ajouter
@@ -261,6 +262,7 @@ export default function JumpGame() {
       const oy2 = GROUND_Y
 
       if (px2 > ox1 && px1 < ox2 && py2 > oy1 && py1 < oy2) {
+        Sounds.gameOver()
         setHiScore(prev => Math.max(prev, Math.floor(s.score)))
         setPhaseSync('over')
         return
@@ -276,6 +278,7 @@ export default function JumpGame() {
   const s = stateRef.current
   if (!s) return
   if (s.player.grounded) {
+    Sounds.gameJump()
     s.player.vy        = JUMP_FORCE
     s.player.grounded  = false
     s.player.jumpHeld  = true   // ← démarre le maintien
@@ -323,6 +326,7 @@ export default function JumpGame() {
 
   // ── Handlers ─────────────────────────────────────────────────────
   const handleStart = () => {
+    Sounds.gameStart()
     initState()
     setPhaseSync('playing')
     lastRef.current = null
@@ -332,6 +336,7 @@ export default function JumpGame() {
   }
 
   const handleRestart = () => {
+    Sounds.gameStart()
     cancelAnimationFrame(rafRef.current)
     initState()
     setPhaseSync('playing')

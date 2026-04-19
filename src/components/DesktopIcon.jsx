@@ -1,4 +1,5 @@
 import { useRef, useCallback } from 'react'
+import Sounds from '../components/Sounds'
 
 const CELL = 90
 
@@ -51,6 +52,7 @@ export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selecte
       if (movedRef.current && snapPosRef.current) {
         onDragEnd(id, snapPosRef.current)
       } else {
+        Sounds.click()
         onSelect(id)
       }
     }
@@ -65,7 +67,7 @@ export default function DesktopIcon({ id, label, icon, onOpen, onSelect, selecte
       className={`desktop-icon${selected ? ' desktop-icon--selected' : ''}`}
       style={{ position: 'absolute', left: position.x, top: position.y }}
       onMouseDown={handleMouseDown}
-      onDoubleClick={() => onOpen(id)}
+      onDoubleClick={() => { Sounds.doubleClick(); onOpen(id) }}
       tabIndex={0}
       data-testid={`desktop-icon-${id}`}
       title={`Ouvrir ${label}`}
