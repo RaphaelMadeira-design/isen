@@ -1,13 +1,9 @@
 import '../styles/ShutdownDialog.scss'
 
-export default function ShutdownDialog({ onCancel, onShutdownSound }) {
+export default function ShutdownDialog({ onCancel, onShutdownSound, onConfirm }) {
   const handleYes = () => {
     if (onShutdownSound) onShutdownSound()
-    window.open('', '_self')
-    window.close()
-    setTimeout(() => {
-      onCancel('blocked')
-    }, 300)
+    if (onConfirm) onConfirm()
   }
 
   return (

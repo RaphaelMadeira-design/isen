@@ -382,7 +382,12 @@ function App() {
       }}>
 
       {/* Boot screen - affiché par-dessus tout jusqu'à la fin du boot */}
-       {!booted && <BootScreen onDone={() => { setBooted(true); Sounds.startup() }} />}
+       {!booted && 
+        <BootScreen onDone={() => { 
+          setBooted(true)
+          Sounds.startup() 
+        }} 
+      />}
 
       {/* Wallpaper */}
       <div className="desktop__wallpaper" />
@@ -447,12 +452,26 @@ function App() {
 
       {/* Dialog Arrêt de Windows */}
       {showShutdown && (
-        <ShutdownDialog onCancel={() => setShowShutdown(false)} onShutdownSound={Sounds.shutdown} />
+        <ShutdownDialog
+          onCancel={() => setShowShutdown(false)}
+          onShutdownSound={Sounds.shutdown}
+          onConfirm={() => {
+            handleReset()
+            powerOff()
+          }}
+        />      
       )}
 
       {/* MSN App */}
       {msnOpen && (
-        <div style={msnMinimized ? { display: 'none' } : undefined}>
+        <div
+          className="desktop__content"
+          style={{
+            position: 'absolute',
+            inset: '0 0 32px 0',
+            display: msnMinimized ? 'none' : undefined,
+          }}
+        >
           <MSNApp
             onClose={() => { setMsnOpen(false); setMsnMinimized(false) }}
             onMinimize={() => setMsnMinimized(true)}
@@ -470,12 +489,15 @@ function App() {
       />
     </div>
   )
-  const handleReset = useCallback(() => {
+
+   const handleReset = useCallback(() => {
     setBooted(false)
     setWindows([])
     setStartOpen(false)
     setShowShutdown(false)
     setLoading(null)
+    setMsnOpen(false)
+    setMsnMinimized(false)
   }, [])
 
   if (isMobile) {
@@ -484,7 +506,118 @@ function App() {
 
   return (
     <CRTFrame onReset={handleReset}>
-      {desktopContent}
+      {({ powerOff }) => (
+        <div className="desktop" data-testid="desktop"
+          onMouseDown={(e) => {
+            if (!e.target.closest('.start-menu') && !e.target.closest('.taskbar')) {
+              setStartOpen(false)
+            }
+            if (!e.target.closest('.desktop-icon')) {
+              setSelectedIcon(null)
+            }
+          }}>
+
+          {/* Boot screen */}
+          {!booted && <BootScreen onDone={() => { setBooted(true); Sounds.startup() }} />}
+
+          {/* Wallpaper */}
+          <div className="desktop__wallpaper" />
+
+          {/* Scan lines overlay */}
+          <div className="scanlines" />
+
+          {/* Watermark */}
+          <div className="desktop__watermark">
+            <span>PC-98</span>
+          </div>
+
+          {/* Desktop Icons */}
+          {icons.map(icon => (
+            <DesktopIcon
+              key={icon.id}
+              id={icon.id}
+              label={icon.label}
+              icon={icon.icon}
+              position={{ x: icon.x, y: icon.y }}
+              selected={selectedIcon === icon.id}
+              onSelect={setSelectedIcon}
+              onOpen={openWindow}
+              onDragEnd={handleIconDragEnd}
+            />
+          ))}
+
+          {/* Windows container */}
+          <div className="desktop__content" style={{ position: 'absolute', inset: '0 0 32px 0' }}>
+            {windows.filter(win => win.id !== 'msn').map(win => (
+              <Win98Window
+                key={win.id}
+                id={win.id}
+                title={win.title}
+                zIndex={win.zIndex}
+                focused={win.focused}
+                minimized={win.minimized}
+                defaultSize={win.defaultSize}
+                defaultPosition={win.defaultPosition}
+                onClose={closeWindow}
+                onMinimize={minimizeWindow}
+                onFocus={focusWindow}
+              >
+                {renderWindowContent(win)}
+              </Win98Window>
+            ))}
+          </div>
+
+          {/* Spinner de chargement */}
+          {loading && <Loading label={loading.label} />}
+
+          {/* Start Menu */}
+          {startOpen && (
+            <StartMenu
+              onClose={() => setStartOpen(false)}
+              onOpenWindow={openWindow}
+              onShutdown={() => setShowShutdown(true)}
+            />
+          )}
+
+          {/* Dialog Arrêt de Windows */}
+          {showShutdown && (
+            <ShutdownDialog
+              onCancel={() => setShowShutdown(false)}
+              onShutdownSound={Sounds.shutdown}
+              onConfirm={() => {
+                setShowShutdown(false)
+                powerOff()
+              }}
+            />
+          )}
+
+          {/* MSN App */}
+          {msnOpen && (
+            <div
+              className="desktop__content"
+              style={{
+                position: 'absolute',
+                inset: '0 0 32px 0',
+                display: msnMinimized ? 'none' : undefined,
+              }}
+            >
+              <MSNApp
+                onClose={() => { setMsnOpen(false); setMsnMinimized(false) }}
+                onMinimize={() => setMsnMinimized(true)}
+              />
+            </div>
+          )}
+
+          {/* Taskbar */}
+          <Taskbar
+            windows={windows}
+            onWindowFocus={focusWindow}
+            onWindowToggle={toggleWindow}
+            onStartClick={(e) => { e.stopPropagation(); setStartOpen(prev => !prev); }}
+            startOpen={startOpen}
+          />
+        </div>
+      )}
     </CRTFrame>
   )
 }

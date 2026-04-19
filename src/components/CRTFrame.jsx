@@ -2,15 +2,15 @@ import { useState } from 'react'
 import '../styles/CRTFrame.scss'
 
 export default function CRTFrame({ children, onReset }) {
-  const [powerOn, setPowerOn] = useState(true)
-  const [screenOn, setScreenOn] = useState(true)
+  const [powerOn, setPowerOn] = useState(false)
+  const [screenOn, setScreenOn] = useState(false)
   const [brightness, setBrightness] = useState(100)
 
   const handlePower = () => {
     if (powerOn) {
-      // Extinction : NO SIGNAL pendant 2.5s puis écran noir
+      // Extinction : NO SIGNAL pendant 20s puis écran noir
       setPowerOn(false)
-      setTimeout(() => setScreenOn(false), 500)
+      setTimeout(() => setScreenOn(false), 20000)
     } else {
       // Rallumage : reset complet + boot screen
       onReset?.()
@@ -37,7 +37,11 @@ export default function CRTFrame({ children, onReset }) {
               
               {/* Contenu (Windows 98) */}
               <div className="crt-monitor__content" style={{ filter: `brightness(${brightness}%)` }}>
-                {powerOn ? children : (
+                {powerOn ? (
+                  typeof children === 'function'
+                    ? children({ powerOff: handlePower })
+                    : children
+                ) : (
                   <div className="crt-monitor__off-screen">
                     <span>NO SIGNAL</span>
                   </div>
