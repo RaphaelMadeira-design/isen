@@ -9,7 +9,6 @@ const ICONS = {
   shutdown:     'https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png',
   snake:        'https://win98icons.alexmeub.com/icons/png/joystick_alt-0.png',
   jump:         'https://win98icons.alexmeub.com/icons/png/joystick_alt-0.png',
-  vn:           'https://win98icons.alexmeub.com/icons/png/executable-0.png',
   games:        'https://win98icons.alexmeub.com/icons/png/joystick-2.png',
   media:        'https://win98icons.alexmeub.com/icons/png/wm-4.png',
   cmd:          'https://win98icons.alexmeub.com/icons/png/console_prompt-0.png',
@@ -107,10 +106,6 @@ export default function StartMenu({ onClose, onOpenWindow, onShutdown }) {
                 <div className="start-menu__item" onClick={() => handle('jump')} data-testid="start-menu-jump">
                   <img src={ICONS.jump} alt="Jump" />
                   JUMP.exe
-                </div>
-                <div className="start-menu__item" onClick={() => handle('vn')} data-testid="start-menu-vn">
-                  <img src={ICONS.vn} alt="VN" />
-                  ISEN.exe
                 </div>
               </div>
             )}

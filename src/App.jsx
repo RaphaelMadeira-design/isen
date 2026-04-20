@@ -13,7 +13,6 @@ import ShutdownDialog from './components/ShutdownDialog'
 import Snake from './components/Snake'
 import JumpGame from './components/JumpGame'
 import Loading from './components/Loading'
-import VisualNovel from './components/VisualNovel'
 import MediaPlayer from './components/MediaPlayer'
 import PDAView from './components/PDAView'
 import CRTFrame from './components/CRTFrame'
@@ -66,12 +65,6 @@ const INITIAL_ICONS = [
     x: 1, y: 2
   },
   {
-    id: 'vn',
-    label: 'ISEN.exe',
-    icon: 'https://win98icons.alexmeub.com/icons/png/executable-0.png',
-    x: 1, y: 3,
-  },
-  {
     id: 'media',
     label: 'Windows Media Player',
     icon: 'https://win98icons.alexmeub.com/icons/png/wm-4.png',
@@ -112,11 +105,6 @@ const WINDOW_CONFIGS = {
     defaultSize: { width: '40%', height: '50%' },
     defaultPosition: { x: 40, y: 20 },
   },
-  vn: {
-    title: 'ISEN.exe — Visual Novel',
-    defaultSize: { width: '35%', height: '55%' },
-    defaultPosition: { x: 80, y: 40 },
-  },
   media: {
     title: 'Windows Media Player',
     defaultSize: { width: 340, height: 460 },
@@ -143,7 +131,6 @@ const LOADING_LABELS = {
   powers: 'POUVOIRS.exe',
   snake: 'SNAKE.exe',
   jump: 'JUMP.exe',
-  vn: 'ISEN.exe',
 }
 
 const makeNotepadConfig = (fileId, fileName) => ({
@@ -366,7 +353,6 @@ function App() {
     />
   )
     if (id.startsWith('notepad-')) return <Notepad fileName={win.notepadFile?.name} content={win.notepadContent} />
-    if (id === 'vn') return <VisualNovel />
     return null
   }
 
