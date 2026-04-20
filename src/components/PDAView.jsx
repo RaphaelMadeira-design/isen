@@ -6,7 +6,6 @@ import Pouvoirs from './Pouvoirs'
 import FileExplorer from './FileExplorer'
 import Snake from './Snake'
 import JumpGame from './JumpGame'
-import VisualNovel from './VisualNovel'
 import MediaPlayer from './MediaPlayer'
 import Notepad from './Notepad'
 
@@ -15,7 +14,6 @@ const PDA_APPS = [
   { id: 'home', label: 'Menu', icon: '🏠' },
   { id: 'powers', label: 'Stats', icon: '⚡' },
   { id: 'histoire', label: 'Docs', icon: '📁' },
-  { id: 'vn', label: 'KIBA', icon: '📖' },
   { id: 'games', label: 'Jeux', icon: '🎮' },
 ]
 
@@ -86,8 +84,6 @@ export default function PDAView() {
         return <Pouvoirs />
       case 'histoire':
         return <FileExplorer onOpenNotepad={handleOpenNotepad} />
-      case 'vn':
-        return <VisualNovel />
       case 'games':
         return <PDAHomeScreen apps={GAME_APPS} onAppSelect={navigateTo} title="Jeux & Media" />
       case 'snake':
