@@ -220,6 +220,8 @@ export default function PDAView() {
   const [battery] = useState(48)
   // États d'alimentation : 'off' (éteint) → 'booting' (démarre) → 'on' (allumé)
   const [powerState, setPowerState] = useState('off')
+  // Joue l'animation d'extinction uniquement lors d'un vrai on → off
+  const [animatingOff, setAnimatingOff] = useState(false)
 
   useEffect(() => {
     const update = () => {
@@ -239,8 +241,13 @@ export default function PDAView() {
    }, [powerState])
 
   const handlePowerToggle = () => {
-    if (powerState === 'off')      setPowerState('booting')
-    else if (powerState === 'on')  { setPowerState('off'); setCurrentApp('home') }
+    if (powerState === 'off') {
+      setPowerState('booting')
+    } else if (powerState === 'on') {
+      setAnimatingOff(true)
+      setPowerState('off')
+      setCurrentApp('home')
+    }
     // Si 'booting' → ignore
   }
 
@@ -282,6 +289,8 @@ export default function PDAView() {
         onPower={handlePowerToggle}
         currentApp={currentApp}
         navigateTo={navigateTo}
+        animatingOff={animatingOff}
+        onOffAnimationEnd={() => setAnimatingOff(false)}
       />
     )
   }
@@ -908,17 +917,25 @@ function PDAContactDetail({ contact, onBack }) {
 // ═══════════════════════════════════════════════════════════════════
 // SHELL (écran éteint OU boot) — même frame + même bouton power
 // ═══════════════════════════════════════════════════════════════════
-function PDAShell({ powerState, onPower, currentApp, navigateTo }) {
+function PDAShell({ powerState, onPower, currentApp, navigateTo, animatingOff = false, onOffAnimationEnd }) {
+  const rootClass =
+    powerState === 'booting'
+      ? 'pda pda--boot'
+      : `pda pda--off${animatingOff ? ' pda--off-anim' : ''}`
+
   return (
-    <div className={`pda ${powerState === 'booting' ? 'pda--boot' : 'pda--off'}`} data-testid={`pda-${powerState}`}>
+    <div className={rootClass} data-testid={`pda-${powerState}`}>
       <div className="pda__frame">
         <div className={`pda__screen ${powerState === 'booting' ? 'pda__screen--boot' : 'pda__screen--off'}`}>
-          <div key={powerState} className="pda__screen-inner">
+          <div
+            key={powerState}
+            className="pda__screen-inner"
+            onAnimationEnd={powerState === 'off' && animatingOff ? onOffAnimationEnd : undefined}
+          >
             {powerState === 'booting' && <div className="pda__scanlines" />}
             {powerState === 'off' && (
               <div className="pda-off" data-testid="pda-off-screen">
                 {/* Reflet diagonal sur écran éteint */}
-                <div className="pda-off__reflect" />
                 <div className="pda-off__hint">
                   <div className="pda-off__hint-text">
                     — appuyer sur ⏻ pour allumer —
