@@ -87,8 +87,8 @@ const INITIAL_ICONS = [
 const WINDOW_CONFIGS = {
   powers: {
     title: 'Shokan et Techniques - SHOKAN.exe',
-    defaultSize: { width: '70%', height: '90%' },
-    defaultPosition: { x: 60, y: 30 },
+    defaultSize: { width: '80%', height: '90%' },
+    defaultPosition: { x: 40, y: 20 },
   },
   documents: {
     title: 'Mes Documents - Explorateur',

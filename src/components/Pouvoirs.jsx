@@ -35,32 +35,32 @@ function useTypewriter(text, speed = 22, startDelay = 0) {
 const STATS = [
   { 
     name: 'Perception', 
-    value: 94, 
+    value: 10, 
     color: '#bfff44' 
   },
   { 
     name: 'Dextérité',  
-    value: 85, 
+    value: 10, 
     color: '#44d4ff' 
   },
   { 
     name: 'Endurance',  
-    value: 71, 
+    value: 10, 
     color: '#ff9944' 
   },
   { 
     name: 'Force',      
-    value: 62, 
+    value: 10, 
     color: '#ff4466' 
   },
   { 
     name: 'Résistance', 
-    value: 68, 
+    value: 10, 
     color: '#cc44ff' 
   },
   { 
     name: 'Shokan',     
-    value: 55, 
+    value: 10, 
     color: '#44ffb0' 
   },
 ]
@@ -72,33 +72,11 @@ const LEVEL  = 23
 
 const SPELLS = [
   {
-    id: 1, key: 'Q',
-    name: 'Écho Fracturé',
+    id: 1, key: 'E',
+    name: 'Assaut rémanent',
     icon: '/images/spell-1.jpg',
-    cost: 45, duration: '3s',
-    desc: "Projette une onde de résonance concentrée qui fracture la cohérence des objets ciblés dans un cône frontal.",
-  },
-  {
-    id: 2, key: 'W',
-    name: 'Vague de Syntonisation',
-    icon: '/images/spell-2.jpg',
-    cost: 80, duration: '8s',
-    desc: "Harmonise les fréquences de Kiba avec sa cible, créant un lien télépathique temporaire et ralentissant ses réflexes.",
-  },
-  {
-    id: 3, key: 'E',
-    name: 'Résonance Sismique',
-    icon: '/images/spell-3.jpg',
-    cost: 120, duration: '5s',
-    desc: "Libère une décharge d'énergie ondulatoire en zone circulaire, déstabilisant et repoussant tous les ennemis proches.",
-  },
-  {
-    id: 4, key: 'R',
-    name: 'Fréquence 528',
-    icon: '/images/spell-4.jpg',
-    cost: 200, duration: '12s',
-    ultimate: true,
-    desc: "ULTIME — Kiba entre en état de résonance pure à 528 Hz. Toutes ses capacités sont amplifiées et elle perçoit les failles cachées du réel. Ne peut être activé qu'en dessous de 40% PV.",
+    cost: 'TECHNIQUE DE RANG E', duration: '1 tour',
+    desc: "Kiba imprime un mouvement dans l’instant, que l’Écho reproduit une seconde plus tard. Lorsqu’il attaque, une seconde frappe est générée par cette projection de sa volonté matérialisée. Au corps à corps, cela permet de toucher deux fois en succession rapide. À distance, l’Écho reproduit le geste jusqu’à 4 mètres, permettant d’atteindre une cible qui est hors de portée directe.",
   },
 ]
 
@@ -130,6 +108,9 @@ export default function Pouvoirs() {
 
   const animCls = (cls) => mounted ? cls : 'pv-hidden'
 
+  const basicSpells = SPELLS.filter(sp => !sp.ultimate)
+  const ultimateSpell = SPELLS.find(sp => sp.ultimate)
+
   return (
     <div className="pouvoirs" data-testid="pouvoirs">
 
@@ -152,10 +133,11 @@ export default function Pouvoirs() {
 
           {/* Portrait */}
           <div className={`gp__portrait-frame ${animCls('pv-portrait-in')}`}>
+            <span className="gp__type-badge">DIVERS</span>
             <span className="gp__lvl-badge">RANG E</span>
             <img src="/images/pose.png" alt="Kiba Igarashi" className="gp__portrait" />
             <div className="gp__char-name">KIBA IGARASHI</div>
-            <div className="gp__char-class">Chevalier • Clan Magaishi</div>
+            <div className="gp__char-class">• Clan Magaishi •</div>
           </div>
 
           {/* Barres PV / EN / XP */}
@@ -260,70 +242,41 @@ export default function Pouvoirs() {
             <div className="gp__section-lbl">[ DOSSIER SUJET ]</div>
 
             <p className={`gp__dossier-p ${animCls('pv-para-1')}`}>
-              Kiba Igarashi, alias <strong>Kōga</strong> ou <em>Croc Écarlate</em>, est un{' '}
-              <strong>Chevalier de rang E</strong> issu de la souche inférieure du clan{' '}
-              <strong>Magaishi</strong>. Membre des <em>Bunkyo City Bolts</em>, il évolue
-              dans la <em>Tokyo Skyrunner League</em>, où les courses de parkour autorisent
-              l'usage des <strong>Shokans</strong>. Son propre Shokan, baptisé{' '}
-              <strong>Écho de l'âme</strong>, est officiellement classé au rang le plus bas
-              de la hiérarchie — une évaluation que peu d'adversaires prennent la peine
-              de remettre en cause.
+              <em>Écho Rémanent</em> est un Shokan de <em>type divers</em> qui permet à Kiba de matérialiser une projection incomplète de lui-même.
             </p>
-
             <p className={`gp__dossier-p ${animCls('pv-para-2')}`}>
-              <strong>Mécanique :</strong> via son téléphone, Kiba matérialise sa volonté
-              sous la forme d'une entité semi-indépendante. Plutôt qu'une arme ou une
-              forme fixe, il fait apparaître des fragments éphémères — une main, un
-              avant-bras, une jambe — directement liés à son intention : saisir,
-              frapper, bloquer, servir d'appui. Les manifestations durent{' '}
-              <strong>1 à 2 secondes</strong> tout au plus et ne peuvent surgir que dans
-              un <strong>rayon de 3 mètres</strong> autour de lui.
+              Cette projection prend la forme d’une <em>silhouette noire humanoïde</em>, qui est une sorte d'incarnation brute de sa volonté. Cependant, Kiba n’est pas encore capable de maintenir ce double dans son intégralité. À ce stade, il ne peut en faire apparaître que des fragments (bras, mains, jambes) qui se manifestent brièvement pour interagir avec son environnement. À son état de base, l’Écho fonctionne comme un <em>miroir de ses actions</em>. Chaque mouvement effectué par Kiba peut être reproduit par l’Écho, avec un léger décalage dans le temps et à un autre point dans l’espace. Ce pouvoir ne confère donc pas une force supérieure, mais une capacité unique à doubler, décaler ou projeter ses actions, rendant son style de combat imprévisible.
             </p>
-
             <p className={`gp__dossier-p ${animCls('pv-para-3')}`}>
-              <strong>Limites :</strong> la puissance de frappe de l'Écho est strictement
-              équivalente à celle de Kiba — aucune amplification, aucun partage de
-              sensations. Ce qui fait la dangerosité du sujet n'est donc pas la
-              démesure du pouvoir, mais l'<em>imagination tactique</em> de son porteur,
-              couplée à un style de combat hybride (boxe, lutte libre, taekwondo,
-              capoeira) et à ses réflexes de traceur. <em>Écho de l'âme</em> n'est,
-              littéralement, qu'une extension de sa volonté : plus il la comprend, plus
-              elle devient imprévisible.
+              Ce shokan présente plusieurs contraintes qui limitent son impact ainsi que son utilisation. Outre leur portée limitée à <em>4 mètres</em> autour de Kiba, ces manifestations sont éphémères et ne durent que <em>1 à 2 secondes</em> avant de disparaître. Cet écho apparaît toujours <em>une seconde après</em> le geste initial de Kiba, ce qui veut dire que ses assauts peuvent très vite devenir téléphonés. Naturellement, la <em>puissance d'attaque de l'Écho est strictement équivalente à celle de Kiba</em>, car il agit comme une extension directe de son propre corps. Toutefois, l'écho n'est pas une entité vivante et ne ressent pas la douleur, bien qu'on puisse l'attaquer.
             </p>
           </div>
 
           {/* Sorts / Capacités */}
           <div className="gp__panel gp__panel--spells">
-            <div className="gp__section-lbl">[ CAPACITÉS ]</div>
             <div className="gp__spells">
-              {SPELLS.map((sp, i) => (
+              <div className="gp__section-lbl">[ TECHNIQUE SPÉCIALE ]</div>
+              {basicSpells.map((sp, i) => (
                 <div
                   key={sp.id}
-                  className={`gp__spell ${sp.ultimate ? 'gp__spell--ult' : ''} ${animCls(`pv-spell-${i}`)}`}
-                  data-testid={`pouvoirs-spell-${sp.id}`}
+                  className={`gp__spell ${animCls(`pv-spell-${i}`)}`}
                 >
                   <div className="gp__spell-ico-wrap">
-                    <img
-                      src={sp.icon}
-                      alt={sp.name}
-                      className="gp__spell-ico"
-                      onError={e => { e.target.style.opacity = '0' }}
-                    />
+                    <img src={sp.icon} alt={sp.name} className="gp__spell-ico" />
                     <span className="gp__spell-key">{sp.key}</span>
                   </div>
                   <div className="gp__spell-body">
                     <div className="gp__spell-name">{sp.name}</div>
                     <div className="gp__spell-meta">
-                      <span className="gp__spell-cost">EN : {sp.cost}</span>
-                      <span className="gp__spell-dur">{sp.duration}</span>
+                      <span className="gp__spell-cost">◉ {sp.cost}</span>
+                      <span className="gp__spell-dur">⧗ {sp.duration}</span>
                     </div>
-                    <p className="gp__spell-desc">{sp.desc}</p>
                   </div>
+                  <p className="gp__spell-desc">{sp.desc}</p>
                 </div>
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </div>

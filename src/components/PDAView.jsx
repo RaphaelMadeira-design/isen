@@ -38,8 +38,8 @@ const IDENTITY = {
   weight: '68 kg',
   height: '178 cm',
   blood: 'B+',
-  handle: 'kiba.samurai99',
-  email: 'kiba.igarashi@hotmail.fr',
+  handle: 'koga99',
+  email: 'koga99@hotmail.jp',
 }
 
 // ─── DESCRIPTION PHYSIQUE (wiki) ──────────────────────────────────
@@ -125,7 +125,7 @@ const CONTACTS_LIST = [
     msg: "[ne plus chercher]",               note: "Disparu depuis 2 mois. Dernier message : « ne me cherche pas »." },
 ]
 
-const SELF = 'kiba.samurai99'
+const SELF = 'koga99'
 
 const CONVERSATIONS = {
   naoto: {

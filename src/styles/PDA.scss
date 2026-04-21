@@ -15,7 +15,7 @@ $lcd-text: #33ff66;
 $lcd-text-dim: #1a8833;
 $lcd-highlight: #44ff77;
 $lcd-shadow: #0a1a0a;
-$lcd-bg-dark: #151f15;
+$lcd-bg-dark: #0b1008;
 
 $pda-button: #333;
 $pda-button-text: #888;
@@ -67,7 +67,7 @@ $pda-button-text: #888;
   // =====================
   &__screen {
     flex: 1;
-    background: #05090a;
+    background: $lcd-bg-dark;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -80,6 +80,7 @@ $pda-button-text: #888;
     &--boot {
       justify-content: center;
       align-items: center;
+      background: $lcd-bg-dark;
     }
   }
 
@@ -414,7 +415,7 @@ $pda-button-text: #888;
   }
 
   &__screen--off {
-    background: #0f150c;
+    background: $lcd-bg-dark;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -445,7 +446,7 @@ $pda-button-text: #888;
   align-items: center;
   justify-content: center;
   color: rgba(51, 255, 102, 0.15);
-  background-color: #0f150c;
+  background: $lcd-bg-dark;
 
   &__hint {
     position: relative;

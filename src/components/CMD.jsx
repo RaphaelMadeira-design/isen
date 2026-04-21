@@ -3,7 +3,7 @@ import '../styles/CMD.scss'
 
 const BOOT_LINES = [
   'Microsoft(R) Windows 98',
-  '(C)Copyright Microsoft Corp 1981-1999.',
+  '(C)Copyright Microsoft Corp 1981-2000.',
   '',
 ]
 
@@ -22,7 +22,7 @@ const COMMANDS = {
     '  ping [host]  Teste la connexion',
     '  matrix       ???',
     '  hack         ???',
-    '  isen         ???',
+    '  koga         ???',
     '  sudo         ???',
     '  format c:    ATTENTION',
     '',
@@ -32,32 +32,32 @@ const COMMANDS = {
   ver: () => [
     '',
     'Microsoft Windows 98 [Version 4.10.2222]',
-    'Raphurst Edition — Build 0001',
+    'Pyrakitaï Edition — Build 0001',
     '',
   ],
 
   whoami: () => [
     '',
     '┌─────────────────────────────────┐',
-    '│  UTILISATEUR : Isen Hata        │',
-    '│  NIVEAU      : ??? / EX         │',
-    '│  GUILDE      : Indépendant      │',
-    '│  STATUT      : Vivant (pour l\'instant)',
-    '│  POUVOIR     : [CLASSIFIÉ]      │',
+    '│  UTILISATEUR : Kiba Igarashi    │',
+    '│  RANG        : E                │',
+    '│  CLAN        : Magaishi         │',
+    '│  SHOKAN      : [DIVERS]         │',
+    '│  STATUT      : VIVANT           │',
     '└─────────────────────────────────┘',
     '',
   ],
 
   dir: () => [
     '',
-    ' Répertoire de C:\\ISEN\\SYSTEM32',
+    ' Répertoire de C:\\KIBA\\SYSTEM32',
     '',
-    '  FICHE_PERSONNAGE.exe      42 Ko',
-    '  POUVOIRS_SECRETS.dat    ???  Ko',
-    '  HISTOIRE.txt             18 Ko',
+    '  TROJAN.exe      42 Ko',
+    '  RAPPORT_SHOKAN.dat    ???  Ko',
+    '  new_tricks.txt             18 Ko',
     '  SNAKE.exe                 8 Ko',
     '  JUMP.exe                  6 Ko',
-    '  ISEN.exe               1337 Ko',
+    '  TSL.txt               1337 Ko',
     '  MEMORIES.locked         [ACCÈS REFUSÉ]',
     '  --------                          ',
     '  7 fichier(s)    ??? Ko disponibles',
@@ -71,9 +71,9 @@ const COMMANDS = {
     '',
   ],
 
-  isen: () => [
+  koga: () => [
     '',
-    '> Initialisation du protocole ISEN...',
+    '> Initialisation du protocole SHOKAN NO KISHI...',
     '> Chargement des données de personnage...',
     '> ...',
     '> ...',
@@ -89,7 +89,15 @@ const COMMANDS = {
     'Êtes-vous sûr(e) ? (O/N)',
     '...',
     '...',
-    'Lol non. T\'as vraiment essayé ? Respect.',
+    '...',
+    '...',
+    '...',
+    '...',
+    '..?',
+    '???',
+    '...',
+    '...',
+    'T\'as vraiment essayé ? Respect.',
     '',
   ],
 
@@ -102,7 +110,7 @@ function generateHackLines() {
     'Initialisation du protocole de connexion...',
     'Bypass firewall... [OK]',
     'Injection de paquets... [OK]',
-    'Accès au système ISEN... [OK]',
+    'Accès au système SHOKAN NO KISHI... [OK]',
     'Déchiffrement des données...',
     '> MÉMOIRE FRAGMENT #1 : [ILLISIBLE]',
     '> MÉMOIRE FRAGMENT #2 : "...il ne faut pas..."',
@@ -224,14 +232,13 @@ export default function CMD() {
 
     const result = COMMANDS[cmd]
     if (result) {
-      setHistory([...newHistory, ...result(), 'C:\\WINDOWS>'])
+      setHistory([...newHistory, ...result()])
     } else if (cmd === '') {
       setHistory([...newHistory, 'C:\\WINDOWS>'])
     } else {
       setHistory([...newHistory,
         `'${cmd}' n'est pas reconnu comme commande interne ou externe.`,
         '',
-        'C:\\WINDOWS>',
       ])
     }
   }
