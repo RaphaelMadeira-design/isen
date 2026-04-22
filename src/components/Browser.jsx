@@ -3,7 +3,8 @@ import '../styles/Browser.scss'
 
 const IE_ICON = 'https://win98icons.alexmeub.com/icons/png/search_web-0.png'
 const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']
-const SECRET_SEARCHES = ['kiba', 'résonance', 'resonance', 'éveil', 'eveil', 'mémoire', 'memoire', 'fréquence', 'frequence', '528', 'igarashi', 'raphurst', 'academia']
+// ── Recherches "secrètes" (glitch) — kiba/igarashi retirés pour laisser place à la recherche normale
+const SECRET_SEARCHES = ['résonance', 'resonance', 'éveil', 'eveil', 'mémoire', 'memoire', 'fréquence', 'frequence', '528', 'raphurst', 'academia', 'académie']
 const SECRET_URLS = ['kiba://core', 'kiba://secret', 'about:kiba', 'kiba://memories']
 
 // ── Pages secrètes ───────────────────────────────────────────────
@@ -115,6 +116,265 @@ function GlitchSearch({ query }) {
   )
 }
 
+// ── Résultats de recherche Google « vintage » (fin 90's / 2000) ─────────
+
+const WIKI_URL = 'https://fr.wikipedia.org/wiki/Kiba_Igarashi'
+const NEWS_URL = 'http://www.actunet-news.fr/'
+
+const SEARCH_TOPICS = [
+  {
+    keys: ['kiba igarashi', 'kiba', 'igarashi', 'kōga', 'koga', 'croc écarlate', 'croc ecarlate'],
+    displayQuery: 'Kiba Igarashi',
+    resultsCount: '2 340',
+    seconds: '0,24',
+    real: {
+      title: 'Kiba Igarashi — Wikipédia, l\'encyclopédie libre',
+      url: 'fr.wikipedia.org/wiki/Kiba_Igarashi',
+      target: WIKI_URL,
+      desc: "Kiba Igarashi (五十嵐 牙), aussi appelé Kōga ou « Croc Écarlate », est un chevalier de rang E issu de la souche inférieure du clan Magaishi. Membre des Bunkyo City Bolts ...",
+    },
+    fakes: [
+      { title: 'Kiba_Koga (@kiba_koga) — photos & messages', url: 'www.photoroll.jp/kiba_koga', desc: 'Profil public — 412 photos, 89 abonnés. Dernier post : "training session, Bunkyo, 03h22". Aucun message depuis 11 jours.' },
+      { title: 'Registre municipal de Tokyo — Igarashi, K.', url: 'www.tokyo.metro.jp/registre/igarashi-k', desc: 'Inscrit branche secondaire Magaishi. Dernière mise à jour partielle. Certaines lignes du recensement sont marquées « données retirées ».' },
+      { title: 'Forum ParkourJP :: [Topic] Qui est vraiment "Kōga" ?', url: 'www.parkourjp.net/forum/viewtopic?t=88471', desc: '— …il apparaît de nulle part sur les courses Bolts et il court comme s\'il connaissait le circuit depuis toujours. Perso, je ne crois pas une seconde au rang E.  |  34 réponses.' },
+      { title: 'Shokan Index — "Écho de l\'âme" [rang E]', url: 'shokan-index.org/E/echo-de-l-ame', desc: 'Manifestation semi-indépendante d\'énergie, déclenchée via téléphone. Portée ≈ 4 m. Durée ≈ 1–2 s. Peu de données fiables.' },
+      { title: 'Tokyo Skyrunner League — Classement 6089', url: 'skyrunner-league.jp/classement/6089', desc: '01. Bunkyo City Bolts — 112 pts  |  02. White Sparrows — 98 pts  |  03. Kanda Ravens — 74 pts ... Ligue officieuse, non affiliée à la fédération.' },
+      { title: 'Igarashi (homonymie) — Wikipédia', url: 'fr.wikipedia.org/wiki/Igarashi_(homonymie)', desc: 'Page d\'homonymie : Igarashi peut désigner un patronyme japonais, une lignée du clan Magaishi, ou une région montagneuse de la préfecture de Niigata...' },
+      { title: 'Recrutez un "Kiba Igarashi" — AnnuairePro', url: 'www.annuairepro.jp/prestataire/kiba-igarashi', desc: 'Plombier à Osaka, 41 ans. Aucun lien connu avec l\'athlète du même nom. Note clients : 3,8 / 5.' },
+      { title: 'Magaishi — Souches inférieures, liste indicative', url: 'www.clans-japon.fr/magaishi/souches-inferieures', desc: 'Ce document recense les lignées mineures rattachées au clan Magaishi. La ligne « Igarashi » y figure, bien que plusieurs entrées soient datées « [retirée] ».' },
+    ],
+  },
+  {
+    keys: ['actunet', 'actualités', 'actualites', 'actunet news'],
+    displayQuery: 'ActuNet',
+    resultsCount: '5 710',
+    seconds: '0,18',
+    real: {
+      title: 'ActuNet Actualités — Toutes les dépêches en direct',
+      url: 'www.actunet-news.fr',
+      target: NEWS_URL,
+      desc: "Portail d'information francophone : Monde, Japon, Faits divers, Sports, Sciences. Édition quotidienne depuis 1998. Ticker en continu, édition du jour...",
+    },
+    fakes: [
+      { title: 'ActuNet — Pages Jaunes Internet', url: 'www.pj-internet.fr/annuaire/a/actunet', desc: 'Référencement officiel du portail ActuNet. Catégorie : Presse en ligne / Information générale. Siège : Paris 11e.' },
+      { title: 'ActuNet Pro — hébergement web dès 2000¥/mois', url: 'www.actunet-pro.jp/hebergement', desc: 'Offres d\'hébergement mutualisé, nom de domaine .jp inclus, support FTP. Ne concerne pas le portail ActuNet Actualités.' },
+      { title: 'Fédération de presse numérique — membre : ActuNet', url: 'www.fpn.fr/membres/actunet', desc: 'Fiche associative — ActuNet Actualités (FR). Rédacteur en chef : [données protégées].' },
+      { title: '"Pourquoi ActuNet a retiré son article ?" — Forum Médias', url: 'www.forum-medias.fr/sujet/23418', desc: '— Quelqu\'un a sauvegardé l\'article sur le rapport #00x7 avant qu\'ils le suppriment ? Je le trouve plus nulle part.  |  12 réponses.' },
+      { title: 'ActuNet : archives hebdomadaires (1999–2000)', url: 'archives.actunet-news.fr/1999-2000', desc: 'Accès aux numéros archivés. Certaines éditions de novembre 1999 sont manquantes : « édition non distribuée pour raisons indépendantes de notre volonté ».' },
+      { title: 'ActuNet contre-attaque après une plainte anonyme', url: 'www.pressewatch.fr/actunet-plainte-anonyme', desc: 'Le portail d\'actualités maintient ses publications sur la Tokyo Skyrunner League, malgré une demande de retrait reçue début janvier 6090.' },
+      { title: 'Webring ActuNet — sites partenaires', url: 'webring.actunet-news.fr/partenaires', desc: 'Liste des sites frères : Météo-Express, Sports-JP, Tech1999. Optimisé pour Internet Explorer 5.0 et Netscape Navigator 4.0.' },
+      { title: 'ActuNet (animatrice TV) — fiche biographique', url: 'www.stars-tv.fr/fiche/actunet-dubois', desc: 'Homonymie : Actunet Dubois, animatrice d\'une émission régionale. Aucun lien avec le portail d\'information.' },
+    ],
+  },
+  {
+    keys: ['clan magaishi', 'magaishi', 'souche magaishi'],
+    displayQuery: 'Clan Magaishi',
+    resultsCount: '918',
+    seconds: '0,31',
+    real: {
+      title: 'Clan Magaishi — mentionné sur la fiche Kiba Igarashi (Wikipédia)',
+      url: 'fr.wikipedia.org/wiki/Kiba_Igarashi#Clan_Magaishi',
+      target: WIKI_URL,
+      desc: "Le clan Magaishi contrôle une grande partie de la métropole de Tokyo. La souche inférieure, dont est issue la branche Igarashi, est reléguée à des rôles de second plan...",
+    },
+    fakes: [
+      { title: 'Clans de Tokyo — fiche administrative MAGAISHI', url: 'www.tokyo.metro.jp/clans/magaishi', desc: 'Fiche officielle — Territoire : wards de Bunkyo, Toshima, partie de Shinjuku. Porte-parole : [non divulgué]. Statut juridique : reconnu.' },
+      { title: 'Magaishi — Pages Jaunes des grandes familles', url: 'www.pj-familles.fr/magaishi', desc: 'Siège principal : immeuble Magaishi, Bunkyo, Tokyo. Téléphone : [masqué sur demande du déclarant].' },
+      { title: 'Le blog de Ko — "J\'ai travaillé chez les Magaishi"', url: 'www.leblogdeko.fr/post/chez-les-magaishi', desc: '— On dit plein de choses, mais la vérité c\'est surtout un énorme système de clientèle. Les "souches inférieures" existent bien, elles ramassent la poussière.' },
+      { title: 'Rumeurs et "purges" dans la branche Igarashi', url: 'www.forum-medias.fr/sujet/24011', desc: '— Trois noms qui ne figurent plus au recensement. Le clan parle de "mutations". Personne n\'y croit.  |  45 réponses.' },
+      { title: 'Magaishi (clan fictif) — fandom encyclopédique', url: 'fandom-clans.fr/wiki/Magaishi', desc: 'Article de fandom : hiérarchie, branches, symboles. Attention, nombreuses sections sont contestées / non sourcées.' },
+      { title: 'Yakuza ou clan moderne ? Le cas Magaishi', url: 'www.sociologie-japon.fr/essai/magaishi-moderne', desc: 'Essai universitaire (2000) comparant l\'organisation Magaishi aux structures yakuza traditionnelles. Conclusion : modèle hybride, post-moderne.' },
+      { title: 'Magaishi Corp. — dépôt de marque 6087', url: 'www.inpi-jp.jp/marques/magaishi-corp', desc: 'Dépôt classes 9, 35, 41, 45. Statut : enregistrée. Signe distinctif associé : un cercle brisé.' },
+      { title: 'Magaishi Shoten — boutique de thés traditionnels', url: 'www.magaishi-shoten.jp', desc: 'Homonymie : boutique de thé située à Kyoto, fondée en 1924. Aucun lien officiel connu avec le clan Magaishi de Tokyo.' },
+    ],
+  },
+  {
+    keys: ['tokyo skyrunner league', 'skyrunner league', 'skyrunner', 'skyrunner tokyo'],
+    displayQuery: 'Tokyo Skyrunner League',
+    resultsCount: '1 487',
+    seconds: '0,27',
+    real: {
+      title: 'Tokyo Skyrunner League — couverture complète (ActuNet)',
+      url: 'www.actunet-news.fr/dossiers/tokyo-skyrunner-league',
+      target: NEWS_URL,
+      desc: "Dossier sportif d'ActuNet : résultats, participants, rumeurs sur la ligue officieuse de parkour urbain de Tokyo. Articles sur les Bunkyo City Bolts et le Rapport #00x7.",
+    },
+    fakes: [
+      { title: 'Skyrunner League — communiqué FFP (fédération)', url: 'www.ffparkour.fr/communique/skyrunner', desc: 'La Fédération Française de Parkour rappelle qu\'elle ne reconnaît aucune compétition appelée "Skyrunner League". Avis aux pratiquants.' },
+      { title: 'Classement Tokyo Skyrunner League — 6089', url: 'skyrunner-league.jp/classement/6089', desc: '01. Bunkyo City Bolts  |  02. White Sparrows  |  03. Kanda Ravens  |  04. Tenku Striders  |  ... liste des 16 crews.' },
+      { title: 'Parcours Nakano-Kōenji (vidéo amateur)', url: 'video-share.jp/v/82417', desc: 'Durée 04:12 — course de la 3ᵉ manche, vue d\'un toit voisin. Commentaires désactivés sur cette vidéo.' },
+      { title: '"Silhouettes aux yeux ambrés" — on a vu la même chose', url: 'www.forum-medias.fr/sujet/24198', desc: '— Pas juste à Bunkyo. Ikebukuro aussi. Toujours en hauteur, toujours immobiles. Personne ne veut en parler officiellement.  |  88 réponses.' },
+      { title: 'Ligue Skyrunner (Osaka) — à ne pas confondre', url: 'www.skyrunner-osaka.jp', desc: 'Championnat régional de course en montagne. Rien à voir avec la ligue de parkour de Tokyo. Calendrier 2000 disponible en ligne.' },
+      { title: 'Skyrunner — définition (Larousse en ligne)', url: 'www.larousse.fr/dictionnaires/skyrunner', desc: 'Anglicisme : coureur s\'adonnant à la course verticale, urbaine ou montagnarde. Forme féminine : skyrunneuse.' },
+      { title: 'Tokyo Skyrunner League — site officiel', url: 'skyrunner-league.jp', desc: 'Dates des prochaines manches, liste officielle des crews. Avertissement en pied de page : "la ligue décline toute responsabilité en cas d\'incident lors des courses".' },
+      { title: 'Tokyo SKY Runner — marathon annuel (homonymie)', url: 'www.tokyo-sky-runner.jp', desc: 'Course caritative longue distance. Homonymie fréquente avec la ligue officieuse. Inscriptions ouvertes.' },
+    ],
+  },
+  {
+    keys: ['tenku striders', 'tenku', 'striders', 'takumi kurogane'],
+    displayQuery: 'Tenku Striders',
+    resultsCount: '746',
+    seconds: '0,22',
+    real: {
+      title: 'Tenku Striders — rivalité et dossier sportif (ActuNet)',
+      url: 'www.actunet-news.fr/sports/tenku-striders',
+      target: NEWS_URL,
+      desc: "Portrait du crew lycéen Tenku Striders, mené par Takumi Kurogane. Articles récents : esquive des questions de la presse, rivalité avec les Bunkyo City Bolts.",
+    },
+    fakes: [
+      { title: 'Tenku Striders — classement Skyrunner League', url: 'skyrunner-league.jp/crew/tenku-striders', desc: 'Position actuelle : 4ᵉ. Capitaine : T. Kurogane. Bilan saison : 2 victoires, 5 podiums, 1 disqualification.' },
+      { title: 'Takumi Kurogane — interview exclusive (parkourjp.net)', url: 'www.parkourjp.net/interviews/takumi-kurogane', desc: '"Je ne lis pas les articles d\'ActuNet. Ce qui s\'est passé au tournoi des Ura Ura Kidz ne regarde personne." — T. Kurogane, mars 6090.' },
+      { title: 'Forum ParkourJP :: Tenku Striders, vrais champions ?', url: 'www.parkourjp.net/forum/viewtopic?t=90112', desc: '— Depuis qu\'ils ont recruté Takumi, ils n\'ont plus gagné une seule fois contre les Bolts. Coïncidence ?  |  61 réponses.' },
+      { title: 'Tenku Striders (manga) — tome 3 en librairie', url: 'www.librairie-manga.fr/tenku-striders-t3', desc: 'Manga en 5 tomes publié chez Éditions Tōkai. Aucun lien avec le crew réel, selon l\'éditeur.' },
+      { title: 'Ura Ura Kidz → Tenku Striders : la bascule', url: 'archives.actunet-news.fr/sports/uraura-tenku', desc: 'Retour sur le tournoi décisif opposant les Ura Ura Kidz à la relève Tenku Striders. L\'article évoque la chute de Ryohei Nishikawa.' },
+      { title: 'Skyrunner League — vidéo : Tenku vs Bolts, manche 2', url: 'video-share.jp/v/81006', desc: 'Durée 06:44 — passage au ralenti du virage contesté du 4ᵉ checkpoint. Vidéo signalée puis réactivée.' },
+      { title: 'Tenku Striders — t-shirts & goodies officiels', url: 'www.shop-skyrunner.jp/tenku-striders', desc: 'Merchandising officiel : maillots (éditions printemps), casquettes, pochettes. Expédition Japon uniquement.' },
+      { title: 'Pourquoi Takumi esquive les interviews ?', url: 'www.forum-medias.fr/sujet/24350', desc: '— Il pète la forme sur les courses mais dès qu\'un micro arrive, il est pressé. Quelqu\'un a une théorie ?  |  39 réponses.' },
+    ],
+  },
+  {
+    keys: ['bunkyo city bolts', 'bunkyo bolts', 'bunkyo', 'city bolts', 'aoi kanzaki', 'hidemichi oyama', 'daigo kawamura'],
+    displayQuery: 'Bunkyo City Bolts',
+    resultsCount: '1 093',
+    seconds: '0,19',
+    real: {
+      title: 'Bunkyo City Bolts — composition du crew (Wikipédia / fiche Kiba Igarashi)',
+      url: 'fr.wikipedia.org/wiki/Kiba_Igarashi#Bunkyo_City_Bolts',
+      target: WIKI_URL,
+      desc: "Crew de parkour de l'arrondissement de Bunkyo. Membres : Kiba Igarashi (Kōga), Aoi Kanzaki, Hidemichi Ōyama, Daigo Kawamura. Rivaux historiques des Tenku Striders.",
+    },
+    fakes: [
+      { title: 'Bunkyo City Bolts — fiche crew officielle', url: 'skyrunner-league.jp/crew/bunkyo-city-bolts', desc: 'Leader : K. Igarashi. Palmarès 6089 : 1er au classement saison. Style : rapide, agressif, imprévisible. 4 titulaires + 0 remplaçants.' },
+      { title: 'Bunkyo — quartier parkour par excellence (JP-Trip)', url: 'www.jp-trip.fr/guides/bunkyo-parkour', desc: 'Guide touristique : spots légaux, cafés fréquentés par les traceurs, meilleurs toits pour observer les courses nocturnes (à vos risques).' },
+      { title: 'Aoi Kanzaki — "le cerveau des Bolts" (portrait)', url: 'www.actunet-news.fr/sports/aoi-kanzaki-portrait', desc: 'Portrait d\'Aoi Kanzaki, stratège du crew. Silencieuse en course, redoutable sur le tableau. Peu d\'apparitions publiques.' },
+      { title: 'Hidemichi Ōyama — fiche physique / Skyrunner', url: 'skyrunner-league.jp/athlete/hidemichi-oyama', desc: 'Taille 1m94, 94 kg. Style : puissance, franchissement. Ne possède pas de Shokan documenté mais plusieurs témoignages contraires existent.' },
+      { title: 'Daigo Kawamura — le plus rapide du nord de Tokyo', url: 'www.parkourjp.net/profils/daigo-kawamura', desc: 'Profil athlète : temps records sur checkpoints droits. Réputation sulfureuse : 2 disqualifications, 1 accrochage avec les White Sparrows.' },
+      { title: 'Bunkyo City — mairie d\'arrondissement', url: 'www.city.bunkyo.lg.jp', desc: 'Site officiel de la mairie de Bunkyo. Nous ne commentons pas les événements liés à la "Tokyo Skyrunner League" (communiqué du 15/01/6090).' },
+      { title: 'Bunkyo Bolts (équipe de football) — à ne pas confondre', url: 'www.foot-amateur-jp.fr/clubs/bunkyo-bolts', desc: 'Club amateur de football, division régionale. Saison 2000 : 3 victoires, 4 nuls, 2 défaites.' },
+      { title: 'Bolts — agence de pub (homonymie)', url: 'www.bolts-agency.com', desc: 'Agence de communication numérique basée à Londres. Aucun rapport avec le crew de parkour japonais.' },
+    ],
+  },
+  {
+    keys: ['ryohei nishikawa', 'ryohei', 'nishikawa', 'disparition ryohei'],
+    displayQuery: 'Ryohei Nishikawa',
+    resultsCount: '3 821',
+    seconds: '0,26',
+    real: {
+      title: 'Disparition de Ryohei Nishikawa — dossier à la une (ActuNet)',
+      url: 'www.actunet-news.fr/dossiers/ryohei-nishikawa',
+      target: NEWS_URL,
+      desc: "Article principal d'ActuNet : plus de deux mois sans la moindre trace. Dernier message : « je m'absente, ne me cherche pas. » L'enquête reste ouverte à la préfecture.",
+    },
+    fakes: [
+      { title: 'Ryohei Nishikawa — appel à témoins (police de Tokyo)', url: 'www.keishicho.metro.tokyo.jp/appel/nishikawa-r', desc: 'Homme, 20 ans, 1m78, dernier signalement : Bunkyo, 07/11/6089 vers 23h. Toute information peut être communiquée à la préfecture.' },
+      { title: 'Ryohei Nishikawa (@ryo_nishi) — profil archivé', url: 'www.photoroll.jp/ryo_nishi', desc: 'Profil inactif depuis 68 jours. Dernier post : photo floue d\'un toit, légende "ils sont là, encore une fois". Commentaires désactivés.' },
+      { title: 'Ura Ura Kidz — l\'ancien leader disparu', url: 'archives.actunet-news.fr/sports/uraura-leader', desc: 'Retour sur la carrière de Ryohei : meilleur traceur du tournoi, blessure aux jambes, reconversion en gestionnaire, disparition.' },
+      { title: 'Famille Nishikawa : "Nous n\'avons plus aucune nouvelle"', url: 'www.actunet-news.fr/faits-divers/famille-nishikawa', desc: 'Entretien avec les parents de Ryohei. Témoignage poignant, refus de commenter les hypothèses liées à la Tokyo Skyrunner League.' },
+      { title: 'Nishikawa (homonymie) — Wikipédia', url: 'fr.wikipedia.org/wiki/Nishikawa', desc: 'Page d\'homonymie : Nishikawa, patronyme japonais répandu. Pour la disparition du traceur, voir Affaire Ryohei Nishikawa (6090).' },
+      { title: 'Forum Médias :: L\'affaire Nishikawa est-elle étouffée ?', url: 'www.forum-medias.fr/sujet/24457', desc: '— ActuNet est le seul média qui publie encore sur cette affaire. Les autres ont arrêté du jour au lendemain. Hasard ?  |  72 réponses.' },
+      { title: 'Ryohei Nishikawa (judoka) — à ne pas confondre', url: 'www.judojp.fr/athletes/ryohei-nishikawa', desc: 'Judoka vétéran de Nagoya, ceinture noire 5ᵉ dan. Aucun lien avec le traceur disparu de Bunkyo.' },
+      { title: 'Pétition en ligne — Rouvrez l\'enquête Nishikawa', url: 'www.petition-web.jp/nishikawa-rouvrir-enquete', desc: '14 218 signataires. Objectif : 20 000. Adressée à la préfecture de police de Tokyo et au bureau d\'enquêtes spéciales.' },
+    ],
+  },
+]
+
+function matchTopic(query) {
+  const q = query.trim().toLowerCase()
+  if (!q) return null
+  for (const t of SEARCH_TOPICS) {
+    if (t.keys.some(k => q.includes(k))) return t
+  }
+  return null
+}
+
+function FakeGoogleResults({ topic, query, onResultClick }) {
+  return (
+    <div className="browser__gresults">
+      <div className="browser__gresults-header">
+        <div className="browser__gresults-logo">
+          <span style={{ color: '#0000cc' }}>G</span>
+          <span style={{ color: '#cc0000' }}>o</span>
+          <span style={{ color: '#cc9900' }}>o</span>
+          <span style={{ color: '#0000cc' }}>g</span>
+          <span style={{ color: '#339900' }}>l</span>
+          <span style={{ color: '#cc0000' }}>e</span>
+        </div>
+        <div className="browser__gresults-searchline">
+          <input
+            className="browser__gresults-input"
+            value={query}
+            readOnly
+          />
+          <button className="browser__gresults-btn">Recherche Google</button>
+        </div>
+      </div>
+      <div className="browser__gresults-tabs">
+        <span className="browser__gresults-tab browser__gresults-tab--active">Web</span>
+        <span className="browser__gresults-tab">Images</span>
+        <span className="browser__gresults-tab">Groupes</span>
+        <span className="browser__gresults-tab">Annuaire</span>
+        <span className="browser__gresults-tab">Actualités</span>
+      </div>
+      <div className="browser__gresults-count">
+        Résultats <b>1 - {topic.fakes.length + 1}</b> sur environ <b>{topic.resultsCount}</b> pour <b>{query}</b>. ({topic.seconds} secondes)
+      </div>
+
+      <ol className="browser__gresults-list">
+        {/* PREMIER résultat = LE vrai, cliquable */}
+        <li className="browser__gresults-item browser__gresults-item--real">
+          <a
+            className="browser__gresults-title"
+            href="#"
+            onClick={(e) => { e.preventDefault(); onResultClick(topic.real.target) }}
+          >
+            {topic.real.title}
+          </a>
+          <p className="browser__gresults-desc">{topic.real.desc}</p>
+          <div className="browser__gresults-url">
+            {topic.real.url} - <span className="browser__gresults-cache">Cache</span> - <span className="browser__gresults-cache">Pages similaires</span>
+          </div>
+        </li>
+
+        {/* Faux résultats, non cliquables */}
+        {topic.fakes.map((r, i) => (
+          <li className="browser__gresults-item" key={i}>
+            <span className="browser__gresults-title browser__gresults-title--dead">
+              {r.title}
+            </span>
+            <p className="browser__gresults-desc">{r.desc}</p>
+            <div className="browser__gresults-url">
+              {r.url} - <span className="browser__gresults-cache">Cache</span> - <span className="browser__gresults-cache">Pages similaires</span>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div className="browser__gresults-pager">
+        <span className="browser__gresults-gooogle">
+          <span style={{ color: '#0000cc' }}>G</span>
+          <span style={{ color: '#cc0000' }}>o</span>
+          <span style={{ color: '#cc9900' }}>o</span>
+          <span style={{ color: '#cc9900' }}>o</span>
+          <span style={{ color: '#0000cc' }}>o</span>
+          <span style={{ color: '#339900' }}>o</span>
+          <span style={{ color: '#cc0000' }}>o</span>
+          <span style={{ color: '#0000cc' }}>g</span>
+          <span style={{ color: '#339900' }}>l</span>
+          <span style={{ color: '#cc0000' }}>e</span>
+        </span>
+        <div className="browser__gresults-pages">
+          <b>1</b>
+          <span className="browser__gresults-page-link">2</span>
+          <span className="browser__gresults-page-link">3</span>
+          <span className="browser__gresults-page-link">4</span>
+          <span className="browser__gresults-page-link">5</span>
+          <span className="browser__gresults-page-link">Suivant ›</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function Page404({ url }) {
   return (
     <div className="browser__404">
@@ -140,12 +400,22 @@ function Page404({ url }) {
   )
 }
 
-function FakeGoogle({ onSecretSearch }) {
+function FakeGoogle({ onNormalSearch, onSecretSearch }) {
   const [query, setQuery] = useState('')
   const handleSearch = () => {
-    const q = query.trim().toLowerCase()
-    if (q && SECRET_SEARCHES.some(s => q.includes(s))) {
-      onSecretSearch(query)
+    const q = query.trim()
+    if (!q) return
+    const topic = matchTopic(q)
+    if (topic) {
+      onNormalSearch(q, topic)
+      return
+    }
+    const lower = q.toLowerCase()
+    if (SECRET_SEARCHES.some(s => lower.includes(s))) {
+      onSecretSearch(q)
+    } else {
+      // Recherche non reconnue : on affiche quand même une page vide-ish
+      onNormalSearch(q, null)
     }
   }
 
@@ -162,9 +432,10 @@ function FakeGoogle({ onSecretSearch }) {
           onChange={e => setQuery(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && handleSearch()}
           placeholder=""
+          data-testid="google-search-input"
         />
         <div className="browser__google-btns">
-          <button className="browser__google-btn" onClick={handleSearch}>Recherche Google</button>
+          <button className="browser__google-btn" onClick={handleSearch} data-testid="google-search-btn">Recherche Google</button>
           <button className="browser__google-btn" onClick={handleSearch}>J'ai de la chance</button>
         </div>
       </div>
@@ -174,6 +445,38 @@ function FakeGoogle({ onSecretSearch }) {
         <span>Groupes</span>
         <span>Annuaire</span>
         <span>Actualités</span>
+      </div>
+    </div>
+  )
+}
+
+function FakeGoogleNoResult({ query }) {
+  return (
+    <div className="browser__gresults">
+      <div className="browser__gresults-header">
+        <div className="browser__gresults-logo">
+          <span style={{ color: '#0000cc' }}>G</span>
+          <span style={{ color: '#cc0000' }}>o</span>
+          <span style={{ color: '#cc9900' }}>o</span>
+          <span style={{ color: '#0000cc' }}>g</span>
+          <span style={{ color: '#339900' }}>l</span>
+          <span style={{ color: '#cc0000' }}>e</span>
+        </div>
+        <div className="browser__gresults-searchline">
+          <input className="browser__gresults-input" value={query} readOnly />
+          <button className="browser__gresults-btn">Recherche Google</button>
+        </div>
+      </div>
+      <div className="browser__gresults-count">
+        Votre recherche - <b>{query}</b> - n'a produit aucun document.
+      </div>
+      <div className="browser__gresults-empty">
+        <p>Suggestions :</p>
+        <ul>
+          <li>Vérifiez l'orthographe des termes recherchés.</li>
+          <li>Essayez des mots-clés différents.</li>
+          <li>Essayez des mots-clés plus généraux.</li>
+        </ul>
       </div>
     </div>
   )
@@ -717,47 +1020,56 @@ function FakeNewsPortal() {
   )
 }
 
-// ── TABS ─────────────────────────────────────────────────────────
+// ── TABS (définitions) ──────────────────────────────────────────
 
-const BASE_TABS = [
-  {
+const TAB_DEFS = {
+  google: {
     id: 'google',
     label: 'Google',
     url: 'http://www.google.fr/',
     icon: 'https://win98icons.alexmeub.com/icons/png/search_web-1.png',
   },
-  {
+  wiki: {
     id: 'wiki',
     label: 'Kiba Igarashi — Wikipédia',
     url: 'https://fr.wikipedia.org/wiki/Kiba_Igarashi',
     icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
   },
-  {
+  news: {
     id: 'news',
     label: 'ActuNet Actualités',
     url: 'http://www.actunet-news.fr/',
     icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
   },
-]
+}
 
 // ── Browser ──────────────────────────────────────────────────────
 
 export default function Browser() {
+  // Au démarrage : SEUL l'onglet Google est ouvert.
+  const [openedTabs, setOpenedTabs] = useState(['google'])
   const [activeTab, setActiveTab] = useState('google')
   const [secretTabVisible, setSecretTabVisible] = useState(false)
-  const [addressValue, setAddressValue] = useState(BASE_TABS[0].url)
+  const [addressValue, setAddressValue] = useState(TAB_DEFS.google.url)
   const [glitching, setGlitching] = useState(false)
   const [logoClicks, setLogoClicks] = useState(0)
   const [konamiIdx, setKonamiIdx] = useState(0)
   const [showKonami, setShowKonami] = useState(false)
   const [contentMode, setContentMode] = useState('normal')
   const [glitchQuery, setGlitchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchTopic, setSearchTopic] = useState(null)
   const [notFoundUrl, setNotFoundUrl] = useState('')
   const [status, setStatus] = useState('Terminé')
 
-  const tabs = secretTabVisible
-    ? [...BASE_TABS, { id: 'secret', label: '????', url: 'kiba://core', icon: '⚠' }]
-    : BASE_TABS
+  const tabs = [
+    ...openedTabs.map(id => TAB_DEFS[id]),
+    ...(secretTabVisible ? [{ id: 'secret', label: '????', url: 'kiba://core', icon: '⚠' }] : []),
+  ]
+
+  const openTab = useCallback((id) => {
+    setOpenedTabs(prev => (prev.includes(id) ? prev : [...prev, id]))
+  }, [])
 
   // ── Konami ─────────────────────────────────────────────────────
   useEffect(() => {
@@ -799,24 +1111,27 @@ export default function Browser() {
         setAddressValue('kiba://core')
         setContentMode('normal')
       } else if (trimmed.includes('google')) {
+        openTab('google')
         setActiveTab('google')
         setContentMode('normal')
-        setAddressValue('http://www.google.fr/')
-      } else if (trimmed.includes('wikipedia') || trimmed.includes('wiki')) {
+        setAddressValue(TAB_DEFS.google.url)
+      } else if (trimmed.includes('wikipedia') || trimmed.includes('wiki') || trimmed.includes('kiba_igarashi') || trimmed.includes('kiba-igarashi')) {
+        openTab('wiki')
         setActiveTab('wiki')
         setContentMode('normal')
-        setAddressValue('https://fr.wikipedia.org/wiki/Kiba_Igarashi')
-      } else if (trimmed.includes('actunet') || trimmed.includes('actualites') || trimmed.includes('news')) {
+        setAddressValue(TAB_DEFS.wiki.url)
+      } else if (trimmed.includes('actunet') || trimmed.includes('actualites') || trimmed.includes('actualités') || trimmed.includes('news')) {
+        openTab('news')
         setActiveTab('news')
         setContentMode('normal')
-        setAddressValue('http://www.actunet-news.fr/')
+        setAddressValue(TAB_DEFS.news.url)
       } else {
         setNotFoundUrl(url)
         setContentMode('404')
         setAddressValue(url)
       }
     })
-  }, [triggerGlitch])
+  }, [triggerGlitch, openTab])
 
   // ── Logo ⊙ clics (×3 = onglet secret) ─────────────────────────
   const handleLogoClick = () => {
@@ -833,12 +1148,26 @@ export default function Browser() {
     }
   }
 
+  // ── Recherche "normale" Google ─────────────────────────────────
+  const handleNormalSearch = (query, topic) => {
+    triggerGlitch(() => {
+      setSearchQuery(query)
+      setSearchTopic(topic)
+      setContentMode(topic ? 'google-results' : 'google-noresult')
+    })
+  }
+
   // ── Recherche secrète Google ───────────────────────────────────
   const handleSecretSearch = (query) => {
     triggerGlitch(() => {
       setGlitchQuery(query)
       setContentMode('glitch-search')
     })
+  }
+
+  // ── Clic sur un résultat réel ──────────────────────────────────
+  const handleResultClick = (targetUrl) => {
+    navigate(targetUrl)
   }
 
   // ── Changement d'onglet ────────────────────────────────────────
@@ -852,17 +1181,21 @@ export default function Browser() {
 
   // ── Rendu contenu ──────────────────────────────────────────────
   const renderContent = () => {
-    if (contentMode === '404') 
+    if (contentMode === '404')
       return <Page404 url={notFoundUrl} />
-    if (contentMode === 'glitch-search') 
+    if (contentMode === 'glitch-search')
       return <GlitchSearch query={glitchQuery} />
-    if (activeTab === 'secret') 
+    if (contentMode === 'google-results' && searchTopic)
+      return <FakeGoogleResults topic={searchTopic} query={searchQuery} onResultClick={handleResultClick} />
+    if (contentMode === 'google-noresult')
+      return <FakeGoogleNoResult query={searchQuery} />
+    if (activeTab === 'secret')
       return <SecretPage />
-    if (activeTab === 'wiki') 
+    if (activeTab === 'wiki')
       return <FakeWikipedia onLogoClick={handleLogoClick} />
-    if (activeTab === 'news') 
+    if (activeTab === 'news')
       return <FakeNewsPortal />
-    return <FakeGoogle onSecretSearch={handleSecretSearch} />
+    return <FakeGoogle onNormalSearch={handleNormalSearch} onSecretSearch={handleSecretSearch} />
   }
 
   return (
@@ -873,7 +1206,7 @@ export default function Browser() {
       <div className="browser__navbar">
         <div className="browser__nav-btns">
           <button className="browser__nav-btn" title="Précédent"
-            onClick={() => { setContentMode('normal'); setActiveTab('google'); setAddressValue(BASE_TABS[0].url) }}>◄</button>
+            onClick={() => { setContentMode('normal'); setActiveTab('google'); setAddressValue(TAB_DEFS.google.url) }}>◄</button>
           <button className="browser__nav-btn" title="Suivant">►</button>
           <button className="browser__nav-btn browser__nav-btn--stop" title="Arrêter">✕</button>
           <button className="browser__nav-btn" title="Actualiser" onClick={() => navigate(addressValue)}>↺</button>
