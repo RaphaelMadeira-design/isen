@@ -157,6 +157,27 @@
     max-width: 120px;
   }
 
+  &__tab-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 700;
+    color: #555;
+    cursor: pointer;
+    flex-shrink: 0;
+    user-select: none;
+
+    &:hover {
+      background: #c75b5b;
+      color: #fff;
+    }
+  }
+
   &__tabs-fill {
     flex: 1;
   }

@@ -90,7 +90,7 @@ function GlitchSearch({ query }) {
           <span className="browser__glitch-result-title browser-glitch-text" data-text="kiba-igarashi.████ — Dossier [CLASSIFIÉ]">
             kiba-igarashi.████ — Dossier [CLASSIFIÉ]
           </span>
-          <div className="browser__glitch-result-url">http://www.kiba-igarashi.██████.fr/core</div>
+          <div className="browser__glitch-result-url">http://www.kiba-igarashi.██████.jp/core</div>
           <p className="browser__glitch-result-desc">
             Sujet actif. Classe ??? détectée. Fréquence d'émission : 528 Hz. Rapport incident #00x7 — [suite inaccessible]. Ne pas distribuer.
           </p>
@@ -99,7 +99,7 @@ function GlitchSearch({ query }) {
           <span className="browser__glitch-result-title browser-glitch-text" data-text="Archives de l'Éveil — Incident #00x7">
             Archives de l'Éveil — Incident #00x7
           </span>
-          <div className="browser__glitch-result-url">http://archives-████████.gouv.fr/7</div>
+          <div className="browser__glitch-result-url">http://archives-████████.gouv.jp/7</div>
           <p className="browser__glitch-result-desc">
             ...sujet a manifesté une résonance active sans précédent... données corrompues à 23h47... connexion perdue... ne pas approcher sans équipement...
           </p>
@@ -118,8 +118,8 @@ function GlitchSearch({ query }) {
 
 // ── Résultats de recherche Google « vintage » (fin 90's / 2000) ─────────
 
-const WIKI_URL = 'https://fr.wikipedia.org/wiki/Kiba_Igarashi'
-const NEWS_URL = 'http://www.actunet-news.fr/'
+const WIKI_URL = 'https://jp.wikipedia.org/wiki/Kiba_Igarashi'
+const NEWS_URL = 'http://www.actunet-news.jp/'
 
 const SEARCH_TOPICS = [
   {
@@ -129,7 +129,7 @@ const SEARCH_TOPICS = [
     seconds: '0,24',
     real: {
       title: 'Kiba Igarashi — Wikipédia, l\'encyclopédie libre',
-      url: 'fr.wikipedia.org/wiki/Kiba_Igarashi',
+      url: 'jp.wikipedia.org/wiki/Kiba_Igarashi',
       target: WIKI_URL,
       desc: "Kiba Igarashi (五十嵐 牙), aussi appelé Kōga ou « Croc Écarlate », est un chevalier de rang E issu de la souche inférieure du clan Magaishi. Membre des Bunkyo City Bolts ...",
     },
@@ -137,11 +137,11 @@ const SEARCH_TOPICS = [
       { title: 'Kiba_Koga (@kiba_koga) — photos & messages', url: 'www.photoroll.jp/kiba_koga', desc: 'Profil public — 412 photos, 89 abonnés. Dernier post : "training session, Bunkyo, 03h22". Aucun message depuis 11 jours.' },
       { title: 'Registre municipal de Tokyo — Igarashi, K.', url: 'www.tokyo.metro.jp/registre/igarashi-k', desc: 'Inscrit branche secondaire Magaishi. Dernière mise à jour partielle. Certaines lignes du recensement sont marquées « données retirées ».' },
       { title: 'Forum ParkourJP :: [Topic] Qui est vraiment "Kōga" ?', url: 'www.parkourjp.net/forum/viewtopic?t=88471', desc: '— …il apparaît de nulle part sur les courses Bolts et il court comme s\'il connaissait le circuit depuis toujours. Perso, je ne crois pas une seconde au rang E.  |  34 réponses.' },
-      { title: 'Shokan Index — "Écho de l\'âme" [rang E]', url: 'shokan-index.org/E/echo-de-l-ame', desc: 'Manifestation semi-indépendante d\'énergie, déclenchée via téléphone. Portée ≈ 4 m. Durée ≈ 1–2 s. Peu de données fiables.' },
+      { title: 'Shokan Index — "Écho Rémanent" [rang E]', url: 'shokan-index.org/E/echo-remanent', desc: 'Manifestation semi-indépendante d\'énergie. Portée ≈ 4 m. Durée ≈ 1–2 s. Peu de données fiables.' },
       { title: 'Tokyo Skyrunner League — Classement 6089', url: 'skyrunner-league.jp/classement/6089', desc: '01. Bunkyo City Bolts — 112 pts  |  02. White Sparrows — 98 pts  |  03. Kanda Ravens — 74 pts ... Ligue officieuse, non affiliée à la fédération.' },
-      { title: 'Igarashi (homonymie) — Wikipédia', url: 'fr.wikipedia.org/wiki/Igarashi_(homonymie)', desc: 'Page d\'homonymie : Igarashi peut désigner un patronyme japonais, une lignée du clan Magaishi, ou une région montagneuse de la préfecture de Niigata...' },
-      { title: 'Recrutez un "Kiba Igarashi" — AnnuairePro', url: 'www.annuairepro.jp/prestataire/kiba-igarashi', desc: 'Plombier à Osaka, 41 ans. Aucun lien connu avec l\'athlète du même nom. Note clients : 3,8 / 5.' },
-      { title: 'Magaishi — Souches inférieures, liste indicative', url: 'www.clans-japon.fr/magaishi/souches-inferieures', desc: 'Ce document recense les lignées mineures rattachées au clan Magaishi. La ligne « Igarashi » y figure, bien que plusieurs entrées soient datées « [retirée] ».' },
+      { title: 'Igarashi (homonymie) — Wikipédia', url: 'jp.wikipedia.org/wiki/Igarashi_(homonymie)', desc: 'Page d\'homonymie : Igarashi peut désigner un patronyme japonais, une lignée du clan Magaishi, ou une région montagneuse de la préfecture de Niigata...' },
+      { title: 'Recrutez un "Sakiba Igarashi" — AnnuairePro', url: 'www.annuairepro.jp/prestataire/sakiba-igarashi', desc: 'Plombier à Osaka, 41 ans. Aucun lien connu avec le membre du clan Magaishi du même nom. Note clients : 3,9 / 5.' },
+      { title: 'Magaishi — Souches inférieures, liste indicative', url: 'www.clans-japon.jp/magaishi/souches-inferieures', desc: 'Ce document recense les lignées mineures rattachées au clan Magaishi. La ligne « Igarashi » y figure, bien que plusieurs entrées soient datées « [retirée] ».' },
     ],
   },
   {
@@ -151,19 +151,19 @@ const SEARCH_TOPICS = [
     seconds: '0,18',
     real: {
       title: 'ActuNet Actualités — Toutes les dépêches en direct',
-      url: 'www.actunet-news.fr',
+      url: 'www.actunet-news.jp',
       target: NEWS_URL,
-      desc: "Portail d'information francophone : Monde, Japon, Faits divers, Sports, Sciences. Édition quotidienne depuis 1998. Ticker en continu, édition du jour...",
+      desc: "Portail d'information : Japon, Monde, Faits divers, Sports, Sciences. Édition quotidienne depuis 6078. Ticker en continu, édition du jour...",
     },
     fakes: [
-      { title: 'ActuNet — Pages Jaunes Internet', url: 'www.pj-internet.fr/annuaire/a/actunet', desc: 'Référencement officiel du portail ActuNet. Catégorie : Presse en ligne / Information générale. Siège : Paris 11e.' },
+      { title: 'ActuNet — Pages Jaunes Internet', url: 'www.pj-internet.jp/annuaire/a/actunet', desc: 'Référencement officiel du portail ActuNet. Catégorie : Presse en ligne / Information générale. Siège : Tokyo - Arakawa' },
       { title: 'ActuNet Pro — hébergement web dès 2000¥/mois', url: 'www.actunet-pro.jp/hebergement', desc: 'Offres d\'hébergement mutualisé, nom de domaine .jp inclus, support FTP. Ne concerne pas le portail ActuNet Actualités.' },
-      { title: 'Fédération de presse numérique — membre : ActuNet', url: 'www.fpn.fr/membres/actunet', desc: 'Fiche associative — ActuNet Actualités (FR). Rédacteur en chef : [données protégées].' },
-      { title: '"Pourquoi ActuNet a retiré son article ?" — Forum Médias', url: 'www.forum-medias.fr/sujet/23418', desc: '— Quelqu\'un a sauvegardé l\'article sur le rapport #00x7 avant qu\'ils le suppriment ? Je le trouve plus nulle part.  |  12 réponses.' },
-      { title: 'ActuNet : archives hebdomadaires (1999–2000)', url: 'archives.actunet-news.fr/1999-2000', desc: 'Accès aux numéros archivés. Certaines éditions de novembre 1999 sont manquantes : « édition non distribuée pour raisons indépendantes de notre volonté ».' },
-      { title: 'ActuNet contre-attaque après une plainte anonyme', url: 'www.pressewatch.fr/actunet-plainte-anonyme', desc: 'Le portail d\'actualités maintient ses publications sur la Tokyo Skyrunner League, malgré une demande de retrait reçue début janvier 6090.' },
-      { title: 'Webring ActuNet — sites partenaires', url: 'webring.actunet-news.fr/partenaires', desc: 'Liste des sites frères : Météo-Express, Sports-JP, Tech1999. Optimisé pour Internet Explorer 5.0 et Netscape Navigator 4.0.' },
-      { title: 'ActuNet (animatrice TV) — fiche biographique', url: 'www.stars-tv.fr/fiche/actunet-dubois', desc: 'Homonymie : Actunet Dubois, animatrice d\'une émission régionale. Aucun lien avec le portail d\'information.' },
+      { title: 'Fédération de presse numérique — membre : ActuNet', url: 'www.fpn.jp/membres/actunet', desc: 'Fiche associative — ActuNet Actualités (JP). Rédacteur en chef : [données protégées].' },
+      { title: '"Pourquoi ActuNet a retiré son article ?" — Forum Médias', url: 'www.forum-medias.jp/sujet/23418', desc: '— Quelqu\'un a sauvegardé l\'article sur le rapport #00x7 avant qu\'ils le suppriment ? Je le trouve plus nulle part.  |  12 réponses.' },
+      { title: 'ActuNet : archives hebdomadaires (6070–6089)', url: 'archives.actunet-news.jp/6070-6089', desc: 'Accès aux numéros archivés. Certaines éditions de novembre 1999 sont manquantes : « édition non distribuée pour raisons indépendantes de notre volonté ».' },
+      { title: 'ActuNet contre-attaque après une plainte anonyme', url: 'www.pressewatch.jp/actunet-plainte-anonyme', desc: 'Le portail d\'actualités maintient ses publications sur la Tokyo Skyrunner League, malgré une demande de retrait reçue début janvier 6089.' },
+      { title: 'Webring ActuNet — sites partenaires', url: 'webring.actunet-news.jp/partenaires', desc: 'Liste des sites frères : Météo-Express, Sports-JP, Tech6079. Optimisé pour Internet Explorer 5.0 et Netscape Navigator 4.0.' },
+      { title: 'Naomi Miyamoto (animatrice TV) — fiche biographique', url: 'www.stars-tv.jp/fiche/naomi-miyamoto', desc: 'Homonymie : Naomi Miyamoto animatrice d\'une émission régionale. Aucun lien avec le portail d\'information.' },
     ],
   },
   {
@@ -173,19 +173,19 @@ const SEARCH_TOPICS = [
     seconds: '0,31',
     real: {
       title: 'Clan Magaishi — mentionné sur la fiche Kiba Igarashi (Wikipédia)',
-      url: 'fr.wikipedia.org/wiki/Kiba_Igarashi#Clan_Magaishi',
+      url: 'jp.wikipedia.org/wiki/Kiba_Igarashi#Clan_Magaishi',
       target: WIKI_URL,
       desc: "Le clan Magaishi contrôle une grande partie de la métropole de Tokyo. La souche inférieure, dont est issue la branche Igarashi, est reléguée à des rôles de second plan...",
     },
     fakes: [
-      { title: 'Clans de Tokyo — fiche administrative MAGAISHI', url: 'www.tokyo.metro.jp/clans/magaishi', desc: 'Fiche officielle — Territoire : wards de Bunkyo, Toshima, partie de Shinjuku. Porte-parole : [non divulgué]. Statut juridique : reconnu.' },
-      { title: 'Magaishi — Pages Jaunes des grandes familles', url: 'www.pj-familles.fr/magaishi', desc: 'Siège principal : immeuble Magaishi, Bunkyo, Tokyo. Téléphone : [masqué sur demande du déclarant].' },
-      { title: 'Le blog de Ko — "J\'ai travaillé chez les Magaishi"', url: 'www.leblogdeko.fr/post/chez-les-magaishi', desc: '— On dit plein de choses, mais la vérité c\'est surtout un énorme système de clientèle. Les "souches inférieures" existent bien, elles ramassent la poussière.' },
-      { title: 'Rumeurs et "purges" dans la branche Igarashi', url: 'www.forum-medias.fr/sujet/24011', desc: '— Trois noms qui ne figurent plus au recensement. Le clan parle de "mutations". Personne n\'y croit.  |  45 réponses.' },
-      { title: 'Magaishi (clan fictif) — fandom encyclopédique', url: 'fandom-clans.fr/wiki/Magaishi', desc: 'Article de fandom : hiérarchie, branches, symboles. Attention, nombreuses sections sont contestées / non sourcées.' },
-      { title: 'Yakuza ou clan moderne ? Le cas Magaishi', url: 'www.sociologie-japon.fr/essai/magaishi-moderne', desc: 'Essai universitaire (2000) comparant l\'organisation Magaishi aux structures yakuza traditionnelles. Conclusion : modèle hybride, post-moderne.' },
-      { title: 'Magaishi Corp. — dépôt de marque 6087', url: 'www.inpi-jp.jp/marques/magaishi-corp', desc: 'Dépôt classes 9, 35, 41, 45. Statut : enregistrée. Signe distinctif associé : un cercle brisé.' },
-      { title: 'Magaishi Shoten — boutique de thés traditionnels', url: 'www.magaishi-shoten.jp', desc: 'Homonymie : boutique de thé située à Kyoto, fondée en 1924. Aucun lien officiel connu avec le clan Magaishi de Tokyo.' },
+      { title: 'Clans de Tokyo — fiche administrative MAGAISHI', url: 'www.tokyo.metro.jp/clans/magaishi', desc: 'Fiche officielle — Territoire : arrondissements de Bunkyo, Toshima, partie de Shinjuku. Porte-parole : [non divulgué]. Statut juridique : reconnu.' },
+      { title: 'Magaishi — Pages Jaunes des grandes familles', url: 'www.pj-familles.jp/magaishi', desc: 'Siège principal : immeuble Magaishi, Chiyoda, Tokyo. Téléphone : [masqué sur demande du déclarant].' },
+      { title: 'Le blog de Ko — "J\'ai travaillé chez les Magaishi"', url: 'www.leblogdeko.jp/post/chez-les-magaishi', desc: '— On dit plein de choses, mais la vérité c\'est surtout un énorme système hiérarchique. Il y a beaucoup d\'inégalités au sein des différentes branches.' },
+      { title: 'Rumeurs et "purges" dans les branches inférieures', url: 'www.forum-medias.jp/sujet/24011', desc: '— Trois noms qui ne figurent plus au recensement. Le clan nie tous les soupçons.  |  45 réponses.' },
+      { title: 'Magaishi (clan) — fandom encyclopédique', url: 'fandom-clans.jp/wiki/Magaishi', desc: 'Article de fandom : hiérarchie, branches, symboles. Attention, nombreuses sections sont contestées / non sourcées.' },
+      { title: 'Clan moderne ou traditionnel ? Le cas Magaishi', url: 'www.sociologie-japon.jp/essai/magaishi-moderne', desc: 'Essai universitaire (6080) comparant l\'organisation du clan Magaishi aux structures traditionnelles. Conclusion : modèle hybride, post-moderne.' },
+      { title: 'Magaishi Zaibatsu. — dépôt de marque 5877', url: 'www.inpi.jp/marques/magaishi-zaibatsu', desc: 'Dépôt classes 9, 35, 41, 45. Statut : enregistrée. Signe distinctif associé : [Informations demandées].' },
+      { title: 'Magaishi Shoten — boutique de thés traditionnels', url: 'www.magaishi-shoten.jp', desc: 'Homonymie : boutique de thé située à Kyoto, fondée en 6024. Aucun lien officiel connu avec le clan Magaishi de Tokyo.' },
     ],
   },
   {
@@ -195,17 +195,17 @@ const SEARCH_TOPICS = [
     seconds: '0,27',
     real: {
       title: 'Tokyo Skyrunner League — couverture complète (ActuNet)',
-      url: 'www.actunet-news.fr/dossiers/tokyo-skyrunner-league',
+      url: 'www.actunet-news.jp/dossiers/tokyo-skyrunner-league',
       target: NEWS_URL,
       desc: "Dossier sportif d'ActuNet : résultats, participants, rumeurs sur la ligue officieuse de parkour urbain de Tokyo. Articles sur les Bunkyo City Bolts et le Rapport #00x7.",
     },
     fakes: [
-      { title: 'Skyrunner League — communiqué FFP (fédération)', url: 'www.ffparkour.fr/communique/skyrunner', desc: 'La Fédération Française de Parkour rappelle qu\'elle ne reconnaît aucune compétition appelée "Skyrunner League". Avis aux pratiquants.' },
+      { title: 'Skyrunner League — communiqué FJP (fédération)', url: 'www.fjparkour.jp/communique/skyrunner', desc: 'La Fédération Japonaise de Parkour rappelle qu\'elle ne reconnaît aucune compétition appelée "Skyrunner League". Avis aux pratiquants.' },
       { title: 'Classement Tokyo Skyrunner League — 6089', url: 'skyrunner-league.jp/classement/6089', desc: '01. Bunkyo City Bolts  |  02. White Sparrows  |  03. Kanda Ravens  |  04. Tenku Striders  |  ... liste des 16 crews.' },
       { title: 'Parcours Nakano-Kōenji (vidéo amateur)', url: 'video-share.jp/v/82417', desc: 'Durée 04:12 — course de la 3ᵉ manche, vue d\'un toit voisin. Commentaires désactivés sur cette vidéo.' },
-      { title: '"Silhouettes aux yeux ambrés" — on a vu la même chose', url: 'www.forum-medias.fr/sujet/24198', desc: '— Pas juste à Bunkyo. Ikebukuro aussi. Toujours en hauteur, toujours immobiles. Personne ne veut en parler officiellement.  |  88 réponses.' },
+      { title: '"Silhouettes aux yeux ambrés" — on a vu la même chose', url: 'www.forum-medias.jp/sujet/24198', desc: '— Pas juste à Bunkyo. Ikebukuro aussi. Toujours en hauteur, toujours immobiles. Personne ne veut en parler officiellement.  |  88 réponses.' },
       { title: 'Ligue Skyrunner (Osaka) — à ne pas confondre', url: 'www.skyrunner-osaka.jp', desc: 'Championnat régional de course en montagne. Rien à voir avec la ligue de parkour de Tokyo. Calendrier 2000 disponible en ligne.' },
-      { title: 'Skyrunner — définition (Larousse en ligne)', url: 'www.larousse.fr/dictionnaires/skyrunner', desc: 'Anglicisme : coureur s\'adonnant à la course verticale, urbaine ou montagnarde. Forme féminine : skyrunneuse.' },
+      { title: 'Skyrunner — définition (Kodansha en ligne)', url: 'www.kodansha.jp/dictionnaires/skyrunner', desc: 'Anglicisme : coureur s\'adonnant à la course verticale, urbaine ou montagnarde. Forme féminine : skyrunneuse.' },
       { title: 'Tokyo Skyrunner League — site officiel', url: 'skyrunner-league.jp', desc: 'Dates des prochaines manches, liste officielle des crews. Avertissement en pied de page : "la ligue décline toute responsabilité en cas d\'incident lors des courses".' },
       { title: 'Tokyo SKY Runner — marathon annuel (homonymie)', url: 'www.tokyo-sky-runner.jp', desc: 'Course caritative longue distance. Homonymie fréquente avec la ligue officieuse. Inscriptions ouvertes.' },
     ],
@@ -217,19 +217,19 @@ const SEARCH_TOPICS = [
     seconds: '0,22',
     real: {
       title: 'Tenku Striders — rivalité et dossier sportif (ActuNet)',
-      url: 'www.actunet-news.fr/sports/tenku-striders',
+      url: 'www.actunet-news.jp/sports/tenku-striders',
       target: NEWS_URL,
       desc: "Portrait du crew lycéen Tenku Striders, mené par Takumi Kurogane. Articles récents : esquive des questions de la presse, rivalité avec les Bunkyo City Bolts.",
     },
     fakes: [
       { title: 'Tenku Striders — classement Skyrunner League', url: 'skyrunner-league.jp/crew/tenku-striders', desc: 'Position actuelle : 4ᵉ. Capitaine : T. Kurogane. Bilan saison : 2 victoires, 5 podiums, 1 disqualification.' },
-      { title: 'Takumi Kurogane — interview exclusive (parkourjp.net)', url: 'www.parkourjp.net/interviews/takumi-kurogane', desc: '"Je ne lis pas les articles d\'ActuNet. Ce qui s\'est passé au tournoi des Ura Ura Kidz ne regarde personne." — T. Kurogane, mars 6090.' },
+      { title: 'Takumi Kurogane — interview exclusive (parkourjp.net)', url: 'www.parkourjp.net/interviews/takumi-kurogane', desc: '"Je ne lis pas les articles d\'ActuNet. Ce qui s\'est passé au tournoi des Ura Ura Kidz ne regarde personne." — T. Kurogane, mars 6088.' },
       { title: 'Forum ParkourJP :: Tenku Striders, vrais champions ?', url: 'www.parkourjp.net/forum/viewtopic?t=90112', desc: '— Depuis qu\'ils ont recruté Takumi, ils n\'ont plus gagné une seule fois contre les Bolts. Coïncidence ?  |  61 réponses.' },
-      { title: 'Tenku Striders (manga) — tome 3 en librairie', url: 'www.librairie-manga.fr/tenku-striders-t3', desc: 'Manga en 5 tomes publié chez Éditions Tōkai. Aucun lien avec le crew réel, selon l\'éditeur.' },
-      { title: 'Ura Ura Kidz → Tenku Striders : la bascule', url: 'archives.actunet-news.fr/sports/uraura-tenku', desc: 'Retour sur le tournoi décisif opposant les Ura Ura Kidz à la relève Tenku Striders. L\'article évoque la chute de Ryohei Nishikawa.' },
+      { title: 'Tenku Striders (manga) — tome 3 en librairie', url: 'www.librairie-manga.jp/tenku-striders-t3', desc: 'Manga en 5 tomes publié chez Éditions Tōkai. Aucun lien avec le crew réel, selon l\'éditeur.' },
+      { title: 'Ura Ura Kidz → Tenku Striders : la bascule', url: 'archives.actunet-news.jp/sports/uraura-tenku', desc: 'Retour sur le tournoi décisif opposant les Ura Ura Kidz à la relève Tenku Striders. L\'article évoque la chute de Ryohei Nishikawa.' },
       { title: 'Skyrunner League — vidéo : Tenku vs Bolts, manche 2', url: 'video-share.jp/v/81006', desc: 'Durée 06:44 — passage au ralenti du virage contesté du 4ᵉ checkpoint. Vidéo signalée puis réactivée.' },
       { title: 'Tenku Striders — t-shirts & goodies officiels', url: 'www.shop-skyrunner.jp/tenku-striders', desc: 'Merchandising officiel : maillots (éditions printemps), casquettes, pochettes. Expédition Japon uniquement.' },
-      { title: 'Pourquoi Takumi esquive les interviews ?', url: 'www.forum-medias.fr/sujet/24350', desc: '— Il pète la forme sur les courses mais dès qu\'un micro arrive, il est pressé. Quelqu\'un a une théorie ?  |  39 réponses.' },
+      { title: 'Pourquoi Takumi esquive les interviews ?', url: 'www.forum-medias.jp/sujet/24350', desc: '— Il pète la forme sur les courses mais dès qu\'un micro arrive, il est pressé. Quelqu\'un a une théorie ?  |  39 réponses.' },
     ],
   },
   {
@@ -239,18 +239,18 @@ const SEARCH_TOPICS = [
     seconds: '0,19',
     real: {
       title: 'Bunkyo City Bolts — composition du crew (Wikipédia / fiche Kiba Igarashi)',
-      url: 'fr.wikipedia.org/wiki/Kiba_Igarashi#Bunkyo_City_Bolts',
+      url: 'jp.wikipedia.org/wiki/Kiba_Igarashi#Bunkyo_City_Bolts',
       target: WIKI_URL,
       desc: "Crew de parkour de l'arrondissement de Bunkyo. Membres : Kiba Igarashi (Kōga), Aoi Kanzaki, Hidemichi Ōyama, Daigo Kawamura. Rivaux historiques des Tenku Striders.",
     },
     fakes: [
       { title: 'Bunkyo City Bolts — fiche crew officielle', url: 'skyrunner-league.jp/crew/bunkyo-city-bolts', desc: 'Leader : K. Igarashi. Palmarès 6089 : 1er au classement saison. Style : rapide, agressif, imprévisible. 4 titulaires + 0 remplaçants.' },
-      { title: 'Bunkyo — quartier parkour par excellence (JP-Trip)', url: 'www.jp-trip.fr/guides/bunkyo-parkour', desc: 'Guide touristique : spots légaux, cafés fréquentés par les traceurs, meilleurs toits pour observer les courses nocturnes (à vos risques).' },
-      { title: 'Aoi Kanzaki — "le cerveau des Bolts" (portrait)', url: 'www.actunet-news.fr/sports/aoi-kanzaki-portrait', desc: 'Portrait d\'Aoi Kanzaki, stratège du crew. Silencieuse en course, redoutable sur le tableau. Peu d\'apparitions publiques.' },
+      { title: 'Bunkyo — quartier parkour par excellence (JP-Trip)', url: 'www.jp-trip.jp/guides/bunkyo-parkour', desc: 'Guide touristique : spots légaux, cafés fréquentés par les traceurs, meilleurs toits pour observer les courses nocturnes (à vos risques).' },
+      { title: 'Aoi Kanzaki — "le cerveau des Bolts" (portrait)', url: 'www.actunet-news.jp/sports/aoi-kanzaki-portrait', desc: 'Portrait d\'Aoi Kanzaki, stratège du crew. Silencieuse en course, redoutable sur le tableau. Peu d\'apparitions publiques.' },
       { title: 'Hidemichi Ōyama — fiche physique / Skyrunner', url: 'skyrunner-league.jp/athlete/hidemichi-oyama', desc: 'Taille 1m94, 94 kg. Style : puissance, franchissement. Ne possède pas de Shokan documenté mais plusieurs témoignages contraires existent.' },
       { title: 'Daigo Kawamura — le plus rapide du nord de Tokyo', url: 'www.parkourjp.net/profils/daigo-kawamura', desc: 'Profil athlète : temps records sur checkpoints droits. Réputation sulfureuse : 2 disqualifications, 1 accrochage avec les White Sparrows.' },
-      { title: 'Bunkyo City — mairie d\'arrondissement', url: 'www.city.bunkyo.lg.jp', desc: 'Site officiel de la mairie de Bunkyo. Nous ne commentons pas les événements liés à la "Tokyo Skyrunner League" (communiqué du 15/01/6090).' },
-      { title: 'Bunkyo Bolts (équipe de football) — à ne pas confondre', url: 'www.foot-amateur-jp.fr/clubs/bunkyo-bolts', desc: 'Club amateur de football, division régionale. Saison 2000 : 3 victoires, 4 nuls, 2 défaites.' },
+      { title: 'Bunkyo City — mairie d\'arrondissement', url: 'www.city.bunkyo.lg.jp', desc: 'Site officiel de la mairie de Bunkyo. Nous ne commentons pas les événements liés à la "Tokyo Skyrunner League" (communiqué du 15/01/6089).' },
+      { title: 'Bunkyo Bolts (équipe de football) — à ne pas confondre', url: 'www.foot-amateur-jp.jp/clubs/bunkyo-bolts', desc: 'Club amateur de football, division régionale. Saison 2000 : 3 victoires, 4 nuls, 2 défaites.' },
       { title: 'Bolts — agence de pub (homonymie)', url: 'www.bolts-agency.com', desc: 'Agence de communication numérique basée à Londres. Aucun rapport avec le crew de parkour japonais.' },
     ],
   },
@@ -261,18 +261,18 @@ const SEARCH_TOPICS = [
     seconds: '0,26',
     real: {
       title: 'Disparition de Ryohei Nishikawa — dossier à la une (ActuNet)',
-      url: 'www.actunet-news.fr/dossiers/ryohei-nishikawa',
+      url: 'www.actunet-news.jp/dossiers/ryohei-nishikawa',
       target: NEWS_URL,
       desc: "Article principal d'ActuNet : plus de deux mois sans la moindre trace. Dernier message : « je m'absente, ne me cherche pas. » L'enquête reste ouverte à la préfecture.",
     },
     fakes: [
       { title: 'Ryohei Nishikawa — appel à témoins (police de Tokyo)', url: 'www.keishicho.metro.tokyo.jp/appel/nishikawa-r', desc: 'Homme, 20 ans, 1m78, dernier signalement : Bunkyo, 07/11/6089 vers 23h. Toute information peut être communiquée à la préfecture.' },
       { title: 'Ryohei Nishikawa (@ryo_nishi) — profil archivé', url: 'www.photoroll.jp/ryo_nishi', desc: 'Profil inactif depuis 68 jours. Dernier post : photo floue d\'un toit, légende "ils sont là, encore une fois". Commentaires désactivés.' },
-      { title: 'Ura Ura Kidz — l\'ancien leader disparu', url: 'archives.actunet-news.fr/sports/uraura-leader', desc: 'Retour sur la carrière de Ryohei : meilleur traceur du tournoi, blessure aux jambes, reconversion en gestionnaire, disparition.' },
-      { title: 'Famille Nishikawa : "Nous n\'avons plus aucune nouvelle"', url: 'www.actunet-news.fr/faits-divers/famille-nishikawa', desc: 'Entretien avec les parents de Ryohei. Témoignage poignant, refus de commenter les hypothèses liées à la Tokyo Skyrunner League.' },
-      { title: 'Nishikawa (homonymie) — Wikipédia', url: 'fr.wikipedia.org/wiki/Nishikawa', desc: 'Page d\'homonymie : Nishikawa, patronyme japonais répandu. Pour la disparition du traceur, voir Affaire Ryohei Nishikawa (6090).' },
-      { title: 'Forum Médias :: L\'affaire Nishikawa est-elle étouffée ?', url: 'www.forum-medias.fr/sujet/24457', desc: '— ActuNet est le seul média qui publie encore sur cette affaire. Les autres ont arrêté du jour au lendemain. Hasard ?  |  72 réponses.' },
-      { title: 'Ryohei Nishikawa (judoka) — à ne pas confondre', url: 'www.judojp.fr/athletes/ryohei-nishikawa', desc: 'Judoka vétéran de Nagoya, ceinture noire 5ᵉ dan. Aucun lien avec le traceur disparu de Bunkyo.' },
+      { title: 'Ura Ura Kidz — l\'ancien leader disparu', url: 'archives.actunet-news.jp/sports/uraura-leader', desc: 'Retour sur la carrière de Ryohei : meilleur traceur du tournoi, blessure aux jambes, reconversion en gestionnaire, disparition.' },
+      { title: 'Famille Nishikawa : "Nous n\'avons plus aucune nouvelle"', url: 'www.actunet-news.jp/faits-divers/famille-nishikawa', desc: 'Entretien avec les parents de Ryohei. Témoignage poignant, refus de commenter les hypothèses liées à la Tokyo Skyrunner League.' },
+      { title: 'Nishikawa (homonymie) — Wikipédia', url: 'jp.wikipedia.org/wiki/Nishikawa', desc: 'Page d\'homonymie : Nishikawa, patronyme japonais répandu. Pour la disparition du traceur, voir Affaire Ryohei Nishikawa (6089).' },
+      { title: 'Forum Médias :: L\'affaire Nishikawa est-elle étouffée ?', url: 'www.forum-medias.jp/sujet/24457', desc: '— ActuNet est le seul média qui publie encore sur cette affaire. Les autres ont arrêté du jour au lendemain. Hasard ?  |  72 réponses.' },
+      { title: 'Ryohei Nishikawa (judoka) — à ne pas confondre', url: 'www.judojp.jp/athletes/ryohei-nishikawa', desc: 'Judoka vétéran de Nagoya, ceinture noire 5ᵉ dan. Aucun lien avec le traceur disparu de Bunkyo.' },
       { title: 'Pétition en ligne — Rouvrez l\'enquête Nishikawa', url: 'www.petition-web.jp/nishikawa-rouvrir-enquete', desc: '14 218 signataires. Objectif : 20 000. Adressée à la préfecture de police de Tokyo et au bureau d\'enquêtes spéciales.' },
     ],
   },
@@ -552,8 +552,8 @@ function FakeWikipedia({ onLogoClick }) {
                 <tr><th>Alignement</th><td>Neutre - Bon</td></tr>
                 <tr><th>Clan</th><td>Magaishi</td></tr>
                 <tr><th>Rôle</th><td>Membre</td></tr>
-                <tr><th>Shokan</th><td>Écho de l'âme</td></tr>
-                <tr><th>Type</th><td>???</td></tr>
+                <tr><th>Shokan</th><td>Écho Rémanent</td></tr>
+                <tr><th>Type</th><td>Divers</td></tr>
                 <tr><th>Rang</th><td>E</td></tr>
               </tbody>
             </table>
@@ -690,7 +690,7 @@ function FakeWikipedia({ onLogoClick }) {
             </p>
           <h3 id="wiki-shokan" className="browser__wiki-h3">Shokan</h3>
           <p>
-            Le <em>Shokan</em> de Kiba lui permet, via son téléphone, de matérialiser sa volonté sous la forme d'une entité semi-indépendante, baptisée <strong>Écho de l'âme</strong>, qui combat à ses côtés. Plutôt que d’invoquer une arme ou une forme fixe, Kiba génère des manifestations éphémères d’énergie qui sont directement liées à son intention au moment de l’action. Il peut faire apparaître un bras, une jambe ou juste une main pour attraper, frapper, bloquer ou plus généralement l'aider dans ses mouvements.
+            Le <em>Shokan</em> de Kiba lui permet, via son téléphone, de matérialiser sa volonté sous la forme d'une entité semi-indépendante, baptisée <strong>Écho Rémanent</strong>, qui combat à ses côtés. Plutôt que d’invoquer une arme ou une forme fixe, Kiba génère des manifestations éphémères d’énergie qui sont directement liées à son intention au moment de l’action. Il peut faire apparaître un bras, une jambe ou juste une main pour attraper, frapper, bloquer ou plus généralement l'aider dans ses mouvements.
           </p>
           <p>
             Ce <em>Shokan</em> présente plusieurs contraintes qui limitent grandement son efficacité, expliquant son rang au plus bas dans la hiérarchie. D'abord, ses manifestations sont brèves, <strong>1 à 2 secondes</strong> tout au plus, et ne peuvent surgir que dans un <strong>rayon de 4 mètres</strong> autour de Kiba. Ensuite, leur puissance de frappe est équivalente à celle de l'utilisateur, comme s'il s'agissait d'une extension de son propre corps, bien qu'elles ne partagent pas de sensations.
@@ -785,7 +785,7 @@ const NEWS_ARTICLES = [
     id: 3,
     category: "Monde",
     catColor: '#004499',
-    date: "Sam. 15 Jan. 6090  |  19:05 JST",
+    date: "Sam. 15 Jan. 6089  |  19:05 JST",
     headline: "Clan Magaishi : silence officiel, rumeurs persistantes",
     summary: "Plusieurs noms liés à la souche inférieure du clan Magaishi auraient disparu ces derniers mois des registres municipaux. Le clan nie, la mairie de Tokyo botte en touche.",
     paragraphs: [
@@ -815,9 +815,9 @@ const NEWS_ARTICLES = [
     catColor: '#990000',
     date: "Ven. 7 Jan. 2000  |  08:30 JST",
     headline: "L'Académie refuse de répondre — Rapport #00x7 toujours classifié",
-    summary: "L'organisation désignée sous le nom « L'Académie » maintient le silence total sur l'incident du 23 novembre à Kyoto.",
+    summary: "L'organisation désignée sous le nom « L'Académie » maintient le silence total sur l'incident du 23 novembre à Tokyo.",
     paragraphs: [
-      "Deux journalistes d'investigation qui ont tenté d'accéder au rapport incident #00x7 — référencé dans les documents administratifs de la ville de Kyoto — se sont heurtés à un mur de silence. L'organisation qui en aurait la garde, connue sous le seul nom « L'Académie », n'a répondu à aucune sollicitation.",
+      "Deux journalistes d'investigation qui ont tenté d'accéder au rapport incident #00x7 — référencé dans les documents administratifs de la ville de Tokyo — se sont heurtés à un mur de silence. L'organisation qui en aurait la garde, connue sous le seul nom « L'Académie », n'a répondu à aucune sollicitation.",
       "Un fonctionnaire municipal, s'exprimant sous couvert d'anonymat total, a accepté de livrer quelques mots : « Ce que nous avons vu cette nuit-là ne rentrait dans aucune case. Ce n'était pas une lumière. Ce n'était pas une explosion. C'était une absence — une ombre sans corps, et au centre, quelqu'un qui semblait parfaitement calme. »",
       "Le rapport, s'il existe, serait l'un des rares documents classifiés au niveau municipal au Japon depuis l'après-guerre.",
       "L'Académie est liée à au moins trois affaires non résolues de « phénomènes perceptifs anormaux » entre 1997 et 2000. Ses membres, ses financements et ses objectifs demeurent inconnus du grand public.",
@@ -893,7 +893,7 @@ function FakeNewsPortal() {
 
       {/* ── Nav ── */}
       <div className="browser__news-nav">
-        {['Accueil','Monde','Japon','Sciences','Technologie','Faits divers','Sports','Météo','Finance'].map((c, i) => (
+        {['Accueil','Japon','Monde','Sciences','Technologie','Faits divers','Sports','Météo','Finance'].map((c, i) => (
           <span key={c} className="browser__news-nav-item">
             {i > 0 && <span className="browser__news-nav-sep">|</span>}
             {c}
@@ -925,9 +925,9 @@ function FakeNewsPortal() {
           <div className="browser__news-sb-section">
             <div className="browser__news-sb-title">MÉTÉO</div>
             <div className="browser__news-weather">
-              <div className="browser__news-weather-city">Kyoto, JP</div>
-              <div className="browser__news-weather-temp">9°C</div>
-              <div className="browser__news-weather-desc">Brouillard</div>
+              <div className="browser__news-weather-city">Tokyo, JP</div>
+              <div className="browser__news-weather-temp">19°C</div>
+              <div className="browser__news-weather-desc">Ciel dégagé</div>
             </div>
           </div>
           <div className="browser__news-sb-section">
@@ -1026,19 +1026,19 @@ const TAB_DEFS = {
   google: {
     id: 'google',
     label: 'Google',
-    url: 'http://www.google.fr/',
+    url: 'http://www.google.jp/',
     icon: 'https://win98icons.alexmeub.com/icons/png/search_web-1.png',
   },
   wiki: {
     id: 'wiki',
     label: 'Kiba Igarashi — Wikipédia',
-    url: 'https://fr.wikipedia.org/wiki/Kiba_Igarashi',
+    url: 'https://jp.wikipedia.org/wiki/Kiba_Igarashi',
     icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
   },
   news: {
     id: 'news',
     label: 'ActuNet Actualités',
-    url: 'http://www.actunet-news.fr/',
+    url: 'http://www.actunet-news.jp/',
     icon: 'https://win98icons.alexmeub.com/icons/png/web_file-0.png',
   },
 }
@@ -1059,7 +1059,6 @@ export default function Browser() {
   const [glitchQuery, setGlitchQuery] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [searchTopic, setSearchTopic] = useState(null)
-  const [notFoundUrl, setNotFoundUrl] = useState('')
   const [status, setStatus] = useState('Terminé')
 
   const tabs = [
@@ -1070,6 +1069,20 @@ export default function Browser() {
   const openTab = useCallback((id) => {
     setOpenedTabs(prev => (prev.includes(id) ? prev : [...prev, id]))
   }, [])
+
+  const closeTab = (id) => {
+    if (id === 'google') return // l'onglet d'accueil ne peut pas être fermé
+    if (id === 'secret') {
+      setSecretTabVisible(false)
+    } else {
+      setOpenedTabs(prev => prev.filter(t => t !== id))
+    }
+    if (activeTab === id) {
+      setActiveTab('google')
+      setAddressValue(TAB_DEFS.google.url)
+      setContentMode('normal')
+    }
+  }
 
   // ── Konami ─────────────────────────────────────────────────────
   useEffect(() => {
@@ -1101,35 +1114,53 @@ export default function Browser() {
     }, 650)
   }, [])
 
-  // ── Navigation barre d'adresse ─────────────────────────────────
-  const navigate = useCallback((url) => {
-    const trimmed = url.trim().toLowerCase()
+   // ── Navigation barre d'adresse ─────────────────────────────────
+  // Seule une adresse EXACTE ouvre l'onglet correspondant.
+  // Tout le reste est traité comme une recherche Google.
+  const normalizeUrl = (s) =>
+    s.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/+$/, '')
+
+  const EXACT_URL_MAP = {
+    'www.google.jp': 'google',
+    'google.jp': 'google',
+    'www.google.com': 'google',
+    'google.com': 'google',
+    'jp.wikipedia.org/wiki/kiba_igarashi': 'wiki',
+    'www.actunet-news.jp': 'news',
+    'actunet-news.jp': 'news',
+  }
+
+  const navigate = useCallback((raw) => {
+    const trimmedLow = raw.trim().toLowerCase()
+    const norm = normalizeUrl(raw)
     triggerGlitch(() => {
-      if (SECRET_URLS.includes(trimmed)) {
+      // URLs secrètes
+      if (SECRET_URLS.includes(trimmedLow)) {
         setSecretTabVisible(true)
         setActiveTab('secret')
         setAddressValue('kiba://core')
         setContentMode('normal')
-      } else if (trimmed.includes('google')) {
-        openTab('google')
-        setActiveTab('google')
-        setContentMode('normal')
-        setAddressValue(TAB_DEFS.google.url)
-      } else if (trimmed.includes('wikipedia') || trimmed.includes('wiki') || trimmed.includes('kiba_igarashi') || trimmed.includes('kiba-igarashi')) {
-        openTab('wiki')
-        setActiveTab('wiki')
-        setContentMode('normal')
-        setAddressValue(TAB_DEFS.wiki.url)
-      } else if (trimmed.includes('actunet') || trimmed.includes('actualites') || trimmed.includes('actualités') || trimmed.includes('news')) {
-        openTab('news')
-        setActiveTab('news')
-        setContentMode('normal')
-        setAddressValue(TAB_DEFS.news.url)
-      } else {
-        setNotFoundUrl(url)
-        setContentMode('404')
-        setAddressValue(url)
+        return
       }
+      // Adresse EXACTE connue → ouvre le site correspondant
+      const tabId = EXACT_URL_MAP[norm]
+      if (tabId) {
+        openTab(tabId)
+        setActiveTab(tabId)
+        setContentMode('normal')
+        setAddressValue(TAB_DEFS[tabId].url)
+        return
+      }
+      // Sinon : traite comme une recherche Google
+      const topic = matchTopic(raw)
+      openTab('google')
+      setActiveTab('google')
+      setSearchQuery(raw)
+      setSearchTopic(topic)
+      setContentMode(topic ? 'google-results' : 'google-noresult')
+      setAddressValue(
+        `http://www.google.jp/search?q=${encodeURIComponent(raw).replace(/%20/g, '+')}`
+      )
     })
   }, [triggerGlitch, openTab])
 
@@ -1181,8 +1212,6 @@ export default function Browser() {
 
   // ── Rendu contenu ──────────────────────────────────────────────
   const renderContent = () => {
-    if (contentMode === '404')
-      return <Page404 url={notFoundUrl} />
     if (contentMode === 'glitch-search')
       return <GlitchSearch query={glitchQuery} />
     if (contentMode === 'google-results' && searchTopic)
@@ -1236,7 +1265,7 @@ export default function Browser() {
             key={tab.id}
             className={[
               'browser__tab',
-              activeTab === tab.id && contentMode === 'normal' ? 'browser__tab--active' : '',
+              activeTab === tab.id && contentMode !== 'glitch-search' ? 'browser__tab--active' : '',
               tab.id === 'secret' ? 'browser__tab--secret' : '',
             ].filter(Boolean).join(' ')}
             onClick={() => handleTabChange(tab.id)}
@@ -1244,6 +1273,18 @@ export default function Browser() {
           >
             <span className="browser__tab-icon"><img src={tab.icon} alt="" /></span>
             <span className="browser__tab-label">{tab.label}</span>
+            {tab.id !== 'google' && (
+              <span
+                className="browser__tab-close"
+                role="button"
+                aria-label="Fermer l'onglet"
+                title="Fermer"
+                onClick={(e) => { e.stopPropagation(); closeTab(tab.id) }}
+                data-testid={`tab-close-${tab.id}`}
+              >
+                ✕
+              </span>
+            )}
           </button>
         ))}
         <div className="browser__tabs-fill" />

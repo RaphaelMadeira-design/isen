@@ -12,8 +12,8 @@ const CREDENTIALS = {
 // ─── CONTACTS ───────────────────────────────────────────────────
 const CONTACTS = [
   {
-    id: 'naoto',
-    name: 'naoto_07',
+    id: 'naomi',
+    name: 'naomi_07',
     status: 'online',
     personalMessage: "Toujours à la recherche d'un scoop",
     senderColor: '#0000bb',
@@ -50,23 +50,23 @@ const CONTACTS = [
 
 // ─── CONVERSATIONS ──────────────────────────────────────────────
 const CONVERSATIONS = {
-  naoto: {
+  naomi: {
     date: "Aujourd'hui — 20:45",
     messages: [
-      { from: 'naoto_07',  text: "kiba !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
+      { from: 'naomi_07',  text: "kiba !! t'as vu les nouvelles de ce soir ?",              time: '20:45' },
       { from: 'koga99', text: 'non, quoi encore',                                         time: '20:46' },
-      { from: 'naoto_07',  text: 'ya une nouvelle course clandestine',                time: '20:46' },
-      { from: 'naoto_07',  text: 'et de nouveaux crews foutent le bordel pour entrer dans la ligue',     time: '20:47' },
-      { from: 'naoto_07',  text: 'tu devrais lire mes articles de temps en temps -_-',     time: '20:47' },
+      { from: 'naomi_07',  text: 'ya une nouvelle course clandestine',                time: '20:46' },
+      { from: 'naomi_07',  text: 'et de nouveaux crews foutent le bordel pour entrer dans la ligue',     time: '20:47' },
+      { from: 'naomi_07',  text: 'tu devrais lire mes articles de temps en temps -_-',     time: '20:47' },
       { from: 'koga99',  text: 'je regarde sur ton site',     time: '20:49' },
-      { from: 'naoto_07',  text: "j'ai besoin de toi sur ce coup",                           time: '20:49' },
+      { from: 'naomi_07',  text: "j'ai besoin de toi sur ce coup",                           time: '20:49' },
       { from: 'koga99', text: 'laisse les se faire choper par les flics ou les clans',             time: '20:50' },
-      { from: 'naoto_07',  text: "c'est ça... ^^",                                 time: '20:50' },
-      { from: 'naoto_07',  text: "tu sais très bien qu'ils vont rien faire",    time: '20:51' },
+      { from: 'naomi_07',  text: "c'est ça... ^^",                                 time: '20:50' },
+      { from: 'naomi_07',  text: "tu sais très bien qu'ils vont rien faire",    time: '20:51' },
       { from: 'koga99',  text: "j'avoue",                               time: '20:51' },
-      { from: 'naoto_07',  text: "le run se passe à toshima, près d'ikebukuro",    time: '20:52' },
+      { from: 'naomi_07',  text: "le run se passe à toshima, près d'ikebukuro",    time: '20:52' },
       { from: 'koga99', text: 'je me prépare',                      time: '20:52' },
-      { from: 'naoto_07',  text: 'je pars mtn ^^ rendez-vous au pont de maruyama. 23h.',  time: '20:54' },
+      { from: 'naomi_07',  text: 'je pars mtn ^^ rendez-vous au pont de maruyama. 23h.',  time: '20:54' },
       { from: 'koga99', text: 'ok',                                                       time: '20:54' },
     ],
   },
