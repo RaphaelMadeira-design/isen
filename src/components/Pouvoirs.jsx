@@ -65,10 +65,10 @@ const STATS = [
   },
 ]
 
-const HP     = { current: 847,  max: 1200 }
-const ENERGY = { current: 340,  max: 500  }
-const XP     = { current: 7850, max: 10000 }
-const LEVEL  = 23
+const HP     = { current: 800,  max: 800 }
+const ENERGY = { current: 500,  max: 500  }
+const XP     = { current: 50, max: 10000 }
+const LEVEL  = 1
 
 const SPELLS = [
   {
@@ -80,7 +80,7 @@ const SPELLS = [
   },
 ]
 
-const HEADER_TEXT = '// MAGAISHI // REGISTRE DES SHOKANS :: DOSSIER CHEVALIER //  CLIENT v2.4.1 — PATCH 0.9.7'
+const HEADER_TEXT = '// CLAN MAGAISHI // REGISTRE DES SHOKANS :: DOSSIER CHEVALIER //  CLIENT v2.4.1 — PATCH 0.9.7'
 
 // ─── RADAR GEOMETRY ───────────────────────────────────────────────
 const CX = 110, CY = 108, R = 72

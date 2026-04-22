@@ -136,9 +136,9 @@ const SEARCH_TOPICS = [
     fakes: [
       { title: 'Kiba_Koga (@kiba_koga) — photos & messages', url: 'www.photoroll.jp/kiba_koga', desc: 'Profil public — 412 photos, 89 abonnés. Dernier post : "training session, Bunkyo, 03h22". Aucun message depuis 11 jours.' },
       { title: 'Registre municipal de Tokyo — Igarashi, K.', url: 'www.tokyo.metro.jp/registre/igarashi-k', desc: 'Inscrit branche secondaire Magaishi. Dernière mise à jour partielle. Certaines lignes du recensement sont marquées « données retirées ».' },
-      { title: 'Forum ParkourJP :: [Topic] Qui est vraiment "Kōga" ?', url: 'www.parkourjp.net/forum/viewtopic?t=88471', desc: '— …il apparaît de nulle part sur les courses Bolts et il court comme s\'il connaissait le circuit depuis toujours. Perso, je ne crois pas une seconde au rang E.  |  34 réponses.' },
+      { title: 'Forum ParkourJP :: [Topic] Qui est vraiment "Kōga" ?', url: 'www.parkourjp.net/forum/viewtopic?t=88471', desc: '— …peu de tout, il a un style très versatile et il court comme s\'il connaissait le circuit depuis toujours. Perso, je ne crois pas une seconde au rang E.  |  34 réponses.' },
       { title: 'Shokan Index — "Écho Rémanent" [rang E]', url: 'shokan-index.org/E/echo-remanent', desc: 'Manifestation semi-indépendante d\'énergie. Portée ≈ 4 m. Durée ≈ 1–2 s. Peu de données fiables.' },
-      { title: 'Tokyo Skyrunner League — Classement 6089', url: 'skyrunner-league.jp/classement/6089', desc: '01. Bunkyo City Bolts — 112 pts  |  02. White Sparrows — 98 pts  |  03. Kanda Ravens — 74 pts ... Ligue officieuse, non affiliée à la fédération.' },
+      { title: 'Tokyo Skyrunner League — Classement 6089', url: 'skyrunner-league.jp/classement/6089', desc: '01. Tenku Striders — 114 pts  |  02. Bunkyo City Bolts — 112 pts  |  03. White Sparrows — 108 pts  |  04. Kanda Ravens — 104 pts ... Ligue officieuse, non affiliée à la fédération.' },
       { title: 'Igarashi (homonymie) — Wikipédia', url: 'jp.wikipedia.org/wiki/Igarashi_(homonymie)', desc: 'Page d\'homonymie : Igarashi peut désigner un patronyme japonais, une lignée du clan Magaishi, ou une région montagneuse de la préfecture de Niigata...' },
       { title: 'Recrutez un "Sakiba Igarashi" — AnnuairePro', url: 'www.annuairepro.jp/prestataire/sakiba-igarashi', desc: 'Plombier à Osaka, 41 ans. Aucun lien connu avec le membre du clan Magaishi du même nom. Note clients : 3,9 / 5.' },
       { title: 'Magaishi — Souches inférieures, liste indicative', url: 'www.clans-japon.jp/magaishi/souches-inferieures', desc: 'Ce document recense les lignées mineures rattachées au clan Magaishi. La ligne « Igarashi » y figure, bien que plusieurs entrées soient datées « [retirée] ».' },
@@ -194,10 +194,10 @@ const SEARCH_TOPICS = [
     resultsCount: '1 487',
     seconds: '0,27',
     real: {
-      title: 'Tokyo Skyrunner League — couverture complète (ActuNet)',
-      url: 'www.actunet-news.jp/dossiers/tokyo-skyrunner-league',
+      title: 'Tokyo Skyrunner League — la scène underground décryptée (ActuNet)',
+      url: 'www.actunet-news.jp/culture/parkour-tokyo',
       target: NEWS_URL,
-      desc: "Dossier sportif d'ActuNet : résultats, participants, rumeurs sur la ligue officieuse de parkour urbain de Tokyo. Articles sur les Bunkyo City Bolts et le Rapport #00x7.",
+      desc: "Notre article culture consacré au parkour tokyoïte évoque longuement la compétition officieuse que les crews appellent « Tokyo Skyrunner League », et les raisons de son succès auprès des jeunes.",
     },
     fakes: [
       { title: 'Skyrunner League — communiqué FJP (fédération)', url: 'www.fjparkour.jp/communique/skyrunner', desc: 'La Fédération Japonaise de Parkour rappelle qu\'elle ne reconnaît aucune compétition appelée "Skyrunner League". Avis aux pratiquants.' },
@@ -216,10 +216,10 @@ const SEARCH_TOPICS = [
     resultsCount: '746',
     seconds: '0,22',
     real: {
-      title: 'Tenku Striders — rivalité et dossier sportif (ActuNet)',
-      url: 'www.actunet-news.jp/sports/tenku-striders',
-      target: NEWS_URL,
-      desc: "Portrait du crew lycéen Tenku Striders, mené par Takumi Kurogane. Articles récents : esquive des questions de la presse, rivalité avec les Bunkyo City Bolts.",
+      title: 'Tenku Striders — section dans l\'article Kiba Igarashi (Wikipédia)',
+      url: 'jp.wikipedia.org/wiki/Kiba_Igarashi#Tenku_Striders',
+      target: WIKI_URL,
+      desc: "Le crew lycéen des Tenku Striders, mené par Takumi Kurogane, est cité dans la biographie de Kiba Igarashi — notamment pour sa rivalité historique avec les Bunkyo City Bolts.",
     },
     fakes: [
       { title: 'Tenku Striders — classement Skyrunner League', url: 'skyrunner-league.jp/crew/tenku-striders', desc: 'Position actuelle : 4ᵉ. Capitaine : T. Kurogane. Bilan saison : 2 victoires, 5 podiums, 1 disqualification.' },
@@ -260,20 +260,20 @@ const SEARCH_TOPICS = [
     resultsCount: '3 821',
     seconds: '0,26',
     real: {
-      title: 'Disparition de Ryohei Nishikawa — dossier à la une (ActuNet)',
-      url: 'www.actunet-news.jp/dossiers/ryohei-nishikawa',
+      title: 'Disparition d\'un étudiant de l\'Université de Tokyo (ActuNet)',
+      url: 'www.actunet-news.jp/faits-divers/etudiant-todai-disparu',
       target: NEWS_URL,
-      desc: "Article principal d'ActuNet : plus de deux mois sans la moindre trace. Dernier message : « je m'absente, ne me cherche pas. » L'enquête reste ouverte à la préfecture.",
+      desc: "Notre article à la une évoque la disparition d'un jeune homme de 20 ans inscrit à l'Université de Tokyo, sans nouvelles depuis plus de deux mois. Plusieurs forums l'identifient — sans confirmation officielle — comme Ryohei Nishikawa.",
     },
     fakes: [
-      { title: 'Ryohei Nishikawa — appel à témoins (police de Tokyo)', url: 'www.keishicho.metro.tokyo.jp/appel/nishikawa-r', desc: 'Homme, 20 ans, 1m78, dernier signalement : Bunkyo, 07/11/6089 vers 23h. Toute information peut être communiquée à la préfecture.' },
+      { title: 'Ryohei Nishikawa — appel à témoins (police de Tokyo)', url: 'www.keishicho.metro.tokyo.jp/appel/nishikawa-r', desc: 'Homme, 19 ans, 1m82, dernier signalement : Bunkyo, 07/11/6089 vers 23h. Toute information peut être communiquée à la préfecture.' },
       { title: 'Ryohei Nishikawa (@ryo_nishi) — profil archivé', url: 'www.photoroll.jp/ryo_nishi', desc: 'Profil inactif depuis 68 jours. Dernier post : photo floue d\'un toit, légende "ils sont là, encore une fois". Commentaires désactivés.' },
-      { title: 'Ura Ura Kidz — l\'ancien leader disparu', url: 'archives.actunet-news.jp/sports/uraura-leader', desc: 'Retour sur la carrière de Ryohei : meilleur traceur du tournoi, blessure aux jambes, reconversion en gestionnaire, disparition.' },
-      { title: 'Famille Nishikawa : "Nous n\'avons plus aucune nouvelle"', url: 'www.actunet-news.jp/faits-divers/famille-nishikawa', desc: 'Entretien avec les parents de Ryohei. Témoignage poignant, refus de commenter les hypothèses liées à la Tokyo Skyrunner League.' },
-      { title: 'Nishikawa (homonymie) — Wikipédia', url: 'jp.wikipedia.org/wiki/Nishikawa', desc: 'Page d\'homonymie : Nishikawa, patronyme japonais répandu. Pour la disparition du traceur, voir Affaire Ryohei Nishikawa (6089).' },
-      { title: 'Forum Médias :: L\'affaire Nishikawa est-elle étouffée ?', url: 'www.forum-medias.jp/sujet/24457', desc: '— ActuNet est le seul média qui publie encore sur cette affaire. Les autres ont arrêté du jour au lendemain. Hasard ?  |  72 réponses.' },
-      { title: 'Ryohei Nishikawa (judoka) — à ne pas confondre', url: 'www.judojp.jp/athletes/ryohei-nishikawa', desc: 'Judoka vétéran de Nagoya, ceinture noire 5ᵉ dan. Aucun lien avec le traceur disparu de Bunkyo.' },
-      { title: 'Pétition en ligne — Rouvrez l\'enquête Nishikawa', url: 'www.petition-web.jp/nishikawa-rouvrir-enquete', desc: '14 218 signataires. Objectif : 20 000. Adressée à la préfecture de police de Tokyo et au bureau d\'enquêtes spéciales.' },
+      { title: 'Todai — communiqué du service des admissions', url: 'www.u-tokyo.ac.jp/communique/avr-6089', desc: "L'Université de Tokyo indique coopérer avec les autorités. Par respect pour la famille, aucune information personnelle concernant l'étudiant ne sera divulguée." },
+      { title: 'Forum Bunkyo :: "Ryohei Nishikawa, quelqu\'un l\'a revu ?\"', url: 'www.forum-bunkyo.jp/sujet/24457', desc: '— Des rumeurs de forum, rien de solide. Les médias généralistes ne citent pas son nom. ActuNet est le seul à évoquer l\'hypothèse, et encore, à demi-mot.  |  72 réponses.' },
+      { title: 'Nishikawa (homonymie) — Wikipédia', url: 'jp.wikipedia.org/wiki/Nishikawa', desc: 'Page d\'homonymie : Nishikawa, patronyme japonais répandu. Aucune page individuelle dédiée à ce jour pour un « Ryohei Nishikawa ».' },
+      { title: 'Famille Nishikawa : appel à la discrétion', url: 'www.actunet-news.jp/faits-divers/famille-nishikawa', desc: "La famille remercie les personnes mobilisées et demande que sa vie privée soit respectée pendant que l'enquête se poursuit." },
+      { title: 'Ryohei Nishikawa (judoka) — à ne pas confondre', url: 'www.judojp.jp/athletes/ryohei-nishikawa', desc: 'Judoka vétéran de Nagoya, ceinture noire 5ᵉ dan. Aucun lien avec le jeune étudiant porté disparu à Tokyo.' },
+      { title: 'Pétition en ligne — Relancer l\'enquête', url: 'www.petition-web.jp/nishikawa-rouvrir-enquete', desc: '14 218 signataires. Objectif : 20 000. Adressée à la préfecture de police de Tokyo et au bureau d\'enquêtes spéciales.' },
     ],
   },
 ]
@@ -287,7 +287,10 @@ function matchTopic(query) {
   return null
 }
 
-function FakeGoogleResults({ topic, query, onResultClick }) {
+function FakeGoogleResults({ topic, query, onResultClick, onSearch }) {
+  const [q, setQ] = useState(query)
+  useEffect(() => { setQ(query) }, [query])
+  const submit = () => { if (q.trim()) onSearch(q) }
   return (
     <div className="browser__gresults">
       <div className="browser__gresults-header">
@@ -302,10 +305,11 @@ function FakeGoogleResults({ topic, query, onResultClick }) {
         <div className="browser__gresults-searchline">
           <input
             className="browser__gresults-input"
-            value={query}
-            readOnly
+            value={q}
+            onChange={e => setQ(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && submit()}
           />
-          <button className="browser__gresults-btn">Recherche Google</button>
+          <button className="browser__gresults-btn" onClick={submit}>Recherche Google</button>
         </div>
       </div>
       <div className="browser__gresults-tabs">
@@ -450,7 +454,10 @@ function FakeGoogle({ onNormalSearch, onSecretSearch }) {
   )
 }
 
-function FakeGoogleNoResult({ query }) {
+function FakeGoogleNoResult({ query, onSearch }) {
+  const [q, setQ] = useState(query)
+  useEffect(() => { setQ(query) }, [query])
+  const submit = () => { if (q.trim()) onSearch(q) }
   return (
     <div className="browser__gresults">
       <div className="browser__gresults-header">
@@ -463,8 +470,13 @@ function FakeGoogleNoResult({ query }) {
           <span style={{ color: '#cc0000' }}>e</span>
         </div>
         <div className="browser__gresults-searchline">
-          <input className="browser__gresults-input" value={query} readOnly />
-          <button className="browser__gresults-btn">Recherche Google</button>
+          <input
+            className="browser__gresults-input"
+            value={q}
+            onChange={e => setQ(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && submit()}
+          />
+          <button className="browser__gresults-btn" onClick={submit}>Recherche Google</button>
         </div>
       </div>
       <div className="browser__gresults-count">
@@ -742,14 +754,14 @@ function KonamiOverlay({ onDismiss }) {
 const NEWS_DATE = 'Vendredi 17 avril 6089'
 
 const TICKER_ITEMS = [
-  "FLASH : Tokyo Skyrunner League — 4ᵉ course de la saison ce week-end à Shinjuku",
-  "BUNKYO : La mairie ne commente toujours pas les « silhouettes aux yeux ambrés »",
-  "DISPARITION : Ryohei Nishikawa, ex-capitaine des Ura Ura Kidz, toujours introuvable",
-  "CLAN : Le porte-parole Magaishi nie toute implication dans l'affaire N.",
-  "SPORTS : Les Bunkyo City Bolts installent leur domination sur la ligue",
-  "SHOKANS : L'Ordre exige une meilleure classification des Chevaliers de rang E",
+  "FLASH : Harajuku — explosion d'un yatai, au moins huit blessés dont deux graves",
+  "TODAI : Disparition inquiétante d'un étudiant admis en première année, deux mois sans nouvelles",
+  "SANTÉ : Un nouvel implant neural prometteur présenté au salon MediTech de Yokohama",
+  "CULTURE : Le parkour, phénomène urbain en pleine expansion à Tokyo",
+  "TECHNOLOGIE : Vers un meilleur encardrement des shokans et des chevaliers ?",
+  "MONDE : Sommet climatique de Genève — le Japon annonce ses engagements pour 6095",
   "FAIT DIVERS : Nouvelle « observation ambre » signalée à Ikebukuro",
-  "TENKU STRIDERS : Takumi Kurogane esquive les questions de la presse",
+  "ÉCONOMIE : Le yen poursuit sa remontée face au dollar",
 ]
 
 const NEWS_ARTICLES = [
@@ -758,78 +770,79 @@ const NEWS_ARTICLES = [
     category: "Faits divers",
     catColor: '#336600',
     date: "Jeu. 16 Avr. 6089  |  08:12 JST",
-    headline: "Disparition de Ryohei Nishikawa : deux mois sans la moindre trace",
-    summary: "Ancien traceur prodige des Ura Ura Kidz devenu gestionnaire, Ryohei Nishikawa reste introuvable. Dernier message à un proche : « je m'absente, ne me cherche pas. »",
+    headline: "Todai : un étudiant de première année porté disparu depuis plus de deux mois",
+    summary: "Admis à l'Université de Tokyo à la rentrée dernière, un jeune homme de vingt ans n'a plus donné signe de vie depuis mi-février. Sa famille lance un appel à témoins.",
     paragraphs: [
-      "Plus de deux mois après son dernier signe de vie, le jeune manager et ex-traceur Ryohei Nishikawa demeure officiellement porté disparu. La préfecture de police de Tokyo confirme ce lundi que l'enquête reste ouverte, sans indiquer de piste privilégiée.",
-      "Selon plusieurs sources proches du crew des Bunkyo City Bolts, Ryohei était devenu, depuis sa blessure aux jambes lors du tournoi opposant les Ura Ura Kidz aux Tenku Striders, un fin observateur de la scène parkour de la capitale. Il s'intéressait particulièrement aux disparitions à bas bruit de concurrents « atypiques » dans la Tokyo Skyrunner League.",
-      "Un membre de son entourage, sous couvert d'anonymat, a livré au correspondant d'ActuNet un témoignage troublant : « Il avait repéré un schéma. Des Chevaliers de rang faible, mais aux Shokans instables — et qui, du jour au lendemain, ne courent plus. Il voulait comprendre. Aujourd'hui, c'est lui qui n'est plus là. »",
-      "Le dernier message reçu par son meilleur ami est limpide : « Je m'absente un moment. Inutile de me chercher. » Un courrier au ton posé, mais dont l'implacable brièveté ne cesse d'interroger.",
+      "La préfecture de police de Tokyo a confirmé ce lundi que l'enquête ouverte à la suite de la disparition d'un étudiant de première année de l'Université de Tokyo reste active, sans piste privilégiée. Le jeune homme, âgé de vingt ans et décrit par ses proches comme « sérieux et mesuré », avait rejoint le campus de Hongō à l'automne dernier.",
+      "Selon sa famille, ses dernières communications — des messages brefs envoyés à un ami d'enfance — ne laissaient présager aucun départ volontaire : « Je m'absente un moment. Inutile de me chercher. » Rien d'autre. Aucun message depuis.",
+      "Les enquêteurs n'excluent aucune hypothèse, mais précisent qu'il n'existe à ce stade « aucun élément tangible permettant d'évoquer un crime ». Les caméras du campus ne l'ont pas filmé franchir les portiques depuis le 12 février.",
+      "Un appel à témoins est relayé par la mairie de Bunkyo. La famille remercie par avance toute personne disposant d'informations de se manifester auprès de la préfecture ou de la rédaction d'ActuNet.",
     ],
   },
   {
     id: 2,
-    category: "Sport",
-    catColor: '#990000',
-    date: "Jeu. 16 Avr. 6089  |  23:48 JST",
-    headline: "TOKYO SKYRUNNER LEAGUE — Les Bunkyo City Bolts écrasent la 3ᵉ manche",
-    summary: "Menés par un Kiba Igarashi en état de grâce, les Bolts s'imposent sur le parcours de Nakano. Fait notable : plusieurs participants rapportent avoir aperçu « des silhouettes aux yeux ambrés » perchées sur les toits.",
+    category: "Faits divers",
+    catColor: '#336600',
+    date: "Mer. 15 Avr. 6089  |  21:04 JST",
+    headline: "Harajuku : explosion d'un stand de yatai sur Takeshita-dōri, plusieurs blessés",
+    summary: "Un stand de nourriture de rue a violemment explosé mardi soir au cœur du quartier commerçant de Harajuku. Le bilan officiel fait état de huit blessés, dont deux en urgence absolue.",
     paragraphs: [
-      "Sur un parcours urbain particulièrement exigeant reliant Nakano à Kōenji, les Bunkyo City Bolts ont confirmé dimanche soir leur statut de favoris. Leur crew, composé de Kiba Igarashi dit « Kōga », Aoi Kanzaki, Hidemichi Ōyama et Daigo Kawamura, termine avec plus de onze secondes d'avance sur les White Sparrows de Setagaya.",
-      "Le numéro 1 du crew, surnommé « Croc Écarlate » par la scène underground, s'est illustré par une manœuvre saluée par les commentateurs comme « techniquement incompréhensible » : une relance en plein vide entre deux immeubles du quartier commerçant. Son Shokan, classé au rang E et peu documenté, n'a, selon la ligue, rien d'officiel dans cette performance.",
-      "Plus discret, mais répété par au moins quatre crews concurrents ce soir-là : la présence de silhouettes immobiles, yeux ambrés luisants, postées en hauteur tout au long du parcours. « On ne sait pas qui c'est. On sait juste qu'ils regardent toujours les mêmes personnes », glisse un traceur des Kanda Ravens.",
-      "Interrogés, les organisateurs de la Tokyo Skyrunner League n'ont pas souhaité répondre. La fédération officielle rappelle pour sa part qu'elle ne reconnaît aucun événement appelé « Skyrunner League ».",
+      "Vers 20h47 mardi soir, une détonation a ébranlé le quartier de Harajuku, au croisement de Takeshita-dōri et d'une petite rue adjacente. Un yatai spécialisé dans les okonomiyaki a explosé au beau milieu de l'affluence, projetant débris et morceaux de métal sur plusieurs mètres.",
+      "Les pompiers de Tokyo, rapidement sur place, ont évacué huit personnes blessées, dont deux en urgence absolue. Les premiers éléments de l'enquête s'orientent vers une fuite de gaz sur la bouteille d'appoint du stand, bien qu'une source proche du dossier indique qu' « aucune hypothèse n'est écartée, y compris un acte volontaire ».",
+      "Plusieurs témoins, encore sous le choc, décrivent une scène d'effroi : « J'ai cru à un tremblement de terre. Puis j'ai vu la fumée, et les gens qui couraient. » Le quartier est resté bouclé une partie de la nuit, le temps des relevés techniques.",
+      "La mairie de Shibuya a annoncé un renforcement immédiat des contrôles de sécurité sur l'ensemble des yatai du quartier, et promet une rencontre avec les représentants de la filière dans les prochains jours.",
     ],
   },
   {
     id: 3,
-    category: "Monde",
+    category: "Sciences",
     catColor: '#004499',
-    date: "Sam. 15 Jan. 6089  |  19:05 JST",
-    headline: "Clan Magaishi : silence officiel, rumeurs persistantes",
-    summary: "Plusieurs noms liés à la souche inférieure du clan Magaishi auraient disparu ces derniers mois des registres municipaux. Le clan nie, la mairie de Tokyo botte en touche.",
+    date: "Mar. 14 Avr. 6089  |  10:30 JST",
+    headline: "Un implant neural capable de régénérer les tissus nerveux présenté à Yokohama",
+    summary: "Au salon MediTech de Yokohama, une équipe de l'Université de Kyoto dévoile un prototype d'implant capable de stimuler la repousse de fibres nerveuses endommagées. Premiers résultats jugés « très encourageants ».",
     paragraphs: [
-      "Le clan Magaishi, qui contrôle une partie de la métropole de Tokyo, est de nouveau cité dans une série de rumeurs concernant la disparition discrète de plusieurs jeunes Chevaliers rattachés à ses branches secondaires. Notre rédaction a pu croiser trois noms cités par des sources indépendantes — aucun ne figure plus dans le dernier recensement municipal.",
-      "Officiellement, le porte-parole du clan dément toute forme de « purge », évoquant des « mutations internes ordinaires ». Officieusement, plusieurs observateurs pointent une corrélation gênante : tous les disparus avaient, à un moment ou à un autre, participé à des courses de la Tokyo Skyrunner League.",
-      "Un fonctionnaire de la mairie, s'exprimant sous anonymat total, résume l'atmosphère : « Tant que cela concerne les souches inférieures, personne en haut du clan ne bougera. C'est exactement pour ça que ça continue. »",
-      "Contactée, l'organisation désignée uniquement comme « L'Académie » — accusée par certains forums de ficher discrètement les Chevaliers au Shokan atypique — n'a pas répondu à nos sollicitations.",
+      "C'est peut-être l'annonce la plus remarquée du salon MediTech de Yokohama cette semaine : une équipe de recherche de l'Université de Kyoto, associée à deux sociétés de biotech, a présenté un implant neural miniature capable de stimuler la régénération de fibres nerveuses endommagées, notamment au niveau de la moelle épinière.",
+      "« Nous n'en sommes qu'à la phase précoce des essais cliniques, mais les résultats précliniques dépassent nos attentes, » a expliqué la Pr Akari Matsuda, directrice du programme. Sur les vingt-deux patients volontaires, dix-neuf ont vu leur sensibilité partielle revenir dans les trois mois suivant l'implantation.",
+      "La technologie, encore loin d'une commercialisation, redonne espoir aux personnes souffrant de séquelles lourdes après un traumatisme vertébral. Le dispositif, de la taille d'un grain de riz, émet des micro-impulsions programmables via un boîtier externe porté à la ceinture.",
+      "Des essais à grande échelle doivent débuter dès l'automne, soutenus par un financement public. « L'objectif est d'ouvrir cette option aux patients d'ici cinq ans au plus, » précise la chercheuse.",
     ],
   },
   {
     id: 4,
-    category: "Sciences",
-    catColor: '#004499',
-    date: "Jeu. 6 Jan. 2000  |  16:55 CET",
-    headline: "528 Hz : entre fréquence cicatrisante et anomalie mesurable",
-    summary: "Plusieurs laboratoires signalent des relevés inexplicables à exactement 528 Hz sans source identifiable. Une organisation non nommée collecte ces données depuis 1997.",
+    category: "Culture",
+    catColor: '#990000',
+    date: "Lun. 13 Avr. 6089  |  15:22 JST",
+    headline: "Le parkour, la discipline underground qui s'empare des toits de Tokyo",
+    summary: "Longtemps confiné à quelques crews confidentiels, le parkour urbain connaît un engouement grandissant auprès des jeunes tokyoïtes. Portrait d'une pratique entre art, sport et rébellion douce.",
     paragraphs: [
-      "Ce que les adeptes de médecine alternative appellent la « fréquence de guérison » commence à attirer l'attention de chercheurs sérieux — non pour ses vertus supposées, mais pour des mesures que certains qualifient d'anomalies.",
-      "« Nous avons d'abord cru à une erreur de calibrage, » confie un ingénieur japonais ayant requis l'anonymat. « Puis nous avons réalisé que les émissions à 528 Hz ne se produisaient que lorsqu'un certain membre de l'équipe était dans la pièce. Quand il partait, la lecture tombait à zéro. »",
-      "Au moins quatre laboratoires en Europe et au Japon auraient observé des phénomènes similaires sans jamais les publier officiellement, par crainte de ne pas être pris au sérieux.",
-      "Une organisation privée dont le siège serait à Osaka, et dont le nom n'a pas été communiqué, collecterait ces données depuis 1997. Leurs chercheurs parleraient désormais de « signatures biologiques uniques » — une empreinte fréquentielle propre à chaque individu dit « actif ».",
+      "Si vous levez les yeux un soir en traversant Bunkyo, Shibuya ou Nakano, vous les verrez peut-être : des silhouettes rapides qui sautent d'un toit à l'autre, enchaînent franchissements et réceptions avec une précision quasi chorégraphique. Le parkour — cette discipline née en banlieue parisienne dans les années 1990 — a désormais trouvé à Tokyo un terrain de jeu à sa (dé)mesure.",
+      "« Ce n'est pas juste un sport, c'est une manière de relire la ville, » explique Rika, 22 ans, l'une des rares pratiquantes à accepter de nous parler à visage découvert. « Un mur n'est plus un mur, c'est un passage. Une rampe n'est plus une rampe, c'est un tremplin. »",
+      "La discipline reste largement informelle et évolue en marge des fédérations officielles. Les crews — des collectifs d'une poignée de traceurs — se retrouvent dans des spots rarement publiés, pour éviter à la fois les interventions de police et les afflux de curieux mal équipés. Les accidents, quoique rares chez les pratiquants expérimentés, existent : chutes, entorses, parfois bien pire.",
+      "Depuis un an, plusieurs équipes tentent d'organiser la pratique autour de compétitions officieuses — la plus citée étant la « Tokyo Skyrunner League ». La fédération officielle rappelle cependant qu'elle ne reconnaît aucun événement de ce type, et déconseille fermement la participation.",
     ],
   },
   {
     id: 5,
     category: "Monde",
-    catColor: '#990000',
-    date: "Ven. 7 Jan. 2000  |  08:30 JST",
-    headline: "L'Académie refuse de répondre — Rapport #00x7 toujours classifié",
-    summary: "L'organisation désignée sous le nom « L'Académie » maintient le silence total sur l'incident du 23 novembre à Tokyo.",
+    catColor: '#004499',
+    date: "Dim. 12 Avr. 6089  |  08:00 JST",
+    headline: "Sommet climatique de Genève : le Japon annonce ses engagements pour 6095",
+    summary: "À l'issue de trois jours de négociations à Genève, la délégation japonaise s'est engagée sur une réduction renforcée de ses émissions de CO₂ à l'horizon 6095. Les ONG saluent prudemment.",
     paragraphs: [
-      "Deux journalistes d'investigation qui ont tenté d'accéder au rapport incident #00x7 — référencé dans les documents administratifs de la ville de Tokyo — se sont heurtés à un mur de silence. L'organisation qui en aurait la garde, connue sous le seul nom « L'Académie », n'a répondu à aucune sollicitation.",
-      "Un fonctionnaire municipal, s'exprimant sous couvert d'anonymat total, a accepté de livrer quelques mots : « Ce que nous avons vu cette nuit-là ne rentrait dans aucune case. Ce n'était pas une lumière. Ce n'était pas une explosion. C'était une absence — une ombre sans corps, et au centre, quelqu'un qui semblait parfaitement calme. »",
-      "Le rapport, s'il existe, serait l'un des rares documents classifiés au niveau municipal au Japon depuis l'après-guerre.",
-      "L'Académie est liée à au moins trois affaires non résolues de « phénomènes perceptifs anormaux » entre 1997 et 2000. Ses membres, ses financements et ses objectifs demeurent inconnus du grand public.",
+      "Le sommet climatique de Genève s'est conclu samedi soir par la signature d'un protocole additionnel auquel le Japon s'est associé. Tokyo s'engage à réduire de 42 % ses émissions brutes de CO₂ d'ici 6095, par rapport aux niveaux de 6080.",
+      "« C'est un signal fort, à la hauteur du moment, » a déclaré la cheffe de la délégation japonaise lors de sa conférence de presse de clôture. Plusieurs ONG, historiquement critiques, reconnaissent un effort réel mais jugent les mécanismes de contrôle encore « largement insuffisants ».",
+      "Sur le plan national, l'annonce devrait se traduire par un plan d'investissement public-privé orienté vers les énergies renouvelables, le rail longue distance et la rénovation thermique des bâtiments publics. Le ministère des Finances doit présenter le détail budgétaire en commission dès le mois prochain.",
+      "La prochaine étape diplomatique est attendue à Séoul, où les grandes puissances asiatiques doivent se retrouver en juin pour aborder la question de la coopération régionale sur l'hydrogène bas-carbone.",
     ],
   },
 ]
 
 const NEWS_BRIEFS = [
-  "SPORTS — 4ᵉ manche de la Tokyo Skyrunner League ce samedi à Shinjuku (17/01)",
-  "BUNKYO — Nouvelle « observation ambre » signalée près du parc Rikugien (16/01)",
-  "CLANS — La mairie de Tokyo confirme deux « mutations » dans la souche Igarashi (15/01)",
-  "TECHNOLOGIE — Une mise à jour des Shokans synchronisés par téléphone à l'étude (12/01)",
+  "HARAJUKU — Explosion d'un yatai hier soir, l'enquête démarre (15/04)",
+  "TODAI — La famille de l'étudiant disparu relance l'appel à témoins (14/04)",
+  "SANTÉ — Ouverture d'un nouveau CHU spécialisé à Yokohama (11/04)",
+  "TECHNOLOGIE — Une nouvelle régularisation des Shokans à l'étude (09/04)",
+  "SPORT — Les Yomiuri Giants s'inclinent face aux Fukuoka Hawks (09/04)",
 ]
 
 const TICKER_STR = TICKER_ITEMS.join('  ◆  ') + '  ◆  '
@@ -1060,6 +1073,15 @@ export default function Browser() {
   const [searchQuery, setSearchQuery] = useState('')
   const [searchTopic, setSearchTopic] = useState(null)
   const [status, setStatus] = useState('Terminé')
+  const [addressSaved, setAddressSaved] = useState('')
+
+  const handleAddressFocus = () => {
+    setAddressSaved(addressValue)
+    setAddressValue('')
+  }
+  const handleAddressBlur = () => {
+    if (!addressValue.trim()) setAddressValue(addressSaved)
+  }
 
   const tabs = [
     ...openedTabs.map(id => TAB_DEFS[id]),
@@ -1215,9 +1237,9 @@ export default function Browser() {
     if (contentMode === 'glitch-search')
       return <GlitchSearch query={glitchQuery} />
     if (contentMode === 'google-results' && searchTopic)
-      return <FakeGoogleResults topic={searchTopic} query={searchQuery} onResultClick={handleResultClick} />
+      return <FakeGoogleResults topic={searchTopic} query={searchQuery} onResultClick={handleResultClick} onSearch={navigate} />
     if (contentMode === 'google-noresult')
-      return <FakeGoogleNoResult query={searchQuery} />
+      return <FakeGoogleNoResult query={searchQuery} onSearch={navigate} />
     if (activeTab === 'secret')
       return <SecretPage />
     if (activeTab === 'wiki')
@@ -1251,6 +1273,8 @@ export default function Browser() {
               value={addressValue}
               onChange={e => setAddressValue(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && navigate(addressValue)}
+              onFocus={handleAddressFocus}
+              onBlur={handleAddressBlur}
               spellCheck={false}
             />
           </div>

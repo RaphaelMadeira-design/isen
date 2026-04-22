@@ -26,125 +26,108 @@ const PAGE_ORDER = ['identite', 'stats', 'histoire', 'contacts']
 const IDENTITY = {
   codename: 'KŌGA',
   fullName: 'Kiba Igarashi',
-  alias: 'Croc Écarlate',
-  age: 25,
-  birth: '1999 • Kyoto',
-  origin: 'Japon / Tokyo',
-  clan: 'Magaishi (souche inférieure)',
-  team: 'Bunkyo City Bolts',
-  league: 'Tokyo Skyrunner League',
+  alias: 'Croc Écarlate, Kōga',
+  age: 19,
+  birth: '23/05/6070',
+  sexe: 'Masculin ♂',
+  clan: 'Magaishi',
+  role: 'Membre',
+  shokan: "Écho Rémanent",
   rank: 'E',
-  shokan: "Écho de l'âme",
-  weight: '68 kg',
-  height: '178 cm',
-  blood: 'B+',
-  handle: 'koga99',
-  email: 'koga99@hotmail.jp',
+  type: 'Divers',
 }
 
 // ─── DESCRIPTION PHYSIQUE (wiki) ──────────────────────────────────
 const PHYSICAL = {
-  intro: "Silhouette longiligne, sèche et nerveuse, taillée par des années de parkour et de rue. Plus rapide que fort, plus endurant qu'imposant.",
+  intro: "Du haut de son 1m80 et pesant 71kg, Kiba est un homme qui possède un physique plutôt banal. Ses cheveux carmins tirent légèrement vers un rouge brun et sont coiffés de manière naturelle, presque négligée avec des mèches désordonnées qui retombent sur son front sans jamais vraiment masquer ses yeux. Son visage est équilibré, aux traits nets mais assez doux. Ses yeux sont violets et dessinés en amande. Le grain de beauté sous son œil gauche attire subtilement l’attention et ajoute une petite signature visuelle qui casse la symétrie de son visage. Kiba ne possède aucun tatouage ni piercing, et son corps ne présente aucune cicatrice visible ou importante.",
   traits: [
-    ['CHEVEUX',  "Noir corbeau, mi-longs, mèches devant les yeux. Jamais coiffés."],
-    ['YEUX',     "Brun foncé, presque noirs. Regard fixe, peu cligné."],
-    ['PEAU',     "Mate, légèrement hâlée. Taches de poussière sur les avant-bras."],
-    ['CARRURE',  "Épaules larges, torse étroit, jambes sèches. Mains calleuses."],
-    ['VOIX',     "Grave, traînante, souvent basse. Rit rarement — ça surprend."],
-    ['CICATRICES', "Arcade sourcilière gauche fendue. Phalanges abîmées. Brûlure ancienne sous la clavicule droite."],
-    ['MARQUES',  "Tatouage du clan Magaishi sur l'omoplate droite. Le cache en permanence."],
-    ['STYLE',    "Hoodies oversize, baggy, sneakers défoncées, bandana au cou. Téléphone toujours en main."],
+    ['TATOUAGES', "Aucun"],
+    ['CICATRICES', "Aucune"],
+    ['STYLE', "Streetwear minimaliste"],
   ],
 }
 
 // ─── PROFIL PSYCHOLOGIQUE (wiki) ──────────────────────────────────
 const PSYCHO = {
-  intro: "Classé froid par ceux qui le connaissent mal, loyal à en crever par ceux qui l'approchent vraiment. Méfiance apprise, pas innée.",
+  intro: "Kiba est quelqu’un d’ouvert, avenant et facile à approcher. Il engage la conversation sans difficulté et met naturellement les autres à l’aise, sans effort particulier. Son attitude détendue et son sens du contact lui permettent de s’intégrer rapidement, quel que soit le contexte. Il possède une énergie plutôt tranquille, sans jamais devenir envahissant, ce qui rend sa présence agréable. Il trouve instinctivement sa place parmi les autres, sans chercher à s’imposer. Sociable sans être dépendant, Kiba apprécie les échanges simples et sincères, mais garde toujours une certaine maîtrise de lui-même. Il sait écouter, répondre, plaisanter, mais choisit avec soin ce qu’il révèle réellement de lui.",
   traits: [
-    ['TEMPÉRAMENT', "Laconique, sarcastique, distant. Préfère observer avant de parler."],
-    ['QUALITÉS',    "Loyal, protecteur, ne ment pas aux siens. Courage calme sous pression."],
-    ['DÉFAUTS',     "Rancunier, auto-destructeur, incapable d'accepter l'aide. Refuse toute autorité."],
-    ['PEURS',       "Révéler ce qu'est vraiment son Shokan. Qu'il arrive quelque chose à Naoto ou Yuki."],
-    ['MOTIVATION',  "Prouver que le rang E ne définit pas la puissance. Retrouver Ry0."],
-    ['MBTI',        "ISTP — « virtuose » : pragmatique, indépendant, bon en situation de crise."],
-    ['ALIGN.',      "Chaotique Neutre — propres règles, pas de bannière."],
+    ['QUALITÉS',    "Stable, empathique, loyal."],
+    ['DÉFAUTS',     "Secret, têtu, trop spontanné"],
+    ['PEURS',       "Stagnation, l'échec continuel"],
+    ['MOTIVATION',  "Indépendance, liens sincères"],
   ],
 }
 
 const STATS_LIST = [
-  { name: 'Perception', value: 94 },
-  { name: 'Dextérité',  value: 85 },
-  { name: 'Endurance',  value: 71 },
-  { name: 'Force',      value: 62 },
-  { name: 'Résistance', value: 68 },
-  { name: 'Shokan',     value: 55 },
+  { name: 'Perception', value: 0 },
+  { name: 'Dextérité',  value: 0 },
+  { name: 'Endurance',  value: 0 },
+  { name: 'Force',      value: 0 },
+  { name: 'Résistance', value: 0 },
+  { name: 'Shokan',     value: 0 },
 ]
 
 const VITALS = {
-  level:  23,
+  level:  1,
   hp:     { cur: 847,  max: 1200  },
   energy: { cur: 340,  max: 500   },
   xp:     { cur: 7850, max: 10000 },
 }
 
 const ABILITIES = [
-  { key: 'Q', name: 'Écho Fracturé',          cost: 45,  dur: '3s',
-    desc: 'Onde résonnante en cône frontal. Fracture la cohérence des objets ciblés.' },
-  { key: 'W', name: 'Vague de Syntonisation', cost: 80,  dur: '8s',
-    desc: "Lien télépathique bref avec la cible ; ralentit ses réflexes." },
-  { key: 'E', name: 'Résonance Sismique',     cost: 120, dur: '5s',
-    desc: "Décharge ondulatoire circulaire : déstabilise et repousse les ennemis proches." },
-  { key: 'R', name: 'Fréquence 528',          cost: 200, dur: '12s', ult: true,
-    desc: "ULT — État de résonance pure. Perception amplifiée. Activable sous 40% PV." },
+  { key: 'A', name: 'Assaut rémanent',          cost: 'E',  dur: '⧗ 1 tour',
+    desc: 'Imprime un mouvement dans l’instant reproduit une seconde plus tard par un écho. Permet de toucher deux fois en succession rapide au CàC. Permet d’atteindre une cible jusqu’à 4m' },
 ]
 
 const HISTORY_CHAPTERS = [
-  { id: 1, year: '1999 — KYOTO',      title: 'Naissance du Croc',
-    body: "Kiba Igarashi naît à Kyoto, fils cadet de la branche subalterne du clan Magaishi. Dès l'enfance, on lui répète que son sang porte un Shokan faible, à peine digne du registre. Il apprend à se battre avant d'apprendre à parler." },
-  { id: 2, year: '2012 — EXIL',       title: 'Départ du clan',
-    body: "Refusant l'union arrangée imposée par les anciens, il quitte Kyoto à treize ans. Il rejoint Tokyo en stop et passe deux hivers dans les bas-fonds d'Ikebukuro, à voler, dormir et survivre. C'est là qu'il croise Ryo pour la première fois." },
-  { id: 3, year: '2018 — LES BOLTS',  title: 'Bunkyo City Bolts',
-    body: "Kiba intègre l'équipe de parkour des Bunkyo City Bolts, menée par Naoto. Son style hybride — boxe, lutte, taekwondo, capoeira — fait la réputation du crew. Il est repéré par la Tokyo Skyrunner League, mais reste classé rang E." },
-  { id: 4, year: "2024 — L'ÉCHO",     title: "Écho de l'âme",
-    body: "Son Shokan se révèle enfin : de son téléphone émergent des fragments éphémères — une main, un bras, une jambe — qui prolongent son intention dans un rayon de 3m. Quelque chose écoute, à travers lui. Et depuis, Yuki voit des ombres." },
-  { id: 5, year: "AUJOURD'HUI",       title: 'Run de Toshima',
-    body: "Course clandestine près d'Ikebukuro. De nouveaux crews cherchent à forcer la Ligue. Naoto a besoin de lui sur le pont de Maruyama à 23h. Kagami prévient : « Ne te retourne pas. »" },
+  { id: 1, year: '6070',      title: 'Naissance',
+    body: " Kiba Igarashi voit le jour au sein de la famille Igarashi, une lignee mineure quasi oubliée, éclipsée par les branches superieures du clan Magaishi. Contrairement aux lignées principales, ou les héritiers sont formes des l'enfance pour occuper des fonctions stratégiques, la branche dont il est issu occupe une position de second plan, souvent reléguée à des rôles d'exécution ou de soutien. Ses parents, bien que membres du clan, n'ont jamais été très impliqués dans les affaires internes. Ils ont laissé une grande liberté à leur fils, tant qu'il respectait les règles de base. Ce coté indépendant lui a permis d'explorer ses propres intérêts et de développer sa personnalité sans être constamment comparé à des figures plus prestigieuses de la famille. De ce fait, Kiba a grandi loin des projecteurs et dans une relative obscurité, sans les pressions et les attentes qui pèsent sur les membres plus en vue du clan. Une enfance presque ordinaire, si l'on oublie le nom qu'il porte et le sang qui coule dans ses veines. Personne, à ce moment-là, ne soupconnait ce que cet enfant deviendrait." },
+  { id: 2, year: '6078',       title: 'Enfance',
+    body: "Élevé dans le quartier de Bunkyo a Tokyo, Kiba n'a pas eu d'enfance particulierement dure, ni reellement privilégiée. Les ruelles étroites, les parcs bordés d'érables, les toits accessibles par les escaliers de secours, tout cela est devenu son terrain de jeu bien avant qu'il ne sache ce qu'était le parkour. Il passait ses journées a vadrouiller dans les rues des différents quartiers de la capitale, sautant par-dessus les murets, grimpant aux façades des immeubles abandonnes, courant sur les toits des garages. Ce n'était pas par rebellion, mais plutôt par instinct. Quelque chose en lui cherchait le mouvement, l'espace et la vitesse. A l'école, Kiba était le genre de gamin qu'on ne remarque pas vraiment. Ce n'était pas le meilleur mais pas le pire non plus, juste dans la moyenne. Il était sociable sans pour autant être envahissant, il savait écouter, plaisanter, s'adapter ou même s'affirmer, mais il ne se livrait jamais complètement. Même enfant, il gardait une certaine distance, comme si une partie de lui observait le monde plutôt que d'y participer pleinement. Ses parents ne posaient pas de questions. La liberté qu'ils lui accordaient n'était pas de l'indifférence, c'était une forme de confiance silencieuse. Tant qu'il rentrait avant la nuit, tant qu'il ne déshonorait pas le nom des Igarashi ou qu'il ne s'apportait pas trop d'ennuis, il pouvait faire ce qu'il voulait. Et ce qu'il voulait, c'était courir librement." },
+  { id: 3, year: '6081',  title: 'Éveil',
+    body: " C'est au collège que tout à réellement commencé. Ses journées passées à profiter de cette liberté en vadrouillant dans les rues l'amènent à faire la rencontre de Ryohei Nishikawa, un camarade de classe qui deviendra rapidement son meilleur ami. Ryohei est le leader naturel d'un petit groupe cherchant à former un club de parkour au sein du college. Il recrute Kiba afin de permettre la création officielle du club, qui est completé par Takumi Kurogane, un garçon sûr de lui, ambitieux, et cherchant a surpasser Ryohei ; ainsi que Aoi Kanzaki, une adolescente silencieuse, analytique, et qui est le véritable cerveau stratégique de la future équipe. Les Ura Ura Kidz sont nés. Pour Kiba, c'était la première fois qu'il ressentait ça, ce sentiment d'appartenance. Pas lié au clan pour qui il n'était qu'un pion de plus, ni lié au sang. Juste quatre gamins qui couraient ensemble, qui se poussaient mutuellement, qui rêvaient de devenir les meilleurs traceurs de Tokyo. Ryohei avait cette énergie contagieuse. Il voyait en chaque toit un chemin et en chaque mur une possibilité de continuer. Il disait toujours : 'Le parkour, c'est pas juste sauter, c'est choisir de ne pas s'arrêter.'. Une expression qu'il avait emprunté à un traceur français très connu de la scène européenne, lu dans un vieux magazine qu'il considérait comme sa bible personnelle. Kiba ne le savait pas encore, mais cette phrase allait définir le reste de sa vie." },
+  { id: 4, year: "6082",     title: "Découverte",
+    body: "Sous le nom des Ura Ura Kidz, ils participent à des courses clandestines contre d'autres équipes des collèges de l'arrondissement de Bunkyo. Leur progression est fulgurante. Leur cohésion, leur créativité et leur style attirent l'attention des Tenku Striders, une équipe de lycéens réputée dans tout Tokyo. Un tournoi final est organisé. Les meilleures équipes des collèges environnants s'affrontent. Une seule equipe sera choisie et aura le privilège de porter le nom de Tenku Striders et de poursuivre leur travail. Les Ura Ura Kidz parviennent jusqu'en finale sans trop de mal. Mais lors de cette course décisive, tout bascule. Alors que la victoire semble à leur portée, Takumi révèle ses véritables intentions et trahit le groupe. Au moment d'un saut critique, il pousse volontairement Ryohei dans le vide. La chute est violente et malgré les tentatives désespérées de Kiba et Aoi pour le rattraper, Ryohei s'ecrase lourdement après plusieurs mètres de chute libre. Graves blessures aux jambes, la course est perdue. Les Tenku Striders se voient dans l'obligation de recruter l'équipe adverse, avec Takumi à leur tête. Ce jour-là, quelque chose s'est brisé chez Kiba. Mais ce n'est pas sa determination ; plutôt sa naïveté qui s'envole en éclats. Il a compris que le monde ne récompensait pas toujours les meilleurs. Parfois, il récompensait les plus cruels." },
+  { id: 5, year: "6085",       title: 'Combat',
+    body: "Après une longue réeducation, Ryohei parvient à remarcher mais ne peut plus pratiquer le parkour au même niveau. A leur entrée au lycée, il choisit d'abandonner son rêve d'être le meilleur traceur du Japon et se tourne vers la gestion. Avant de tourner la page, il confie ses dernières instructions à son meilleur ami : 'Continue. Avance. Ne laisse pas cette trahison être la fin de notre histoire. Un mur sur notre route n'est pas un obstacle, c'est une invitation à créer notre propre chemin.' Encouragés par leur ami, Kiba et Aoi fondent leur propre équipe : les Bunkyo City Bolts, en hommage à leur quartier d'origine, comme pour prévenir les nouveaux Tenku Striders qu'ils en sont les dignes représentants. Leur approche change drastiquement. Moins naïve, plus directe et plus ancrée dans la performance plutôt que dans le rêve. Ils sont rejoints par Hidemichi Oyama, un lycéen a la carrure impressionnante, et Daigo Kawamura, considéré comme l'un des traceurs les plus rapides du nord de Tokyo. Les Bolts se font rapidement un nom. Rapides, agressifs, imprevisibles et surtout, chaque membre détient un Shokan. C'est ainsi qu'ils intègrent la Tokyo Skyrunner League, une compétition officieuse mais extrêmement influente, où l'utilisation de Shokan est autorisée, même indispensable pour concourir. C'est là que Kiba découvre l'utilité de son propre Shokan pour la première fois. Au milieu d'une course, pris entre deux immeubles, sans prise et sans issue, une main d'apparence spectrale jaillit de nulle part et le rattrape. Une main qui n'appartenait à personne d'autre qu'à lui-même. Echo Rémanent sera son atout pour se hisser au sommet." },
+  { id: 6, year: "6089",       title: 'Aujourd\'hui',
+    body: "Ryohei commence à s'intéresser à ce qui entoure réellement la Tokyo Skyrunner League. Il repère un schéma : des Chevaliers de rang faible, aux Shokans instables ou atypiques, qui disparaissent du circuit du jour au lendemain et les organisateurs n'en parlent jamais. Et puis il y a les silhouettes. Des figures immobiles, aux yeux ambrés luisants, postées en hauteur tout au long des parcours. Elles observent toujours les mêmes participants. La majorité les ignore et ceux qui les pointent publiquement du doigt finissent rarement par les revoir. Lors de leurs derniers échanges, Ryohei confie à Kiba une intuition troublante : quelqu'un observe la ligue et sélectionne. Ceux qui possèdent un Shokan particulierement instable, atypique ou prometteur. Puis, quelques mois après l'obtention de leur diplôme, Ryohei cesse de répondre. Il laisse un dernier message : 'Je m'absente un moment. Inutile de me chercher.' Les messages restent sans réponse, les appels tombent dans le vide et les lieux qu'il fréquentait sont devenus déserts. Comme s'il avait simplement disparu au bon moment. Aujourd'hui, plus de 2 mois après sa disparition, Kiba poursuit les recherches. Chaque course est devenue une analyse. Chaque adversaire est une piste ou un suspect. Et chaque disparition, une répétition du même schéma. La question reste ouverte : Saura-t-il percer le secret de la disparition de son meilleur ami ?" },
 ]
 
 // ─── CONTACTS & CONVERSATIONS (repris de MSN.jsx) ─────────────────
 const CONTACTS_LIST = [
-  { id: 'naoto',    name: 'naoto_07',      status: 'online',  role: 'BUNKYO CITY BOLTS',
-    msg: 'Bunkyo City Bolts on TOP !',       note: "Journaliste indé. Leader du crew. Ami d'enfance." },
-  { id: 'yuki',     name: 'YukiChan',      status: 'online',  role: 'MÉDIUM',
-    msg: "j'en ai marre des exams...",       note: "Voyante. Camarade de lycée. Visions étranges autour de Kiba." },
-  { id: 'kagami',   name: 'KagamiSpirit',  status: 'away',    role: 'INCONNU',
-    msg: 'Le reflet ne ment jamais.',        note: "Contact non ajouté. Apparu seul. À surveiller." },
-  { id: 'masahiro', name: 'MasaMasa',      status: 'offline', role: 'GROUPE DE MUSIQUE',
-    msg: "Concert bientôt — Let's go !",     note: "Guitariste du groupe. Kiba y tient la batterie." },
-  { id: 'ryo',      name: 'Ry0',           status: 'offline', role: 'DISPARU',
-    msg: "[ne plus chercher]",               note: "Disparu depuis 2 mois. Dernier message : « ne me cherche pas »." },
+  { id: 'naomi',    name: 'naomi_07',      status: 'online',
+    msg: 'Toujours à la recherche d\'un scoop',       note: "Journaliste indépendante pour ActuNet." },
+  { id: 'yuki',     name: 'YukiChan',      status: 'online',
+    msg: "j'en ai marre des exams...",       note: "Camarade de lycée, maintenant dans la même fac." },
+  { id: 'kagami',   name: 'KagamiSpirit',  status: 'away',
+    msg: 'Le reflet ne ment jamais.',        note: "C'est qui ?" },
+  { id: 'masahiro', name: 'MasaMasa',      status: 'offline',
+    msg: "Concert bientôt — Let's go !",     note: "Pote de fac, membre d'un groupe de musique." },
+  { id: 'ryo',      name: 'Ry0',           status: 'offline',
+    msg: "",               note: "Disparu depuis 2 mois." },
 ]
 
 const SELF = 'koga99'
 
 const CONVERSATIONS = {
-  naoto: {
+  naomi: {
     date: "Aujourd'hui — 20:45",
     messages: [
-      { from: 'naoto_07', text: "kiba !! t'as vu les nouvelles de ce soir ?", time: '20:45' },
+      { from: 'naomi_07', text: "kiba !! t'as vu les nouvelles de ce soir ?", time: '20:45' },
       { from: SELF,       text: 'non, quoi encore',                            time: '20:46' },
-      { from: 'naoto_07', text: 'ya une nouvelle course clandestine',          time: '20:46' },
-      { from: 'naoto_07', text: 'et de nouveaux crews foutent le bordel pour entrer dans la ligue', time: '20:47' },
-      { from: 'naoto_07', text: 'tu devrais lire mes articles de temps en temps -_-', time: '20:47' },
+      { from: 'naomi_07', text: 'ya une nouvelle course clandestine',          time: '20:46' },
+      { from: 'naomi_07', text: 'et de nouveaux crews foutent le bordel pour entrer dans la ligue', time: '20:47' },
+      { from: 'naomi_07', text: 'tu devrais lire mes articles de temps en temps -_-', time: '20:47' },
       { from: SELF,       text: 'je regarde sur ton site',                      time: '20:49' },
-      { from: 'naoto_07', text: "j'ai besoin de toi sur ce coup",              time: '20:49' },
+      { from: 'naomi_07', text: "j'ai besoin de toi sur ce coup",              time: '20:49' },
       { from: SELF,       text: 'laisse les se faire choper par les flics ou les clans', time: '20:50' },
-      { from: 'naoto_07', text: "c'est ça... ^^",                               time: '20:50' },
-      { from: 'naoto_07', text: "tu sais très bien qu'ils vont rien faire",     time: '20:51' },
+      { from: 'naomi_07', text: "c'est ça... ^^",                               time: '20:50' },
+      { from: 'naomi_07', text: "tu sais très bien qu'ils vont rien faire",     time: '20:51' },
       { from: SELF,       text: "j'avoue",                                      time: '20:51' },
-      { from: 'naoto_07', text: "le run se passe à toshima, près d'ikebukuro", time: '20:52' },
+      { from: 'naomi_07', text: "le run se passe à toshima, près d'ikebukuro", time: '20:52' },
       { from: SELF,       text: 'je me prépare',                                time: '20:52' },
-      { from: 'naoto_07', text: 'je pars mtn ^^ rendez-vous au pont de maruyama. 23h.', time: '20:54' },
+      { from: 'naomi_07', text: 'je pars mtn ^^ rendez-vous au pont de maruyama. 23h.', time: '20:54' },
       { from: SELF,       text: 'ok',                                           time: '20:54' },
     ],
   },
@@ -562,20 +545,14 @@ function PDAGreenImage({ src, width = 132, height = 150 }) {
 function PDAIdentity() {
   const rows = [
     ['NOM',     IDENTITY.fullName],
-    ['ALIAS',   `"${IDENTITY.alias}"`],
+    ['ALIAS',   IDENTITY.alias],
     ['ÂGE',     `${IDENTITY.age} ans`],
     ['NAISS.',  IDENTITY.birth],
-    ['ORIGINE', IDENTITY.origin],
     ['CLAN',    IDENTITY.clan],
-    ['ÉQUIPE',  IDENTITY.team],
-    ['LIGUE',   IDENTITY.league],
-    ['RANG',    `${IDENTITY.rank}  (shokan faible)`],
+    ['ROLE',    IDENTITY.role],
     ['SHOKAN',  IDENTITY.shokan],
-    ['TAILLE',  IDENTITY.height],
-    ['POIDS',   IDENTITY.weight],
-    ['SANG',    IDENTITY.blood],
-    ['@',       IDENTITY.handle],
-    ['MAIL',    IDENTITY.email],
+    ['RANG',    IDENTITY.rank],
+    ['TYPE',  IDENTITY.type],
   ]
 
   return (
@@ -584,13 +561,14 @@ function PDAIdentity() {
 
       <div className="pda-id__head">
         <div className="pda-id__avatar">
-          <PDAGreenImage src="/images/4.jpg" width={132} height={150} />
-          <div className="pda-id__codename">// {IDENTITY.codename}</div>
+          <PDAGreenImage src="/images/4.jpg" width={150} height={150} />
         </div>
         <div className="pda-id__tag">
-          <div className="pda-id__label">REGISTRE SHOKAN</div>
-          <div className="pda-id__value">#MAG-0482-E</div>
-          <div className="pda-id__label" style={{ marginTop: 8 }}>STATUT</div>
+          <div className="pda-id__label">REGISTRE CLAN</div>
+          <div className="pda-id__value">#MAG01-2119</div>
+          <div className="pda-id__label" style={{ marginTop: 8 }}>REGISTRE SHOKAN</div>
+          <div className="pda-id__value">#JP01-482-E</div>
+          <div className="pda-id__label" style={{ marginTop: 8 }}>STATUT CHEVALIER</div>
           <div className="pda-id__value pda-id__value--ok">▣ ACTIF</div>
         </div>
       </div>
@@ -609,8 +587,7 @@ function PDAIdentity() {
       </table>
 
       <div className="pda-page__note">
-        &gt; Évaluation clan : « puissance négligeable ».
-        <br />&gt; Évaluation terrain : <strong>à reconsidérer.</strong>
+        &gt; E-mail : <strong>koga99@hotmail.jp</strong>
       </div>
 
       {/* ── DESCRIPTION PHYSIQUE ─────────────────── */}
@@ -677,16 +654,16 @@ function PDAStats() {
         ))}
       </div>
 
-      <div className="pda-page__section">[ SHOKAN // ÉCHO DE L'ÂME ]</div>
+      <div className="pda-page__section">[ SHOKAN // ÉCHO RÉMANENT ]</div>
       <div className="pda-shokan">
         <p>
-          Manifestation éphémère de fragments — main, bras, jambe —
-          dans un rayon de <strong>3 m</strong>. Durée : <strong>1–2 s</strong>.
-          Frappe égale à celle du porteur. Pas d'amplification.
+          Manifestation éphémère de sa volonté sous forme de fragments d'une silhouette (main, bras, jambe)
+          dans un rayon de <strong>4 m</strong>. Durée actuelle : <strong>1–2 s</strong>.
+          Frappe égale à celle de l'utilisateur.
         </p>
       </div>
 
-      <div className="pda-page__section">[ CAPACITÉS ]</div>
+      <div className="pda-page__section">[ TECHNIQUE SPÉCIALE ]</div>
       <div className="pda-abilities">
         {ABILITIES.map(a => (
           <div key={a.key} className={`pda-ab ${a.ult ? 'pda-ab--ult' : ''}`} data-testid={`pda-ability-${a.key}`}>
@@ -694,7 +671,7 @@ function PDAStats() {
             <div className="pda-ab__body">
               <div className="pda-ab__head">
                 <span className="pda-ab__name">{a.name}</span>
-                <span className="pda-ab__meta">EN:{a.cost} · {a.dur}</span>
+                <span className="pda-ab__meta">◉ RANG {a.cost} · {a.dur}</span>
               </div>
               <p className="pda-ab__desc">{a.desc}</p>
             </div>
@@ -858,10 +835,6 @@ function PDAContactDetail({ contact, onBack }) {
           </span>
         </div>
         <div className="pda-detail__row">
-          <span className="pda-detail__k">RÔLE</span>
-          <span className="pda-detail__v">{contact.role}</span>
-        </div>
-        <div className="pda-detail__row">
           <span className="pda-detail__k">PSEUDO</span>
           <span className="pda-detail__v">{contact.name}</span>
         </div>
@@ -892,7 +865,7 @@ function PDAContactDetail({ contact, onBack }) {
                   <div key={i} className={`pda-conv__msg ${isSelf ? 'pda-conv__msg--self' : ''}`}>
                     <div className="pda-conv__head">
                       <span className="pda-conv__from">
-                        {isSelf ? 'kiba' : contact.name}
+                        {isSelf ? 'koga99' : contact.name}
                       </span>
                       {m.time && <span className="pda-conv__time">{m.time}</span>}
                     </div>

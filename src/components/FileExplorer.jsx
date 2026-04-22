@@ -188,35 +188,35 @@ export const FILE_TREE = {
     children: ['mus1', 'mus2', 'mus3', 'mus4', 'mus5'],
   },
   mus1: { 
-    name: 'M.O.O.N. - Dust.mp3', 
+    name: 'dust.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
     musicFile: '/music/track01.mp3' 
   },
   mus2: { 
-    name: '憂鬱 - Sun.mp3', 
+    name: 'sun.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
     musicFile: '/music/track02.mp3' 
   },
   mus3: { 
-    name: 'Lonely Lies, GOLDKID$ - Interlinked.mp3', 
+    name: 'interlinked.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
     musicFile: '/music/track03.mp3' 
   },
   mus4: { 
-    name: 'Visitor - RnB.mp3', 
+    name: 'rnb.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
     musicFile: '/music/track04.mp3' 
   },
   mus5: { 
-    name: 'ILLENIUM - Fractures.mp3', 
+    name: 'fractures.mp3', 
     parent: 'musique', 
     type: 'file', 
     content: null, 
@@ -276,11 +276,9 @@ export const FILE_TREE = {
     Forum parkour   : CrocEcarlate / ********
     Compte banque   : 6524 JP88 4579 5***
 
-    NOTE : Ryohei, si tu lis ca,
-    rappelle-moi de changer mes mots de passe.
-    Tu sais que je les oublie toujours.
-
-    ... Ryo, reponds-moi.`
+    NOTE : Changer mes mots de passe
+    Check les articles sur ActuNet
+    Aller voir les parents de Ryo`
   }
 }
 

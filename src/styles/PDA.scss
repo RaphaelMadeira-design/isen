@@ -329,11 +329,10 @@ $pda-button-text: #888;
     }
 
     &--active {
-      box-shadow:
-        0 0 10px rgba($lcd-text, 0.4),
-        0 3px 6px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      span { color: $lcd-text; text-shadow: 0 0 6px rgba($lcd-text, 0.6); }
+      span { 
+        color: $lcd-text !important; 
+        text-shadow: 0 0 6px rgba($lcd-text, 0.6); 
+      }
     }
 
     // ── Bouton POWER centré ────────────────────────
