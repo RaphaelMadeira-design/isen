@@ -1282,7 +1282,7 @@ export default function Browser() {
                 onClick={(e) => { e.stopPropagation(); closeTab(tab.id) }}
                 data-testid={`tab-close-${tab.id}`}
               >
-                ✕
+                <span>✕</span>
               </span>
             )}
           </button>
