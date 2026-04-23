@@ -3,14 +3,13 @@ import '../styles/CRTFrame.scss'
 
 export default function CRTFrame({ children, onReset }) {
   const [powerOn, setPowerOn] = useState(false)
-  const [screenOn, setScreenOn] = useState(false)
+  const [screenOn, setScreenOn] = useState(true)
   const [brightness, setBrightness] = useState(100)
 
   const handlePower = () => {
     if (powerOn) {
-      // Extinction : NO SIGNAL pendant 20s puis écran noir
+      // Extinction : NO SIGNAL
       setPowerOn(false)
-      setTimeout(() => setScreenOn(false), 20000)
     } else {
       // Rallumage : reset complet + boot screen
       onReset?.()

@@ -702,10 +702,10 @@ function FakeWikipedia({ onLogoClick }) {
             </p>
           <h3 id="wiki-shokan" className="browser__wiki-h3">Shokan</h3>
           <p>
-            Le <em>Shokan</em> de Kiba lui permet, via son téléphone, de matérialiser sa volonté sous la forme d'une entité semi-indépendante, baptisée <strong>Dualité</strong>, qui combat à ses côtés. Plutôt que d’invoquer une arme ou une forme fixe, Kiba génère des manifestations éphémères d’énergie qui sont directement liées à son intention au moment de l’action. Il peut faire apparaître un bras, une jambe ou juste une main pour attraper, frapper, bloquer ou plus généralement l'aider dans ses mouvements.
+            Le <em>Shokan</em> de Kiba lui permet, via son téléphone, de matérialiser sa volonté sous la forme d'une entité semi-indépendante, baptisée <strong>Dualité</strong>, qui combat à ses côtés. Cette présence se manifeste comme une ombre déformée qui à mi-chemin entre apparition et disparition, gravitant autour de lui. Plutôt qu’un corps complet permanent, elle prend vie par impulsions. Ses membres surgissent, frappent, bloquent ou assistent, puis redeviennent translucides et flous aussitôt, comme s'il lui était impossible de demeurer dans le plan physique trop longtemps.
           </p>
           <p>
-            Ce <em>Shokan</em> présente plusieurs contraintes qui limitent grandement son efficacité, expliquant son rang au plus bas dans la hiérarchie. D'abord, ses manifestations sont brèves, <strong>1 à 2 secondes</strong> tout au plus, et ne peuvent surgir que dans un <strong>rayon de 4 mètres</strong> autour de Kiba. Ensuite, leur puissance de frappe est équivalente à celle de l'utilisateur, comme s'il s'agissait d'une extension de son propre corps, bien qu'elles ne partagent pas de sensations.
+            Ce <em>Shokan</em> présente plusieurs contraintes qui limitent grandement son efficacité, expliquant son rang au plus bas dans la hiérarchie. D'abord, ces manifestations sont brèves, <strong>1 à 2 secondes</strong> tout au plus, et ne peuvent surgir que dans un <strong>rayon de 4 mètres</strong> autour de Kiba. Ensuite, leur puissance de frappe est équivalente à celle de l'utilisateur, comme s'il s'agissait d'une extension de son propre corps, bien qu'elles ne partagent pas de sensations.
           </p>
           <div className="browser__wiki-references">
             <h2 id="wiki-references" className="browser__wiki-h2">Références</h2>
@@ -931,7 +931,7 @@ function FakeNewsPortal() {
         <div className="browser__news-sidebar">
           <div className="browser__news-sb-section">
             <div className="browser__news-sb-title">RUBRIQUES</div>
-            {['Monde','Japon','Sciences','Technologie','Faits divers','Sports','Culture','Météo'].map(c => (
+            {['Japon','Monde','Sciences','Technologie','Faits divers','Sports','Culture','Météo'].map(c => (
               <div key={c} className="browser__news-sb-link">{c}</div>
             ))}
           </div>

@@ -7,7 +7,7 @@ const BIOS_LINES = [
   { text: 'Award Modular BIOS v4.51PG, An Energy Star Ally', delay: 0 },
   { text: 'Copyright (C) 1984-98, Award Software, Inc.', delay: 80 },
   { text: '', delay: 160 },
-  { text: 'ISEN_PC BIOS Version 1.00', delay: 240 },
+  { text: 'PYR_PC BIOS Version 1.00', delay: 240 },
   { text: '', delay: 320 },
   { text: 'CPU : AMD K6-2/350MHz', delay: 400 },
   { text: 'Memory Test :  32768K OK', delay: 600, typewrite: true },

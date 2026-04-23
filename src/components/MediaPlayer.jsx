@@ -244,11 +244,15 @@ export default function MediaPlayer({ requestedTrack }) {
 
         {/* Volume */}
         <div className="wmp__volume">
-          <span className="wmp__vol-icon">🔊</span>
+          <span className="wmp__vol-label">VOLUME</span>
           <input
-            type="range" min="0" max="1" step="0.02"
+            type="range"
+            min="0"
+            max="1"
+            step="0.02"
             value={volume}
             className="wmp__vol-slider"
+            style={{ "--value": volume }}
             onChange={e => setVolume(+e.target.value)}
           />
         </div>
