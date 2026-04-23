@@ -73,10 +73,10 @@ const LEVEL  = 1
 const SPELLS = [
   {
     id: 1, key: 'E',
-    name: 'Assaut rémanent',
+    name: 'Permutation',
     icon: '/images/spell-1.jpg',
     cost: 'TECHNIQUE DE RANG E', duration: '1 tour',
-    desc: "Kiba imprime un mouvement dans l’instant, que l’Écho reproduit une seconde plus tard. Lorsqu’il attaque, une seconde frappe est générée par cette projection de sa volonté matérialisée. Au corps à corps, cela permet de toucher deux fois en succession rapide. À distance, l’Écho reproduit le geste jusqu’à 4 mètres, permettant d’atteindre une cible qui est hors de portée directe.",
+    desc: "Technique basique qui permet à Kiba d'échanger sa position avec celle de sa projection de la Dualité, lui offrant ainsi une grande mobilité tactique pour surprendre ses adversaires ou échapper à des situations dangereuses.",
   },
 ]
 
@@ -242,13 +242,13 @@ export default function Pouvoirs() {
             <div className="gp__section-lbl">[ DOSSIER SUJET ]</div>
 
             <p className={`gp__dossier-p ${animCls('pv-para-1')}`}>
-              <em>Écho Rémanent</em> est un Shokan de <em>type divers</em> qui permet à Kiba de matérialiser une projection incomplète de lui-même.
+              Le <em>Shokan de la Dualité</em> est une capacité unique de <em>type divers</em> permettant à Kiba de matérialiser une projection partielle de lui-même depuis son téléphone, qu’il est capable de contrôler à volonté.
             </p>
             <p className={`gp__dossier-p ${animCls('pv-para-2')}`}>
-              Cette projection prend la forme d’une <em>silhouette noire humanoïde</em>, qui est une sorte d'incarnation brute de sa volonté. Cependant, Kiba n’est pas encore capable de maintenir ce double dans son intégralité. À ce stade, il ne peut en faire apparaître que des fragments (bras, mains, jambes) qui se manifestent brièvement pour interagir avec son environnement. À son état de base, l’Écho fonctionne comme un <em>miroir de ses actions</em>. Chaque mouvement effectué par Kiba peut être reproduit par l’Écho, avec un léger décalage dans le temps et à un autre point dans l’espace. Ce pouvoir ne confère donc pas une force supérieure, mais une capacité unique à doubler, décaler ou projeter ses actions, rendant son style de combat imprévisible.
+              Cette projection se manifeste sous la forme d’une <em>silhouette humanoïde sombre</em>, quasiment <em>translucide</em> et dont les contours vacillent dans un flou instable. Ce clone évolue en permanence à proximité de Kiba, agissant comme une extension directe de sa volonté, capable de <em>combattre</em>, de <em>défendre</em> ou de simplement l'<em>épauler</em> dans ses actions. Cependant à son niveau actuel, Kiba est incapable de maintenir cette entité à la vue de tous dans son intégralité. Seuls des fragments du double peuvent être correctement matérialisés de manière récurrente : les bras et les jambes. Ces manifestations sont brèves ne durent que quelques secondes, avant de redevenir transparents aussitôt, comme si le double était incapable de perdurer et intéragir plus longtemps sur le plan physique. La Dualité peut <em>se déplacer librement autour de Kiba</em> mais reste confinée à un périmètre limité qu’elle ne peut dépasser.
             </p>
             <p className={`gp__dossier-p ${animCls('pv-para-3')}`}>
-              Ce shokan présente plusieurs contraintes qui limitent son impact ainsi que son utilisation. Outre leur portée limitée à <em>4 mètres</em> autour de Kiba, ces manifestations sont éphémères et ne durent que <em>1 à 2 secondes</em> avant de disparaître. Cet écho apparaît toujours <em>une seconde après</em> le geste initial de Kiba, ce qui veut dire que ses assauts peuvent très vite devenir téléphonés. Naturellement, la <em>puissance d'attaque de l'Écho est strictement équivalente à celle de Kiba</em>, car il agit comme une extension directe de son propre corps. Toutefois, l'écho n'est pas une entité vivante et ne ressent pas la douleur, bien qu'on puisse l'attaquer.
+              Ce shokan présente plusieurs contraintes qui limitent son impact ainsi que son utilisation. Outre sa portée limitée à <em>4 mètres</em> tout autour de Kiba, les manifestations sont éphémères et ne durent que <em>1 à 2 secondes</em> avant de donner l'impression de disparaître. Naturellement, les statistiques de cette projection sont équivalentes à celles de Kiba lui-même et reflétent parfaitement ses propres aptitudes sans jamais les dépasser. Maintenir le clone trop longtemps est épuisant et provoque des migraines à l'utilisateur. Toutefois, la Dualité n'est pas une entité vivante et ne ressent pas la douleur, bien qu'il soit possible de l'attaquer, pour peu qu'on puisse clairement la voir.
             </p>
           </div>
 

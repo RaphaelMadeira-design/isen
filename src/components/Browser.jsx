@@ -10,19 +10,19 @@ const SECRET_URLS = ['kiba://core', 'kiba://secret', 'about:kiba', 'kiba://memor
 // ── Pages secrètes ───────────────────────────────────────────────
 
 const FRAGMENTS = [
-  { text: '> CONNEXION ÉTABLIE — PROTOCOLE ISEN v0.0.1', cmd: true, delay: 0 },
+  { text: '> CONNEXION ÉTABLIE — PROTOCOLE SHOKAN NO KISHI v0.0.1', cmd: true, delay: 0 },
   { text: '> Chargement CORE_DUMP.exe...', cmd: true, delay: 280 },
   { text: '> Lecture des fragments mémoire...', cmd: true, delay: 560 },
   { text: '', delay: 840 },
   { text: ' [FRAGMENT #001] ████████████████████ [CORROMPU]', frag: true, delay: 1120 },
   { text: ' [FRAGMENT #002] "...ils ne savent pas ce que j\'ai perçu ce soir-là.', frag: true, delay: 1400 },
   { text: ' [FRAGMENT #003] ████████████ [DATE EFFACÉE]', frag: true, delay: 1680 },
-  { text: ' [FRAGMENT #004] "la résonance était là avant moi. avant nous tous."', frag: true, delay: 1960 },
+  { text: ' [FRAGMENT #004] "ils étaient là avant moi. avant nous tous."', frag: true, delay: 1960 },
   { text: ' [FRAGMENT #005] ████ [ACCÈS REFUSÉ — NIVEAU 5]', frag: true, delay: 2240 },
-  { text: ' [FRAGMENT #006] "528 Hz. Pas une fréquence. Une signature."', frag: true, delay: 2520 },
+  { text: ' [FRAGMENT #006] "Pas une simple présence. Un présage."', frag: true, delay: 2520 },
   { text: '', delay: 2800 },
   { text: '> COORDONNÉES : 34.9876° N, 135.7553° E', cmd: true, delay: 3080 },
-  { text: '> FRÉQUENCE DE BASE : 528 Hz [NON DOCUMENTÉE]', cmd: true, delay: 3360 },
+  { text: '> FRÉQUENCE MÉMORIELLE : [NON DOCUMENTÉE]', cmd: true, delay: 3360 },
   { text: '> STATUT ACTUEL : ACTIF / [INDÉTERMINÉ]', cmd: true, delay: 3640 },
   { text: '', delay: 3920 },
   { text: '> Fin du dump. Connexion fermée.', cmd: true, delay: 4200 },
@@ -137,7 +137,7 @@ const SEARCH_TOPICS = [
       { title: 'Kiba_Koga (@kiba_koga) — photos & messages', url: 'www.photoroll.jp/kiba_koga', desc: 'Profil public — 412 photos, 89 abonnés. Dernier post : "training session, Bunkyo, 03h22". Aucun message depuis 11 jours.' },
       { title: 'Registre municipal de Tokyo — Igarashi, K.', url: 'www.tokyo.metro.jp/registre/igarashi-k', desc: 'Inscrit branche secondaire Magaishi. Dernière mise à jour partielle. Certaines lignes du recensement sont marquées « données retirées ».' },
       { title: 'Forum ParkourJP :: [Topic] Qui est vraiment "Kōga" ?', url: 'www.parkourjp.net/forum/viewtopic?t=88471', desc: '— …peu de tout, il a un style très versatile et il court comme s\'il connaissait le circuit depuis toujours. Perso, je ne crois pas une seconde au rang E.  |  34 réponses.' },
-      { title: 'Shokan Index — "Écho Rémanent" [rang E]', url: 'shokan-index.org/E/echo-remanent', desc: 'Manifestation semi-indépendante d\'énergie. Portée ≈ 4 m. Durée ≈ 1–2 s. Peu de données fiables.' },
+      { title: 'Shokan Index — "Dualité" [rang E]', url: 'shokan-index.org/E/dualite', desc: 'Manifestation semi-indépendante d\'énergie. Portée ≈ 4 m. Durée ≈ 1–2 s. Peu de données fiables.' },
       { title: 'Tokyo Skyrunner League — Classement 6089', url: 'skyrunner-league.jp/classement/6089', desc: '01. Tenku Striders — 114 pts  |  02. Bunkyo City Bolts — 112 pts  |  03. White Sparrows — 108 pts  |  04. Kanda Ravens — 104 pts ... Ligue officieuse, non affiliée à la fédération.' },
       { title: 'Igarashi (homonymie) — Wikipédia', url: 'jp.wikipedia.org/wiki/Igarashi_(homonymie)', desc: 'Page d\'homonymie : Igarashi peut désigner un patronyme japonais, une lignée du clan Magaishi, ou une région montagneuse de la préfecture de Niigata...' },
       { title: 'Recrutez un "Sakiba Igarashi" — AnnuairePro', url: 'www.annuairepro.jp/prestataire/sakiba-igarashi', desc: 'Plombier à Osaka, 41 ans. Aucun lien connu avec le membre du clan Magaishi du même nom. Note clients : 3,9 / 5.' },
@@ -564,7 +564,7 @@ function FakeWikipedia({ onLogoClick }) {
                 <tr><th>Alignement</th><td>Neutre - Bon</td></tr>
                 <tr><th>Clan</th><td>Magaishi</td></tr>
                 <tr><th>Rôle</th><td>Membre</td></tr>
-                <tr><th>Shokan</th><td>Écho Rémanent</td></tr>
+                <tr><th>Shokan</th><td>Dualité</td></tr>
                 <tr><th>Type</th><td>Divers</td></tr>
                 <tr><th>Rang</th><td>E</td></tr>
               </tbody>
@@ -702,7 +702,7 @@ function FakeWikipedia({ onLogoClick }) {
             </p>
           <h3 id="wiki-shokan" className="browser__wiki-h3">Shokan</h3>
           <p>
-            Le <em>Shokan</em> de Kiba lui permet, via son téléphone, de matérialiser sa volonté sous la forme d'une entité semi-indépendante, baptisée <strong>Écho Rémanent</strong>, qui combat à ses côtés. Plutôt que d’invoquer une arme ou une forme fixe, Kiba génère des manifestations éphémères d’énergie qui sont directement liées à son intention au moment de l’action. Il peut faire apparaître un bras, une jambe ou juste une main pour attraper, frapper, bloquer ou plus généralement l'aider dans ses mouvements.
+            Le <em>Shokan</em> de Kiba lui permet, via son téléphone, de matérialiser sa volonté sous la forme d'une entité semi-indépendante, baptisée <strong>Dualité</strong>, qui combat à ses côtés. Plutôt que d’invoquer une arme ou une forme fixe, Kiba génère des manifestations éphémères d’énergie qui sont directement liées à son intention au moment de l’action. Il peut faire apparaître un bras, une jambe ou juste une main pour attraper, frapper, bloquer ou plus généralement l'aider dans ses mouvements.
           </p>
           <p>
             Ce <em>Shokan</em> présente plusieurs contraintes qui limitent grandement son efficacité, expliquant son rang au plus bas dans la hiérarchie. D'abord, ses manifestations sont brèves, <strong>1 à 2 secondes</strong> tout au plus, et ne peuvent surgir que dans un <strong>rayon de 4 mètres</strong> autour de Kiba. Ensuite, leur puissance de frappe est équivalente à celle de l'utilisateur, comme s'il s'agissait d'une extension de son propre corps, bien qu'elles ne partagent pas de sensations.

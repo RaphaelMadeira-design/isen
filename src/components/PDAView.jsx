@@ -32,7 +32,7 @@ const IDENTITY = {
   sexe: 'Masculin ♂',
   clan: 'Magaishi',
   role: 'Membre',
-  shokan: "Écho Rémanent",
+  shokan: "Dualité",
   rank: 'E',
   type: 'Divers',
 }
@@ -69,14 +69,14 @@ const STATS_LIST = [
 
 const VITALS = {
   level:  1,
-  hp:     { cur: 847,  max: 1200  },
-  energy: { cur: 340,  max: 500   },
-  xp:     { cur: 7850, max: 10000 },
+  hp:     { cur: 800,  max: 800  },
+  energy: { cur: 500,  max: 500   },
+  xp:     { cur: 50, max: 10000 },
 }
 
 const ABILITIES = [
-  { key: 'A', name: 'Assaut rémanent',          cost: 'E',  dur: '⧗ 1 tour',
-    desc: 'Imprime un mouvement dans l’instant reproduit une seconde plus tard par un écho. Permet de toucher deux fois en succession rapide au CàC. Permet d’atteindre une cible jusqu’à 4m' },
+  { key: 'A', name: 'Permutation',          cost: 'E',  dur: '⧗ 1 tour',
+    desc: "Technique basique qui permet à Kiba d'échanger sa position avec celle de sa projection de la Dualité, lui offrant ainsi une grande mobilité tactique pour surprendre ses adversaires ou échapper à des situations dangereuses." },
 ]
 
 const HISTORY_CHAPTERS = [
@@ -89,7 +89,7 @@ const HISTORY_CHAPTERS = [
   { id: 4, year: "6082",     title: "Découverte",
     body: "Sous le nom des Ura Ura Kidz, ils participent à des courses clandestines contre d'autres équipes des collèges de l'arrondissement de Bunkyo. Leur progression est fulgurante. Leur cohésion, leur créativité et leur style attirent l'attention des Tenku Striders, une équipe de lycéens réputée dans tout Tokyo. Un tournoi final est organisé. Les meilleures équipes des collèges environnants s'affrontent. Une seule equipe sera choisie et aura le privilège de porter le nom de Tenku Striders et de poursuivre leur travail. Les Ura Ura Kidz parviennent jusqu'en finale sans trop de mal. Mais lors de cette course décisive, tout bascule. Alors que la victoire semble à leur portée, Takumi révèle ses véritables intentions et trahit le groupe. Au moment d'un saut critique, il pousse volontairement Ryohei dans le vide. La chute est violente et malgré les tentatives désespérées de Kiba et Aoi pour le rattraper, Ryohei s'ecrase lourdement après plusieurs mètres de chute libre. Graves blessures aux jambes, la course est perdue. Les Tenku Striders se voient dans l'obligation de recruter l'équipe adverse, avec Takumi à leur tête. Ce jour-là, quelque chose s'est brisé chez Kiba. Mais ce n'est pas sa determination ; plutôt sa naïveté qui s'envole en éclats. Il a compris que le monde ne récompensait pas toujours les meilleurs. Parfois, il récompensait les plus cruels." },
   { id: 5, year: "6085",       title: 'Combat',
-    body: "Après une longue réeducation, Ryohei parvient à remarcher mais ne peut plus pratiquer le parkour au même niveau. A leur entrée au lycée, il choisit d'abandonner son rêve d'être le meilleur traceur du Japon et se tourne vers la gestion. Avant de tourner la page, il confie ses dernières instructions à son meilleur ami : 'Continue. Avance. Ne laisse pas cette trahison être la fin de notre histoire. Un mur sur notre route n'est pas un obstacle, c'est une invitation à créer notre propre chemin.' Encouragés par leur ami, Kiba et Aoi fondent leur propre équipe : les Bunkyo City Bolts, en hommage à leur quartier d'origine, comme pour prévenir les nouveaux Tenku Striders qu'ils en sont les dignes représentants. Leur approche change drastiquement. Moins naïve, plus directe et plus ancrée dans la performance plutôt que dans le rêve. Ils sont rejoints par Hidemichi Oyama, un lycéen a la carrure impressionnante, et Daigo Kawamura, considéré comme l'un des traceurs les plus rapides du nord de Tokyo. Les Bolts se font rapidement un nom. Rapides, agressifs, imprevisibles et surtout, chaque membre détient un Shokan. C'est ainsi qu'ils intègrent la Tokyo Skyrunner League, une compétition officieuse mais extrêmement influente, où l'utilisation de Shokan est autorisée, même indispensable pour concourir. C'est là que Kiba découvre l'utilité de son propre Shokan pour la première fois. Au milieu d'une course, pris entre deux immeubles, sans prise et sans issue, une main d'apparence spectrale jaillit de nulle part et le rattrape. Une main qui n'appartenait à personne d'autre qu'à lui-même. Echo Rémanent sera son atout pour se hisser au sommet." },
+    body: "Après une longue réeducation, Ryohei parvient à remarcher mais ne peut plus pratiquer le parkour au même niveau. A leur entrée au lycée, il choisit d'abandonner son rêve d'être le meilleur traceur du Japon et se tourne vers la gestion. Avant de tourner la page, il confie ses dernières instructions à son meilleur ami : 'Continue. Avance. Ne laisse pas cette trahison être la fin de notre histoire. Un mur sur notre route n'est pas un obstacle, c'est une invitation à créer notre propre chemin.' Encouragés par leur ami, Kiba et Aoi fondent leur propre équipe : les Bunkyo City Bolts, en hommage à leur quartier d'origine, comme pour prévenir les nouveaux Tenku Striders qu'ils en sont les dignes représentants. Leur approche change drastiquement. Moins naïve, plus directe et plus ancrée dans la performance plutôt que dans le rêve. Ils sont rejoints par Hidemichi Oyama, un lycéen a la carrure impressionnante, et Daigo Kawamura, considéré comme l'un des traceurs les plus rapides du nord de Tokyo. Les Bolts se font rapidement un nom. Rapides, agressifs, imprevisibles et surtout, chaque membre détient un Shokan. C'est ainsi qu'ils intègrent la Tokyo Skyrunner League, une compétition officieuse mais extrêmement influente, où l'utilisation de Shokan est autorisée, même indispensable pour concourir. C'est là que Kiba découvre l'utilité de son propre Shokan pour la première fois. Au milieu d'une course, pris entre deux immeubles, sans prise et sans issue, une main d'apparence spectrale jaillit de nulle part et le rattrape. Une main qui n'appartenait à personne d'autre qu'à lui-même. Dualité sera son atout pour se hisser au sommet." },
   { id: 6, year: "6089",       title: 'Aujourd\'hui',
     body: "Ryohei commence à s'intéresser à ce qui entoure réellement la Tokyo Skyrunner League. Il repère un schéma : des Chevaliers de rang faible, aux Shokans instables ou atypiques, qui disparaissent du circuit du jour au lendemain et les organisateurs n'en parlent jamais. Et puis il y a les silhouettes. Des figures immobiles, aux yeux ambrés luisants, postées en hauteur tout au long des parcours. Elles observent toujours les mêmes participants. La majorité les ignore et ceux qui les pointent publiquement du doigt finissent rarement par les revoir. Lors de leurs derniers échanges, Ryohei confie à Kiba une intuition troublante : quelqu'un observe la ligue et sélectionne. Ceux qui possèdent un Shokan particulierement instable, atypique ou prometteur. Puis, quelques mois après l'obtention de leur diplôme, Ryohei cesse de répondre. Il laisse un dernier message : 'Je m'absente un moment. Inutile de me chercher.' Les messages restent sans réponse, les appels tombent dans le vide et les lieux qu'il fréquentait sont devenus déserts. Comme s'il avait simplement disparu au bon moment. Aujourd'hui, plus de 2 mois après sa disparition, Kiba poursuit les recherches. Chaque course est devenue une analyse. Chaque adversaire est une piste ou un suspect. Et chaque disparition, une répétition du même schéma. La question reste ouverte : Saura-t-il percer le secret de la disparition de son meilleur ami ?" },
 ]
@@ -654,7 +654,7 @@ function PDAStats() {
         ))}
       </div>
 
-      <div className="pda-page__section">[ SHOKAN // ÉCHO RÉMANENT ]</div>
+      <div className="pda-page__section">[ SHOKAN // DUALITÉ ]</div>
       <div className="pda-shokan">
         <p>
           Manifestation éphémère de sa volonté sous forme de fragments d'une silhouette (main, bras, jambe)
