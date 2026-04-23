@@ -140,8 +140,13 @@
       color: #006000; 
       font-size: 14px; 
     }
-    &--pause { color: $win98-navy; }
-    &--stop  { color: #800000; }
+    &--pause { 
+      color: $win98-navy; 
+    }
+
+    &--stop  { 
+      color: #800000; 
+    }
   }
 
   &__volume {

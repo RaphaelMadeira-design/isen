@@ -211,7 +211,7 @@ const SEARCH_TOPICS = [
     ],
   },
   {
-    keys: ['tenku striders', 'tenku', 'striders', 'takumi kurogane'],
+    keys: ['tenku striders', 'tenku', 'striders', 'kazuki kurogane'],
     displayQuery: 'Tenku Striders',
     resultsCount: '746',
     seconds: '0,22',
@@ -219,17 +219,17 @@ const SEARCH_TOPICS = [
       title: 'Tenku Striders — section dans l\'article Kiba Igarashi (Wikipédia)',
       url: 'jp.wikipedia.org/wiki/Kiba_Igarashi#Tenku_Striders',
       target: WIKI_URL,
-      desc: "Le crew lycéen des Tenku Striders, mené par Takumi Kurogane, est cité dans la biographie de Kiba Igarashi — notamment pour sa rivalité historique avec les Bunkyo City Bolts.",
+      desc: "Le crew lycéen des Tenku Striders, mené par Kazuki Kurogane, est cité dans la biographie de Kiba Igarashi — notamment pour sa rivalité historique avec les Bunkyo City Bolts.",
     },
     fakes: [
       { title: 'Tenku Striders — classement Skyrunner League', url: 'skyrunner-league.jp/crew/tenku-striders', desc: 'Position actuelle : 4ᵉ. Capitaine : T. Kurogane. Bilan saison : 2 victoires, 5 podiums, 1 disqualification.' },
-      { title: 'Takumi Kurogane — interview exclusive (parkourjp.net)', url: 'www.parkourjp.net/interviews/takumi-kurogane', desc: '"Je ne lis pas les articles d\'ActuNet. Ce qui s\'est passé au tournoi des Ura Ura Kidz ne regarde personne." — T. Kurogane, mars 6088.' },
-      { title: 'Forum ParkourJP :: Tenku Striders, vrais champions ?', url: 'www.parkourjp.net/forum/viewtopic?t=90112', desc: '— Depuis qu\'ils ont recruté Takumi, ils n\'ont plus gagné une seule fois contre les Bolts. Coïncidence ?  |  61 réponses.' },
+      { title: 'Kazuki Kurogane — interview exclusive (parkourjp.net)', url: 'www.parkourjp.net/interviews/Kazuki-kurogane', desc: '"Je ne lis pas les articles d\'ActuNet. Ce qui s\'est passé au tournoi des Ura Ura Kidz ne regarde personne." — T. Kurogane, mars 6088.' },
+      { title: 'Forum ParkourJP :: Tenku Striders, vrais champions ?', url: 'www.parkourjp.net/forum/viewtopic?t=90112', desc: '— Depuis qu\'ils ont recruté Kazuki, ils n\'ont plus gagné une seule fois contre les Bolts. Coïncidence ?  |  61 réponses.' },
       { title: 'Tenku Striders (manga) — tome 3 en librairie', url: 'www.librairie-manga.jp/tenku-striders-t3', desc: 'Manga en 5 tomes publié chez Éditions Tōkai. Aucun lien avec le crew réel, selon l\'éditeur.' },
       { title: 'Ura Ura Kidz → Tenku Striders : la bascule', url: 'archives.actunet-news.jp/sports/uraura-tenku', desc: 'Retour sur le tournoi décisif opposant les Ura Ura Kidz à la relève Tenku Striders. L\'article évoque la chute de Ryohei Nishikawa.' },
       { title: 'Skyrunner League — vidéo : Tenku vs Bolts, manche 2', url: 'video-share.jp/v/81006', desc: 'Durée 06:44 — passage au ralenti du virage contesté du 4ᵉ checkpoint. Vidéo signalée puis réactivée.' },
       { title: 'Tenku Striders — t-shirts & goodies officiels', url: 'www.shop-skyrunner.jp/tenku-striders', desc: 'Merchandising officiel : maillots (éditions printemps), casquettes, pochettes. Expédition Japon uniquement.' },
-      { title: 'Pourquoi Takumi esquive les interviews ?', url: 'www.forum-medias.jp/sujet/24350', desc: '— Il pète la forme sur les courses mais dès qu\'un micro arrive, il est pressé. Quelqu\'un a une théorie ?  |  39 réponses.' },
+      { title: 'Pourquoi Kazuki esquive les interviews ?', url: 'www.forum-medias.jp/sujet/24350', desc: '— Il pète la forme sur les courses mais dès qu\'un micro arrive, il est pressé. Quelqu\'un a une théorie ?  |  39 réponses.' },
     ],
   },
   {
@@ -653,13 +653,13 @@ function FakeWikipedia({ onLogoClick }) {
           </p>
           <h3 id="wiki-parkour" className="browser__wiki-h3">Découverte du parkour et les <em>Ura Ura Kidz</em></h3>
           <p>
-            Ses journées passées à profiter de cette liberté en vadrouillant dans les rues des différents quartiers de la capitale l'amènent à faire la rencontre de <strong>Ryohei Nishikawa</strong>, un camarade de collège qui deviendra rapidement son meilleur ami. Ryohei est le leader naturel d’un petit groupe cherchant à former un club de parkour au sein du collège. Il recrute Kiba afin de permettre la création officielle du club, qui est complété par <strong>Takumi Kurogane</strong>, un garçon sûr de lui, ambitieux, et cherchant à surpasser Ryohei ; ainsi que <strong>Aoi Kanzaki</strong>, une adolescente silencieuse, analytique, et qui est le véritable cerveau stratégique de l'équipe.
+            Ses journées passées à profiter de cette liberté en vadrouillant dans les rues des différents quartiers de la capitale l'amènent à faire la rencontre de <strong>Ryohei Nishikawa</strong>, un camarade de collège qui deviendra rapidement son meilleur ami. Ryohei est le leader naturel d’un petit groupe cherchant à former un club de parkour au sein du collège. Il recrute Kiba afin de permettre la création officielle du club, qui est complété par <strong>Kazuki Kurogane</strong>, un garçon sûr de lui, ambitieux, et cherchant à surpasser Ryohei ; ainsi que <strong>Aoi Kanzaki</strong>, une adolescente silencieuse, analytique, et qui est le véritable cerveau stratégique de l'équipe.
           </p>
           <p>
             Sous le nom des <em>Ura Ura Kidz</em>, ils participent à des courses clandestines contre d’autres équipes des collèges de l’arrondissement de Bunkyo. Leur progression est rapide et ils sont bientôt invités à participer à des runs organisées. Leur cohésion, leur créativité et leur style attirent l’attention des <em>Tenku Striders</em>, une équipe de lycéens réputée dans tout Tokyo, qui cherchent à recruter une nouvelle génération pour reprendre leur place avant d'obtenir leur diplôme de fin d'études. Un tournoi final est organisé et oppose les meilleures équipes des collèges environnants. Mais une seule équipe sera choisie et aura le privilège de porter le nom de <em>Tenku Striders</em>.
           </p>
           <p>
-            Les <em>Ura Ura Kidz</em> parviennent jusqu'en finale sans trop de mal. Mais lors de cette course décisive, tout bascule. Alors que la victoire semble à leur portée, Takumi révèle ses véritables intentions et finit par trahir le groupe. Au moment d’un saut critique, il pousse volontairement le leader des <em>Ura Ura Kidz</em> dans le vide. La chute est violente et malgré les tentatives désespérées de Kiba et Aoi pour le rattraper, Ryohei, considéré comme le meilleur <em>traceur</em> du tournoi, s’écrase lourdement après plusieurs mètres de chute libre et subit de graves blessures aux jambes. La course est perdue et les <em>Tenku Striders</em> recrutent l’équipe adverse, avec Takumi à leur tête.
+            Les <em>Ura Ura Kidz</em> parviennent jusqu'en finale sans trop de mal. Mais lors de cette course décisive, tout bascule. Alors que la victoire semble à leur portée, Kazuki révèle ses véritables intentions et finit par trahir le groupe. Au moment d’un saut critique, il pousse volontairement le leader des <em>Ura Ura Kidz</em> dans le vide. La chute est violente et malgré les tentatives désespérées de Kiba et Aoi pour le rattraper, Ryohei, considéré comme le meilleur <em>traceur</em> du tournoi, s’écrase lourdement après plusieurs mètres de chute libre et subit de graves blessures aux jambes. La course est perdue et les <em>Tenku Striders</em> recrutent l’équipe adverse, avec Kazuki à leur tête.
           </p>
           <h3 id="wiki-bunkyo" className="browser__wiki-h3"><em>Bunkyo City Bolts</em> et la <em>Tokyo Skyrunner League</em></h3>
           <p>

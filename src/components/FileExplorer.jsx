@@ -97,7 +97,7 @@ export const FILE_TREE = {
 
     Ses journées passées à profiter de cette liberté en vadrouillant dans les rues l'amènent à faire la rencontre de Ryohei Nishikawa, un camarade de classe qui deviendra rapidement son meilleur ami. Ryohei est le leader naturel d'un petit groupe cherchant à former un club de parkour au sein du college.
 
-    Il recrute Kiba afin de permettre la création officielle du club, qui est completé par Takumi Kurogane, un garçon sûr de lui, ambitieux, et cherchant a surpasser Ryohei ; ainsi que Aoi Kanzaki, une adolescente silencieuse, analytique, et qui est le véritable cerveau stratégique de la future équipe.
+    Il recrute Kiba afin de permettre la création officielle du club, qui est completé par Kazuki Kurogane, un garçon sûr de lui, ambitieux, et cherchant a surpasser Ryohei ; ainsi que Aoi Kanzaki, une adolescente silencieuse, analytique, et qui est le véritable cerveau stratégique de la future équipe.
 
     Les Ura Ura Kidz sont nés.
 
@@ -123,9 +123,9 @@ export const FILE_TREE = {
 
     Les Ura Ura Kidz parviennent jusqu'en finale sans trop de mal. Mais lors de cette course décisive, tout bascule.
 
-    Alors que la victoire semble à leur portée, Takumi révèle ses véritables intentions et trahit le groupe. Au moment d'un saut critique, il pousse volontairement Ryohei dans le vide.
+    Alors que la victoire semble à leur portée, Kazuki révèle ses véritables intentions et trahit le groupe. Au moment d'un saut critique, il pousse volontairement Ryohei dans le vide.
 
-    La chute est violente et malgré les tentatives désespérées de Kiba et Aoi pour le rattraper, Ryohei s'ecrase lourdement après plusieurs mètres de chute libre. Graves blessures aux jambes, la course est perdue. Les Tenku Striders se voient dans l'obligation de recruter l'équipe adverse, avec Takumi à leur tête.
+    La chute est violente et malgré les tentatives désespérées de Kiba et Aoi pour le rattraper, Ryohei s'ecrase lourdement après plusieurs mètres de chute libre. Graves blessures aux jambes, la course est perdue. Les Tenku Striders se voient dans l'obligation de recruter l'équipe adverse, avec Kazuki à leur tête.
 
     Ce jour-là, quelque chose s'est brisé chez Kiba. Mais ce n'est pas sa determination ; plutôt sa naïveté qui s'envole en éclats. Il a compris que le monde ne récompensait pas toujours les meilleurs. Parfois, il récompensait les plus cruels.
 
