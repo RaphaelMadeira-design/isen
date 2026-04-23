@@ -157,50 +157,51 @@
   }
 
   &__vol-slider {
-    -webkit-appearance: none; // important (Chrome/Safari)
+    -webkit-appearance: none;
     appearance: none;
-    width: 70px;
-    height: 5px;
-    background: linear-gradient(
-      to right,
-      $win98-navy 0%,
-      $win98-navy calc(var(--value) * 100%),
-      $win98-dark-gray calc(var(--value) * 100%),
-      $win98-dark-gray 100%
-    );
-    cursor: pointer;
+    background: linear-gradient( 
+      to right, $win98-navy 0%, 
+      $win98-navy calc(var(--value) * 100%), 
+      $win98-dark-gray calc(var(--value) * 100%), 
+      $win98-dark-gray 100% ); 
     @include border-inset;
+    width: 70px;
+    height: 8px;
+    cursor: pointer;
   }
 
-  /* Chrome, Edge, Safari */
+  &__vol-slider::-webkit-slider-runnable-track {
+    height: 5px;
+  }
+
+  &__vol-slider::-moz-range-track {
+    height: 2px;
+  }
+
   &__vol-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 6px;
-    height: 10px;
-    border-radius: 0;
-    cursor: pointer;
+    width: 8px;
+    height: 12px;
+    background: $win98-dark-gray;
     @include border-outset;
+    margin-top: -4px;
+
+    &:hover {
+      background: $win98-light-gray;
+    }
   }
 
-  /* Firefox */
   &__vol-slider::-moz-range-thumb {
+    border-radius: 0;
     width: 6px;
     height: 10px;
-    border-radius: 0;
-    cursor: pointer;
+    background: $win98-dark-gray;
     @include border-outset;
-  }
+    cursor: pointer;
 
-  /* Track (barre) - Chrome/Safari/Edge */
-  &__vol-slider::-webkit-slider-runnable-track {
-    height: 4px;
-    accent-color: $win98-navy;
-  }
-
-  /* Track - Firefox */
-  &__vol-slider::-moz-range-track {
-    height: 4px;
-    accent-color: $win98-navy;
+    &:hover {
+      background: $win98-light-gray;
+    }
   }
 
   // ── Playlist ──────────────────────────────────────────
