@@ -3,15 +3,20 @@ import '../styles/CRTFrame.scss'
 
 export default function CRTFrame({ children, onReset }) {
   const [powerOn, setPowerOn] = useState(false)
-  const [screenOn, setScreenOn] = useState(true)
+  const [screenOn, setScreenOn] = useState(false)
   const [brightness, setBrightness] = useState(100)
+  const [animatingOff, setAnimatingOff] = useState(false)
 
   const handlePower = () => {
     if (powerOn) {
-      // Extinction : NO SIGNAL
-      setPowerOn(false)
+      // Animation CRT shutdown : shrink → line → black
+      setAnimatingOff(true)
+      setTimeout(() => {
+        setAnimatingOff(false)
+        setPowerOn(false)
+        setScreenOn(true)
+      }, 650)
     } else {
-      // Rallumage : reset complet + boot screen
       onReset?.()
       setScreenOn(true)
       setPowerOn(true)
@@ -20,22 +25,19 @@ export default function CRTFrame({ children, onReset }) {
 
   return (
     <div className="crt-monitor" data-testid="crt-monitor">
-      {/* Cadre extérieur du moniteur */}
       <div className="crt-monitor__frame">
-        {/* Zone écran avec biseau */}
         <div className="crt-monitor__screen-area">
-          {/* Biseau interne */}
           <div className="crt-monitor__bezel">
-            {/* Écran CRT */}
             <div className={`crt-monitor__screen ${screenOn ? 'crt-monitor__screen--on' : ''}`}>
-              {/* Effets CRT */}
               <div className="crt-monitor__scanlines" />
               <div className="crt-monitor__flicker" />
               <div className="crt-monitor__vignette" />
               <div className="crt-monitor__curvature" />
-              
-              {/* Contenu (Windows 98) */}
-              <div className="crt-monitor__content" style={{ filter: `brightness(${brightness}%)` }}>
+
+              <div
+                className={`crt-monitor__content${animatingOff ? ' crt-monitor__content--off-anim' : ''}`}
+                style={{ filter: `brightness(${brightness}%)` }}
+              >
                 {powerOn ? (
                   typeof children === 'function'
                     ? children({ powerOff: handlePower })
@@ -47,31 +49,27 @@ export default function CRTFrame({ children, onReset }) {
                 )}
               </div>
 
-              {/* Reflet sur l'écran */}
               <div className="crt-monitor__reflection" />
             </div>
           </div>
         </div>
 
-        {/* Panneau de contrôle */}
         <div className="crt-monitor__controls">
-          {/* Logo marque */}
           <div className="crt-monitor__brand">
             <span className="crt-monitor__brand-logo">PYRAKITAI</span>
             <span className="crt-monitor__brand-model">MultiSync 98</span>
           </div>
 
-          {/* Boutons de contrôle */}
           <div className="crt-monitor__buttons">
             <div className="crt-monitor__button-group">
-              <button 
+              <button
                 className="crt-monitor__btn crt-monitor__btn--small"
                 onClick={() => setBrightness(b => Math.max(50, b - 10))}
                 title="Luminosité -"
               >
                 <span>◐</span>
               </button>
-              <button 
+              <button
                 className="crt-monitor__btn crt-monitor__btn--small"
                 onClick={() => setBrightness(b => Math.min(120, b + 10))}
                 title="Luminosité +"
@@ -79,7 +77,6 @@ export default function CRTFrame({ children, onReset }) {
                 <span>◑</span>
               </button>
             </div>
-            {/* Power + LED à droite */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <button
                 className={`crt-monitor__btn crt-monitor__btn--power${powerOn ? ' crt-monitor__btn--power-on' : ''}`}

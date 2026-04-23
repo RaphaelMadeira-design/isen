@@ -122,14 +122,18 @@ export default function Snake() {
     s.dir = s.nextDir
     const head = { x: s.snake[0].x + s.dir.x, y: s.snake[0].y + s.dir.y }
 
-    if (head.x < 0 || head.x >= COLS || head.y < 0 || head.y >= ROWS) {
+    const die = () => {
+      if (loopRef.current) { clearInterval(loopRef.current); loopRef.current = null }
       Sounds.gameOver()
       setPhase('over')
+    }
+
+    if (head.x < 0 || head.x >= COLS || head.y < 0 || head.y >= ROWS) {
+      die()
       return
     }
     if (s.snake.some(seg => seg.x === head.x && seg.y === head.y)) {
-      Sounds.gameOver()
-      setPhase('over')
+      die()
       return
     }
 
