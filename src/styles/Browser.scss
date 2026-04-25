@@ -158,12 +158,13 @@
   }
 
   &__tab-close {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $win98-light-gray;
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
     margin-left: 4px;
-    line-height: 1;
     color: #1b1b1b;
     cursor: pointer;
     flex-shrink: 0;
@@ -171,12 +172,7 @@
     @include border-outset-light;
 
     span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      line-height: 1;
-      padding: 3px 2px 2px 2px ;
+      font-size: 9px;
     }
 
     &:hover {

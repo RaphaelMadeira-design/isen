@@ -25,19 +25,18 @@ const BIOS_LINES = [
   { text: 'Boot from HDD-0 : OK', delay: 2900, highlight: true },
 ]
 
-const WIN98_LINES = [
-  { text: 'Microsoft Windows 98', delay: 0, big: true },
-  { text: 'Démarrage de Windows 98...', delay: 400 },
-]
-
 // Phases : 'bios' | 'win98' | 'progress' | 'done'
 export default function BootScreen({ onDone }) {
   const [phase, setPhase] = useState('bios')
   const [visibleBios, setVisibleBios] = useState([])
-  const [setVisibleWin] = useState([])
   const [progress, setProgress] = useState(0)
   const [scanOn, setScanOn] = useState(true)
   const timerRef = useRef(null)
+
+  useEffect(() => {
+    const img = new Image()
+    img.src = '/images/Windows_98_logo.png'
+  }, [])
 
   // --- Phase BIOS ---
   useEffect(() => {
@@ -48,20 +47,21 @@ export default function BootScreen({ onDone }) {
       }, line.delay)
     )
     // Fin du BIOS → transition vers Win98
-    const end = setTimeout(() => { Sounds.biosBeep(); setPhase('win98') }, 3200)
-    return () => { timers.forEach(clearTimeout); clearTimeout(end); }
+    const end = setTimeout(() => { 
+      Sounds.biosBeep()
+      setPhase('win98') 
+    }, 3200)
+    return () => { 
+      timers.forEach(clearTimeout)
+      clearTimeout(end)
+    }
   }, [phase])
 
   // --- Phase Win98 logo ---
   useEffect(() => {
     if (phase !== 'win98') return
-    const timers = WIN98_LINES.map((line, i) =>
-      setTimeout(() => {
-        setVisibleWin(prev => [...prev, i])
-      }, line.delay)
-    );
     const end = setTimeout(() => setPhase('progress'), 1200)
-    return () => { timers.forEach(clearTimeout); clearTimeout(end); }
+    return () => clearTimeout(end)
   }, [phase])
 
   // --- Phase barre de progression ---
